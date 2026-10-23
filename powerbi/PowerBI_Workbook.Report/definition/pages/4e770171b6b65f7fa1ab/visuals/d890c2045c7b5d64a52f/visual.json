@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "d890c2045c7b5d64a52f",
+  "position": {
+    "x": 1155,
+    "y": 110,
+    "z": 6000,
+    "height": 110,
+    "width": 359,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Deals To Review"
+                }
+              },
+              "queryRef": "_Measures.Deals To Review",
+              "nativeQueryRef": "Deals To Review"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Deals to review (>= 25 pts apart)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

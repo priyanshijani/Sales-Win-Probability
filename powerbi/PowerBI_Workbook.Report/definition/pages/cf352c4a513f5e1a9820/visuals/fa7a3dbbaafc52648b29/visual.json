@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "fa7a3dbbaafc52648b29",
+  "position": {
+    "x": 968,
+    "y": 110,
+    "z": 5000,
+    "height": 110,
+    "width": 453,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Average Open Deal Probability"
+                }
+              },
+              "queryRef": "_Measures.Average Open Deal Probability",
+              "nativeQueryRef": "Average Open Deal Probability"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Average open deal (model)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

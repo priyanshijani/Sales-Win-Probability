@@ -1,0 +1,19 @@
+table DimDepartment
+	lineageTag: 7a7bd3ba-7888-5ea2-b53a-efb4be39e73c
+
+	column department
+		dataType: string
+		isDataTypeInferred
+		lineageTag: 0f3a75c2-c7c0-5f5c-bb45-6f8664861ed3
+		summarizeBy: none
+		sourceColumn: [department]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimDepartment = calculated
+		mode: import
+		source =
+				DATATABLE (
+				    "department", STRING,
+				    { { "Cloud & Infrastructure" }, { "Data & AI" }, { "Cybersecurity" }, { "ERP & Business Apps" } }
+				)

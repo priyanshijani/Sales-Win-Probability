@@ -1,0 +1,150 @@
+table model_scores
+	lineageTag: c899a487-e171-51e7-9674-b4bbcc9712c5
+
+	column opportunity_id
+		dataType: string
+		lineageTag: bf197d62-3658-5f3d-9036-2cbc67a261c4
+		summarizeBy: none
+		sourceColumn: opportunity_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column opportunity_name
+		dataType: string
+		lineageTag: 5723afcc-ad58-505c-b469-b4dba58d7c60
+		summarizeBy: none
+		sourceColumn: opportunity_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_name
+		dataType: string
+		lineageTag: 1fb0e71a-47bf-5c9d-87d0-68d5a4c649c7
+		summarizeBy: none
+		sourceColumn: account_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column stage
+		dataType: string
+		lineageTag: c63f85ea-72bb-5e5e-b7c7-6311dfce8192
+		summarizeBy: none
+		sourceColumn: stage
+
+		annotation SummarizationSetBy = Automatic
+
+	column amount_eur
+		dataType: double
+		lineageTag: 80711619-0211-53db-b05f-8ca9f2cc0380
+		summarizeBy: sum
+		sourceColumn: amount_eur
+
+		annotation SummarizationSetBy = Automatic
+
+	column governed_probability
+		dataType: double
+		lineageTag: 4171d007-de3d-5242-81d2-7e855c32c3ac
+		summarizeBy: none
+		sourceColumn: governed_probability
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_win_probability
+		dataType: double
+		lineageTag: 1f2f1cf6-b16e-5981-be23-5ecec35fd15f
+		summarizeBy: none
+		sourceColumn: model_win_probability
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_weighted_eur
+		dataType: double
+		lineageTag: 8c0fa92d-5f89-52f4-973b-8dbcf78afa8f
+		summarizeBy: sum
+		sourceColumn: model_weighted_eur
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_vs_governed_pts
+		dataType: double
+		lineageTag: 8e832454-7278-5f3f-b5a4-a666f0e35b6d
+		summarizeBy: none
+		sourceColumn: model_vs_governed_pts
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_review_flag
+		dataType: string
+		lineageTag: 8073c843-72af-56a2-8731-e584d11dfd45
+		summarizeBy: none
+		sourceColumn: model_review_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_status
+		dataType: string
+		lineageTag: 9762ec27-932c-51ae-8fa5-a05f9fbf4df5
+		summarizeBy: none
+		sourceColumn: model_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_name
+		dataType: string
+		lineageTag: 689a385a-2a24-5737-a22f-5fb192c30fbd
+		summarizeBy: none
+		sourceColumn: model_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_version
+		dataType: string
+		lineageTag: ed1304ab-1460-55a5-ad67-64b23b9b464e
+		summarizeBy: none
+		sourceColumn: model_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column deal_label
+		dataType: string
+		lineageTag: c3733313-c161-5897-8770-6b10d41dbaf5
+		summarizeBy: none
+		sourceColumn: deal_label
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_reasoning
+		dataType: string
+		lineageTag: b785a362-7a3e-549b-b16a-f2215a335373
+		summarizeBy: none
+		sourceColumn: model_reasoning
+
+		annotation SummarizationSetBy = Automatic
+
+	column top_positive_drivers
+		dataType: string
+		lineageTag: 0d729ac7-d883-5c05-baea-547b201828e0
+		summarizeBy: none
+		sourceColumn: top_positive_drivers
+
+		annotation SummarizationSetBy = Automatic
+
+	column top_negative_drivers
+		dataType: string
+		lineageTag: 03edc69a-a023-5793-b3d9-2e30b1feb592
+		summarizeBy: none
+		sourceColumn: top_negative_drivers
+
+		annotation SummarizationSetBy = Automatic
+
+	partition model_scores = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents(DataFolder & "model_scores.csv"), [Delimiter = ",", Columns = 17, Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"opportunity_id", type text}, {"opportunity_name", type text}, {"account_name", type text}, {"stage", type text}, {"amount_eur", type number}, {"governed_probability", type number}, {"model_win_probability", type number}, {"model_weighted_eur", type number}, {"model_vs_governed_pts", type number}, {"model_review_flag", type text}, {"model_status", type text}, {"model_name", type text}, {"model_version", type text}, {"deal_label", type text}, {"model_reasoning", type text}, {"top_positive_drivers", type text}, {"top_negative_drivers", type text}}, "en-US")
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table

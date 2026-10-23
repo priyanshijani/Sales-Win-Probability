@@ -1,0 +1,143 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "c0c9740c79085bc198cf",
+  "position": {
+    "x": 30,
+    "y": 240,
+    "z": 7000,
+    "height": 750,
+    "width": 1240,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dq_reconciliation"
+                    }
+                  },
+                  "Property": "check_group"
+                }
+              },
+              "queryRef": "dq_reconciliation.check_group",
+              "nativeQueryRef": "check_group"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dq_reconciliation"
+                    }
+                  },
+                  "Property": "check_name"
+                }
+              },
+              "queryRef": "dq_reconciliation.check_name",
+              "nativeQueryRef": "check_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dq_reconciliation"
+                    }
+                  },
+                  "Property": "dimension"
+                }
+              },
+              "queryRef": "dq_reconciliation.dimension",
+              "nativeQueryRef": "dimension"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dq_reconciliation"
+                    }
+                  },
+                  "Property": "expected"
+                }
+              },
+              "queryRef": "dq_reconciliation.expected",
+              "nativeQueryRef": "expected"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dq_reconciliation"
+                    }
+                  },
+                  "Property": "actual"
+                }
+              },
+              "queryRef": "dq_reconciliation.actual",
+              "nativeQueryRef": "actual"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dq_reconciliation"
+                    }
+                  },
+                  "Property": "difference"
+                }
+              },
+              "queryRef": "dq_reconciliation.difference",
+              "nativeQueryRef": "difference"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dq_reconciliation"
+                    }
+                  },
+                  "Property": "status"
+                }
+              },
+              "queryRef": "dq_reconciliation.status",
+              "nativeQueryRef": "status"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Reconciliation checks'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

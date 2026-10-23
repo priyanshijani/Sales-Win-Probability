@@ -1,0 +1,63 @@
+table rejected_records
+	lineageTag: 387314bd-3a75-5491-8a18-5c5e2221fc5b
+
+	column opportunity_id
+		dataType: string
+		lineageTag: bd09e0c4-53be-51b8-b154-8f72e4f4855f
+		summarizeBy: none
+		sourceColumn: opportunity_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_file
+		dataType: string
+		lineageTag: 93cad67e-b050-5272-892c-f7a9f558aadd
+		summarizeBy: none
+		sourceColumn: source_file
+
+		annotation SummarizationSetBy = Automatic
+
+	column crm_version
+		dataType: string
+		lineageTag: 58979ea3-db63-53de-a59f-b1a393883e78
+		summarizeBy: none
+		sourceColumn: crm_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_modified
+		dataType: dateTime
+		formatString: dd mmm yyyy hh:mm
+		lineageTag: 2375a9c3-b85a-5dd6-93e3-bd74025c6a59
+		summarizeBy: none
+		sourceColumn: last_modified
+
+		annotation SummarizationSetBy = Automatic
+
+	column opportunity_name
+		dataType: string
+		lineageTag: a0a8738d-9bb7-53ca-9e8e-ef79c5b7a736
+		summarizeBy: none
+		sourceColumn: opportunity_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column reject_reason
+		dataType: string
+		lineageTag: 3c122fab-0c33-53f1-b973-99ba255fe865
+		summarizeBy: none
+		sourceColumn: reject_reason
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rejected_records = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents(DataFolder & "rejected_records.csv"), [Delimiter = ",", Columns = 6, Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"opportunity_id", type text}, {"source_file", type text}, {"crm_version", type text}, {"last_modified", type datetime}, {"opportunity_name", type text}, {"reject_reason", type text}}, "en-US")
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "230771ed73055761810c",
+  "position": {
+    "x": 1530,
+    "y": 110,
+    "z": 7000,
+    "height": 110,
+    "width": 359,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Deals Not Scored"
+                }
+              },
+              "queryRef": "_Measures.Deals Not Scored",
+              "nativeQueryRef": "Deals Not Scored"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Deals not scored (no amount)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

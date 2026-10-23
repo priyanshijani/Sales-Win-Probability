@@ -1,0 +1,4 @@
+expression DataFolder = "D:\Learnings\Sales-Win-Probability\Sales-Win-Probability\data\output\powerbi\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 46eb59cd-717b-50d8-8e4e-00453da4a343
+
+	annotation PBI_ResultType = Text

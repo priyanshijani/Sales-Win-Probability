@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "85f09e16a2e25c25972f",
+  "position": {
+    "x": 30,
+    "y": 184,
+    "z": 6000,
+    "height": 110,
+    "width": 359,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "EUR At Risk"
+                }
+              },
+              "queryRef": "_Measures.EUR At Risk",
+              "nativeQueryRef": "EUR At Risk"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Pipeline at risk'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

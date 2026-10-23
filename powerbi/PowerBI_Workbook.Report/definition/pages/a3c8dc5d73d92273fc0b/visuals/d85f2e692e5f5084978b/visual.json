@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "d85f2e692e5f5084978b",
+  "position": {
+    "x": 342,
+    "y": 184,
+    "z": 7000,
+    "height": 110,
+    "width": 296,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Weighted Pipeline EUR"
+                }
+              },
+              "queryRef": "_Measures.Weighted Pipeline EUR",
+              "nativeQueryRef": "Weighted Pipeline EUR"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Weighted pipeline (governed)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

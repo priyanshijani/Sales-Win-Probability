@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "52e15dd5db235375a6c4",
+  "position": {
+    "x": 1437,
+    "y": 110,
+    "z": 6000,
+    "height": 110,
+    "width": 453,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Rejected Records"
+                }
+              },
+              "queryRef": "_Measures.Rejected Records",
+              "nativeQueryRef": "Rejected Records"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Raw rows not turned into deals'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

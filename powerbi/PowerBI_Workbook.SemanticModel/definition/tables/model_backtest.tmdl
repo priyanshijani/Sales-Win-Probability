@@ -1,0 +1,79 @@
+table model_backtest
+	lineageTag: 7eef736e-2f22-5469-b829-7a677130e458
+
+	column method
+		dataType: string
+		lineageTag: 2b385982-e128-5f5e-b703-90cb4168e12e
+		summarizeBy: none
+		sourceColumn: method
+
+		annotation SummarizationSetBy = Automatic
+
+	column brier_score
+		dataType: double
+		lineageTag: e0430231-a840-5b46-b893-16e3df8d4673
+		summarizeBy: none
+		sourceColumn: brier_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column auc
+		dataType: double
+		lineageTag: deba0030-3a76-593a-9949-54b4db2aac24
+		summarizeBy: none
+		sourceColumn: auc
+
+		annotation SummarizationSetBy = Automatic
+
+	column forecast_won_eur
+		dataType: double
+		lineageTag: f90c00b1-e511-515e-81a6-fdeab5e91162
+		summarizeBy: sum
+		sourceColumn: forecast_won_eur
+
+		annotation SummarizationSetBy = Automatic
+
+	column actual_won_eur
+		dataType: double
+		lineageTag: acbdb836-0ed0-54fd-b23f-15b3c197cab7
+		summarizeBy: sum
+		sourceColumn: actual_won_eur
+
+		annotation SummarizationSetBy = Automatic
+
+	column forecast_error_pct
+		dataType: double
+		lineageTag: 303747f9-f85f-52ed-be7f-d122e37fd86b
+		summarizeBy: none
+		sourceColumn: forecast_error_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column deals_tested
+		dataType: int64
+		formatString: 0
+		lineageTag: 83fd4ba5-611a-5454-bf78-b9d69368767c
+		summarizeBy: none
+		sourceColumn: deals_tested
+
+		annotation SummarizationSetBy = Automatic
+
+	column chosen
+		dataType: boolean
+		lineageTag: 8cf7cbe8-bc1b-5c3f-acfe-590df8de3cb1
+		summarizeBy: none
+		sourceColumn: chosen
+
+		annotation SummarizationSetBy = Automatic
+
+	partition model_backtest = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents(DataFolder & "model_backtest.csv"), [Delimiter = ",", Columns = 8, Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"method", type text}, {"brier_score", type number}, {"auc", type number}, {"forecast_won_eur", type number}, {"actual_won_eur", type number}, {"forecast_error_pct", type number}, {"deals_tested", Int64.Type}, {"chosen", type logical}}, "en-US")
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table

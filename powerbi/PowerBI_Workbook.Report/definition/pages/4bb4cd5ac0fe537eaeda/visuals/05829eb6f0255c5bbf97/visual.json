@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "05829eb6f0255c5bbf97",
+  "position": {
+    "x": 1530,
+    "y": 184,
+    "z": 10000,
+    "height": 110,
+    "width": 359,
+    "tabOrder": 10000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Forecast Honesty Gap (pts)"
+                }
+              },
+              "queryRef": "_Measures.Forecast Honesty Gap (pts)",
+              "nativeQueryRef": "Forecast Honesty Gap (pts)"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Rep optimism vs governed (pts)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,112 @@
+table dept_quarter_summary
+	lineageTag: a0b72cef-8acc-536d-a327-9c62b1f91ab6
+
+	column department
+		dataType: string
+		lineageTag: 1561ed49-40fe-593b-9a89-6c26fb488b56
+		summarizeBy: none
+		sourceColumn: department
+
+		annotation SummarizationSetBy = Automatic
+
+	column quarter
+		dataType: string
+		lineageTag: fb2461c2-283d-5f12-a23e-9e2f150a8959
+		summarizeBy: none
+		sourceColumn: quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column bookings_target_eur
+		dataType: int64
+		formatString: 0
+		lineageTag: 01a1571a-f012-5111-9183-0a12dbe13538
+		summarizeBy: sum
+		sourceColumn: bookings_target_eur
+
+		annotation SummarizationSetBy = Automatic
+
+	column bookings_eur
+		dataType: double
+		lineageTag: c81ed538-2312-5c30-924e-5bb230dadfa5
+		summarizeBy: sum
+		sourceColumn: bookings_eur
+
+		annotation SummarizationSetBy = Automatic
+
+	column deals_won
+		dataType: int64
+		formatString: 0
+		lineageTag: ea165a19-7371-5dfe-b32a-fb556553dcc4
+		summarizeBy: none
+		sourceColumn: deals_won
+
+		annotation SummarizationSetBy = Automatic
+
+	column target_attainment
+		dataType: double
+		lineageTag: f660e964-9daa-53c8-bb79-6d137a3830a0
+		summarizeBy: none
+		sourceColumn: target_attainment
+
+		annotation SummarizationSetBy = Automatic
+
+	column open_pipeline_eur
+		dataType: double
+		lineageTag: 6c1edde5-c120-5178-b08f-117ff9891c83
+		summarizeBy: sum
+		sourceColumn: open_pipeline_eur
+
+		annotation SummarizationSetBy = Automatic
+
+	column weighted_pipeline_eur
+		dataType: double
+		lineageTag: 1616b5c7-6eab-586b-8ca5-7ea0d844ce92
+		summarizeBy: sum
+		sourceColumn: weighted_pipeline_eur
+
+		annotation SummarizationSetBy = Automatic
+
+	column commit_eur
+		dataType: double
+		lineageTag: cc741c54-1ca0-5726-a95b-c7d67825e227
+		summarizeBy: sum
+		sourceColumn: commit_eur
+
+		annotation SummarizationSetBy = Automatic
+
+	column best_case_eur
+		dataType: double
+		lineageTag: b4fb9fbc-f9d3-5cb1-9bf6-6b6ab0dd804e
+		summarizeBy: sum
+		sourceColumn: best_case_eur
+
+		annotation SummarizationSetBy = Automatic
+
+	column pipeline_eur
+		dataType: double
+		lineageTag: 2ba91960-b6af-5497-8f98-432ebd386679
+		summarizeBy: sum
+		sourceColumn: pipeline_eur
+
+		annotation SummarizationSetBy = Automatic
+
+	column pipeline_coverage_x
+		dataType: double
+		lineageTag: 68292777-65e3-5e56-bac1-83a84431f99a
+		summarizeBy: none
+		sourceColumn: pipeline_coverage_x
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dept_quarter_summary = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents(DataFolder & "dept_quarter_summary.csv"), [Delimiter = ",", Columns = 12, Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"department", type text}, {"quarter", type text}, {"bookings_target_eur", Int64.Type}, {"bookings_eur", type number}, {"deals_won", Int64.Type}, {"target_attainment", type number}, {"open_pipeline_eur", type number}, {"weighted_pipeline_eur", type number}, {"commit_eur", type number}, {"best_case_eur", type number}, {"pipeline_eur", type number}, {"pipeline_coverage_x", type number}}, "en-US")
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table

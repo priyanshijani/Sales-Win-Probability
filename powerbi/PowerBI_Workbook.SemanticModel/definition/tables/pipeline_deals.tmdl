@@ -1,0 +1,508 @@
+table pipeline_deals
+	lineageTag: 8a13b900-d1de-5d21-9659-f9bf8095b8eb
+
+	column opportunity_id
+		dataType: string
+		lineageTag: c5c23897-d159-5e76-985e-da9bad4bd7d6
+		summarizeBy: none
+		sourceColumn: opportunity_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column opportunity_name
+		dataType: string
+		lineageTag: 034d5621-b563-56ba-bb8a-e7405292f057
+		summarizeBy: none
+		sourceColumn: opportunity_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column master_account_id
+		dataType: string
+		lineageTag: 3357681e-b013-5b1d-85a4-01d92db7a8cb
+		summarizeBy: none
+		sourceColumn: master_account_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_name
+		dataType: string
+		lineageTag: 0f14af02-d9ab-5af0-875b-d3dcbe4d3b01
+		summarizeBy: none
+		sourceColumn: account_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column industry
+		dataType: string
+		lineageTag: 62ab6e0f-5d4c-55f1-8117-1236f647edfe
+		summarizeBy: none
+		sourceColumn: industry
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_size_band
+		dataType: string
+		lineageTag: 1f90b493-942f-5b8f-b5a0-d61fe5013127
+		summarizeBy: none
+		sourceColumn: company_size_band
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_code
+		dataType: string
+		lineageTag: e1322720-c583-514d-8dc9-aee101944f73
+		summarizeBy: none
+		sourceColumn: country_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_name
+		dataType: string
+		lineageTag: 84e131a2-f466-5853-8a3f-9e5367c54d35
+		summarizeBy: none
+		sourceColumn: country_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column sales_region
+		dataType: string
+		lineageTag: c8c89260-ed51-5b76-9e63-26c1cfc381cf
+		summarizeBy: none
+		sourceColumn: sales_region
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: d7a5c499-f6f7-5c03-9dbc-709c214bb9ad
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitude
+		dataType: double
+		lineageTag: 3792bdb4-3e35-5c1a-820d-b6a7e6d528c9
+		summarizeBy: none
+		sourceColumn: latitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column longitude
+		dataType: double
+		lineageTag: 752e2923-c51f-5597-9317-8f4c977f303f
+		summarizeBy: none
+		sourceColumn: longitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_status
+		dataType: string
+		lineageTag: 2f888fe9-43e9-56ae-9072-24e91f632ed9
+		summarizeBy: none
+		sourceColumn: account_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column owner_email
+		dataType: string
+		lineageTag: ab4db806-fd12-5b8c-a9ba-25a57b3aaec5
+		summarizeBy: none
+		sourceColumn: owner_email
+
+		annotation SummarizationSetBy = Automatic
+
+	column owner_name
+		dataType: string
+		lineageTag: ced8281b-ecc6-523a-b14b-13f54d6d9444
+		summarizeBy: none
+		sourceColumn: owner_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column sales_manager
+		dataType: string
+		lineageTag: 723efdfa-cc46-5aba-a5ab-6e4e63a35bb5
+		summarizeBy: none
+		sourceColumn: sales_manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column department
+		dataType: string
+		lineageTag: 62e691cd-dfe8-5fe9-bdfe-35166aaceb08
+		summarizeBy: none
+		sourceColumn: department
+
+		annotation SummarizationSetBy = Automatic
+
+	column owner_is_active
+		dataType: boolean
+		lineageTag: 50c2a1ae-8b46-5d55-94c8-bebc0c2b877c
+		summarizeBy: none
+		sourceColumn: owner_is_active
+
+		annotation SummarizationSetBy = Automatic
+
+	column service_line
+		dataType: string
+		lineageTag: 6f591454-ed5a-5528-b5f6-31097b56860e
+		summarizeBy: none
+		sourceColumn: service_line
+
+		annotation SummarizationSetBy = Automatic
+
+	column lead_source
+		dataType: string
+		lineageTag: 9642e81a-527f-540e-bf2a-bc074fc46951
+		summarizeBy: none
+		sourceColumn: lead_source
+
+		annotation SummarizationSetBy = Automatic
+
+	column deal_type
+		dataType: string
+		lineageTag: d433d067-8e28-5880-998f-63cdc0fedb59
+		summarizeBy: none
+		sourceColumn: deal_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column loss_reason
+		dataType: string
+		lineageTag: 568198e3-2b55-5e8c-9df7-4bcd747cacbd
+		summarizeBy: none
+		sourceColumn: loss_reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column lost_at_stage
+		dataType: string
+		lineageTag: bcc3300e-6831-5ffc-b040-2138bea178e3
+		summarizeBy: none
+		sourceColumn: lost_at_stage
+
+		annotation SummarizationSetBy = Automatic
+
+	column stage
+		dataType: string
+		lineageTag: 0329f65e-7b7f-5e40-99ca-d03edcd84c0a
+		summarizeBy: none
+		sortByColumn: stage_order
+		sourceColumn: stage
+
+		annotation SummarizationSetBy = Automatic
+
+	column stage_order
+		dataType: int64
+		formatString: 0
+		lineageTag: a945cd37-3d0a-5246-8132-5516d0081107
+		summarizeBy: none
+		sourceColumn: stage_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column confidence_band
+		dataType: string
+		lineageTag: 26d76bff-39f1-5cf5-889c-87faf1c8cf0b
+		summarizeBy: none
+		sourceColumn: confidence_band
+
+		annotation SummarizationSetBy = Automatic
+
+	column forecast_category
+		dataType: string
+		lineageTag: 01294d06-9bf8-5bee-bd83-8a641c58001c
+		summarizeBy: none
+		sourceColumn: forecast_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_open
+		dataType: boolean
+		lineageTag: e048062c-9950-5ddf-8bcf-9b7f438c1e06
+		summarizeBy: none
+		sourceColumn: is_open
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_won
+		dataType: boolean
+		lineageTag: 7b969044-8843-58c4-a33e-b73fb2741551
+		summarizeBy: none
+		sourceColumn: is_won
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_lost
+		dataType: boolean
+		lineageTag: 2a17d496-ffa1-58fb-aef4-11d63222d772
+		summarizeBy: none
+		sourceColumn: is_lost
+
+		annotation SummarizationSetBy = Automatic
+
+	column max_stage_reached
+		dataType: int64
+		formatString: 0
+		lineageTag: 92c4adfa-f54f-516e-abd9-b3964da724f7
+		summarizeBy: none
+		sourceColumn: max_stage_reached
+
+		annotation SummarizationSetBy = Automatic
+
+	column amount_local
+		dataType: double
+		lineageTag: 6093e25c-22e0-5bec-97a0-575d420dea99
+		summarizeBy: none
+		sourceColumn: amount_local
+
+		annotation SummarizationSetBy = Automatic
+
+	column currency
+		dataType: string
+		lineageTag: b5c75af3-add5-5082-8f8b-ecb66c40db42
+		summarizeBy: none
+		sourceColumn: currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column fx_rate
+		dataType: double
+		lineageTag: fe9fa06c-4dca-5b7d-8158-d3ee311af34b
+		summarizeBy: none
+		sourceColumn: fx_rate
+
+		annotation SummarizationSetBy = Automatic
+
+	column amount_eur
+		dataType: double
+		lineageTag: 599d6b87-2599-58fc-bad5-8046865b33de
+		summarizeBy: sum
+		sourceColumn: amount_eur
+
+		annotation SummarizationSetBy = Automatic
+
+	column governed_probability
+		dataType: double
+		lineageTag: 0daf5698-31f1-5acc-8fb3-845513d69fc6
+		summarizeBy: none
+		sourceColumn: governed_probability
+
+		annotation SummarizationSetBy = Automatic
+
+	column weighted_amount_eur
+		dataType: double
+		lineageTag: 6150d01b-1171-5ff0-95c4-61cb6f77c999
+		summarizeBy: sum
+		sourceColumn: weighted_amount_eur
+
+		annotation SummarizationSetBy = Automatic
+
+	column rep_probability
+		dataType: double
+		lineageTag: 4270c694-c9e0-55a4-a162-e3d097cf38b3
+		summarizeBy: none
+		sourceColumn: rep_probability
+
+		annotation SummarizationSetBy = Automatic
+
+	column probability_gap_pts
+		dataType: double
+		lineageTag: 98d46f72-790a-5abd-bd46-fb5ab50e249b
+		summarizeBy: none
+		sourceColumn: probability_gap_pts
+
+		annotation SummarizationSetBy = Automatic
+
+	column deal_size_band
+		dataType: string
+		lineageTag: 53d62a3c-39a2-5933-95d4-5fb8c9a4b025
+		summarizeBy: none
+		sourceColumn: deal_size_band
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_date
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: afcc0f71-1125-5ae6-b633-393dfa30cdd7
+		summarizeBy: none
+		sourceColumn: created_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column expected_close_date
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 965e64d2-858d-52c4-9b7d-60675425937d
+		summarizeBy: none
+		sourceColumn: expected_close_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column actual_close_date
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: ac776445-1871-5f49-9264-b890efaa7bde
+		summarizeBy: none
+		sourceColumn: actual_close_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_activity_date
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: b75a738f-8df8-5962-ad85-4f21cdb61984
+		summarizeBy: none
+		sourceColumn: last_activity_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column stage_entered_date
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: a44c5a0e-5ec9-520e-8993-95d1f7b0270a
+		summarizeBy: none
+		sourceColumn: stage_entered_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column close_quarter
+		dataType: string
+		lineageTag: 6247954b-a956-56ff-ac9c-10c741f153a9
+		summarizeBy: none
+		sourceColumn: close_quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column expected_close_quarter
+		dataType: string
+		lineageTag: 17abfcdf-78c0-570f-99a0-4af1168bc3a3
+		summarizeBy: none
+		sourceColumn: expected_close_quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column days_in_current_stage
+		dataType: int64
+		formatString: 0
+		lineageTag: 29000170-62aa-5b26-a678-e5fb7b11f247
+		summarizeBy: none
+		sourceColumn: days_in_current_stage
+
+		annotation SummarizationSetBy = Automatic
+
+	column stuck_after_days
+		dataType: int64
+		formatString: 0
+		lineageTag: aafc914e-1ef8-5ff4-a5a7-0edd3469bd80
+		summarizeBy: none
+		sourceColumn: stuck_after_days
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_stuck
+		dataType: boolean
+		lineageTag: 922e6b71-86af-57e4-8a42-5fe4730e319f
+		summarizeBy: none
+		sourceColumn: is_stuck
+
+		annotation SummarizationSetBy = Automatic
+
+	column days_since_activity
+		dataType: int64
+		formatString: 0
+		lineageTag: 08e886bc-fb48-5bd8-9f84-ef8c86bf9129
+		summarizeBy: none
+		sourceColumn: days_since_activity
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_stale
+		dataType: boolean
+		lineageTag: 1ba42f2c-8e24-5ac0-aa57-63c5db0308c6
+		summarizeBy: none
+		sourceColumn: is_stale
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_past_due
+		dataType: boolean
+		lineageTag: ef28b6ae-06c8-5204-a1c5-b3749424b0c2
+		summarizeBy: none
+		sourceColumn: is_past_due
+
+		annotation SummarizationSetBy = Automatic
+
+	column regression_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 7941b591-2e66-5a63-bdc7-10f89a060233
+		summarizeBy: none
+		sourceColumn: regression_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column sales_cycle_days
+		dataType: int64
+		formatString: 0
+		lineageTag: 94a7d9a2-3d95-59f0-9505-fc26d01e6f91
+		summarizeBy: none
+		sourceColumn: sales_cycle_days
+
+		annotation SummarizationSetBy = Automatic
+
+	column crm_version
+		dataType: string
+		lineageTag: 0c7b10c4-9249-5092-b94f-76f66a144169
+		summarizeBy: none
+		sourceColumn: crm_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_at_risk
+		dataType: boolean
+		lineageTag: dbeef0e1-7cbe-56a1-aa61-76d1b5c8d327
+		summarizeBy: none
+		sourceColumn: is_at_risk
+
+		annotation SummarizationSetBy = Automatic
+
+	column risk_reasons
+		dataType: string
+		lineageTag: a842d035-f569-5c5f-bed9-34aface0852b
+		summarizeBy: none
+		sourceColumn: risk_reasons
+
+		annotation SummarizationSetBy = Automatic
+
+	column dq_flags
+		dataType: string
+		lineageTag: 60f1d6f0-da15-5d1e-ac55-5c5f94162c99
+		summarizeBy: none
+		sourceColumn: dq_flags
+
+		annotation SummarizationSetBy = Automatic
+
+	column snapshot_date
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 298bf426-8c66-5ec5-bba0-926518a8ca78
+		summarizeBy: none
+		sourceColumn: snapshot_date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition pipeline_deals = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents(DataFolder & "pipeline_deals.csv"), [Delimiter = ",", Columns = 60, Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"opportunity_id", type text}, {"opportunity_name", type text}, {"master_account_id", type text}, {"account_name", type text}, {"industry", type text}, {"company_size_band", type text}, {"country_code", type text}, {"country_name", type text}, {"sales_region", type text}, {"city", type text}, {"latitude", type number}, {"longitude", type number}, {"account_status", type text}, {"owner_email", type text}, {"owner_name", type text}, {"sales_manager", type text}, {"department", type text}, {"owner_is_active", type logical}, {"service_line", type text}, {"lead_source", type text}, {"deal_type", type text}, {"loss_reason", type text}, {"lost_at_stage", type text}, {"stage", type text}, {"stage_order", Int64.Type}, {"confidence_band", type text}, {"forecast_category", type text}, {"is_open", type logical}, {"is_won", type logical}, {"is_lost", type logical}, {"max_stage_reached", Int64.Type}, {"amount_local", type number}, {"currency", type text}, {"fx_rate", type number}, {"amount_eur", type number}, {"governed_probability", type number}, {"weighted_amount_eur", type number}, {"rep_probability", type number}, {"probability_gap_pts", type number}, {"deal_size_band", type text}, {"created_date", type date}, {"expected_close_date", type date}, {"actual_close_date", type date}, {"last_activity_date", type date}, {"stage_entered_date", type date}, {"close_quarter", type text}, {"expected_close_quarter", type text}, {"days_in_current_stage", Int64.Type}, {"stuck_after_days", Int64.Type}, {"is_stuck", type logical}, {"days_since_activity", Int64.Type}, {"is_stale", type logical}, {"is_past_due", type logical}, {"regression_count", Int64.Type}, {"sales_cycle_days", Int64.Type}, {"crm_version", type text}, {"is_at_risk", type logical}, {"risk_reasons", type text}, {"dq_flags", type text}, {"snapshot_date", type date}}, "en-US")
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table

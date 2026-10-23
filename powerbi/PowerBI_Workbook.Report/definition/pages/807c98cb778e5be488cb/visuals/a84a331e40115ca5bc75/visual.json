@@ -1,0 +1,147 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "a84a331e40115ca5bc75",
+  "position": {
+    "x": 810,
+    "y": 660,
+    "z": 15000,
+    "height": 330,
+    "width": 1080,
+    "tabOrder": 15000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pipeline_deals"
+                    }
+                  },
+                  "Property": "opportunity_name"
+                }
+              },
+              "queryRef": "pipeline_deals.opportunity_name",
+              "nativeQueryRef": "opportunity_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pipeline_deals"
+                    }
+                  },
+                  "Property": "owner_name"
+                }
+              },
+              "queryRef": "pipeline_deals.owner_name",
+              "nativeQueryRef": "owner_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pipeline_deals"
+                    }
+                  },
+                  "Property": "stage"
+                }
+              },
+              "queryRef": "pipeline_deals.stage",
+              "nativeQueryRef": "stage"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Days In Current Stage"
+                }
+              },
+              "queryRef": "_Measures.Days In Current Stage",
+              "nativeQueryRef": "Days In Current Stage"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "EUR At Risk"
+                }
+              },
+              "queryRef": "_Measures.EUR At Risk",
+              "nativeQueryRef": "EUR At Risk"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pipeline_deals"
+                    }
+                  },
+                  "Property": "risk_reasons"
+                }
+              },
+              "queryRef": "pipeline_deals.risk_reasons",
+              "nativeQueryRef": "risk_reasons"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  }
+                },
+                "Property": "EUR At Risk"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Fix this week: at-risk deals'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

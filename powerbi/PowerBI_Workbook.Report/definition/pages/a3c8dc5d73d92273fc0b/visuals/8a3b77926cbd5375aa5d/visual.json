@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "8a3b77926cbd5375aa5d",
+  "position": {
+    "x": 654,
+    "y": 184,
+    "z": 8000,
+    "height": 110,
+    "width": 296,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Current Quarter Attainment %"
+                }
+              },
+              "queryRef": "_Measures.Current Quarter Attainment %",
+              "nativeQueryRef": "Current Quarter Attainment %"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Bookings vs target, this quarter'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

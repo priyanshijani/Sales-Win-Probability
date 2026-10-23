@@ -1,0 +1,113 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "3fb0253c570858158fcc",
+  "position": {
+    "x": 1350,
+    "y": 310,
+    "z": 13000,
+    "height": 330,
+    "width": 540,
+    "tabOrder": 13000
+  },
+  "visual": {
+    "visualType": "scatterChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "sales_team"
+                    }
+                  },
+                  "Property": "sales_manager"
+                }
+              },
+              "queryRef": "sales_team.sales_manager",
+              "nativeQueryRef": "sales_manager"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Open Pipeline EUR"
+                }
+              },
+              "queryRef": "_Measures.Open Pipeline EUR",
+              "nativeQueryRef": "Open Pipeline EUR"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Win Rate (count)"
+                }
+              },
+              "queryRef": "_Measures.Win Rate (count)",
+              "nativeQueryRef": "Win Rate (count)"
+            }
+          ]
+        },
+        "Size": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Bookings YTD EUR"
+                }
+              },
+              "queryRef": "_Measures.Bookings YTD EUR",
+              "nativeQueryRef": "Bookings YTD EUR"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Open pipeline vs win rate by manager'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
