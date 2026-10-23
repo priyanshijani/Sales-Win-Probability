@@ -8,6 +8,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+(ROOT / "warehouse").mkdir(exist_ok=True)      # DuckDB file lives here; the folder is not guaranteed on a fresh clone
 
 
 def run(*cmd):
