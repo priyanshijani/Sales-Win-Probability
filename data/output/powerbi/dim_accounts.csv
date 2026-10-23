@@ -1,0 +1,721 @@
+master_account_id,account_name,industry,company_size_band,country_code,country_name,sales_region,city,latitude,longitude,annual_revenue_eur_m,coordinates_filled_from_city,crm_records_merged,deal_count,won_eur,open_pipeline_eur,account_status
+ACC-10559,Pionier Logistics AB,Transport & Logistics,<250,SE,Sweden,Nordics,Stockholm,59.3089,18.10306,54.5,false,1,0,0.0,0.0,
+ACC-10406,Vistula Industries SA,Manufacturing & Automotive,"5,000-19,999",FR,France,France,Toulouse,43.6383,1.4847,2598.1,false,1,12,1044000.0,957000.0,Active Customer
+ACC-10004,Elbe Power S.A.,Energy & Utilities,"5,000-19,999",ES,Spain,Southern Europe,Madrid,40.39657,-3.66732,3290.2,false,1,7,136500.0,645500.0,Lapsed Customer
+ACC-10619,Karlsson Automotive Lda,Manufacturing & Automotive,"20,000+",PT,Portugal,Southern Europe,Porto,41.11717,-8.56979,9866.7,false,1,17,636500.0,521000.0,Active Customer
+ACC-10572,Castellan Medical Sp. z o.o.,Healthcare & Life Sciences,"1,000-4,999",PL,Poland,CEE,Wrocław,51.12551,17.05703,626.9,false,2,14,1233010.6300000001,579805.27,Active Customer
+ACC-10623,Arcadia Industries S.A.,Manufacturing & Automotive,"1,000-4,999",PL,Poland,CEE,Wrocław,51.07614,17.0022,882.0,false,1,8,67032.072,0.0,Lapsed Customer
+ACC-10609,Moselle Capital N.V.,Financial Services,<250,NL,Netherlands,Benelux,Rotterdam,51.86842,4.50285,64.4,false,1,4,117000.0,0.0,Active Customer
+ACC-10123,Castellan Industries N.V.,Manufacturing & Automotive,"1,000-4,999",NL,Netherlands,Benelux,Amsterdam,52.34231,4.93884,1007.7,false,1,12,388000.0,226000.0,Active Customer
+ACC-10568,Castellan Grid B.V.,Energy & Utilities,"5,000-19,999",NL,Netherlands,Benelux,Amsterdam,52.36235,4.84891,1938.4,false,1,11,984500.0,696000.0,Active Customer
+ACC-10168,Bergmann Industries S.A.,Manufacturing & Automotive,"5,000-19,999",PL,Poland,CEE,Warsaw,52.23600666666667,21.019859166666667,,true,1,15,1982104.426,1471171.2599999998,Active Customer
+ACC-10192,Tamsin Grid Ltd,Energy & Utilities,250-999,GB,United Kingdom,UK & Ireland,Manchester,53.48212,-2.24566,180.3,false,1,12,283588.634,45500.0,Active Customer
+ACC-10016,Delta Medical Ltd,Healthcare & Life Sciences,250-999,GB,United Kingdom,UK & Ireland,London,51.50461,-0.17862,100.9,false,1,12,401300.593,382241.73299999995,Lapsed Customer
+ACC-10127,Estrella Grid S.r.l.,Energy & Utilities,250-999,IT,Italy,Southern Europe,Turin,45.05885,7.66021,180.8,false,1,7,1384000.0,0.0,Active Customer
+ACC-10055,Alpenkraft Capital S.p.A.,Financial Services,"1,000-4,999",IT,Italy,Southern Europe,Milan,45.48653,9.24462,,false,2,7,284500.0,485500.0,Active Customer
+ACC-10605,Noord Health N.V.,Healthcare & Life Sciences,"5,000-19,999",NL,Netherlands,Benelux,Rotterdam,51.92251,4.51742,7193.4,false,1,13,312500.0,0.0,Active Customer
+ACC-10304,Gallway Public Services plc,Public Sector,250-999,GB,United Kingdom,UK & Ireland,Birmingham,52.50031,-1.89002,182.9,false,1,5,170550.765,0.0,Lapsed Customer
+ACC-10455,Atlas Power AB,Energy & Utilities,"1,000-4,999",SE,Sweden,Nordics,Stockholm,59.30314,18.09472,576.8,false,1,9,1390665.3090000001,0.0,Lapsed Customer
+ACC-10136,Gallway Foods AG,Retail & Consumer Goods,"1,000-4,999",CH,Switzerland,DACH,Geneva,46.21434,6.15438,1506.2,false,2,5,668362.461,0.0,Active Customer
+ACC-10217,Marisol Public Services SE,Public Sector,250-999,DE,Germany,DACH,Hamburg,53.5503,10.05311,250.3,false,1,3,262000.0,311500.0,Lapsed Customer
+ACC-10532,Meridian Biotech Ltd,Healthcare & Life Sciences,<250,GB,United Kingdom,UK & Ireland,Edinburgh,55.9451,-3.23171,30.3,false,1,6,101228.288,95633.946,Lapsed Customer
+ACC-10227,Cygnus Logistics s.r.o.,Transport & Logistics,<250,CZ,Czechia,CEE,Brno,49.17303,16.63448,38.3,false,1,7,23324.92,57289.32000000001,Active Customer
+ACC-10144,Solvik Clinics SAS,Healthcare & Life Sciences,"1,000-4,999",FR,France,France,Lyon,45.75315,4.82131,1294.4,false,1,7,101500.0,189500.0,Active Customer
+ACC-10287,Riviera Grid AS,Energy & Utilities,"1,000-4,999",NO,Norway,Nordics,Bergen,60.3774,5.32979,1356.1,false,1,7,788684.083,403839.81299999997,Active Customer
+ACC-10613,Tauern Consumer S.r.l.,Retail & Consumer Goods,"5,000-19,999",IT,Italy,Southern Europe,Rome,41.91012,12.45562,1878.4,false,1,9,0.0,0.0,Prospect
+ACC-10288,Moselle Agency S.p.A.,Public Sector,250-999,IT,Italy,Southern Europe,Milan,45.44844785714286,9.192499999999999,120.0,true,1,7,0.0,368500.0,Prospect
+ACC-10017,Isola Freight AG,Transport & Logistics,"20,000+",DE,Germany,DACH,Frankfurt,50.08284,8.67066,25222.6,false,1,9,0.0,203500.0,Prospect
+ACC-10188,Stellaris Authority ASA,Public Sector,"1,000-4,999",NO,Norway,Nordics,Bergen,60.38379,5.32506,,false,1,5,0.0,562449.2509999999,Prospect
+ACC-10671,Polaris Finance GmbH,Financial Services,"1,000-4,999",DE,Germany,DACH,Berlin,52.50927,13.36397,652.0,false,1,2,0.0,0.0,Prospect
+ACC-10431,Riviera Brands N.V.,Retail & Consumer Goods,250-999,NL,Netherlands,Benelux,Eindhoven,51.48405,5.5147,207.8,false,2,6,0.0,0.0,Prospect
+ACC-10378,Rhein Medical N.V.,Healthcare & Life Sciences,<250,NL,Netherlands,Benelux,Eindhoven,51.39353,5.44766,39.1,false,1,3,0.0,43500.0,Prospect
+ACC-10638,Delta Capital AG,Financial Services,"20,000+",DE,Germany,DACH,Stuttgart,48.76612,9.18428,30586.0,false,1,7,809000.0,765500.0,Active Customer
+ACC-10685,Valora Stores AG,Retail & Consumer Goods,250-999,AT,Austria,DACH,Graz,47.04528,15.43676,173.4,false,1,5,84000.0,193500.0,Active Customer
+ACC-10510,Vektor Motorenwerk SE,Manufacturing & Automotive,250-999,DE,Germany,DACH,Munich,48.12066,11.59707,104.5,false,1,7,259500.0,0.0,Active Customer
+ACC-10100,Borealis Consumer ApS,Retail & Consumer Goods,"1,000-4,999",DK,Denmark,Nordics,Copenhagen,55.68306,12.61633,551.9,false,1,5,66594.788,107964.04500000001,Lapsed Customer
+ACC-10293,Noord Precision SA,Manufacturing & Automotive,250-999,CH,Switzerland,DACH,Zurich,47.3912,8.50165,235.4,false,2,5,339789.01,29596.104000000003,Active Customer
+ACC-10063,Lumen Utilities Oy,Energy & Utilities,250-999,FI,Finland,Nordics,Helsinki,60.20987,24.9637,252.1,false,1,2,0.0,0.0,Prospect
+ACC-10163,Moselle Stores S.A.,Retail & Consumer Goods,"1,000-4,999",PT,Portugal,Southern Europe,Porto,41.15693,-8.66994,812.5,false,1,2,0.0,0.0,Prospect
+ACC-10297,Vektor Health GmbH,Healthcare & Life Sciences,"1,000-4,999",DE,Germany,DACH,Munich,48.1005,11.60026,623.5,false,1,7,834500.0,333500.0,Active Customer
+ACC-10628,Alpenkraft Finance SA,Financial Services,"1,000-4,999",FR,France,France,Lyon,45.75791133333333,4.833216666666667,670.5,true,2,8,86000.0,213500.0,Active Customer
+ACC-10331,Stellaris Motorenwerk AG,Manufacturing & Automotive,250-999,DE,Germany,DACH,Hamburg,53.53809,10.0169,163.8,false,1,5,179500.0,0.0,Lapsed Customer
+ACC-10093,Corvina Finance Oyj,Financial Services,250-999,FI,Finland,Nordics,Espoo,60.22621,24.67588,210.0,false,1,4,444500.0,0.0,Lapsed Customer
+ACC-10012,Bergmann Health SE,Healthcare & Life Sciences,250-999,DE,Germany,DACH,Berlin,52.51426,13.36673,114.4,false,1,1,32000.0,0.0,Active Customer
+ACC-10650,Baltica Telecom SE,Telecom & Media,250-999,DE,Germany,DACH,Berlin,52.48553,13.40531,152.9,false,1,1,0.0,0.0,Prospect
+ACC-10610,Riviera Motorenwerk GmbH,Manufacturing & Automotive,250-999,DE,Germany,DACH,Hamburg,53.56085,9.97417,126.4,false,1,1,0.0,0.0,Prospect
+ACC-10714,Fjordline Invest GmbH,Financial Services,<250,DE,Germany,DACH,Hamburg,53.54864,10.01222,40.5,false,1,0,0.0,0.0,
+ACC-10415,Arcadia Foods AG,Retail & Consumer Goods,250-999,CH,Switzerland,DACH,Geneva,46.19078,6.18268,234.6,false,1,0,0.0,0.0,
+ACC-10258,Moselle Retail Ltd,Retail & Consumer Goods,"1,000-4,999",GB,United Kingdom,UK & Ireland,Edinburgh,55.95750176470588,-3.191166470588236,613.2,true,1,10,253620.581,371871.567,Active Customer
+ACC-10269,Delta Telecom Ltd,Telecom & Media,250-999,GB,United Kingdom,UK & Ireland,Manchester,53.44897,-2.24465,283.2,false,1,4,61000.0,0.0,Lapsed Customer
+ACC-10129,Borealis Connect B.V.,Telecom & Media,"1,000-4,999",NL,Netherlands,Benelux,Eindhoven,51.47849,5.48906,1210.0,false,1,7,95000.0,121500.0,Active Customer
+ACC-10441,Moselle Brands SA,Retail & Consumer Goods,"1,000-4,999",FR,France,France,Paris,48.83386,2.40172,684.4,false,1,14,554500.0,597000.0,Lapsed Customer
+ACC-10368,Novara Authority S.A.,Public Sector,"5,000-19,999",PL,Poland,CEE,Kraków,50.06135,19.93095,7823.5,false,2,9,217046.445,261000.0,Lapsed Customer
+ACC-10447,Ysolde Precision Sp. z o.o.,Manufacturing & Automotive,250-999,PL,Poland,CEE,Warsaw,52.23488,21.0506,129.3,false,2,11,756979.092,381968.33999999997,Active Customer
+ACC-10148,Corvina Logistics Ltd,Transport & Logistics,"1,000-4,999",GB,United Kingdom,UK & Ireland,Manchester,53.42424,-2.30176,895.6,false,1,10,83090.88,0.0,Active Customer
+ACC-10499,Saxon Clinics SA,Healthcare & Life Sciences,"5,000-19,999",FR,France,France,Lille,50.60691,3.05785,1845.6,false,1,16,1076000.0,764000.0,Active Customer
+ACC-10691,Granite Invest Ltd,Financial Services,"5,000-19,999",GB,United Kingdom,UK & Ireland,London,51.48366,-0.07249,3040.7,false,1,9,582935.618,458790.669,Active Customer
+ACC-10382,Cygnus Utilities Oyj,Energy & Utilities,"20,000+",FI,Finland,Nordics,Espoo,60.21749,24.62329,19308.8,false,1,14,3206500.0,1852000.0,Active Customer
+ACC-10470,Juniper Biotech S.A.,Healthcare & Life Sciences,"1,000-4,999",LU,Luxembourg,Benelux,Luxembourg,49.59752,6.17539,861.8,false,1,7,150500.0,0.0,Active Customer
+ACC-10576,Orion Authority S.A.,Public Sector,"5,000-19,999",ES,Spain,Southern Europe,Madrid,40.42045,-3.67567,3696.6,false,1,8,801000.0,200000.0,Active Customer
+ACC-10651,Kronberg Logistics Ltd,Transport & Logistics,"20,000+",GB,United Kingdom,UK & Ireland,London,51.47149,-0.07872,7551.5,false,1,20,963045.691,0.0,Lapsed Customer
+ACC-10533,Bergmann Logistics AG,Transport & Logistics,250-999,DE,Germany,DACH,Hamburg,53.5713,9.97365,,false,1,4,57000.0,0.0,Lapsed Customer
+ACC-10557,Juniper Industries Sp. z o.o.,Manufacturing & Automotive,"5,000-19,999",PL,Poland,CEE,Kraków,50.08048,19.95954,4638.4,false,1,15,1720636.1379999998,474207.24,Active Customer
+ACC-10436,Valora Transport N.V.,Transport & Logistics,"5,000-19,999",NL,Netherlands,Benelux,Eindhoven,51.45028,5.48873,,false,1,11,478000.0,1131000.0,Active Customer
+ACC-10050,Lusitania Agency Ltd,Public Sector,"1,000-4,999",GB,United Kingdom,UK & Ireland,London,51.49989,-0.1227,1013.1,false,2,6,0.0,110884.923,Prospect
+ACC-10285,Estrella Municipal Services S.r.l.,Public Sector,"5,000-19,999",IT,Italy,Southern Europe,Rome,41.86553,12.50831,2905.1,false,1,7,0.0,88500.0,Prospect
+ACC-10444,Novara Logistics S.r.l.,Transport & Logistics,"5,000-19,999",IT,Italy,Southern Europe,Rome,41.92363,12.53222,3068.2,false,1,5,0.0,0.0,Prospect
+ACC-10636,Invicta Capital Ltd,Financial Services,"1,000-4,999",GB,United Kingdom,UK & Ireland,Manchester,53.51371,-2.27109,626.3,false,1,6,0.0,0.0,Prospect
+ACC-10003,Gallway Agency SA,Public Sector,"1,000-4,999",FR,France,France,Paris,48.83122,2.36306,613.3,false,1,11,0.0,0.0,Prospect
+ACC-10313,Wexford Capital S.p.A.,Financial Services,"1,000-4,999",IT,Italy,Southern Europe,Rome,41.92267,12.46346,1583.5,false,1,3,0.0,0.0,Prospect
+ACC-10145,Juniper Medical S.A.,Healthcare & Life Sciences,250-999,LU,Luxembourg,Benelux,Luxembourg,49.6211,6.14375,82.9,false,1,4,0.0,0.0,Prospect
+ACC-10057,Dunmore Logistics S.L.,Transport & Logistics,250-999,ES,Spain,Southern Europe,Madrid,40.3805,-3.72413,203.9,false,1,7,0.0,55000.0,Prospect
+ACC-10253,Orion Industries S.L.,Manufacturing & Automotive,250-999,ES,Spain,Southern Europe,Madrid,40.42691,-3.71035,219.7,false,1,5,0.0,427500.0,Prospect
+ACC-10289,Danubia Networks S.p.A.,Telecom & Media,250-999,IT,Italy,Southern Europe,Milan,45.48219,9.14985,273.7,false,1,5,0.0,287500.0,Prospect
+ACC-10338,Invicta Institute plc,Public Sector,250-999,GB,United Kingdom,UK & Ireland,Manchester,53.44306,-2.18968,234.3,false,1,6,0.0,156637.854,Prospect
+ACC-10317,Dunmore Agency NV,Public Sector,<250,BE,Belgium,Benelux,Antwerp,51.15876,4.41,26.1,false,1,3,0.0,0.0,Prospect
+ACC-10371,Silverline Medical Oy,Healthcare & Life Sciences,"1,000-4,999",FI,Finland,Nordics,Espoo,60.23743,24.64717,749.9,false,1,5,0.0,0.0,Prospect
+ACC-10221,Saxon Pharma SA,Healthcare & Life Sciences,<250,BE,Belgium,Benelux,Brussels,50.87414,4.33175,47.0,false,1,2,0.0,0.0,Prospect
+ACC-10314,Hansa Telecom S.A.,Telecom & Media,<250,ES,Spain,Southern Europe,Barcelona,41.37873,2.19336,34.5,false,1,1,0.0,122500.0,Prospect
+ACC-10565,Lindholm Telecom S.r.l.,Telecom & Media,"5,000-19,999",IT,Italy,Southern Europe,Milan,45.43983,9.17965,1186.8,false,1,4,535000.0,0.0,Lapsed Customer
+ACC-10521,Riviera Utilities SE,Energy & Utilities,"1,000-4,999",DE,Germany,DACH,Stuttgart,48.75605,9.21112,657.7,false,1,4,156500.0,0.0,Active Customer
+ACC-10492,Lusitania Assurance SA,Financial Services,"1,000-4,999",CH,Switzerland,DACH,Zurich,47.38273,8.50281,695.5,false,1,4,133804.116,43115.312000000005,Active Customer
+ACC-10541,Danubia Automotive GmbH,Manufacturing & Automotive,"1,000-4,999",DE,Germany,DACH,Hamburg,53.55129258064516,10.003629032258065,,true,1,4,223500.0,202000.0,Active Customer
+ACC-10343,Silverline Industries AB,Manufacturing & Automotive,"1,000-4,999",SE,Sweden,Nordics,Gothenburg,57.70868133333333,11.972446000000001,1171.9,true,1,6,446256.77499999997,753500.0,Active Customer
+ACC-10566,Stellaris Bank AG,Financial Services,"1,000-4,999",CH,Switzerland,DACH,Geneva,46.17341,6.14797,880.1,false,1,4,423564.55000000005,0.0,Active Customer
+ACC-10672,Polaris Components Ltd,Manufacturing & Automotive,250-999,GB,United Kingdom,UK & Ireland,London,51.5429,-0.15524,201.6,false,1,4,0.0,0.0,Prospect
+ACC-10681,Aurora Medical Ltd,Healthcare & Life Sciences,<250,GB,United Kingdom,UK & Ireland,Birmingham,52.48506,-1.9333,27.2,false,1,10,488161.6769999999,129150.394,Active Customer
+ACC-10284,Elbe Finance S.p.A.,Financial Services,"1,000-4,999",IT,Italy,Southern Europe,Rome,41.92919,12.47996,479.8,false,1,2,294000.0,0.0,Active Customer
+ACC-10179,Tamsin Components B.V.,Manufacturing & Automotive,"1,000-4,999",NL,Netherlands,Benelux,Rotterdam,51.91939,4.52062,749.8,false,1,9,185000.0,136000.0,Lapsed Customer
+ACC-10020,Dunmore Grid AS,Energy & Utilities,"1,000-4,999",NO,Norway,Nordics,Oslo,59.91466,10.80005,817.8,false,1,6,504923.956,706824.775,Lapsed Customer
+ACC-10097,Solvik Brands Lda,Retail & Consumer Goods,250-999,PT,Portugal,Southern Europe,Lisbon,38.67856,-9.14104,199.9,false,1,2,0.0,0.0,Prospect
+ACC-10607,Vektor Assurance AG,Financial Services,250-999,AT,Austria,DACH,Graz,47.02831,15.48275,185.1,false,1,2,25000.0,0.0,Active Customer
+ACC-10394,Castellan Stores SE,Retail & Consumer Goods,"5,000-19,999",DE,Germany,DACH,Hamburg,53.48936,9.98734,,false,1,5,559500.0,0.0,Active Customer
+ACC-10411,Kestrel Connect S.A.,Telecom & Media,"1,000-4,999",PT,Portugal,Southern Europe,Lisbon,38.69285,-9.11681,1249.0,false,1,5,371500.0,602500.0,Active Customer
+ACC-10359,Iberia Institute Sp. z o.o.,Public Sector,"20,000+",PL,Poland,CEE,Warsaw,52.20604,21.00145,,false,1,22,575295.98,1641774.0299999998,Active Customer
+ACC-10157,Jadeport Foods plc,Retail & Consumer Goods,"1,000-4,999",GB,United Kingdom,UK & Ireland,Birmingham,52.47903,-1.88773,902.2,false,1,13,420451.46200000006,558896.706,Lapsed Customer
+ACC-10544,Corvina Industries N.V.,Manufacturing & Automotive,"20,000+",NL,Netherlands,Benelux,Amsterdam,52.33106,4.91347,8389.2,false,1,20,2781500.0,1053500.0,Active Customer
+ACC-10376,Helvetia Industries AG,Manufacturing & Automotive,"5,000-19,999",AT,Austria,DACH,Vienna,48.1803,16.34168,3445.7,false,2,3,82000.0,0.0,Active Customer
+ACC-10555,Hansa Bank SA,Financial Services,"1,000-4,999",FR,France,France,Paris,48.87362,2.33451,1153.5,false,1,11,239000.0,0.0,Lapsed Customer
+ACC-10088,Estrella Invest Ltd,Financial Services,250-999,IE,Ireland,UK & Ireland,Dublin,53.37693,-6.21113,122.1,false,1,8,1059000.0,487500.0,Active Customer
+ACC-10387,Polaris Assurance S.A.,Financial Services,<250,ES,Spain,Southern Europe,Barcelona,41.37029,2.1463,13.2,false,1,5,40000.0,12500.0,Active Customer
+ACC-10107,Dunmore Connect plc,Telecom & Media,"1,000-4,999",GB,United Kingdom,UK & Ireland,London,51.47578,-0.20038,1714.3,false,1,11,471298.10899999994,85313.736,Active Customer
+ACC-10561,Moselle Telecom S.p.A.,Telecom & Media,"5,000-19,999",IT,Italy,Southern Europe,Turin,45.06216,7.68757,3451.8,false,1,6,37000.0,0.0,Active Customer
+ACC-10633,Solvik Consumer SAS,Retail & Consumer Goods,"20,000+",FR,France,France,Paris,48.85104,2.31384,17581.8,false,1,22,950500.0,3068500.0,Active Customer
+ACC-10308,Rhein Freight a.s.,Transport & Logistics,"20,000+",CZ,Czechia,CEE,Brno,49.21742,16.60872,9593.8,false,1,11,1198645.088,2663230.0300000003,Active Customer
+ACC-10577,Atlas Bank SAS,Financial Services,"1,000-4,999",FR,France,France,Lille,50.66093,3.02765,2774.4,false,1,8,532500.0,202000.0,Active Customer
+ACC-10596,Orion Motorenwerk SE,Manufacturing & Automotive,"20,000+",DE,Germany,DACH,Frankfurt,50.13813,8.67195,21184.9,false,1,5,464500.0,168500.0,Lapsed Customer
+ACC-10177,Solvik Telecom SA,Telecom & Media,"20,000+",CH,Switzerland,DACH,Geneva,46.17533,6.15613,9128.0,false,1,10,1166119.4,1387637.0860000001,Active Customer
+ACC-10445,Marisol Connect Ltd,Telecom & Media,"1,000-4,999",GB,United Kingdom,UK & Ireland,London,51.52466,-0.13064,610.7,false,1,9,222505.697,210000.0,Active Customer
+ACC-10502,Fontaine Automotive Lda,Manufacturing & Automotive,"5,000-19,999",PT,Portugal,Southern Europe,Lisbon,38.76836,-9.14487,3882.5,false,1,8,480500.0,883500.0,Lapsed Customer
+ACC-10397,Borealis Clinics B.V.,Healthcare & Life Sciences,"20,000+",NL,Netherlands,Benelux,Amsterdam,52.4171,4.86506,13028.6,false,1,6,0.0,0.0,Prospect
+ACC-10251,Corvina Precision AG,Manufacturing & Automotive,250-999,DE,Germany,DACH,Stuttgart,48.77532,9.16432,117.2,false,1,4,0.0,0.0,Prospect
+ACC-10647,Vistula Public Services Ltd,Public Sector,250-999,IE,Ireland,UK & Ireland,Cork,51.88844,-8.48009,103.5,false,1,5,0.0,0.0,Prospect
+ACC-10389,Orion Municipal Services GmbH,Public Sector,<250,DE,Germany,DACH,Berlin,52.56106,13.40668,48.8,false,1,1,0.0,0.0,Prospect
+ACC-10453,Quadra Motorenwerk AG,Manufacturing & Automotive,"1,000-4,999",AT,Austria,DACH,Graz,47.06281,15.47761,419.3,false,1,4,0.0,133500.0,Prospect
+ACC-10715,Jadeport Brands AG,Retail & Consumer Goods,250-999,DE,Germany,DACH,Frankfurt,50.07854,8.65944,,false,1,1,0.0,0.0,Prospect
+ACC-10461,Zentra Stores S.r.l.,Retail & Consumer Goods,"1,000-4,999",IT,Italy,Southern Europe,Turin,45.05792,7.65867,819.2,false,1,3,0.0,0.0,Prospect
+ACC-10295,Gallway Components S.p.A.,Manufacturing & Automotive,"1,000-4,999",IT,Italy,Southern Europe,Turin,45.10298,7.70586,1783.6,false,1,7,0.0,194500.0,Prospect
+ACC-10372,Wexford Bank S.A.,Financial Services,"1,000-4,999",ES,Spain,Southern Europe,Barcelona,41.37464466666666,2.1830119999999997,1508.8,true,1,3,0.0,166500.0,Prospect
+ACC-10138,Elbe Stores S.L.,Retail & Consumer Goods,"1,000-4,999",ES,Spain,Southern Europe,Barcelona,41.36616,2.18234,766.3,false,1,2,0.0,98000.0,Prospect
+ACC-10257,Atlas Brands S.A.,Retail & Consumer Goods,<250,ES,Spain,Southern Europe,Madrid,40.41189,-3.76804,51.2,false,1,1,0.0,0.0,Prospect
+ACC-10692,Rhein Finance S.L.,Financial Services,"1,000-4,999",ES,Spain,Southern Europe,Barcelona,41.42906,2.1739,1125.4,false,1,2,0.0,0.0,Prospect
+ACC-10386,Borealis Grid AG,Energy & Utilities,250-999,DE,Germany,DACH,Munich,48.17195,11.60283,503.7,false,1,8,182500.0,499500.0,Active Customer
+ACC-10155,Lusitania Renewables SA,Energy & Utilities,"5,000-19,999",CH,Switzerland,DACH,Basel,47.60209,7.60388,6038.4,false,1,7,2254197.202,68600.846,Active Customer
+ACC-10423,Umbria Invest Ltd,Financial Services,<250,GB,United Kingdom,UK & Ireland,London,51.51349,-0.10385,42.0,false,1,3,106319.222,0.0,Lapsed Customer
+ACC-10340,Umbria Connect plc,Telecom & Media,"1,000-4,999",GB,United Kingdom,UK & Ireland,London,51.4833,-0.1241,875.2,false,1,8,1154492.393,66278.682,Active Customer
+ACC-10405,Jadeport Precision AG,Manufacturing & Automotive,"1,000-4,999",DE,Germany,DACH,Düsseldorf,51.15583,6.75693,627.6,false,1,5,299000.0,416000.0,Active Customer
+ACC-10029,Lindholm Assurance plc,Financial Services,"20,000+",GB,United Kingdom,UK & Ireland,London,51.52038,-0.14165,9187.2,false,1,11,1466415.518,1632886.5599999998,Active Customer
+ACC-10109,Lusitania Finance GmbH,Financial Services,250-999,AT,Austria,DACH,Graz,47.02517,15.45998,409.1,false,1,5,147500.0,0.0,Active Customer
+ACC-10606,Meridian Capital B.V.,Financial Services,"5,000-19,999",NL,Netherlands,Benelux,Eindhoven,51.42817,5.45287,1720.8,false,1,8,309000.0,999000.0,Active Customer
+ACC-10204,Novara Finance SA,Financial Services,250-999,BE,Belgium,Benelux,Brussels,50.85893,4.3786,148.0,false,1,9,319000.0,0.0,Active Customer
+ACC-10393,Hansa Assurance GmbH,Financial Services,"5,000-19,999",DE,Germany,DACH,Düsseldorf,51.31002,6.79804,5325.8,false,1,1,0.0,136500.0,Prospect
+ACC-10491,Karlsson Grid S.p.A.,Energy & Utilities,250-999,IT,Italy,Southern Europe,Turin,45.12834,7.73428,374.4,false,1,3,404500.0,149000.0,Lapsed Customer
+ACC-10214,Lindholm Broadcast S.L.,Telecom & Media,"1,000-4,999",ES,Spain,Southern Europe,Barcelona,41.40281,2.21911,1607.0,false,2,6,583000.0,0.0,Active Customer
+ACC-10327,Riviera Power AG,Energy & Utilities,"20,000+",CH,Switzerland,DACH,Geneva,46.19261,6.08891,11102.7,false,1,8,2151556.915,758537.184,Active Customer
+ACC-10585,Atlas Media S.r.l.,Telecom & Media,"1,000-4,999",IT,Italy,Southern Europe,Milan,45.41764,9.1809,1394.9,false,1,5,406000.0,415500.0,Active Customer
+ACC-10497,Castellan Mobility A/S,Transport & Logistics,<250,DK,Denmark,Nordics,Copenhagen,55.69865,12.55916,14.6,false,1,1,0.0,0.0,Prospect
+ACC-10562,Westbrook Energy AG,Energy & Utilities,250-999,DE,Germany,DACH,Frankfurt,50.10156,8.6746,218.8,false,1,1,163000.0,0.0,Active Customer
+ACC-10482,Lindholm Bank AB,Financial Services,"1,000-4,999",SE,Sweden,Nordics,Stockholm,59.34799,18.0455,3060.1,false,1,5,775043.878,0.0,Active Customer
+ACC-10059,Novara Stores Ltd,Retail & Consumer Goods,"20,000+",GB,United Kingdom,UK & Ireland,Birmingham,52.50373,-1.93745,27070.1,false,1,10,828513.4679999999,0.0,Active Customer
+ACC-10678,Gallway Renewables B.V.,Energy & Utilities,"5,000-19,999",NL,Netherlands,Benelux,Amsterdam,52.34338,4.86606,2705.4,false,1,14,1318500.0,356500.0,Active Customer
+ACC-10198,Helvetia Brands SA,Retail & Consumer Goods,250-999,FR,France,France,Paris,48.82706,2.34945,94.9,false,1,8,950500.0,0.0,Active Customer
+ACC-10230,Vistula Automotive S.A.,Manufacturing & Automotive,250-999,PL,Poland,CEE,Warsaw,52.24131,20.97819,306.3,false,1,12,488059.288,190357.05,Active Customer
+ACC-10425,Fontaine Invest S.p.A.,Financial Services,"20,000+",IT,Italy,Southern Europe,Turin,45.06359,7.63299,31985.1,false,1,14,76000.0,1508500.0,Active Customer
+ACC-10276,Aurora Stores S.r.l.,Retail & Consumer Goods,"5,000-19,999",IT,Italy,Southern Europe,Rome,41.91809,12.42358,4536.3,false,1,9,137000.0,95000.0,Active Customer
+ACC-10306,Vektor Shipping SAS,Transport & Logistics,"20,000+",FR,France,France,Paris,48.87152,2.34418,6455.8,false,1,17,409500.0,0.0,Active Customer
+ACC-10296,Lindholm Energy SAS,Energy & Utilities,250-999,FR,France,France,Lyon,45.72871,4.81267,139.9,false,1,7,722000.0,0.0,Active Customer
+ACC-10507,Estrella Precision SAS,Manufacturing & Automotive,250-999,FR,France,France,Lyon,45.83479,4.8254,152.1,false,1,10,513500.0,0.0,Active Customer
+ACC-10246,Novara Power NV,Energy & Utilities,"1,000-4,999",BE,Belgium,Benelux,Antwerp,51.19726,4.37639,1081.7,false,1,7,554000.0,160500.0,Active Customer
+ACC-10526,Vektor Renewables DAC,Energy & Utilities,"1,000-4,999",IE,Ireland,UK & Ireland,Cork,51.90357,-8.45437,1119.7,false,1,15,833000.0,359500.0,Active Customer
+ACC-10661,Zephyr Networks AG,Telecom & Media,<250,DE,Germany,DACH,Munich,48.10395,11.59497,40.2,false,1,2,0.0,163000.0,Prospect
+ACC-10203,Valora Medical AG,Healthcare & Life Sciences,250-999,AT,Austria,DACH,Graz,47.06693,15.41948,137.5,false,1,7,0.0,175500.0,Prospect
+ACC-10493,Falkner Precision S.L.,Manufacturing & Automotive,"1,000-4,999",ES,Spain,Southern Europe,Madrid,40.4253,-3.74451,794.5,false,1,6,0.0,306000.0,Prospect
+ACC-10220,Vektor Brands S.L.,Retail & Consumer Goods,"1,000-4,999",ES,Spain,Southern Europe,Barcelona,41.31058,2.14311,1473.7,false,1,7,0.0,60000.0,Prospect
+ACC-10044,Lumen Precision S.A.,Manufacturing & Automotive,250-999,PT,Portugal,Southern Europe,Lisbon,38.71799,-9.18025,163.6,false,1,6,0.0,130000.0,Prospect
+ACC-10105,Orion Connect Oy,Telecom & Media,"5,000-19,999",FI,Finland,Nordics,Helsinki,60.19141,24.94525,2737.8,false,1,2,0.0,0.0,Prospect
+ACC-10232,Brightwater Agency GmbH,Public Sector,"1,000-4,999",DE,Germany,DACH,Hamburg,53.55632,10.00174,1622.7,false,1,8,0.0,852500.0,Prospect
+ACC-10298,Dunmore Motorenwerk AS,Manufacturing & Automotive,"5,000-19,999",NO,Norway,Nordics,Oslo,59.90046,10.75416,2084.7,false,1,10,1425229.088,0.0,Active Customer
+ACC-10580,Vistula Power Oyj,Energy & Utilities,"5,000-19,999",FI,Finland,Nordics,Espoo,60.26447,24.6574,3590.7,false,1,9,675500.0,600500.0,Active Customer
+ACC-10401,Brightwater Power ApS,Energy & Utilities,250-999,DK,Denmark,Nordics,Aarhus,56.18352,10.18558,94.6,false,1,4,104613.99,107964.04500000001,Active Customer
+ACC-10068,Karlsson Precision SE,Manufacturing & Automotive,250-999,DE,Germany,DACH,Düsseldorf,51.2329,6.79762,153.8,false,1,1,442000.0,0.0,Lapsed Customer
+ACC-10717,Rhein Media GmbH,Telecom & Media,"1,000-4,999",DE,Germany,DACH,Hamburg,53.55129258064516,10.003629032258065,449.2,true,2,3,0.0,28500.0,Prospect
+ACC-10655,Granite Finance GmbH,Financial Services,250-999,AT,Austria,DACH,Vienna,48.17857,16.36059,162.1,false,1,5,324500.0,0.0,Active Customer
+ACC-10377,Harbour Motorenwerk Oy,Manufacturing & Automotive,250-999,FI,Finland,Nordics,Espoo,60.24188,24.63182,103.1,false,1,5,152500.0,0.0,Lapsed Customer
+ACC-10254,Castellan Power SA,Energy & Utilities,250-999,CH,Switzerland,DACH,Zurich,47.37997,8.54304,224.1,false,1,2,560885.376,0.0,Lapsed Customer
+ACC-10679,Marisol Telecom S.A.,Telecom & Media,"1,000-4,999",ES,Spain,Southern Europe,Barcelona,41.34827,2.15915,1138.3,false,1,3,0.0,344000.0,Prospect
+ACC-10686,Westbrook Assurance SA,Financial Services,"1,000-4,999",CH,Switzerland,DACH,Zurich,47.37119,8.58348,553.4,false,1,1,36041.03999999999,0.0,Active Customer
+ACC-10089,Valora Freight S.A.,Transport & Logistics,250-999,ES,Spain,Southern Europe,Barcelona,41.42711,2.15972,322.1,false,1,2,0.0,0.0,Prospect
+ACC-10259,Aurora Broadcast S.L.,Telecom & Media,"20,000+",ES,Spain,Southern Europe,Barcelona,41.43049,2.16517,20989.4,false,1,8,75000.0,189500.0,Active Customer
+ACC-10560,Dunmore Renewables SE,Energy & Utilities,"1,000-4,999",DE,Germany,DACH,Frankfurt,50.13336,8.7093,1008.2,false,1,6,22500.0,491000.0,Lapsed Customer
+ACC-10428,Kronberg Health GmbH,Healthcare & Life Sciences,"20,000+",DE,Germany,DACH,Düsseldorf,51.24141,6.78523,13194.9,false,1,6,545000.0,0.0,Lapsed Customer
+ACC-10416,Fjordline Connect SAS,Telecom & Media,250-999,FR,France,France,Lyon,45.77383,4.85353,125.2,false,1,12,483500.0,113000.0,Lapsed Customer
+ACC-10529,Falkner Municipal Services SA,Public Sector,"5,000-19,999",BE,Belgium,Benelux,Brussels,50.90917,4.34632,11769.0,false,1,9,1432500.0,1583500.0,Lapsed Customer
+ACC-10053,Marisol Automotive Ltd,Manufacturing & Automotive,"1,000-4,999",GB,United Kingdom,UK & Ireland,Manchester,53.53332,-2.22983,1253.4,false,1,14,531955.287,0.0,Active Customer
+ACC-10380,Oakridge Retail N.V.,Retail & Consumer Goods,"1,000-4,999",NL,Netherlands,Benelux,Eindhoven,51.47354,5.48653,347.7,false,1,6,132500.0,0.0,Lapsed Customer
+ACC-10460,Noord Components Sp. z o.o.,Manufacturing & Automotive,"5,000-19,999",PL,Poland,CEE,Kraków,50.02707,19.90991,2079.2,false,1,18,2286546.056,936440.4999999999,Active Customer
+ACC-10392,Vektor Finance SAS,Financial Services,"1,000-4,999",FR,France,France,Paris,48.82994,2.30542,998.9,false,1,10,92000.0,0.0,Lapsed Customer
+ACC-10164,Vistula Medical AG,Healthcare & Life Sciences,250-999,DE,Germany,DACH,Munich,48.12852,11.57181,196.8,false,1,1,40500.0,0.0,Lapsed Customer
+ACC-10351,Tamsin Freight AS,Transport & Logistics,"20,000+",NO,Norway,Nordics,Oslo,59.904668,10.770199999999999,11661.7,true,1,6,353295.984,0.0,Active Customer
+ACC-10539,Atlas Renewables SAS,Energy & Utilities,"5,000-19,999",FR,France,France,Toulouse,43.59245,1.42679,5574.3,false,1,24,2296500.0,1413500.0,Active Customer
+ACC-10600,Dunmore Institute SE,Public Sector,250-999,DE,Germany,DACH,Stuttgart,48.79753,9.1864,108.9,false,1,3,158500.0,246500.0,Active Customer
+ACC-10062,Noord Clinics S.A.,Healthcare & Life Sciences,"1,000-4,999",PL,Poland,CEE,Wrocław,51.15244,17.01669,647.7,false,1,13,309672.604,274332.94999999995,Active Customer
+ACC-10216,Bergmann Invest SA,Financial Services,"5,000-19,999",FR,France,France,Lyon,45.69888,4.77558,4811.9,false,1,12,373500.0,1193500.0,Active Customer
+ACC-10362,Brightwater Finance plc,Financial Services,"1,000-4,999",GB,United Kingdom,UK & Ireland,London,51.4816,-0.16027,984.5,false,1,11,0.0,231287.37300000002,Prospect
+ACC-10706,Quadra Logistics AG,Transport & Logistics,"1,000-4,999",CH,Switzerland,DACH,Zurich,47.40066,8.55829,602.5,false,1,3,0.0,512451.06000000006,Prospect
+ACC-10261,Solvik Motorenwerk B.V.,Manufacturing & Automotive,250-999,NL,Netherlands,Benelux,Amsterdam,52.34827,4.87755,155.5,false,1,3,0.0,0.0,Prospect
+ACC-10141,Vektor Authority A/S,Public Sector,"1,000-4,999",DK,Denmark,Nordics,Copenhagen,55.64217,12.55661,666.0,false,1,4,0.0,468369.34200000006,Prospect
+ACC-10243,Harbour Finance plc,Financial Services,"1,000-4,999",GB,United Kingdom,UK & Ireland,Edinburgh,55.99616,-3.19232,1010.7,false,1,8,0.0,0.0,Prospect
+ACC-10547,Kronberg Bank N.V.,Financial Services,"1,000-4,999",NL,Netherlands,Benelux,Eindhoven,51.45111,5.44469,524.5,false,1,4,0.0,219000.0,Prospect
+ACC-10337,Zentra Retail plc,Retail & Consumer Goods,250-999,GB,United Kingdom,UK & Ireland,Manchester,53.43886,-2.20932,173.3,false,2,3,0.0,227617.965,Prospect
+ACC-10716,Fjordline Retail S.r.l.,Retail & Consumer Goods,"5,000-19,999",IT,Italy,Southern Europe,Milan,45.44518,9.23397,3144.6,false,1,5,0.0,0.0,Prospect
+ACC-10101,Rhein Public Services B.V.,Public Sector,"5,000-19,999",NL,Netherlands,Benelux,Amsterdam,52.35728,4.84545,2096.6,false,1,4,0.0,796000.0,Prospect
+ACC-10534,Rhein Telecom SA,Telecom & Media,250-999,FR,France,France,Lyon,45.72835,4.86793,237.1,false,1,6,135000.0,314000.0,Active Customer
+ACC-10454,Granite Capital S.A.,Financial Services,"5,000-19,999",ES,Spain,Southern Europe,Barcelona,41.37403,2.21497,5126.9,false,2,7,331000.0,0.0,Active Customer
+ACC-10091,Lindholm Precision GmbH,Manufacturing & Automotive,250-999,DE,Germany,DACH,Düsseldorf,51.21084,6.80743,69.1,false,1,4,387000.0,0.0,Active Customer
+ACC-10549,Lumen Invest B.V.,Financial Services,250-999,NL,Netherlands,Benelux,Amsterdam,52.41933,4.8687,157.3,false,1,8,325000.0,42000.0,Active Customer
+ACC-10710,Castellan Components S.L.,Manufacturing & Automotive,"5,000-19,999",ES,Spain,Southern Europe,Madrid,40.41853,-3.66261,5677.8,false,1,9,44000.0,858500.0,Active Customer
+ACC-10528,Arcadia Clinics S.A.,Healthcare & Life Sciences,<250,PT,Portugal,Southern Europe,Porto,41.13929,-8.6448,25.5,false,1,5,32500.0,205000.0,Lapsed Customer
+ACC-10698,Lusitania Brands S.r.l.,Retail & Consumer Goods,"1,000-4,999",IT,Italy,Southern Europe,Rome,41.89158,12.5386,430.9,false,1,4,0.0,202000.0,Prospect
+ACC-10624,Oakridge Institute SA,Public Sector,250-999,BE,Belgium,Benelux,Antwerp,51.23467,4.39504,167.6,false,1,5,0.0,163500.0,Prospect
+ACC-10664,Tamsin Stores S.r.l.,Retail & Consumer Goods,250-999,IT,Italy,Southern Europe,Turin,45.07346,7.67787,128.7,false,1,4,198000.0,52000.0,Lapsed Customer
+ACC-10162,Harbour Broadcast B.V.,Telecom & Media,"1,000-4,999",NL,Netherlands,Benelux,Rotterdam,51.92394,4.48924,1718.4,false,1,8,154500.0,308000.0,Lapsed Customer
+ACC-10622,Oakridge Assurance A/S,Financial Services,"5,000-19,999",DK,Denmark,Nordics,Copenhagen,55.61784,12.52833,5846.7,false,1,4,175601.83200000002,0.0,Lapsed Customer
+ACC-10312,Zentra Pharma AB,Healthcare & Life Sciences,<250,SE,Sweden,Nordics,Gothenburg,57.72325,11.95424,37.4,false,1,3,0.0,74073.888,Prospect
+ACC-10356,Lusitania Industries SA,Manufacturing & Automotive,"1,000-4,999",CH,Switzerland,DACH,Geneva,46.20588,6.14623,980.9,false,1,4,376952.407,342821.538,Active Customer
+ACC-10147,Quadra Components AG,Manufacturing & Automotive,"1,000-4,999",AT,Austria,DACH,Graz,47.05245,15.4376,1006.2,false,1,2,117000.0,0.0,Active Customer
+ACC-10430,Lusitania Pharma AB,Healthcare & Life Sciences,"5,000-19,999",SE,Sweden,Nordics,Gothenburg,57.69599,11.91245,4089.3,false,1,5,101000.0,285595.422,Lapsed Customer
+ACC-10660,Vistula Health AG,Healthcare & Life Sciences,250-999,AT,Austria,DACH,Vienna,48.19851,16.35346,196.7,false,1,1,419500.0,0.0,Active Customer
+ACC-10001,Solvik Retail Oy,Retail & Consumer Goods,"5,000-19,999",FI,Finland,Nordics,Espoo,60.23322,24.59747,2079.0,false,1,0,0.0,0.0,
+ACC-10701,Isola Finance SE,Financial Services,"1,000-4,999",DE,Germany,DACH,Hamburg,53.51116,10.009,525.4,false,1,0,0.0,0.0,
+ACC-10024,Dunmore Medical Ltd,Healthcare & Life Sciences,"20,000+",GB,United Kingdom,UK & Ireland,Manchester,53.45131,-2.30696,16695.4,false,1,14,1008620.6680000001,0.0,Active Customer
+ACC-10409,Corvina Bank SA,Financial Services,250-999,CH,Switzerland,DACH,Zurich,47.34545,8.54407,163.4,false,1,3,217698.239,0.0,Lapsed Customer
+ACC-10159,Arcadia Finance SA,Financial Services,<250,CH,Switzerland,DACH,Zurich,47.380720000000004,8.550529285714285,48.7,true,1,3,187897.511,0.0,Active Customer
+ACC-10459,Oakridge Clinics SAS,Healthcare & Life Sciences,250-999,FR,France,France,Lyon,45.76939,4.81844,155.2,false,1,6,474500.0,0.0,Lapsed Customer
+ACC-10403,Elbe Clinics DAC,Healthcare & Life Sciences,"1,000-4,999",IE,Ireland,UK & Ireland,Cork,51.88474,-8.4805,695.6,false,1,9,173500.0,183500.0,Active Customer
+ACC-10680,Delta Authority plc,Public Sector,"20,000+",GB,United Kingdom,UK & Ireland,Edinburgh,56.01897,-3.18853,11367.7,false,1,17,306276.657,1764297.2340000002,Active Customer
+ACC-10126,Tamsin Precision SAS,Manufacturing & Automotive,"1,000-4,999",FR,France,France,Paris,48.82638,2.2962,,false,1,20,380500.0,297500.0,Active Customer
+ACC-10422,Westbrook Consumer SE,Retail & Consumer Goods,"1,000-4,999",DE,Germany,DACH,Düsseldorf,51.27265,6.78376,1292.7,false,1,4,170500.0,0.0,Active Customer
+ACC-10273,Kestrel Energy GmbH,Energy & Utilities,"5,000-19,999",DE,Germany,DACH,Hamburg,53.58627,9.99877,5504.6,false,1,5,596500.0,0.0,Active Customer
+ACC-10171,Zentra Industries SE,Manufacturing & Automotive,250-999,DE,Germany,DACH,Berlin,52.50498,13.35535,118.5,false,1,4,134500.0,0.0,Lapsed Customer
+ACC-10514,Isola Automotive GmbH,Manufacturing & Automotive,250-999,DE,Germany,DACH,Hamburg,53.59371,10.02288,123.9,false,1,3,48500.0,0.0,Lapsed Customer
+ACC-10635,Jadeport Industries SA,Manufacturing & Automotive,"5,000-19,999",FR,France,France,Toulouse,43.63283,1.46651,2935.8,false,1,18,544000.0,578000.0,Active Customer
+ACC-10082,Karlsson Media ASA,Telecom & Media,"20,000+",NO,Norway,Nordics,Bergen,60.3893,5.31689,10982.0,false,1,7,254864.49999999997,0.0,Lapsed Customer
+ACC-10472,Falkner Bank B.V.,Financial Services,"1,000-4,999",NL,Netherlands,Benelux,Amsterdam,52.39909,4.92123,607.7,false,1,7,745500.0,1217500.0,Lapsed Customer
+ACC-10256,Fjordline Broadcast SAS,Telecom & Media,"20,000+",FR,France,France,Toulouse,43.52251,1.43698,,false,1,16,2425000.0,504000.0,Active Customer
+ACC-10527,Estrella Freight AG,Transport & Logistics,"5,000-19,999",DE,Germany,DACH,Hamburg,53.56339,9.97122,4057.8,false,1,4,1055000.0,65000.0,Lapsed Customer
+ACC-10212,Alpenkraft Components Ltd,Manufacturing & Automotive,250-999,IE,Ireland,UK & Ireland,Cork,51.902062307692304,-8.485329230769231,148.4,true,1,5,144000.0,174000.0,Lapsed Customer
+ACC-10185,Meridian Freight SA,Transport & Logistics,"20,000+",FR,France,France,Lyon,45.76199,4.88338,,false,1,26,1972500.0,2281000.0,Active Customer
+ACC-10398,Jadeport Medical DAC,Healthcare & Life Sciences,<250,IE,Ireland,UK & Ireland,Cork,51.93158,-8.48663,28.1,false,1,1,0.0,0.0,Prospect
+ACC-10291,Novara Institute SAS,Public Sector,"1,000-4,999",FR,France,France,Toulouse,43.60227,1.44308,826.0,false,2,5,0.0,0.0,Prospect
+ACC-10438,Polaris Brands Ltd,Retail & Consumer Goods,<250,GB,United Kingdom,UK & Ireland,Birmingham,52.46969,-1.84766,38.6,false,1,5,0.0,31877.982,Prospect
+ACC-10094,Granite Authority Ltd,Public Sector,"5,000-19,999",GB,United Kingdom,UK & Ireland,London,51.50439,-0.13721,2589.2,false,1,14,0.0,907949.142,Prospect
+ACC-10383,Stellaris Precision AG,Manufacturing & Automotive,"20,000+",DE,Germany,DACH,Hamburg,53.51266,10.04959,12054.5,false,1,5,0.0,440000.0,Prospect
+ACC-10569,Borealis Invest SAS,Financial Services,<250,FR,France,France,Toulouse,43.62376,1.43562,27.2,false,1,2,0.0,48000.0,Prospect
+ACC-10663,Invicta Municipal Services S.p.A.,Public Sector,"20,000+",IT,Italy,Southern Europe,Turin,45.08189,7.69326,24238.5,false,1,9,372000.0,1842500.0,Lapsed Customer
+ACC-10614,Granite Public Services A/S,Public Sector,"20,000+",DK,Denmark,Nordics,Copenhagen,55.66778,12.52368,26503.8,false,1,8,1187197.815,718904.1780000001,Active Customer
+ACC-10700,Zephyr Pharma S.L.,Healthcare & Life Sciences,250-999,ES,Spain,Southern Europe,Barcelona,41.36821,2.18384,307.4,false,1,5,305000.0,0.0,Active Customer
+ACC-10226,Castellan Renewables S.r.l.,Energy & Utilities,"1,000-4,999",IT,Italy,Southern Europe,Rome,41.91583,12.50917,729.0,false,1,6,302500.0,406000.0,Active Customer
+ACC-10617,Delta Networks AG,Telecom & Media,250-999,CH,Switzerland,DACH,Basel,47.54612,7.59744,168.2,false,1,3,0.0,0.0,Prospect
+ACC-10496,Meridian Clinics ASA,Healthcare & Life Sciences,"5,000-19,999",NO,Norway,Nordics,Bergen,60.39781,5.37,4144.4,false,1,5,22995.17,0.0,Lapsed Customer
+ACC-10469,Novara Motorenwerk SA,Manufacturing & Automotive,"1,000-4,999",CH,Switzerland,DACH,Geneva,46.23598,6.15454,934.7,false,1,2,132187.264,52067.22,Active Customer
+ACC-10099,Riviera Public Services S.p.A.,Public Sector,"20,000+",IT,Italy,Southern Europe,Turin,45.06119,7.65484,19961.6,false,1,4,333500.0,178500.0,Lapsed Customer
+ACC-10548,Westbrook Pharma S.r.l.,Healthcare & Life Sciences,"5,000-19,999",IT,Italy,Southern Europe,Turin,45.06866,7.64485,,false,1,2,0.0,82500.0,Prospect
+ACC-10684,Quadra Foods Ltd,Retail & Consumer Goods,<250,GB,United Kingdom,UK & Ireland,London,51.51435,-0.09609,30.8,false,1,5,9611.784,0.0,Lapsed Customer
+ACC-10363,Zephyr Precision GmbH,Manufacturing & Automotive,"1,000-4,999",AT,Austria,DACH,Graz,47.09032,15.41668,730.5,false,1,1,206500.0,0.0,Active Customer
+ACC-10045,Tauern Motorenwerk GmbH,Manufacturing & Automotive,<250,DE,Germany,DACH,Stuttgart,48.79015,9.21338,42.6,false,1,0,0.0,0.0,
+ACC-10262,Borealis Public Services S.L.,Public Sector,250-999,ES,Spain,Southern Europe,Barcelona,41.40815,2.19727,169.8,false,1,0,0.0,0.0,
+ACC-10629,Polaris Broadcast AB,Telecom & Media,"5,000-19,999",SE,Sweden,Nordics,Gothenburg,57.71113,11.96161,2879.3,false,1,8,963681.8189999999,0.0,Active Customer
+ACC-10601,Stellaris Assurance Ltd,Financial Services,"5,000-19,999",GB,United Kingdom,UK & Ireland,London,51.52852,-0.16371,4258.9,false,1,10,557087.258,620704.521,Active Customer
+ACC-10702,Polaris Precision S.p.A.,Manufacturing & Automotive,"5,000-19,999",IT,Italy,Southern Europe,Turin,45.03927,7.68418,4281.2,false,1,13,985500.0,0.0,Active Customer
+ACC-10245,Alpenkraft Institute SAS,Public Sector,"1,000-4,999",FR,France,France,Paris,48.85357,2.42099,933.3,false,1,7,339000.0,75000.0,Active Customer
+ACC-10161,Alpenkraft Utilities AS,Energy & Utilities,250-999,NO,Norway,Nordics,Oslo,59.92833,10.71713,135.4,false,1,6,390277.488,0.0,Lapsed Customer
+ACC-10505,Gallway Assurance Ltd,Financial Services,"5,000-19,999",GB,United Kingdom,UK & Ireland,London,51.53158,-0.13802,5768.3,false,1,13,153912.024,946477.926,Lapsed Customer
+ACC-10199,Moselle Clinics SAS,Healthcare & Life Sciences,250-999,FR,France,France,Lille,50.64152,3.01739,253.4,false,2,11,1604000.0,234000.0,Active Customer
+ACC-10225,Silverline Automotive S.A.,Manufacturing & Automotive,"5,000-19,999",PL,Poland,CEE,Wrocław,51.16378,17.05306,4553.6,false,1,17,1949814.175,1908247.7699999998,Active Customer
+ACC-10224,Tamsin Finance Ltd,Financial Services,250-999,GB,United Kingdom,UK & Ireland,London,51.52926,-0.18434,117.1,false,1,10,455969.82,34744.707,Active Customer
+ACC-10697,Zentra Power GmbH,Energy & Utilities,"5,000-19,999",DE,Germany,DACH,Stuttgart,48.74573,9.19216,3301.3,false,1,5,94500.0,138000.0,Lapsed Customer
+ACC-10310,Oakridge Medical N.V.,Healthcare & Life Sciences,250-999,NL,Netherlands,Benelux,Rotterdam,51.95037,4.43208,106.6,false,1,6,404500.0,162000.0,Active Customer
+ACC-10346,Ysolde Motorenwerk ASA,Manufacturing & Automotive,"5,000-19,999",NO,Norway,Nordics,Bergen,60.37621,5.26769,2750.2,false,1,12,2222550.745,0.0,Active Customer
+ACC-10355,Moselle Bank S.r.l.,Financial Services,250-999,IT,Italy,Southern Europe,Rome,41.91471,12.51089,259.2,false,1,5,159500.0,245500.0,Active Customer
+ACC-10621,Zentra Transport S.A.,Transport & Logistics,"1,000-4,999",PL,Poland,CEE,Wrocław,51.07162,17.05182,,false,1,13,590971.315,714315.81,Active Customer
+ACC-10076,Iberia Power SA,Energy & Utilities,"1,000-4,999",FR,France,France,Toulouse,43.63844,1.4555,854.0,false,1,18,1202000.0,165500.0,Active Customer
+ACC-10632,Novara Bank AB,Financial Services,"5,000-19,999",SE,Sweden,Nordics,Gothenburg,57.70366,11.99773,3195.7,false,1,8,2497616.628,0.0,Active Customer
+ACC-10395,Valora Motorenwerk s.r.o.,Manufacturing & Automotive,250-999,CZ,Czechia,CEE,Prague,50.12106,14.46048,233.6,false,1,9,439953.82899999997,23029.9,Lapsed Customer
+ACC-10328,Moselle Finance N.V.,Financial Services,"1,000-4,999",NL,Netherlands,Benelux,Eindhoven,51.44269,5.47736,442.2,false,1,6,131500.0,0.0,Active Customer
+ACC-10364,Zephyr Freight AG,Transport & Logistics,"1,000-4,999",DE,Germany,DACH,Berlin,52.55903,13.424,1146.4,false,2,5,337000.0,118000.0,Active Customer
+ACC-10030,Hansa Media a.s.,Telecom & Media,"5,000-19,999",CZ,Czechia,CEE,Brno,49.187143333333324,16.607106666666663,3923.9,true,1,7,0.0,780467.28,Prospect
+ACC-10573,Saxon Agency plc,Public Sector,"20,000+",GB,United Kingdom,UK & Ireland,Edinburgh,55.96497,-3.16325,11277.7,false,1,12,0.0,2293042.0,Prospect
+ACC-10575,Arcadia Consumer Ltd,Retail & Consumer Goods,<250,GB,United Kingdom,UK & Ireland,Birmingham,52.42014,-1.95067,42.1,false,1,6,0.0,153197.78399999999,Prospect
+ACC-10345,Atlas Medical S.p.A.,Healthcare & Life Sciences,<250,IT,Italy,Southern Europe,Milan,45.42726,9.22477,125.4,false,1,3,0.0,106000.0,Prospect
+ACC-10537,Noord Bank SE,Financial Services,"1,000-4,999",DE,Germany,DACH,Düsseldorf,51.2053,6.76228,522.0,false,1,1,0.0,0.0,Prospect
+ACC-10149,Pionier Connect B.V.,Telecom & Media,"5,000-19,999",NL,Netherlands,Benelux,Amsterdam,52.37677,4.92343,2244.1,false,1,3,0.0,109500.0,Prospect
+ACC-10439,Vistula Finance Ltd,Financial Services,"1,000-4,999",GB,United Kingdom,UK & Ireland,Birmingham,52.45621,-1.89589,1253.0,false,1,4,0.0,107330.184,Prospect
+ACC-10329,Marisol Consumer S.r.l.,Retail & Consumer Goods,"5,000-19,999",IT,Italy,Southern Europe,Milan,45.49124,9.15392,3121.2,false,2,3,0.0,0.0,Prospect
+ACC-10696,Zephyr Energy S.p.A.,Energy & Utilities,250-999,IT,Italy,Southern Europe,Turin,45.08049,7.68486,118.1,false,1,4,0.0,384000.0,Prospect
+ACC-10213,Lusitania Retail ApS,Retail & Consumer Goods,250-999,DK,Denmark,Nordics,Copenhagen,55.66259,12.56651,171.9,false,1,6,82799.74799999999,50162.571,Active Customer
+ACC-10589,Corvina Automotive Ltd,Manufacturing & Automotive,"1,000-4,999",GB,United Kingdom,UK & Ireland,London,51.55022,-0.12925,1344.5,false,1,12,132306.872,386893.206,Active Customer
+ACC-10061,Lumen Medical Oy,Healthcare & Life Sciences,250-999,FI,Finland,Nordics,Helsinki,60.16557,24.93342,209.8,false,1,3,81500.0,185000.0,Lapsed Customer
+ACC-10046,Marisol Stores B.V.,Retail & Consumer Goods,"5,000-19,999",NL,Netherlands,Benelux,Amsterdam,52.34835,4.90449,3366.4,false,1,4,307500.0,496500.0,Active Customer
+ACC-10183,Quadra Institute GmbH,Public Sector,250-999,DE,Germany,DACH,Stuttgart,48.77931,9.17075,102.9,false,1,4,64000.0,104500.0,Lapsed Customer
+ACC-10370,Solvik Automotive GmbH,Manufacturing & Automotive,"1,000-4,999",AT,Austria,DACH,Vienna,48.20155,16.3486,725.3,false,1,4,50500.0,0.0,Active Customer
+ACC-10348,Bergmann Foods GmbH,Retail & Consumer Goods,<250,DE,Germany,DACH,Munich,48.15292,11.56912,34.9,false,1,2,65000.0,0.0,Lapsed Customer
+ACC-10501,Jadeport Logistics S.A.,Transport & Logistics,"5,000-19,999",LU,Luxembourg,Benelux,Luxembourg,49.62054,6.10747,3329.2,false,1,6,588500.0,0.0,Active Customer
+ACC-10071,Castellan Telecom AB,Telecom & Media,<250,SE,Sweden,Nordics,Gothenburg,57.68592,12.01561,41.5,false,1,5,199451.69,0.0,Lapsed Customer
+ACC-10357,Valora Precision plc,Manufacturing & Automotive,"1,000-4,999",GB,United Kingdom,UK & Ireland,Manchester,53.45673,-2.24097,890.0,false,1,9,491071.076,0.0,Lapsed Customer
+ACC-10027,Aurora Finance Oyj,Financial Services,"20,000+",FI,Finland,Nordics,Espoo,60.16945,24.62705,11222.9,false,1,12,374500.0,0.0,Active Customer
+ACC-10512,Nordwind Logistics AG,Transport & Logistics,250-999,AT,Austria,DACH,Graz,47.06712,15.41395,174.9,false,1,2,0.0,0.0,Prospect
+ACC-10707,Fontaine Public Services SA,Public Sector,"1,000-4,999",FR,France,France,Paris,48.80782,2.29077,1022.2,false,2,11,216000.0,723500.0,Lapsed Customer
+ACC-10189,Kronberg Motorenwerk GmbH,Manufacturing & Automotive,"1,000-4,999",DE,Germany,DACH,Düsseldorf,51.19734,6.78651,901.1,false,1,2,870000.0,0.0,Active Customer
+ACC-10654,Ysolde Transport AG,Transport & Logistics,250-999,DE,Germany,DACH,Berlin,52.50534,13.4472,,false,1,3,588500.0,0.0,Active Customer
+ACC-10603,Falkner Broadcast SA,Telecom & Media,"5,000-19,999",CH,Switzerland,DACH,Geneva,46.22073,6.10287,4530.2,false,1,6,135827.328,511628.94600000005,Lapsed Customer
+ACC-10518,Baltica Power S.L.,Energy & Utilities,"5,000-19,999",ES,Spain,Southern Europe,Madrid,40.44012,-3.66597,,false,1,7,116500.0,1461000.0,Lapsed Customer
+ACC-10360,Meridian Authority AG,Public Sector,"1,000-4,999",DE,Germany,DACH,Hamburg,53.54815,9.98303,2654.4,false,1,2,52000.0,0.0,Lapsed Customer
+ACC-10228,Riviera Shipping GmbH,Transport & Logistics,"5,000-19,999",DE,Germany,DACH,Stuttgart,48.78658,9.24039,4217.5,false,1,6,1099500.0,0.0,Active Customer
+ACC-10026,Tamsin Foods AG,Retail & Consumer Goods,<250,DE,Germany,DACH,Düsseldorf,51.21241,6.77139,81.1,false,1,3,28500.0,0.0,Lapsed Customer
+ACC-10064,Aurora Institute SE,Public Sector,"1,000-4,999",DE,Germany,DACH,Berlin,52.45989,13.45313,749.4,false,2,2,117500.0,0.0,Lapsed Customer
+ACC-10598,Juniper Bank AG,Financial Services,"20,000+",AT,Austria,DACH,Graz,47.04717,15.45605,11144.9,false,1,4,312500.0,218000.0,Lapsed Customer
+ACC-10202,Tauern Brands AG,Retail & Consumer Goods,250-999,CH,Switzerland,DACH,Basel,47.5312,7.63255,117.9,false,1,1,0.0,0.0,Prospect
+ACC-10078,Novara Consumer plc,Retail & Consumer Goods,"1,000-4,999",GB,United Kingdom,UK & Ireland,Manchester,53.49042,-2.268,476.5,false,1,8,433870.43,95633.946,Active Customer
+ACC-10336,Jadeport Telecom B.V.,Telecom & Media,"1,000-4,999",NL,Netherlands,Benelux,Rotterdam,51.91224181818182,4.48857,751.2,true,1,2,49000.0,0.0,Active Customer
+ACC-10408,Ysolde Components GmbH,Manufacturing & Automotive,250-999,DE,Germany,DACH,Munich,48.20021,11.55769,178.8,false,1,1,0.0,0.0,Prospect
+ACC-10620,Solvik Municipal Services AG,Public Sector,"1,000-4,999",DE,Germany,DACH,Hamburg,53.532,10.00985,950.6,false,1,3,51500.0,0.0,Active Customer
+ACC-10519,Invicta Foods GmbH,Retail & Consumer Goods,250-999,DE,Germany,DACH,Stuttgart,48.80744,9.16901,115.5,false,1,0,0.0,0.0,
+ACC-10151,Aurora Utilities S.r.l.,Energy & Utilities,"1,000-4,999",IT,Italy,Southern Europe,Turin,45.05775,7.68816,794.5,false,1,8,978500.0,0.0,Active Customer
+ACC-10092,Atlas Motorenwerk GmbH,Manufacturing & Automotive,"5,000-19,999",DE,Germany,DACH,Frankfurt,50.11743,8.67662,3162.7,false,1,5,190500.0,973000.0,Active Customer
+ACC-10449,Tauern Biotech NV,Healthcare & Life Sciences,250-999,BE,Belgium,Benelux,Antwerp,51.17614,4.38932,,false,2,4,72000.0,0.0,Lapsed Customer
+ACC-10488,Noord Assurance S.A.,Financial Services,"1,000-4,999",PL,Poland,CEE,Warsaw,52.23236,20.98612,1243.7,false,1,16,543316.665,695998.6799999999,Active Customer
+ACC-10542,Estrella Motorenwerk Ltd,Manufacturing & Automotive,"5,000-19,999",GB,United Kingdom,UK & Ireland,Manchester,53.51725,-2.17598,5225.2,false,1,18,595604.692,164779.353,Active Customer
+ACC-10260,Solvik Bank Ltd,Financial Services,"1,000-4,999",GB,United Kingdom,UK & Ireland,London,51.4999,-0.18142,652.7,false,2,7,51977.606999999996,193675.941,Active Customer
+ACC-10668,Isola Components S.r.l.,Manufacturing & Automotive,"20,000+",IT,Italy,Southern Europe,Turin,45.06282,7.66288,10075.8,false,1,11,1441500.0,871000.0,Active Customer
+ACC-10128,Fontaine Retail Lda,Retail & Consumer Goods,"1,000-4,999",PT,Portugal,Southern Europe,Lisbon,38.77556,-9.10492,622.7,false,1,2,81500.0,0.0,Lapsed Customer
+ACC-10051,Iberia Pharma GmbH,Healthcare & Life Sciences,"1,000-4,999",DE,Germany,DACH,Munich,48.18882,11.52898,1271.5,false,1,4,165500.0,217000.0,Lapsed Customer
+ACC-10154,Lindholm Components AG,Manufacturing & Automotive,"5,000-19,999",DE,Germany,DACH,Stuttgart,48.75345,9.19491,4371.0,false,1,5,207500.0,0.0,Active Customer
+ACC-10599,Castellan Public Services AG,Public Sector,250-999,DE,Germany,DACH,Stuttgart,48.80381,9.17542,165.4,false,1,3,106000.0,98000.0,Active Customer
+ACC-10173,Orion Precision S.r.l.,Manufacturing & Automotive,"1,000-4,999",IT,Italy,Southern Europe,Turin,45.00676,7.67607,376.3,false,1,6,315500.0,0.0,Lapsed Customer
+ACC-10503,Quadra Retail SAS,Retail & Consumer Goods,"1,000-4,999",FR,France,France,Lille,50.63532,3.10458,983.6,false,1,14,246500.0,0.0,Active Customer
+ACC-10015,Ysolde Power ApS,Energy & Utilities,250-999,DK,Denmark,Nordics,Aarhus,56.16337,10.21842,215.2,false,1,6,64723.656,161251.02000000002,Active Customer
+ACC-10172,Kestrel Industries AB,Manufacturing & Automotive,250-999,SE,Sweden,Nordics,Stockholm,59.3189,18.08759,206.2,false,1,7,479880.12,551606.588,Active Customer
+ACC-10420,Pionier Components GmbH,Manufacturing & Automotive,250-999,DE,Germany,DACH,Stuttgart,48.80872,9.24932,171.4,false,1,4,370000.0,0.0,Active Customer
+ACC-10342,Novara Industries S.A.,Manufacturing & Automotive,250-999,PL,Poland,CEE,Wrocław,51.09609,17.04241,241.7,false,1,8,38703.28,49176.659999999996,Lapsed Customer
+ACC-10087,Delta Power AB,Energy & Utilities,"1,000-4,999",SE,Sweden,Nordics,Stockholm,59.33198,18.06642,1234.9,false,2,9,345011.368,239998.374,Active Customer
+ACC-10490,Lindholm Brands S.A.,Retail & Consumer Goods,"5,000-19,999",PT,Portugal,Southern Europe,Porto,41.17432,-8.64355,,false,1,11,0.0,276500.0,Prospect
+ACC-10067,Meridian Broadcast N.V.,Telecom & Media,<250,NL,Netherlands,Benelux,Eindhoven,51.44515,5.4928,43.8,false,1,4,0.0,0.0,Prospect
+ACC-10464,Falkner Assurance SE,Financial Services,"1,000-4,999",DE,Germany,DACH,Hamburg,53.55442,10.02537,557.4,false,1,4,0.0,0.0,Prospect
+ACC-10509,Atlas Telecom S.p.A.,Telecom & Media,"5,000-19,999",IT,Italy,Southern Europe,Turin,45.03324,7.73204,4110.5,false,1,7,0.0,375500.0,Prospect
+ACC-10552,Kronberg Assurance plc,Financial Services,<250,GB,United Kingdom,UK & Ireland,London,51.47304,-0.09917,17.2,false,1,8,0.0,62956.518,Prospect
+ACC-10187,Jadeport Connect SA,Telecom & Media,"5,000-19,999",BE,Belgium,Benelux,Antwerp,51.19516,4.44111,4898.1,false,1,6,0.0,82500.0,Prospect
+ACC-10324,Corvina Pharma Ltd,Healthcare & Life Sciences,250-999,GB,United Kingdom,UK & Ireland,Manchester,53.46351,-2.27352,254.5,false,2,3,0.0,0.0,Prospect
+ACC-10429,Valora Public Services plc,Public Sector,<250,GB,United Kingdom,UK & Ireland,Birmingham,52.47664,-1.82938,20.0,false,1,5,0.0,0.0,Prospect
+ACC-10170,Novara Capital plc,Financial Services,<250,GB,United Kingdom,UK & Ireland,Manchester,53.5011,-2.25425,54.1,false,1,3,0.0,0.0,Prospect
+ACC-10131,Pionier Public Services A/S,Public Sector,250-999,DK,Denmark,Nordics,Aarhus,56.17066,10.24452,180.9,false,1,2,0.0,0.0,Prospect
+ACC-10320,Quadra Networks S.L.,Telecom & Media,250-999,ES,Spain,Southern Europe,Madrid,40.43509,-3.7079,230.6,false,1,3,167000.0,0.0,Active Customer
+ACC-10515,Marisol Bank Ltd,Financial Services,"1,000-4,999",IE,Ireland,UK & Ireland,Dublin,53.31585,-6.27325,744.4,false,1,10,212000.0,0.0,Active Customer
+ACC-10404,Corvina Energy SA,Energy & Utilities,"5,000-19,999",FR,France,France,Lyon,45.77244,4.81507,2475.4,false,1,14,1342000.0,588000.0,Active Customer
+ACC-10531,Oakridge Automotive AB,Manufacturing & Automotive,"5,000-19,999",SE,Sweden,Nordics,Stockholm,59.30173,18.08155,3317.3,false,1,11,1897984.2119999998,1681627.37,Active Customer
+ACC-10504,Nordwind Pharma SA,Healthcare & Life Sciences,250-999,FR,France,France,Paris,48.85523,2.42371,148.2,false,1,9,483500.0,199500.0,Lapsed Customer
+ACC-10666,Borealis Networks AG,Telecom & Media,"1,000-4,999",DE,Germany,DACH,Frankfurt,50.10801,8.66977,909.4,false,1,5,393000.0,0.0,Lapsed Customer
+ACC-10525,Gallway Connect A/S,Telecom & Media,250-999,DK,Denmark,Nordics,Aarhus,56.18546,10.184,169.3,false,1,7,1379128.219,0.0,Active Customer
+ACC-10142,Brightwater Bank S.A.,Financial Services,250-999,ES,Spain,Southern Europe,Madrid,40.47212,-3.71408,385.7,false,1,5,0.0,76000.0,Prospect
+ACC-10484,Alpenkraft Industries Ltd,Manufacturing & Automotive,<250,GB,United Kingdom,UK & Ireland,Edinburgh,55.89615,-3.18449,16.3,false,1,9,0.0,101000.0,Prospect
+ACC-10218,Lindholm Motorenwerk N.V.,Manufacturing & Automotive,"5,000-19,999",NL,Netherlands,Benelux,Rotterdam,51.86012,4.48473,4908.4,false,1,9,858000.0,0.0,Active Customer
+ACC-10239,Alpenkraft Biotech AG,Healthcare & Life Sciences,"20,000+",CH,Switzerland,DACH,Geneva,46.20484,6.13648,13794.7,false,1,4,414213.578,102124.82800000001,Active Customer
+ACC-10274,Saxon Motorenwerk S.r.l.,Manufacturing & Automotive,<250,IT,Italy,Southern Europe,Milan,45.49634,9.1534,28.7,false,1,5,549000.0,88500.0,Lapsed Customer
+ACC-10480,Iberia Brands AG,Retail & Consumer Goods,"1,000-4,999",DE,Germany,DACH,Hamburg,53.58028,9.98835,1595.2,false,1,5,293000.0,144500.0,Active Customer
+ACC-10551,Granite Health GmbH,Healthcare & Life Sciences,"1,000-4,999",DE,Germany,DACH,Düsseldorf,51.20245,6.80544,789.9,false,1,2,141000.0,0.0,Lapsed Customer
+ACC-10133,Olympia Logistics AG,Transport & Logistics,"1,000-4,999",DE,Germany,DACH,Frankfurt,50.11034,8.68946,916.1,false,1,3,629000.0,276500.0,Lapsed Customer
+ACC-10014,Danubia Stores AB,Retail & Consumer Goods,"5,000-19,999",SE,Sweden,Nordics,Gothenburg,57.68914,11.96411,3004.4,false,1,2,0.0,244500.102,Prospect
+ACC-10373,Meridian Consumer GmbH,Retail & Consumer Goods,250-999,DE,Germany,DACH,Hamburg,53.55134,9.99006,138.8,false,1,2,0.0,237000.0,Prospect
+ACC-10013,Granite Industries GmbH,Manufacturing & Automotive,250-999,DE,Germany,DACH,Berlin,52.54071,13.39218,191.8,false,1,4,242500.0,144500.0,Active Customer
+ACC-10659,Noord Energy AG,Energy & Utilities,250-999,AT,Austria,DACH,Vienna,48.24858,16.44567,148.8,false,1,1,100000.0,0.0,Lapsed Customer
+ACC-10174,Iberia Energy SA,Energy & Utilities,250-999,CH,Switzerland,DACH,Basel,47.59463,7.59408,147.4,false,1,4,139579.236,0.0,Active Customer
+ACC-10720,Jadeport Invest Ltd,Financial Services,"1,000-4,999",GB,United Kingdom,UK & Ireland,Manchester,53.49284,-2.18768,1053.5,false,1,14,616434.4579999999,879396.5610000001,Active Customer
+ACC-10305,Lindholm Freight S.p.A.,Transport & Logistics,250-999,IT,Italy,Southern Europe,Turin,45.07821,7.68679,192.7,false,1,5,168500.0,141000.0,Lapsed Customer
+ACC-10223,Moselle Renewables SE,Energy & Utilities,250-999,DE,Germany,DACH,Frankfurt,50.06311,8.68886,265.1,false,1,4,343500.0,0.0,Active Customer
+ACC-10550,Baltica Motorenwerk S.p.A.,Manufacturing & Automotive,"1,000-4,999",IT,Italy,Southern Europe,Rome,41.95136,12.48129,1054.1,false,1,7,459000.0,81000.0,Lapsed Customer
+ACC-10424,Meridian Agency SA,Public Sector,"5,000-19,999",FR,France,France,Toulouse,43.62166,1.39266,3211.3,false,1,11,1081500.0,130500.0,Active Customer
+ACC-10350,Stellaris Medical S.à r.l.,Healthcare & Life Sciences,250-999,LU,Luxembourg,Benelux,Luxembourg,49.62322,6.14261,113.5,false,1,6,162000.0,0.0,Lapsed Customer
+ACC-10662,Aurora Invest Ltd,Financial Services,"5,000-19,999",GB,United Kingdom,UK & Ireland,London,51.46397,-0.15067,2293.9,false,1,9,188205.8,0.0,Lapsed Customer
+ACC-10643,Isola Renewables A/S,Energy & Utilities,250-999,DK,Denmark,Nordics,Aarhus,56.15028,10.18204,175.5,false,1,7,440141.58900000004,110876.625,Active Customer
+ACC-10699,Vistula Utilities Ltd,Energy & Utilities,250-999,GB,United Kingdom,UK & Ireland,Birmingham,52.434,-1.90188,322.1,false,1,6,74279.751,0.0,Lapsed Customer
+ACC-10280,Gallway Retail SAS,Retail & Consumer Goods,"20,000+",FR,France,France,Lille,50.60811,3.06372,15012.0,false,1,24,2646500.0,100000.0,Active Customer
+ACC-10194,Pionier Automotive SE,Manufacturing & Automotive,250-999,DE,Germany,DACH,Hamburg,53.58191,9.99852,264.5,false,1,4,139500.0,0.0,Lapsed Customer
+ACC-10049,Hansa Municipal Services S.L.,Public Sector,"1,000-4,999",ES,Spain,Southern Europe,Barcelona,41.37623,2.1699,813.7,false,1,6,153500.0,389500.0,Lapsed Customer
+ACC-10318,Kronberg Municipal Services Oyj,Public Sector,"5,000-19,999",FI,Finland,Nordics,Helsinki,60.20074,24.9145,2221.1,false,1,7,243500.0,74500.0,Lapsed Customer
+ACC-10657,Invicta Logistics plc,Transport & Logistics,"20,000+",GB,United Kingdom,UK & Ireland,London,51.48791,-0.11837,19394.3,false,1,15,2217544.449,1727029.809,Active Customer
+ACC-10384,Baltica Brands Ltd,Retail & Consumer Goods,250-999,GB,United Kingdom,UK & Ireland,Edinburgh,55.98615,-3.17969,216.2,false,1,9,104559.66,126709.245,Active Customer
+ACC-10688,Aurora Grid s.r.o.,Energy & Utilities,"5,000-19,999",CZ,Czechia,CEE,Prague,50.10679,14.43741,2523.0,false,1,16,1460089.942,584439.4299999999,Active Customer
+ACC-10236,Atlas Mobility S.A.,Transport & Logistics,250-999,PL,Poland,CEE,Wrocław,51.09828,17.03288,,false,1,10,554032.874,23987.339999999997,Lapsed Customer
+ACC-10321,Westbrook Capital S.A.,Financial Services,"5,000-19,999",PL,Poland,CEE,Wrocław,51.0939,17.05206,2561.5,false,1,7,263018.102,108500.0,Active Customer
+ACC-10476,Lumen Capital S.A.,Financial Services,250-999,PL,Poland,CEE,Wrocław,51.10451,17.09426,388.7,false,1,10,460990.748,0.0,Active Customer
+ACC-10139,Atlas Industries AB,Manufacturing & Automotive,"20,000+",SE,Sweden,Nordics,Gothenburg,57.69456,12.01813,9423.6,false,1,10,1928983.6,43397.340000000004,Lapsed Customer
+ACC-10007,Marisol Pharma AG,Healthcare & Life Sciences,250-999,DE,Germany,DACH,Munich,48.15652,11.5973,223.7,false,1,4,89000.0,0.0,Active Customer
+ACC-10584,Meridian Components AG,Manufacturing & Automotive,"1,000-4,999",CH,Switzerland,DACH,Zurich,47.39074,8.60292,,false,2,6,206069.80599999998,0.0,Active Customer
+ACC-10031,Karlsson Connect B.V.,Telecom & Media,"1,000-4,999",NL,Netherlands,Benelux,Amsterdam,52.40319,4.90786,1663.5,false,1,9,271500.0,0.0,Active Customer
+ACC-10279,Brightwater Logistics S.L.,Transport & Logistics,"5,000-19,999",ES,Spain,Southern Europe,Barcelona,41.38886,2.24461,2254.0,false,1,6,0.0,681500.0,Prospect
+ACC-10645,Castellan Motorenwerk plc,Manufacturing & Automotive,"1,000-4,999",GB,United Kingdom,UK & Ireland,Birmingham,52.51163,-1.88307,988.8,false,1,7,0.0,0.0,Prospect
+ACC-10110,Moselle Pharma B.V.,Healthcare & Life Sciences,250-999,NL,Netherlands,Benelux,Eindhoven,51.45946,5.41808,192.2,false,1,8,0.0,200500.0,Prospect
+ACC-10481,Polaris Bank S.r.l.,Financial Services,"5,000-19,999",IT,Italy,Southern Europe,Turin,45.11726,7.68517,3681.2,false,1,3,0.0,457000.0,Prospect
+ACC-10487,Dunmore Retail S.A.,Retail & Consumer Goods,250-999,PT,Portugal,Southern Europe,Lisbon,38.73465,-9.14182,138.1,false,1,4,0.0,70500.0,Prospect
+ACC-10166,Tauern Transport plc,Transport & Logistics,250-999,GB,United Kingdom,UK & Ireland,Birmingham,52.47644130434782,-1.896073913043478,209.1,true,1,6,0.0,0.0,Prospect
+ACC-10282,Saxon Biotech Oyj,Healthcare & Life Sciences,"1,000-4,999",FI,Finland,Nordics,Espoo,60.21594,24.63422,804.4,false,1,6,0.0,83500.0,Prospect
+ACC-10137,Baltica Municipal Services SAS,Public Sector,"20,000+",FR,France,France,Lille,50.61943,3.06352,13835.2,false,1,9,0.0,1018000.0,Prospect
+ACC-10121,Valora Finance plc,Financial Services,<250,GB,United Kingdom,UK & Ireland,Birmingham,52.45495,-1.89036,36.8,false,2,4,0.0,122625.72200000001,Prospect
+ACC-10125,Tamsin Media SE,Telecom & Media,<250,DE,Germany,DACH,Frankfurt,50.13333,8.70621,20.9,false,1,2,37500.0,0.0,Lapsed Customer
+ACC-10255,Ysolde Health B.V.,Healthcare & Life Sciences,250-999,NL,Netherlands,Benelux,Rotterdam,51.93031,4.45555,304.2,false,2,6,91000.0,60000.0,Active Customer
+ACC-10292,Iberia Consumer A/S,Retail & Consumer Goods,250-999,DK,Denmark,Nordics,Copenhagen,55.63495,12.56231,129.7,false,1,4,328398.848,0.0,Active Customer
+ACC-10703,Tamsin Agency S.A.,Public Sector,"5,000-19,999",ES,Spain,Southern Europe,Barcelona,41.36261,2.14087,2853.1,false,1,9,691500.0,572500.0,Lapsed Customer
+ACC-10113,Rhein Power AS,Energy & Utilities,250-999,NO,Norway,Nordics,Bergen,60.38855,5.27083,94.3,false,1,5,594325.62,0.0,Active Customer
+ACC-10399,Oakridge Invest Sp. z o.o.,Financial Services,250-999,PL,Poland,CEE,Kraków,50.06156,19.99279,156.2,false,1,10,1376435.3510000003,174705.18,Active Customer
+ACC-10709,Estrella Brands SE,Retail & Consumer Goods,250-999,DE,Germany,DACH,Frankfurt,50.09969,8.68303,203.0,false,1,2,232500.0,0.0,Lapsed Customer
+ACC-10452,Umbria Institute SE,Public Sector,250-999,DE,Germany,DACH,Stuttgart,48.76935,9.21287,136.6,false,1,3,88500.0,0.0,Lapsed Customer
+ACC-10300,Fontaine Finance AS,Financial Services,"1,000-4,999",NO,Norway,Nordics,Bergen,60.31791,5.2925,1185.0,false,1,4,225406.36200000002,0.0,Active Customer
+ACC-10683,Solvik Finance AG,Financial Services,"1,000-4,999",CH,Switzerland,DACH,Basel,47.57616,7.59927,1272.5,false,1,3,356488.776,0.0,Active Customer
+ACC-10108,Novara Precision S.r.l.,Manufacturing & Automotive,"1,000-4,999",IT,Italy,Southern Europe,Rome,41.89369,12.48741,834.2,false,1,3,305500.0,0.0,Active Customer
+ACC-10588,Noord Agency plc,Public Sector,250-999,GB,United Kingdom,UK & Ireland,Edinburgh,55.95750176470588,-3.191166470588236,110.8,true,1,11,37875.006,0.0,Lapsed Customer
+ACC-10060,Bergmann Brands AB,Retail & Consumer Goods,"5,000-19,999",SE,Sweden,Nordics,Stockholm,59.332935,18.0789075,3841.7,true,1,9,191087.74800000002,0.0,Lapsed Customer
+ACC-10694,Fontaine Foods GmbH,Retail & Consumer Goods,250-999,DE,Germany,DACH,Hamburg,53.53163,10.01498,120.7,false,1,1,128000.0,0.0,Lapsed Customer
+ACC-10201,Vistula Broadcast AG,Telecom & Media,"1,000-4,999",DE,Germany,DACH,Hamburg,53.58123,9.9853,1214.9,false,1,4,0.0,218500.0,Prospect
+ACC-10021,Riviera Pharma AG,Healthcare & Life Sciences,<250,DE,Germany,DACH,Düsseldorf,51.26778,6.79805,46.1,false,1,1,0.0,0.0,Prospect
+ACC-10704,Granite Clinics SE,Healthcare & Life Sciences,"5,000-19,999",DE,Germany,DACH,Hamburg,53.52743,10.02914,3612.7,false,1,2,368000.0,0.0,Active Customer
+ACC-10249,Stellaris Mobility SE,Transport & Logistics,250-999,DE,Germany,DACH,Hamburg,53.60218,10.0065,225.5,false,1,2,0.0,0.0,Prospect
+ACC-10065,Harbour Biotech SE,Healthcare & Life Sciences,"5,000-19,999",DE,Germany,DACH,Berlin,52.48245,13.35696,2547.5,false,1,1,0.0,0.0,Prospect
+ACC-10334,Rhein Stores DAC,Retail & Consumer Goods,<250,IE,Ireland,UK & Ireland,Dublin,53.35595,-6.28302,29.0,false,1,6,139000.0,0.0,Active Customer
+ACC-10115,Borealis Automotive AG,Manufacturing & Automotive,250-999,CH,Switzerland,DACH,Geneva,46.27548,6.15561,210.2,false,1,3,129563.75200000001,0.0,Active Customer
+ACC-10554,Helvetia Utilities N.V.,Energy & Utilities,"1,000-4,999",NL,Netherlands,Benelux,Eindhoven,51.4732,5.45782,596.4,false,1,11,258500.0,83000.0,Active Customer
+ACC-10421,Westbrook Components S.A.,Manufacturing & Automotive,"1,000-4,999",PL,Poland,CEE,Wrocław,51.12459,17.04647,1347.3,false,1,19,2130378.1289999997,699920.1299999999,Active Customer
+ACC-10642,Kestrel Pharma N.V.,Healthcare & Life Sciences,250-999,NL,Netherlands,Benelux,Amsterdam,52.3821,4.90303,159.3,false,1,3,99000.0,0.0,Lapsed Customer
+ACC-10299,Vistula Consumer plc,Retail & Consumer Goods,"20,000+",GB,United Kingdom,UK & Ireland,Manchester,53.4406,-2.23668,9578.1,false,1,18,195354.06300000002,1304818.551,Lapsed Customer
+ACC-10098,Stellaris Energy ApS,Energy & Utilities,"20,000+",DK,Denmark,Nordics,Aarhus,56.20309,10.24144,13558.9,false,1,14,3482900.1100000003,719570.216,Active Customer
+ACC-10234,Silverline Bank AG,Financial Services,"5,000-19,999",DE,Germany,DACH,Stuttgart,48.74853,9.16284,6320.0,false,1,3,1345500.0,0.0,Active Customer
+ACC-10352,Invicta Agency Oyj,Public Sector,"5,000-19,999",FI,Finland,Nordics,Espoo,60.20896,24.68056,3635.0,false,1,15,1785000.0,1105500.0,Active Customer
+ACC-10035,Ysolde Industries AB,Manufacturing & Automotive,"1,000-4,999",SE,Sweden,Nordics,Stockholm,59.3037,18.03244,633.4,false,1,5,260500.0,0.0,Active Customer
+ACC-10379,Zentra Shipping A/S,Transport & Logistics,"5,000-19,999",DK,Denmark,Nordics,Aarhus,56.18325,10.13256,5292.4,false,1,9,2194912.6590000005,399486.825,Active Customer
+ACC-10630,Invicta Renewables A/S,Energy & Utilities,250-999,DK,Denmark,Nordics,Copenhagen,55.62838,12.54527,90.9,false,1,8,156932.891,132000.0,Lapsed Customer
+ACC-10705,Alpenkraft Grid SA,Energy & Utilities,250-999,BE,Belgium,Benelux,Brussels,50.86153,4.36399,155.4,false,1,9,492500.0,45000.0,Active Customer
+ACC-10086,Quadra Industries AG,Manufacturing & Automotive,"20,000+",DE,Germany,DACH,Berlin,52.59261,13.41805,11991.8,false,1,8,573000.0,1234500.0,Active Customer
+ACC-10631,Brightwater Foods Ltd,Retail & Consumer Goods,"1,000-4,999",GB,United Kingdom,UK & Ireland,Edinburgh,55.903,-3.161,672.9,false,1,4,0.0,0.0,Prospect
+ACC-10556,Tamsin Pharma SE,Healthcare & Life Sciences,"1,000-4,999",DE,Germany,DACH,Munich,48.14155,11.59151,2053.1,false,1,2,0.0,530000.0,Prospect
+ACC-10450,Oakridge Networks Ltd,Telecom & Media,<250,GB,United Kingdom,UK & Ireland,Edinburgh,55.93333,-3.16727,,false,1,9,0.0,22360.454999999998,Prospect
+ACC-10468,Vektor Pharma B.V.,Healthcare & Life Sciences,<250,NL,Netherlands,Benelux,Rotterdam,51.91009,4.49096,26.7,false,1,5,0.0,194000.0,Prospect
+ACC-10719,Karlsson Foods plc,Retail & Consumer Goods,250-999,GB,United Kingdom,UK & Ireland,London,51.48302,-0.11772,286.0,false,1,5,0.0,66278.682,Prospect
+ACC-10506,Aurora Public Services S.L.,Public Sector,"5,000-19,999",ES,Spain,Southern Europe,Madrid,40.40904,-3.71788,1589.3,false,1,7,0.0,560500.0,Prospect
+ACC-10695,Fontaine Industries AB,Manufacturing & Automotive,<250,SE,Sweden,Nordics,Gothenburg,57.70868133333333,11.972446000000001,36.7,true,1,4,0.0,0.0,Prospect
+ACC-10247,Bergmann Consumer S.A.,Retail & Consumer Goods,"5,000-19,999",ES,Spain,Southern Europe,Barcelona,41.34419,2.13019,1725.8,false,1,5,0.0,0.0,Prospect
+ACC-10281,Saxon Connect B.V.,Telecom & Media,"1,000-4,999",NL,Netherlands,Benelux,Amsterdam,52.32206,4.89905,1077.5,false,1,3,239000.0,0.0,Active Customer
+ACC-10462,Wexford Medical a.s.,Healthcare & Life Sciences,<250,CZ,Czechia,CEE,Brno,49.21443,16.58205,19.7,false,1,6,131770.39599999998,92702.19,Active Customer
+ACC-10206,Solvik Public Services GmbH,Public Sector,"5,000-19,999",DE,Germany,DACH,Stuttgart,48.81472,9.19533,4786.4,false,1,6,334500.0,427000.0,Active Customer
+ACC-10018,Lindholm Utilities Oyj,Energy & Utilities,"1,000-4,999",FI,Finland,Nordics,Helsinki,60.16384,24.9095,785.9,false,1,3,475500.0,0.0,Lapsed Customer
+ACC-10479,Orion Logistics SAS,Transport & Logistics,<250,FR,France,France,Paris,48.87895,2.33206,26.3,false,2,5,37500.0,112000.0,Lapsed Customer
+ACC-10553,Nordwind Utilities NV,Energy & Utilities,"1,000-4,999",BE,Belgium,Benelux,Antwerp,51.24206,4.38528,1516.6,false,1,8,388500.0,300500.0,Active Customer
+ACC-10326,Jadeport Clinics S.r.l.,Healthcare & Life Sciences,"5,000-19,999",IT,Italy,Southern Europe,Turin,45.04968,7.66295,2102.1,false,1,4,0.0,0.0,Prospect
+ACC-10466,Vektor Utilities ASA,Energy & Utilities,250-999,NO,Norway,Nordics,Bergen,60.37018,5.26736,362.9,false,1,7,626737.523,0.0,Active Customer
+ACC-10219,Olympia Media Sp. z o.o.,Telecom & Media,250-999,PL,Poland,CEE,Kraków,50.052096,19.952326,78.2,true,1,6,140132.665,0.0,Active Customer
+ACC-10095,Marisol Health S.r.l.,Healthcare & Life Sciences,"1,000-4,999",IT,Italy,Southern Europe,Rome,41.88759,12.46934,874.9,false,1,6,459500.0,220000.0,Lapsed Customer
+ACC-10385,Zephyr Broadcast AB,Telecom & Media,250-999,SE,Sweden,Nordics,Gothenburg,57.73813,11.92759,215.2,false,1,2,154513.76499999998,0.0,Active Customer
+ACC-10665,Elbe Telecom B.V.,Telecom & Media,250-999,NL,Netherlands,Benelux,Amsterdam,52.40924,4.8359,176.1,false,1,2,0.0,369000.0,Prospect
+ACC-10116,Silverline Retail S.L.,Retail & Consumer Goods,"1,000-4,999",ES,Spain,Southern Europe,Madrid,40.45455,-3.71964,756.1,false,1,4,0.0,115500.0,Prospect
+ACC-10006,Nordwind Freight ASA,Transport & Logistics,250-999,NO,Norway,Nordics,Bergen,60.36659,5.34048,282.7,false,1,3,358762.498,296563.839,Active Customer
+ACC-10639,Marisol Clinics GmbH,Healthcare & Life Sciences,"5,000-19,999",DE,Germany,DACH,Stuttgart,48.76476,9.20467,1938.5,false,1,2,0.0,561000.0,Prospect
+ACC-10215,Isola Broadcast plc,Telecom & Media,"1,000-4,999",GB,United Kingdom,UK & Ireland,Manchester,53.4817,-2.26099,1720.6,false,1,8,303258.24,0.0,Active Customer
+ACC-10165,Zephyr Automotive Lda,Manufacturing & Automotive,"5,000-19,999",PT,Portugal,Southern Europe,Porto,41.19114,-8.64137,1985.8,false,1,17,992500.0,0.0,Active Customer
+ACC-10277,Iberia Biotech AG,Healthcare & Life Sciences,"1,000-4,999",CH,Switzerland,DACH,Basel,47.59409,7.58264,681.8,false,1,2,330945.30000000005,0.0,Lapsed Customer
+ACC-10341,Aurora Brands S.r.l.,Retail & Consumer Goods,250-999,IT,Italy,Southern Europe,Milan,45.38594,9.19616,148.7,false,2,5,635500.0,0.0,Active Customer
+ACC-10112,Falkner Pharma GmbH,Healthcare & Life Sciences,"1,000-4,999",DE,Germany,DACH,Munich,48.17338,11.56529,457.4,false,1,4,282500.0,781500.0,Lapsed Customer
+ACC-10388,Gallway Health Ltd,Healthcare & Life Sciences,"5,000-19,999",IE,Ireland,UK & Ireland,Cork,51.95606,-8.4746,5866.0,false,1,11,420500.0,0.0,Active Customer
+ACC-10124,Tauern Assurance S.A.,Financial Services,"1,000-4,999",PT,Portugal,Southern Europe,Lisbon,38.73543,-9.13725,1120.9,false,1,6,663000.0,0.0,Active Customer
+ACC-10574,Wexford Connect ApS,Telecom & Media,"1,000-4,999",DK,Denmark,Nordics,Aarhus,56.18429,10.25413,1096.4,false,1,5,358602.69,0.0,Active Customer
+ACC-10106,Fontaine Broadcast SAS,Telecom & Media,<250,FR,France,France,Lyon,45.75791133333333,4.833216666666667,48.3,true,1,5,52000.0,0.0,Active Customer
+ACC-10054,Invicta Consumer Ltd,Retail & Consumer Goods,250-999,IE,Ireland,UK & Ireland,Dublin,53.37969,-6.29535,246.1,false,1,9,101500.0,102500.0,Active Customer
+ACC-10718,Vistula Precision ASA,Manufacturing & Automotive,"1,000-4,999",NO,Norway,Nordics,Bergen,60.39975,5.35557,746.7,false,1,8,860829.8099999999,326154.257,Active Customer
+ACC-10286,Fontaine Motorenwerk SA,Manufacturing & Automotive,<250,CH,Switzerland,DACH,Geneva,46.17016,6.1282,42.3,false,1,4,203515.002,0.0,Active Customer
+ACC-10522,Saxon Foods GmbH,Retail & Consumer Goods,"20,000+",DE,Germany,DACH,Hamburg,53.53131,10.0534,19002.7,false,1,5,229500.0,459000.0,Active Customer
+ACC-10244,Orion Health s.r.o.,Healthcare & Life Sciences,"5,000-19,999",CZ,Czechia,CEE,Brno,49.1772,16.59723,4291.9,false,1,19,177739.19,329202.45000000007,Active Customer
+ACC-10211,Fjordline Motorenwerk Ltd,Manufacturing & Automotive,"1,000-4,999",GB,United Kingdom,UK & Ireland,Manchester,53.5265,-2.26691,1015.5,false,2,11,1570776.3090000001,141157.539,Active Customer
+ACC-10010,Kronberg Consumer plc,Retail & Consumer Goods,250-999,GB,United Kingdom,UK & Ireland,London,51.55185,-0.15397,265.1,false,1,9,16737.546,0.0,Active Customer
+ACC-10150,Vektor Invest Sp. z o.o.,Financial Services,250-999,PL,Poland,CEE,Kraków,50.10235,19.93206,66.2,false,1,8,728164.9859999999,82779.84,Lapsed Customer
+ACC-10673,Ysolde Brands Lda,Retail & Consumer Goods,"1,000-4,999",PT,Portugal,Southern Europe,Lisbon,38.74006,-9.15936,1348.9,false,1,8,0.0,129500.0,Prospect
+ACC-10477,Stellaris Freight SA,Transport & Logistics,<250,FR,France,France,Lille,50.65842,3.08611,26.9,false,1,8,0.0,82000.0,Prospect
+ACC-10365,Danubia Assurance GmbH,Financial Services,"20,000+",DE,Germany,DACH,Munich,48.11485,11.55651,10673.1,false,1,3,0.0,292500.0,Prospect
+ACC-10309,Nordwind Foods Ltd,Retail & Consumer Goods,"1,000-4,999",IE,Ireland,UK & Ireland,Cork,51.90459,-8.48276,1625.7,false,1,3,0.0,22000.0,Prospect
+ACC-10323,Harbour Capital SAS,Financial Services,"5,000-19,999",FR,France,France,Lyon,45.73119,4.86681,1622.8,false,1,13,0.0,811500.0,Prospect
+ACC-10486,Gallway Mobility S.A.,Transport & Logistics,"5,000-19,999",ES,Spain,Southern Europe,Barcelona,41.3941,2.18835,,false,1,2,0.0,457500.0,Prospect
+ACC-10414,Jadeport Finance Ltd,Financial Services,<250,GB,United Kingdom,UK & Ireland,Edinburgh,55.91522,-3.2274,37.6,false,1,4,0.0,0.0,Prospect
+ACC-10182,Invicta Medical AG,Healthcare & Life Sciences,"1,000-4,999",DE,Germany,DACH,Stuttgart,48.7584,9.22606,992.2,false,1,4,0.0,23000.0,Prospect
+ACC-10019,Lumen Bank plc,Financial Services,250-999,GB,United Kingdom,UK & Ireland,London,51.51413,-0.14582,100.9,false,1,5,0.0,194593.293,Prospect
+ACC-10058,Nordwind Stores SAS,Retail & Consumer Goods,"1,000-4,999",FR,France,France,Toulouse,43.61413,1.44616,1062.0,false,1,9,38000.0,100500.0,Active Customer
+ACC-10434,Isola Power S.p.A.,Energy & Utilities,"1,000-4,999",IT,Italy,Southern Europe,Milan,45.43953,9.16109,1493.6,false,1,8,809000.0,360500.0,Active Customer
+ACC-10513,Gallway Consumer Ltd,Retail & Consumer Goods,250-999,GB,United Kingdom,UK & Ireland,Birmingham,52.47644130434782,-1.896073913043478,155.0,true,1,5,443703.357,0.0,Active Customer
+ACC-10146,Valora Industries S.A.,Manufacturing & Automotive,<250,PL,Poland,CEE,Warsaw,52.22825,21.01452,30.3,false,2,10,441281.052,71021.34,Active Customer
+ACC-10047,Moselle Foods SA,Retail & Consumer Goods,"1,000-4,999",CH,Switzerland,DACH,Geneva,46.18111,6.10963,1449.3,false,1,5,0.0,0.0,Prospect
+ACC-10485,Zentra Institute SA,Public Sector,250-999,CH,Switzerland,DACH,Basel,47.57089,7.59717,257.4,false,1,4,0.0,655133.512,Prospect
+ACC-10229,Aurora Media Ltd,Telecom & Media,"1,000-4,999",IE,Ireland,UK & Ireland,Cork,51.89038,-8.48633,1298.4,false,1,6,144500.0,65000.0,Active Customer
+ACC-10083,Alpenkraft Telecom B.V.,Telecom & Media,"1,000-4,999",NL,Netherlands,Benelux,Amsterdam,52.38837,4.91497,1389.2,false,1,6,159000.0,0.0,Active Customer
+ACC-10467,Fjordline Clinics plc,Healthcare & Life Sciences,"5,000-19,999",GB,United Kingdom,UK & Ireland,Birmingham,52.5033,-1.89733,3278.1,false,1,7,382906.608,101138.058,Lapsed Customer
+ACC-10034,Saxon Stores S.A.,Retail & Consumer Goods,250-999,PL,Poland,CEE,Warsaw,52.24013,21.05422,186.6,false,2,6,213919.48,180349.25999999998,Active Customer
+ACC-10330,Castellan Networks AG,Telecom & Media,"1,000-4,999",DE,Germany,DACH,Frankfurt,50.10187,8.67492,670.9,false,1,1,167000.0,0.0,Active Customer
+ACC-10222,Granite Shipping N.V.,Transport & Logistics,<250,NL,Netherlands,Benelux,Amsterdam,52.38128,4.85045,64.4,false,1,5,198000.0,89500.0,Active Customer
+ACC-10546,Umbria Industries SAS,Manufacturing & Automotive,<250,FR,France,France,Lille,50.59445,3.09041,28.4,false,1,4,18500.0,222000.0,Lapsed Customer
+ACC-10153,Kronberg Authority AS,Public Sector,250-999,NO,Norway,Nordics,Bergen,60.37233,5.38381,164.5,false,1,1,0.0,103223.783,Prospect
+ACC-10594,Solvik Components SE,Manufacturing & Automotive,250-999,DE,Germany,DACH,Munich,48.10939,11.62205,209.9,false,1,1,0.0,0.0,Prospect
+ACC-10283,Hansa Energy AG,Energy & Utilities,"1,000-4,999",CH,Switzerland,DACH,Basel,47.59585,7.56881,1162.7,false,1,0,0.0,0.0,
+ACC-10494,Tamsin Shipping SA,Transport & Logistics,<250,CH,Switzerland,DACH,Basel,47.59069,7.56534,13.4,false,2,0,0.0,0.0,
+ACC-10130,Atlas Finance AG,Financial Services,250-999,DE,Germany,DACH,Berlin,52.52251,13.38831,107.9,false,1,0,0.0,0.0,
+ACC-10056,Estrella Finance S.A.,Financial Services,"20,000+",PL,Poland,CEE,Kraków,50.04945,19.99034,19357.2,false,1,18,3672230.927,1174356.94,Active Customer
+ACC-10008,Iberia Agency S.A.,Public Sector,"1,000-4,999",ES,Spain,Southern Europe,Barcelona,41.39156,2.19914,984.2,false,1,6,108500.0,312500.0,Active Customer
+ACC-10237,Polaris Consumer GmbH,Retail & Consumer Goods,"20,000+",AT,Austria,DACH,Vienna,48.22755,16.37274,18418.0,false,1,9,2012000.0,0.0,Active Customer
+ACC-10592,Corvina Broadcast B.V.,Telecom & Media,<250,NL,Netherlands,Benelux,Rotterdam,51.90523,4.50927,46.1,false,1,8,208000.0,58000.0,Active Customer
+ACC-10567,Delta Components SAS,Manufacturing & Automotive,250-999,FR,France,France,Lyon,45.77857,4.79754,182.2,false,1,13,983000.0,34000.0,Active Customer
+ACC-10640,Saxon Assurance Sp. z o.o.,Financial Services,"20,000+",PL,Poland,CEE,Kraków,50.03334,19.97018,14703.5,false,1,9,362257.922,1729649.2199999997,Lapsed Customer
+ACC-10571,Baltica Agency B.V.,Public Sector,"5,000-19,999",NL,Netherlands,Benelux,Rotterdam,51.91224181818182,4.48857,2278.0,true,1,8,474000.0,0.0,Active Customer
+ACC-10410,Brightwater Assurance S.L.,Financial Services,"1,000-4,999",ES,Spain,Southern Europe,Barcelona,41.35551,2.18129,1340.2,false,1,6,481000.0,0.0,Active Customer
+ACC-10322,Bergmann Assurance Ltd,Financial Services,"5,000-19,999",IE,Ireland,UK & Ireland,Cork,51.93371,-8.56643,2735.6,false,1,7,851000.0,391500.0,Active Customer
+ACC-10084,Stellaris Industries SE,Manufacturing & Automotive,250-999,DE,Germany,DACH,Stuttgart,48.76674,9.21107,86.5,false,1,5,40500.0,87000.0,Active Customer
+ACC-10540,Karlsson Industries DAC,Manufacturing & Automotive,<250,IE,Ireland,UK & Ireland,Cork,51.88771,-8.46061,45.5,false,1,6,271500.0,0.0,Lapsed Customer
+ACC-10417,Westbrook Power SA,Energy & Utilities,"1,000-4,999",FR,France,France,Toulouse,43.62786,1.4356,1861.3,false,2,20,945000.0,151500.0,Active Customer
+ACC-10023,Oakridge Bank SAS,Financial Services,"20,000+",FR,France,France,Toulouse,43.57453,1.45341,20974.4,false,1,24,1968500.0,325500.0,Active Customer
+ACC-10361,Vistula Authority SAS,Public Sector,<250,FR,France,France,Lille,50.60072,3.0851,34.6,false,1,12,102000.0,866500.0,Active Customer
+ACC-10315,Riviera Components SE,Manufacturing & Automotive,"1,000-4,999",DE,Germany,DACH,Frankfurt,50.09151,8.64617,587.9,false,1,6,555500.0,65500.0,Active Customer
+ACC-10475,Corvina Brands AG,Retail & Consumer Goods,250-999,DE,Germany,DACH,Hamburg,53.5763,9.94678,202.9,false,1,6,187000.0,0.0,Active Customer
+ACC-10033,Tamsin Brands GmbH,Retail & Consumer Goods,"5,000-19,999",AT,Austria,DACH,Vienna,48.25016,16.34616,4527.2,false,1,5,1149500.0,0.0,Lapsed Customer
+ACC-10208,Ysolde Mobility SE,Transport & Logistics,"1,000-4,999",DE,Germany,DACH,Frankfurt,50.1126,8.69181,655.5,false,1,4,353500.0,0.0,Active Customer
+ACC-10433,Lusitania Health SAS,Healthcare & Life Sciences,250-999,FR,France,France,Toulouse,43.67319,1.4632,324.5,false,1,10,983500.0,409500.0,Active Customer
+ACC-10489,Karlsson Renewables N.V.,Energy & Utilities,250-999,NL,Netherlands,Benelux,Amsterdam,52.35389,4.88273,,false,1,10,687500.0,227000.0,Active Customer
+ACC-10344,Kestrel Utilities ApS,Energy & Utilities,250-999,DK,Denmark,Nordics,Copenhagen,55.64617,12.58781,219.7,false,1,8,193445.927,364257.846,Active Customer
+ACC-10176,Arcadia Health S.r.l.,Healthcare & Life Sciences,"1,000-4,999",IT,Italy,Southern Europe,Rome,41.92396,12.49906,663.5,false,1,7,173000.0,46000.0,Active Customer
+ACC-10347,Arcadia Freight ApS,Transport & Logistics,250-999,DK,Denmark,Nordics,Aarhus,56.17119,10.21539,159.1,false,1,6,195069.91499999998,157530.86100000003,Active Customer
+ACC-10011,Meridian Institute SAS,Public Sector,"1,000-4,999",FR,France,France,Toulouse,43.62259,1.46534,1236.1,false,1,5,122500.0,50000.0,Active Customer
+ACC-10538,Harbour Components SA,Manufacturing & Automotive,"5,000-19,999",CH,Switzerland,DACH,Geneva,46.16858,6.13953,5345.1,false,1,5,525975.66,272667.81,Active Customer
+ACC-10178,Castellan Institute Oy,Public Sector,"1,000-4,999",FI,Finland,Nordics,Helsinki,60.12868,24.98216,955.6,false,1,4,0.0,68000.0,Prospect
+ACC-10602,Dunmore Industries GmbH,Manufacturing & Automotive,<250,AT,Austria,DACH,Graz,47.0809,15.43683,31.4,false,1,1,0.0,0.0,Prospect
+ACC-10240,Castellan Automotive AG,Manufacturing & Automotive,"1,000-4,999",AT,Austria,DACH,Graz,47.04266,15.46373,1301.0,false,1,1,0.0,0.0,Prospect
+ACC-10233,Orion Grid ApS,Energy & Utilities,"1,000-4,999",DK,Denmark,Nordics,Aarhus,56.15806,10.15144,934.6,false,1,5,0.0,389297.386,Prospect
+ACC-10590,Pionier Energy AG,Energy & Utilities,"5,000-19,999",DE,Germany,DACH,Frankfurt,50.10269,8.72166,4513.6,false,1,2,495500.0,0.0,Active Customer
+ACC-10458,Estrella Consumer SA,Retail & Consumer Goods,250-999,FR,France,France,Lille,50.63386,3.08818,,false,1,10,527500.0,299000.0,Active Customer
+ACC-10543,Helvetia Municipal Services Sp. z o.o.,Public Sector,"1,000-4,999",PL,Poland,CEE,Wrocław,51.05268,17.04665,710.2,false,1,7,149125.72,1041228.2399999999,Active Customer
+ACC-10077,Iberia Clinics plc,Healthcare & Life Sciences,<250,GB,United Kingdom,UK & Ireland,Manchester,53.48308,-2.23819,61.5,false,1,5,190097.08000000002,0.0,Active Customer
+ACC-10687,Fjordline Logistics ApS,Transport & Logistics,250-999,DK,Denmark,Nordics,Aarhus,56.15113,10.1887,280.3,false,2,4,311538.717,44483.04,Active Customer
+ACC-10437,Bergmann Pharma s.r.o.,Healthcare & Life Sciences,"5,000-19,999",CZ,Czechia,CEE,Brno,49.14675,16.58232,5742.6,false,1,20,1372522.064,1937045.28,Active Customer
+ACC-10072,Castellan Invest S.r.l.,Financial Services,"5,000-19,999",IT,Italy,Southern Europe,Milan,45.44844785714286,9.192499999999999,4826.9,true,1,4,516000.0,0.0,Active Customer
+ACC-10156,Saxon Precision SA,Manufacturing & Automotive,"20,000+",CH,Switzerland,DACH,Zurich,47.37958,8.52386,14035.5,false,1,10,1151864.4479999999,712042.0700000001,Active Customer
+ACC-10040,Dunmore Municipal Services SE,Public Sector,"5,000-19,999",DE,Germany,DACH,Frankfurt,50.04558,8.67712,2288.3,false,2,4,182500.0,0.0,Lapsed Customer
+ACC-10374,Helvetia Renewables S.p.A.,Energy & Utilities,"1,000-4,999",IT,Italy,Southern Europe,Rome,41.90558,12.47218,579.7,false,1,6,1117500.0,0.0,Active Customer
+ACC-10451,Cygnus Consumer N.V.,Retail & Consumer Goods,250-999,NL,Netherlands,Benelux,Eindhoven,51.45196,5.51697,220.6,false,1,6,398500.0,0.0,Active Customer
+ACC-10195,Polaris Renewables SE,Energy & Utilities,"1,000-4,999",DE,Germany,DACH,Berlin,52.52332,13.40504,1622.3,false,1,3,65500.0,0.0,Active Customer
+ACC-10181,Falkner Utilities AG,Energy & Utilities,<250,DE,Germany,DACH,Frankfurt,50.10312,8.63422,27.8,false,1,1,26500.0,0.0,Lapsed Customer
+ACC-10581,Estrella Capital Ltd,Financial Services,250-999,GB,United Kingdom,UK & Ireland,London,51.49436,-0.09864,145.1,false,1,3,132752.076,155949.84,Lapsed Customer
+ACC-10278,Rhein Components Lda,Manufacturing & Automotive,"5,000-19,999",PT,Portugal,Southern Europe,Porto,41.14643,-8.63609,1869.9,false,1,4,0.0,35500.0,Prospect
+ACC-10608,Delta Consumer AG,Retail & Consumer Goods,<250,DE,Germany,DACH,Frankfurt,50.102065416666676,8.682318333333335,51.8,true,1,2,0.0,0.0,Prospect
+ACC-10435,Orion Automotive S.A.,Manufacturing & Automotive,"5,000-19,999",ES,Spain,Southern Europe,Barcelona,41.38239,2.18319,4207.4,false,1,10,242000.0,66000.0,Active Customer
+ACC-10495,Moselle Invest AS,Financial Services,"5,000-19,999",NO,Norway,Nordics,Oslo,59.89148,10.80128,,false,1,4,364014.252,287585.62299999996,Active Customer
+ACC-10641,Danubia Power GmbH,Energy & Utilities,"1,000-4,999",DE,Germany,DACH,Frankfurt,50.11903,8.71149,314.9,false,1,9,530500.0,1419000.0,Active Customer
+ACC-10611,Solvik Agency S.p.A.,Public Sector,"20,000+",IT,Italy,Southern Europe,Rome,41.90439,12.46822,24503.8,false,1,7,1506000.0,282000.0,Active Customer
+ACC-10193,Novara Automotive plc,Manufacturing & Automotive,250-999,GB,United Kingdom,UK & Ireland,London,51.4907,-0.12756,237.2,false,1,4,42540.38,0.0,Lapsed Customer
+ACC-10134,Dunmore Foods Ltd,Retail & Consumer Goods,250-999,IE,Ireland,UK & Ireland,Cork,51.87562,-8.51251,220.8,false,2,3,0.0,0.0,Prospect
+ACC-10303,Baltica Logistics AG,Transport & Logistics,250-999,DE,Germany,DACH,Hamburg,53.54981,10.00627,159.4,false,1,1,63500.0,0.0,Active Customer
+ACC-10074,Zephyr Industries ApS,Manufacturing & Automotive,<250,DK,Denmark,Nordics,Copenhagen,55.65998,12.53591,30.8,false,1,3,104570.31999999999,0.0,Lapsed Customer
+ACC-10048,Bergmann Telecom SE,Telecom & Media,<250,DE,Germany,DACH,Berlin,52.54782,13.41863,25.7,false,1,1,78500.0,0.0,Active Customer
+ACC-10075,Pionier Utilities S.L.,Energy & Utilities,"1,000-4,999",ES,Spain,Southern Europe,Madrid,40.42786,-3.66438,784.7,false,1,4,710000.0,0.0,Active Customer
+ACC-10693,Stellaris Clinics SE,Healthcare & Life Sciences,250-999,DE,Germany,DACH,Düsseldorf,51.20274,6.75474,282.5,false,1,1,0.0,0.0,Prospect
+ACC-10175,Moselle Biotech AG,Healthcare & Life Sciences,"5,000-19,999",DE,Germany,DACH,Frankfurt,50.13958,8.66527,4830.9,false,1,1,0.0,0.0,Prospect
+ACC-10319,Iberia Bank SA,Financial Services,250-999,CH,Switzerland,DACH,Geneva,46.15747,6.15659,150.4,false,1,0,0.0,0.0,
+ACC-10186,Castellan Precision Sp. z o.o.,Manufacturing & Automotive,"1,000-4,999",PL,Poland,CEE,Warsaw,52.24842,21.02995,1107.9,false,1,16,1842476.5719999997,748702.89,Active Customer
+ACC-10272,Zentra Motorenwerk S.A.,Manufacturing & Automotive,250-999,PL,Poland,CEE,Wrocław,51.05469,17.04872,132.8,false,1,13,395906.84299999994,119335.70999999999,Active Customer
+ACC-10677,Cygnus Components plc,Manufacturing & Automotive,"5,000-19,999",GB,United Kingdom,UK & Ireland,Edinburgh,55.95750176470588,-3.191166470588236,3784.5,true,1,20,110124.67199999999,162256.635,Active Customer
+ACC-10248,Danubia Motorenwerk AG,Manufacturing & Automotive,"1,000-4,999",DE,Germany,DACH,Hamburg,53.48319,9.98728,843.3,false,1,4,238500.0,0.0,Lapsed Customer
+ACC-10037,Olympia Energy Ltd,Energy & Utilities,"20,000+",GB,United Kingdom,UK & Ireland,Manchester,53.47636,-2.26388,13715.2,false,1,20,633822.036,782386.5869999999,Lapsed Customer
+ACC-10625,Arcadia Renewables SA,Energy & Utilities,"1,000-4,999",FR,France,France,Lyon,45.77811,4.85605,848.6,false,1,15,472500.0,851000.0,Active Customer
+ACC-10658,Fjordline Automotive B.V.,Manufacturing & Automotive,<250,NL,Netherlands,Benelux,Eindhoven,51.39245,5.54339,21.1,false,1,9,235000.0,114000.0,Active Customer
+ACC-10448,Rhein Logistics Ltd,Transport & Logistics,<250,GB,United Kingdom,UK & Ireland,London,51.47848,-0.1334,47.9,false,1,5,14041.589999999998,10549.548,Lapsed Customer
+ACC-10593,Cygnus Industries plc,Manufacturing & Automotive,250-999,GB,United Kingdom,UK & Ireland,Edinburgh,55.95338,-3.1683,134.6,false,1,8,668534.477,0.0,Active Customer
+ACC-10689,Kronberg Connect Ltd,Telecom & Media,"5,000-19,999",GB,United Kingdom,UK & Ireland,Edinburgh,56.0213,-3.18615,2577.0,false,1,13,1064882.178,232319.394,Active Customer
+ACC-10180,Isola Motorenwerk S.r.l.,Manufacturing & Automotive,<250,IT,Italy,Southern Europe,Turin,45.03784,7.70065,71.3,false,1,7,105000.0,406000.0,Active Customer
+ACC-10367,Elbe Bank SE,Financial Services,"1,000-4,999",DE,Germany,DACH,Stuttgart,48.83963,9.19003,427.3,false,1,6,412500.0,99500.0,Active Customer
+ACC-10616,Gallway Automotive AG,Manufacturing & Automotive,"5,000-19,999",CH,Switzerland,DACH,Zurich,47.36901,8.59846,2435.1,false,1,5,975531.141,0.0,Active Customer
+ACC-10366,Nordwind Health plc,Healthcare & Life Sciences,250-999,GB,United Kingdom,UK & Ireland,London,51.51705,-0.12645,,false,1,4,78140.832,0.0,Lapsed Customer
+ACC-10432,Dunmore Freight S.p.A.,Transport & Logistics,250-999,IT,Italy,Southern Europe,Rome,41.93701,12.46775,195.1,false,1,4,924000.0,0.0,Lapsed Customer
+ACC-10396,Aurora Authority S.L.,Public Sector,"5,000-19,999",ES,Spain,Southern Europe,Barcelona,41.34944,2.10741,3716.5,false,1,10,190000.0,428500.0,Active Customer
+ACC-10135,Brightwater Broadcast AB,Telecom & Media,<250,SE,Sweden,Nordics,Stockholm,59.35887,18.10078,60.3,false,1,7,192405.59,130108.568,Active Customer
+ACC-10102,Ysolde Renewables Oyj,Energy & Utilities,"20,000+",FI,Finland,Nordics,Helsinki,60.17725,24.88475,18434.3,false,2,15,1858000.0,349500.0,Active Customer
+ACC-10523,Falkner Finance AB,Financial Services,"5,000-19,999",SE,Sweden,Nordics,Gothenburg,57.74058,11.97288,3563.1,false,1,6,986581.4700000001,0.0,Active Customer
+ACC-10005,Fontaine Precision Oyj,Manufacturing & Automotive,"1,000-4,999",FI,Finland,Nordics,Espoo,60.21596,24.66838,1069.3,false,1,9,524000.0,0.0,Active Customer
+ACC-10637,Vektor Components SA,Manufacturing & Automotive,"1,000-4,999",FR,France,France,Lille,50.64025,3.00143,616.6,false,2,23,480500.0,134000.0,Active Customer
+ACC-10400,Riviera Assurance A/S,Financial Services,"1,000-4,999",DK,Denmark,Nordics,Copenhagen,55.67728,12.5654,806.7,false,1,5,310269.413,1479797.732,Active Customer
+ACC-10275,Baltica Precision AS,Manufacturing & Automotive,"5,000-19,999",NO,Norway,Nordics,Bergen,60.42354,5.26904,5167.0,false,1,9,1268705.712,0.0,Active Customer
+ACC-10009,Wexford Assurance GmbH,Financial Services,"5,000-19,999",AT,Austria,DACH,Graz,47.08894,15.39529,3079.9,false,1,6,227000.0,0.0,Lapsed Customer
+ACC-10122,Isola Industries Ltd,Manufacturing & Automotive,"1,000-4,999",GB,United Kingdom,UK & Ireland,Birmingham,52.47547,-1.92067,866.0,false,1,6,488556.54,0.0,Active Customer
+ACC-10407,Orion Brands B.V.,Retail & Consumer Goods,"5,000-19,999",NL,Netherlands,Benelux,Amsterdam,52.31416,4.88658,6506.0,false,1,3,105500.0,0.0,Lapsed Customer
+ACC-10052,Jadeport Pharma B.V.,Healthcare & Life Sciences,"1,000-4,999",NL,Netherlands,Benelux,Rotterdam,51.91397,4.516,1136.2,false,1,5,283500.0,522500.0,Active Customer
+ACC-10090,Zentra Brands AS,Retail & Consumer Goods,"1,000-4,999",NO,Norway,Nordics,Bergen,60.38015,5.29377,752.2,false,1,1,0.0,0.0,Prospect
+ACC-10498,Corvina Consumer Ltd,Retail & Consumer Goods,250-999,GB,United Kingdom,UK & Ireland,Manchester,53.48441,-2.23747,392.8,false,1,9,0.0,0.0,Prospect
+ACC-10268,Baltica Networks Ltd,Telecom & Media,"1,000-4,999",GB,United Kingdom,UK & Ireland,Manchester,53.45911,-2.23166,1078.6,false,1,7,0.0,0.0,Prospect
+ACC-10205,Vistula Networks S.r.l.,Telecom & Media,<250,IT,Italy,Southern Europe,Rome,41.86166,12.44168,16.3,false,1,2,0.0,0.0,Prospect
+ACC-10070,Kestrel Municipal Services SA,Public Sector,<250,CH,Switzerland,DACH,Geneva,46.22648,6.13445,43.3,false,1,1,0.0,27677.838,Prospect
+ACC-10353,Harbour Automotive S.L.,Manufacturing & Automotive,"20,000+",ES,Spain,Southern Europe,Barcelona,41.33076,2.2193,16621.8,false,1,14,0.0,0.0,Prospect
+ACC-10646,Olympia Networks AG,Telecom & Media,250-999,CH,Switzerland,DACH,Basel,47.55367,7.56476,319.1,false,1,2,0.0,0.0,Prospect
+ACC-10457,Tamsin Public Services GmbH,Public Sector,"5,000-19,999",DE,Germany,DACH,Düsseldorf,51.2482,6.77076,,false,1,1,0.0,298000.0,Prospect
+ACC-10354,Granite Utilities AG,Energy & Utilities,<250,DE,Germany,DACH,Munich,48.12861,11.55964,70.1,false,1,5,205500.0,0.0,Active Customer
+ACC-10667,Oakridge Freight A/S,Transport & Logistics,"1,000-4,999",DK,Denmark,Nordics,Aarhus,56.14413,10.17913,1519.6,false,1,4,78149.883,175774.203,Active Customer
+ACC-10427,Noord Authority plc,Public Sector,"5,000-19,999",GB,United Kingdom,UK & Ireland,Birmingham,52.48075,-1.85863,2476.0,false,1,12,583715.196,2073109.483,Active Customer
+ACC-10587,Hansa Networks plc,Telecom & Media,250-999,GB,United Kingdom,UK & Ireland,Birmingham,52.51524,-1.8507,255.4,false,1,8,299085.08200000005,63000.0,Active Customer
+ACC-10676,Karlsson Freight B.V.,Transport & Logistics,<250,NL,Netherlands,Benelux,Amsterdam,52.39061,4.94668,42.8,false,1,6,402500.0,242500.0,Active Customer
+ACC-10618,Arcadia Municipal Services Ltd,Public Sector,"1,000-4,999",GB,United Kingdom,UK & Ireland,Edinburgh,55.90097,-3.18389,1093.9,false,1,6,118030.90800000001,30845.961,Lapsed Customer
+ACC-10085,Silverline Public Services GmbH,Public Sector,"5,000-19,999",DE,Germany,DACH,Munich,48.17792,11.60186,,false,1,8,2261500.0,950500.0,Active Customer
+ACC-10231,Invicta Authority S.r.l.,Public Sector,"5,000-19,999",IT,Italy,Southern Europe,Turin,45.09487,7.69915,1841.6,false,1,7,256500.0,0.0,Active Customer
+ACC-10708,Marisol Energy AB,Energy & Utilities,"5,000-19,999",SE,Sweden,Nordics,Stockholm,59.3926,18.11069,3157.7,false,1,10,1529593.4030000002,0.0,Active Customer
+ACC-10118,Isola Capital Ltd,Financial Services,"20,000+",GB,United Kingdom,UK & Ireland,Birmingham,52.4612,-1.91347,5929.3,false,1,17,1138982.182,879052.554,Active Customer
+ACC-10302,Baltica Pharma SE,Healthcare & Life Sciences,"5,000-19,999",DE,Germany,DACH,Munich,48.08144,11.56523,3070.5,false,1,3,0.0,77500.0,Prospect
+ACC-10271,Marisol Authority S.r.l.,Public Sector,250-999,IT,Italy,Southern Europe,Milan,45.45643,9.18872,185.7,false,1,2,0.0,0.0,Prospect
+ACC-10332,Castellan Capital N.V.,Financial Services,"1,000-4,999",NL,Netherlands,Benelux,Eindhoven,51.40079,5.4931,422.1,false,1,4,97500.0,0.0,Active Customer
+ACC-10483,Valora Renewables AB,Energy & Utilities,250-999,SE,Sweden,Nordics,Gothenburg,57.75488,11.97694,226.3,false,1,4,50964.48,0.0,Lapsed Customer
+ACC-10649,Kestrel Invest plc,Financial Services,<250,GB,United Kingdom,UK & Ireland,Birmingham,52.50373,-1.91226,23.3,false,1,2,0.0,79809.624,Prospect
+ACC-10043,Falkner Retail SE,Retail & Consumer Goods,250-999,DE,Germany,DACH,Berlin,52.57186,13.37539,163.2,false,1,2,19000.0,57000.0,Lapsed Customer
+ACC-10471,Lindholm Power S.A.,Energy & Utilities,"1,000-4,999",PL,Poland,CEE,Warsaw,52.25027,21.02881,811.9,false,1,9,142157.106,0.0,Active Customer
+ACC-10586,Pionier Brands S.A.,Retail & Consumer Goods,"20,000+",ES,Spain,Southern Europe,Barcelona,41.32087,2.16632,,false,1,9,318000.0,0.0,Active Customer
+ACC-10545,Isola Stores SE,Retail & Consumer Goods,<250,DE,Germany,DACH,Stuttgart,48.80209,9.16846,49.8,false,1,3,89000.0,0.0,Lapsed Customer
+ACC-10081,Rhein Retail S.A.,Retail & Consumer Goods,"1,000-4,999",ES,Spain,Southern Europe,Barcelona,41.38519,2.25093,984.0,false,1,4,135000.0,0.0,Active Customer
+ACC-10316,Dunmore Automotive Ltd,Manufacturing & Automotive,"1,000-4,999",GB,United Kingdom,UK & Ireland,Edinburgh,55.99576,-3.23678,1202.7,false,1,14,252654.20799999998,465212.133,Active Customer
+ACC-10066,Isola Mobility B.V.,Transport & Logistics,"5,000-19,999",NL,Netherlands,Benelux,Eindhoven,51.39862,5.4007,3576.9,false,2,9,36000.0,65000.0,Active Customer
+ACC-10264,Elbe Automotive S.A.,Manufacturing & Automotive,"1,000-4,999",PL,Poland,CEE,Kraków,50.01739,19.94575,824.2,false,1,13,615598.814,567761.61,Active Customer
+ACC-10500,Delta Utilities a.s.,Energy & Utilities,"1,000-4,999",CZ,Czechia,CEE,Brno,49.19403,16.63784,881.0,false,1,15,2286014.452,484585.85000000003,Active Customer
+ACC-10583,Saxon Finance SAS,Financial Services,250-999,FR,France,France,Paris,48.85017,2.37517,187.5,false,1,6,483500.0,153000.0,Lapsed Customer
+ACC-10196,Rhein Automotive S.r.l.,Manufacturing & Automotive,250-999,IT,Italy,Southern Europe,Turin,45.073478333333334,7.680930416666668,98.5,true,1,9,52000.0,66000.0,Lapsed Customer
+ACC-10644,Lindholm Public Services DAC,Public Sector,"1,000-4,999",IE,Ireland,UK & Ireland,Cork,51.92676,-8.43804,877.3,false,1,6,78500.0,0.0,Active Customer
+ACC-10536,Alpenkraft Bank Ltd,Financial Services,"5,000-19,999",GB,United Kingdom,UK & Ireland,Manchester,53.43606,-2.26436,4387.4,false,1,9,269454.53,287131.176,Active Customer
+ACC-10558,Meridian Grid AB,Energy & Utilities,"20,000+",SE,Sweden,Nordics,Gothenburg,57.72843,11.96977,15852.7,false,1,18,2768391.166,1055518.8,Lapsed Customer
+ACC-10478,Stellaris Biotech Ltd,Healthcare & Life Sciences,"20,000+",GB,United Kingdom,UK & Ireland,Birmingham,52.49292,-1.85411,,false,1,16,259046.53900000002,1832374.428,Lapsed Customer
+ACC-10080,Baltica Retail SAS,Retail & Consumer Goods,"5,000-19,999",FR,France,France,Lille,50.62047,3.06256,4483.6,false,1,22,1820000.0,1347500.0,Active Customer
+ACC-10563,Tauern Utilities AG,Energy & Utilities,"5,000-19,999",CH,Switzerland,DACH,Zurich,47.39892,8.59163,4785.6,false,1,10,1256076.655,170908.366,Active Customer
+ACC-10119,Lusitania Clinics SE,Healthcare & Life Sciences,"1,000-4,999",DE,Germany,DACH,Stuttgart,48.80939,9.17565,595.9,false,1,3,140000.0,307000.0,Lapsed Customer
+ACC-10443,Rhein Renewables AG,Energy & Utilities,250-999,CH,Switzerland,DACH,Zurich,47.3787,8.51141,176.0,false,1,2,237500.0,0.0,Lapsed Customer
+ACC-10167,Quadra Medical GmbH,Healthcare & Life Sciences,"5,000-19,999",DE,Germany,DACH,Munich,48.12792,11.56052,4957.9,false,1,2,983000.0,0.0,Active Customer
+ACC-10294,Zephyr Capital S.p.A.,Financial Services,"5,000-19,999",IT,Italy,Southern Europe,Rome,41.88825,12.52279,2567.6,false,1,5,384000.0,509500.0,Active Customer
+ACC-10682,Lumen Pharma S.L.,Healthcare & Life Sciences,"1,000-4,999",ES,Spain,Southern Europe,Madrid,40.41169,-3.70217,1284.5,false,1,5,1014000.0,0.0,Active Customer
+ACC-10307,Olympia Components Sp. z o.o.,Manufacturing & Automotive,"1,000-4,999",PL,Poland,CEE,Wrocław,51.08161,17.05921,1269.8,false,1,15,953783.0290000001,297031.24,Active Customer
+ACC-10270,Granite Assurance Ltd,Financial Services,250-999,GB,United Kingdom,UK & Ireland,Manchester,53.52174,-2.22776,194.6,false,1,10,37788.228,194707.962,Active Customer
+ACC-10266,Cygnus Assurance a.s.,Financial Services,250-999,CZ,Czechia,CEE,Prague,50.07141,14.45451,135.9,false,1,6,120867.264,451155.3500000001,Active Customer
+ACC-10626,Olympia Industries GmbH,Manufacturing & Automotive,250-999,DE,Germany,DACH,Munich,48.140836521739125,11.58371608695652,216.0,true,1,2,172000.0,0.0,Active Customer
+ACC-10265,Zephyr Clinics Oy,Healthcare & Life Sciences,"5,000-19,999",FI,Finland,Nordics,Espoo,60.16713,24.65688,5281.8,false,1,4,0.0,696000.0,Prospect
+ACC-10325,Zentra Automotive SE,Manufacturing & Automotive,"1,000-4,999",DE,Germany,DACH,Frankfurt,50.0841,8.72081,524.5,false,1,6,0.0,299000.0,Prospect
+ACC-10674,Fontaine Networks Oyj,Telecom & Media,250-999,FI,Finland,Nordics,Helsinki,60.1776,24.96486,200.8,false,1,3,0.0,217500.0,Prospect
+ACC-10335,Moselle Institute GmbH,Public Sector,"20,000+",DE,Germany,DACH,Munich,48.14395,11.60396,15536.6,false,1,4,0.0,1051000.0,Prospect
+ACC-10096,Dunmore Utilities S.A.,Energy & Utilities,250-999,PT,Portugal,Southern Europe,Porto,41.18501,-8.60682,168.9,false,1,6,0.0,312500.0,Prospect
+ACC-10120,Riviera Finance S.à r.l.,Financial Services,"1,000-4,999",LU,Luxembourg,Benelux,Luxembourg,49.58368,6.14776,823.7,false,1,6,0.0,0.0,Prospect
+ACC-10250,Kestrel Agency S.r.l.,Public Sector,"5,000-19,999",IT,Italy,Southern Europe,Rome,41.87872,12.52234,2020.9,false,1,5,0.0,265000.0,Prospect
+ACC-10413,Estrella Mobility GmbH,Transport & Logistics,"20,000+",DE,Germany,DACH,Berlin,52.50768,13.40769,22341.0,false,1,6,4106500.0,2356500.0,Active Customer
+ACC-10713,Jadeport Assurance S.A.,Financial Services,"20,000+",PT,Portugal,Southern Europe,Lisbon,38.69317,-9.09677,24527.1,false,2,11,1921000.0,2622000.0,Lapsed Customer
+ACC-10653,Pionier Pharma AB,Healthcare & Life Sciences,250-999,SE,Sweden,Nordics,Gothenburg,57.67064,11.98705,114.9,false,1,6,131238.19900000002,0.0,Active Customer
+ACC-10143,Tamsin Authority S.à r.l.,Public Sector,"5,000-19,999",LU,Luxembourg,Benelux,Luxembourg,49.61493,6.14196,12482.2,false,1,7,350500.0,0.0,Active Customer
+ACC-10038,Moselle Utilities SAS,Energy & Utilities,<250,FR,France,France,Lyon,45.76671,4.84285,109.5,false,1,6,123500.0,135000.0,Active Customer
+ACC-10132,Olympia Power AG,Energy & Utilities,250-999,DE,Germany,DACH,Hamburg,53.55281,9.95392,176.4,false,1,5,247000.0,60000.0,Lapsed Customer
+ACC-10103,Riviera Capital S.L.,Financial Services,"1,000-4,999",ES,Spain,Southern Europe,Barcelona,41.3659,2.18923,1221.2,false,1,4,0.0,0.0,Prospect
+ACC-10440,Elbe Consumer SA,Retail & Consumer Goods,"1,000-4,999",FR,France,France,Toulouse,43.58691,1.43223,428.2,false,1,9,458500.0,242500.0,Active Customer
+ACC-10520,Orion Bank SE,Financial Services,"20,000+",DE,Germany,DACH,Düsseldorf,51.24918,6.73815,10442.7,false,1,7,2895000.0,229500.0,Active Customer
+ACC-10022,Cygnus Stores AG,Retail & Consumer Goods,250-999,DE,Germany,DACH,Munich,48.1092,11.56331,103.8,false,1,1,27000.0,0.0,Active Customer
+ACC-10311,Fjordline Energy SA,Energy & Utilities,"1,000-4,999",CH,Switzerland,DACH,Geneva,46.19246,6.16284,696.3,false,1,2,588594.884,0.0,Active Customer
+ACC-10032,Pionier Mobility AG,Transport & Logistics,250-999,CH,Switzerland,DACH,Basel,47.60853,7.63971,167.5,false,1,4,216046.012,0.0,Active Customer
+ACC-10209,Invicta Motorenwerk AG,Manufacturing & Automotive,250-999,DE,Germany,DACH,Munich,48.18356,11.61331,120.6,false,1,1,0.0,0.0,Prospect
+ACC-10191,Solvik Connect SE,Telecom & Media,"5,000-19,999",DE,Germany,DACH,Munich,48.12911,11.55442,6082.7,false,1,4,0.0,1689000.0,Prospect
+ACC-10117,Falkner Foods GmbH,Retail & Consumer Goods,<250,AT,Austria,DACH,Graz,47.05623,15.42626,45.4,false,1,4,23000.0,78000.0,Lapsed Customer
+ACC-10169,Bergmann Media plc,Telecom & Media,"1,000-4,999",GB,United Kingdom,UK & Ireland,Birmingham,52.48422,-1.91188,762.5,false,1,10,654933.299,0.0,Active Customer
+ACC-10634,Iberia Precision AG,Manufacturing & Automotive,"1,000-4,999",CH,Switzerland,DACH,Geneva,46.21309,6.16071,876.9,false,1,4,141419.904,0.0,Active Customer
+ACC-10200,Arcadia Invest AB,Financial Services,<250,SE,Sweden,Nordics,Gothenburg,57.66771,11.96551,46.3,false,1,4,303676.374,0.0,Lapsed Customer
+ACC-10184,Danubia Precision S.L.,Manufacturing & Automotive,"1,000-4,999",ES,Spain,Southern Europe,Madrid,40.39912,-3.70374,1236.9,false,1,12,257500.0,406000.0,Active Customer
+ACC-10675,Castellan Energy SA,Energy & Utilities,"20,000+",FR,France,France,Paris,48.84746,2.36609,10727.8,false,1,30,6644000.0,2515500.0,Active Customer
+ACC-10349,Danubia Components SE,Manufacturing & Automotive,250-999,DE,Germany,DACH,Stuttgart,48.78313521739131,9.194465217391304,177.5,true,1,2,307000.0,0.0,Active Customer
+ACC-10579,Quadra Broadcast Sp. z o.o.,Telecom & Media,"5,000-19,999",PL,Poland,CEE,Kraków,50.02662,19.96079,2697.2,false,1,7,651755.962,0.0,Active Customer
+ACC-10419,Juniper Precision Ltd,Manufacturing & Automotive,250-999,GB,United Kingdom,UK & Ireland,Edinburgh,55.95989,-3.18807,249.4,false,1,11,423982.497,62000.0,Lapsed Customer
+ACC-10263,Danubia Finance Lda,Financial Services,"1,000-4,999",PT,Portugal,Southern Europe,Porto,41.1236,-8.65721,698.2,false,1,10,590500.0,38500.0,Lapsed Customer
+ACC-10290,Tauern Capital AG,Financial Services,"20,000+",DE,Germany,DACH,Frankfurt,50.14382,8.68493,10296.9,false,1,7,3445000.0,0.0,Active Customer
+ACC-10339,Zephyr Assurance AG,Financial Services,"20,000+",DE,Germany,DACH,Frankfurt,50.11478,8.68116,11518.2,false,1,10,1310500.0,956000.0,Active Customer
+ACC-10069,Riviera Bank AB,Financial Services,<250,SE,Sweden,Nordics,Gothenburg,57.70868133333333,11.972446000000001,23.8,true,1,4,121106.28899999999,14383.362000000001,Active Customer
+ACC-10197,Juniper Retail SA,Retail & Consumer Goods,"5,000-19,999",FR,France,France,Paris,48.91105,2.33965,3026.3,false,1,17,127500.0,2014000.0,Active Customer
+ACC-10140,Meridian Renewables Ltd,Energy & Utilities,"5,000-19,999",GB,United Kingdom,UK & Ireland,London,51.50793,-0.13153,5688.5,false,1,12,102309.2,577358.415,Lapsed Customer
+ACC-10267,Kronberg Agency Ltd,Public Sector,250-999,GB,United Kingdom,UK & Ireland,Manchester,53.50928,-2.27255,150.0,false,1,8,197445.13799999998,42312.861,Lapsed Customer
+ACC-10426,Polaris Invest AG,Financial Services,"1,000-4,999",AT,Austria,DACH,Graz,47.10247,15.42274,1424.7,false,1,4,624500.0,180500.0,Active Customer
+ACC-10042,Aurora Assurance Ltd,Financial Services,250-999,GB,United Kingdom,UK & Ireland,London,51.4741,-0.07289,575.4,false,1,6,139653.481,0.0,Active Customer
+ACC-10025,Polaris Retail B.V.,Retail & Consumer Goods,"1,000-4,999",NL,Netherlands,Benelux,Amsterdam,52.36578,4.92698,958.4,false,1,6,46000.0,556500.0,Lapsed Customer
+ACC-10358,Baltica Automotive SE,Manufacturing & Automotive,"1,000-4,999",DE,Germany,DACH,Hamburg,53.56367,10.02505,936.0,false,1,4,116000.0,720000.0,Active Customer
+ACC-10418,Vektor Institute SA,Public Sector,250-999,FR,France,France,Toulouse,43.60199,1.44057,187.9,false,2,10,0.0,198000.0,Prospect
+ACC-10039,Gallway Freight SAS,Transport & Logistics,"5,000-19,999",FR,France,France,Lyon,45.7201,4.81828,3970.9,false,1,13,0.0,922500.0,Prospect
+ACC-10301,Zephyr Transport Ltd,Transport & Logistics,"1,000-4,999",GB,United Kingdom,UK & Ireland,Edinburgh,55.96205,-3.15753,463.6,false,2,8,0.0,31304.637,Prospect
+ACC-10111,Tauern Retail Lda,Retail & Consumer Goods,250-999,PT,Portugal,Southern Europe,Lisbon,38.72298,-9.131986,227.7,true,1,5,0.0,0.0,Prospect
+ACC-10036,Harbour Institute S.A.,Public Sector,"5,000-19,999",ES,Spain,Southern Europe,Madrid,40.41792,-3.71853,3070.0,false,1,3,0.0,164500.0,Prospect
+ACC-10252,Lindholm Pharma AG,Healthcare & Life Sciences,"5,000-19,999",DE,Germany,DACH,Hamburg,53.5165,10.01436,2181.8,false,1,4,0.0,0.0,Prospect
+ACC-10530,Estrella Automotive SE,Manufacturing & Automotive,250-999,DE,Germany,DACH,Stuttgart,48.78717,9.20807,172.0,false,1,2,0.0,0.0,Prospect
+ACC-10564,Granite Power N.V.,Energy & Utilities,"1,000-4,999",NL,Netherlands,Benelux,Eindhoven,51.44633,5.48618,623.6,false,1,16,1096000.0,264500.0,Active Customer
+ACC-10207,Lusitania Biotech GmbH,Healthcare & Life Sciences,250-999,DE,Germany,DACH,Berlin,52.5027,13.42179,225.8,false,1,5,525500.0,714000.0,Active Customer
+ACC-10114,Kronberg Stores S.p.A.,Retail & Consumer Goods,"5,000-19,999",IT,Italy,Southern Europe,Turin,45.09355,7.69517,2630.6,false,1,7,339000.0,59000.0,Active Customer
+ACC-10028,Juniper Connect NV,Telecom & Media,"5,000-19,999",BE,Belgium,Benelux,Brussels,50.82291,4.37995,4082.6,false,1,6,248500.0,941500.0,Active Customer
+ACC-10152,Alpenkraft Renewables S.p.A.,Energy & Utilities,"5,000-19,999",IT,Italy,Southern Europe,Rome,41.91737,12.44993,4090.4,false,1,5,181000.0,360000.0,Lapsed Customer
+ACC-10656,Noord Retail Ltd,Retail & Consumer Goods,250-999,GB,United Kingdom,UK & Ireland,Manchester,53.41081,-2.27469,231.4,false,1,5,234249.353,122581.161,Lapsed Customer
+ACC-10474,Nordwind Components SA,Manufacturing & Automotive,"1,000-4,999",CH,Switzerland,DACH,Zurich,47.35999,8.54122,726.5,false,1,5,230087.374,130898.81800000001,Lapsed Customer
+ACC-10402,Fjordline Brands AB,Retail & Consumer Goods,"5,000-19,999",SE,Sweden,Nordics,Gothenburg,57.65017,11.99618,1801.8,false,1,5,486923.88800000004,49587.216,Active Customer
+ACC-10241,Gallway Industries ApS,Manufacturing & Automotive,"20,000+",DK,Denmark,Nordics,Aarhus,56.13513,10.17795,7798.0,false,1,7,86137.608,584448.8940000001,Active Customer
+ACC-10104,Estrella Industries SE,Manufacturing & Automotive,<250,DE,Germany,DACH,Frankfurt,50.07897,8.68906,22.6,false,1,1,17500.0,0.0,Active Customer
+ACC-10235,Arcadia Precision GmbH,Manufacturing & Automotive,250-999,DE,Germany,DACH,Munich,48.140836521739125,11.58371608695652,167.3,true,1,2,413500.0,0.0,Active Customer
+ACC-10390,Saxon Medical AB,Healthcare & Life Sciences,"1,000-4,999",SE,Sweden,Nordics,Gothenburg,57.77603,11.96689,1064.4,false,1,7,278674.683,153118.434,Active Customer
+ACC-10412,Quadra Finance plc,Financial Services,"1,000-4,999",GB,United Kingdom,UK & Ireland,Birmingham,52.50907,-1.86543,726.6,false,1,10,188753.39899999998,0.0,Lapsed Customer
+ACC-10582,Wexford Clinics SE,Healthcare & Life Sciences,250-999,DE,Germany,DACH,Berlin,52.57823,13.42664,323.0,false,1,6,729000.0,254000.0,Active Customer
+ACC-10463,Isola Municipal Services N.V.,Public Sector,250-999,NL,Netherlands,Benelux,Eindhoven,51.4269,5.465,243.0,false,1,3,138000.0,117000.0,Lapsed Customer
+ACC-10517,Danubia Clinics Oyj,Healthcare & Life Sciences,250-999,FI,Finland,Nordics,Helsinki,60.18306,25.0003,128.4,false,1,3,0.0,0.0,Prospect
+ACC-10670,Cygnus Networks AB,Telecom & Media,250-999,SE,Sweden,Nordics,Stockholm,59.33838,18.06138,242.4,false,1,1,0.0,107384.97,Prospect
+ACC-10516,Helvetia Bank GmbH,Financial Services,"5,000-19,999",DE,Germany,DACH,Munich,48.14298,11.64915,3747.0,false,1,1,76000.0,0.0,Lapsed Customer
+ACC-10604,Lusitania Invest AG,Financial Services,250-999,CH,Switzerland,DACH,Basel,47.56827,7.64897,119.5,false,1,0,0.0,0.0,
+ACC-10002,Falkner Authority AS,Public Sector,250-999,NO,Norway,Nordics,Oslo,59.88841,10.77838,245.7,false,1,0,0.0,0.0,
+ACC-10524,Lumen Components S.A.,Manufacturing & Automotive,"1,000-4,999",PL,Poland,CEE,Wrocław,51.08361,17.04605,,false,1,14,756950.902,0.0,Active Customer
+ACC-10442,Karlsson Networks S.L.,Telecom & Media,250-999,ES,Spain,Southern Europe,Barcelona,41.36844,2.16835,309.3,false,1,7,630000.0,333500.0,Active Customer
+ACC-10595,Arcadia Utilities N.V.,Energy & Utilities,"5,000-19,999",NL,Netherlands,Benelux,Amsterdam,52.41684,4.8894,5903.6,false,1,11,653500.0,860500.0,Active Customer
+ACC-10158,Umbria Health Sp. z o.o.,Healthcare & Life Sciences,"20,000+",PL,Poland,CEE,Kraków,50.052096,19.952326,9466.0,true,1,14,1801054.23,472404.26999999996,Active Customer
+ACC-10652,Invicta Shipping s.r.o.,Transport & Logistics,<250,CZ,Czechia,CEE,Prague,50.08545,14.45489,40.3,false,1,6,332589.752,58524.880000000005,Active Customer
+ACC-10473,Estrella Assurance Sp. z o.o.,Financial Services,"1,000-4,999",PL,Poland,CEE,Wrocław,51.05053,17.04735,519.0,false,1,15,1713034.778,175227.78,Active Customer
+ACC-10535,Noord Media S.L.,Telecom & Media,"1,000-4,999",ES,Spain,Southern Europe,Barcelona,41.33216,2.19889,966.1,false,1,9,343500.0,64500.0,Active Customer
+ACC-10648,Cygnus Bank Ltd,Financial Services,"1,000-4,999",GB,United Kingdom,UK & Ireland,Birmingham,52.48858,-1.96003,866.8,false,1,10,718855.299,348937.767,Active Customer
+ACC-10465,Delta Automotive Lda,Manufacturing & Automotive,"1,000-4,999",PT,Portugal,Southern Europe,Porto,41.18416,-8.64983,471.4,false,1,6,171000.0,519500.0,Lapsed Customer
+ACC-10612,Westbrook Authority A/S,Public Sector,"20,000+",DK,Denmark,Nordics,Copenhagen,55.65642,12.56418,14005.8,false,1,9,1390778.966,122050.341,Active Customer
+ACC-10079,Delta Industries SAS,Manufacturing & Automotive,<250,FR,France,France,Lille,50.6202,3.11512,,false,1,14,264000.0,0.0,Active Customer
+ACC-10446,Danubia Renewables ApS,Energy & Utilities,"5,000-19,999",DK,Denmark,Nordics,Aarhus,56.21221,10.18859,3932.4,false,1,4,1744912.442,0.0,Lapsed Customer
+ACC-10627,Riviera Renewables AB,Energy & Utilities,"20,000+",SE,Sweden,Nordics,Stockholm,59.35705,18.09634,14407.4,false,1,14,4461742.713,1548244.866,Active Customer
+ACC-10511,Cygnus Institute S.A.,Public Sector,"1,000-4,999",PL,Poland,CEE,Warsaw,52.24716,20.97511,1038.2,false,1,7,45154.560000000005,230597.24999999997,Active Customer
+ACC-10669,Brightwater Industries A/S,Manufacturing & Automotive,"1,000-4,999",DK,Denmark,Nordics,Copenhagen,55.62909,12.57458,988.5,false,1,5,55500.0,131476.50900000002,Active Customer
+ACC-10690,Valora Assurance Ltd,Financial Services,"5,000-19,999",GB,United Kingdom,UK & Ireland,London,51.52351,-0.10347,4167.3,false,1,8,415820.85599999997,849009.276,Lapsed Customer
+ACC-10615,Hansa Shipping SE,Transport & Logistics,250-999,DE,Germany,DACH,Berlin,52.56289,13.4127,253.2,false,1,2,0.0,0.0,Prospect
+ACC-10570,Oakridge Capital S.r.l.,Financial Services,"5,000-19,999",IT,Italy,Southern Europe,Turin,45.12635,7.66693,3398.6,false,2,10,0.0,371000.0,Prospect
+ACC-10160,Karlsson Medical plc,Healthcare & Life Sciences,"1,000-4,999",GB,United Kingdom,UK & Ireland,Edinburgh,55.96308,-3.27592,1049.0,false,1,6,0.0,142074.891,Prospect
+ACC-10456,Solvik Freight AG,Transport & Logistics,"1,000-4,999",DE,Germany,DACH,Berlin,52.51471,13.41701,286.5,false,1,1,0.0,0.0,Prospect
+ACC-10041,Jadeport Energy S.p.A.,Energy & Utilities,"1,000-4,999",IT,Italy,Southern Europe,Milan,45.43769,9.18717,445.5,false,1,3,0.0,20500.0,Prospect
+ACC-10508,Zephyr Biotech ASA,Healthcare & Life Sciences,250-999,NO,Norway,Nordics,Bergen,60.37207,5.35372,209.4,false,1,3,0.0,950457.2479999999,Prospect
+ACC-10369,Fontaine Components Ltd,Manufacturing & Automotive,<250,IE,Ireland,UK & Ireland,Cork,51.86803,-8.4739,42.9,false,1,3,0.0,0.0,Prospect
+ACC-10712,Riviera Automotive SE,Manufacturing & Automotive,"1,000-4,999",DE,Germany,DACH,Düsseldorf,51.23892,6.8315,688.9,false,1,2,0.0,0.0,Prospect
+ACC-10591,Hansa Clinics S.L.,Healthcare & Life Sciences,"1,000-4,999",ES,Spain,Southern Europe,Madrid,40.41156,-3.69057,1119.6,false,1,6,0.0,92000.0,Prospect
+ACC-10711,Kestrel Media S.L.,Telecom & Media,"1,000-4,999",ES,Spain,Southern Europe,Barcelona,41.37464466666666,2.1830119999999997,3330.3,true,1,2,0.0,0.0,Prospect
+ACC-10333,Lusitania Components SE,Manufacturing & Automotive,"1,000-4,999",DE,Germany,DACH,Stuttgart,48.78112,9.16619,,false,1,6,205000.0,0.0,Active Customer
+ACC-10210,Kestrel Medical SA,Healthcare & Life Sciences,"1,000-4,999",BE,Belgium,Benelux,Antwerp,51.22104,4.38964,436.7,false,1,8,380500.0,19000.0,Active Customer
+ACC-10597,Polaris Power S.A.,Energy & Utilities,"1,000-4,999",ES,Spain,Southern Europe,Barcelona,41.38038,2.18514,809.0,false,1,2,10000.0,0.0,Lapsed Customer
+ACC-10381,Corvina Motorenwerk GmbH,Manufacturing & Automotive,250-999,DE,Germany,DACH,Munich,48.15133,11.59868,229.6,false,1,2,0.0,0.0,Prospect
+ACC-10073,Kestrel Brands a.s.,Retail & Consumer Goods,<250,CZ,Czechia,CEE,Prague,50.04478,14.45224,38.0,false,1,5,138534.842,148020.87,Active Customer
+ACC-10578,Ysolde Agency S.A.,Public Sector,250-999,ES,Spain,Southern Europe,Madrid,40.47331,-3.68022,94.7,false,1,4,0.0,0.0,Prospect
+ACC-10190,Karlsson Institute plc,Public Sector,<250,GB,United Kingdom,UK & Ireland,Manchester,53.4729,-2.18986,38.5,false,1,1,0.0,0.0,Prospect
+ACC-10391,Gallway Pharma N.V.,Healthcare & Life Sciences,250-999,NL,Netherlands,Benelux,Eindhoven,51.3695,5.4855,74.1,false,2,4,0.0,375500.0,Prospect
+ACC-10242,Corvina Biotech Ltd,Healthcare & Life Sciences,"1,000-4,999",GB,United Kingdom,UK & Ireland,Birmingham,52.39733,-1.92742,1409.1,false,1,4,132564.528,0.0,Active Customer
+ACC-10238,Lusitania Grid S.L.,Energy & Utilities,"5,000-19,999",ES,Spain,Southern Europe,Barcelona,41.42283,2.21404,2489.0,false,1,1,0.0,0.0,Prospect
+ACC-10375,Borealis Brands SE,Retail & Consumer Goods,250-999,DE,Germany,DACH,Hamburg,53.61658,10.00132,218.5,false,1,2,271000.0,0.0,Active Customer

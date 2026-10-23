@@ -1,0 +1,67 @@
+version: 2
+
+models:
+  - name: pipeline_deals
+    description: >
+      One row per real opportunity (latest version, test records removed). All row-level business logic lives here:
+      governed probability, FX, risk flags, deal type, account status. Power BI only aggregates.
+    columns:
+      - name: opportunity_id
+        tests: [unique, not_null]
+      - name: stage
+        tests:
+          - accepted_values:
+              arguments:
+                values: [Discovery, Solution Design, Proposal, Negotiation, Closed Won, Closed Lost]
+      - name: owner_name
+        description: Resolved from the roster. NULL would mean an unresolved owner.
+        tests: [not_null]
+      - name: fx_rate
+        tests: [not_null]
+      - name: governed_probability
+        tests: [not_null]
+      - name: deal_type
+        tests:
+          - accepted_values:
+              arguments: {values: [New Logo, Expansion]}
+      - name: account_status
+        tests:
+          - accepted_values:
+              arguments: {values: [Active Customer, Lapsed Customer, Prospect, Unknown]}
+      - name: department
+        tests:
+          - accepted_values:
+              arguments: {values: [Cloud & Infrastructure, Data & AI, Cybersecurity, ERP & Business Apps]}
+  - name: pipeline_stage_stints
+    description: One row per time a deal sat in an open stage.
+    columns:
+      - name: opportunity_id
+        tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('pipeline_deals'), field: opportunity_id}
+      - name: days_in_stage
+        tests: [not_null]
+  - name: sales_team
+    columns:
+      - name: owner_email
+        tests: [unique, not_null]
+  - name: dim_accounts
+    columns:
+      - name: master_account_id
+        tests: [unique, not_null]
+  - name: rejected_records
+    description: Every raw CRM row that did not become an opportunity, with the reason.
+    columns:
+      - name: reject_reason
+        tests:
+          - accepted_values:
+              arguments: {values: [DUPLICATE_OLDER_VERSION, TEST_RECORD]}
+  - name: dq_reconciliation
+    description: Automated reconciliation to the CRM's control totals plus row bridges and integrity checks.
+    columns:
+      - name: status
+        tests:
+          - accepted_values:
+              arguments: {values: [PASS]}
+              config: {severity: error}

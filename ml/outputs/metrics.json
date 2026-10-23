@@ -1,0 +1,68 @@
+{
+  "model_version": "wp-v1-2026-09-15",
+  "chosen_model": "Logistic Regression",
+  "train_photos": 20574,
+  "train_deals": 2927,
+  "train_win_rate_per_photo": 0.4302031690483134,
+  "test_deals": 550,
+  "test_win_rate": 0.4218181818181818,
+  "final_photos": 29348,
+  "final_deals": 4061,
+  "open_deals": 724,
+  "scored": 692,
+  "backtest": [
+    {
+      "method": "Logistic Regression",
+      "brier_score": 0.2079093405569453,
+      "auc": 0.7249647581869443,
+      "forecast_won_eur": 55597093.84576459,
+      "actual_won_eur": 51283125.08400001,
+      "forecast_error_pct": 0.0841206294409409,
+      "deals_tested": 550
+    },
+    {
+      "method": "Forest",
+      "brier_score": 0.21004152664906897,
+      "auc": 0.7169811320754716,
+      "forecast_won_eur": 58770388.25061858,
+      "actual_won_eur": 51283125.08400001,
+      "forecast_error_pct": 0.1459985746647594,
+      "deals_tested": 550
+    },
+    {
+      "method": "Governed stage probability",
+      "brier_score": 0.26387272727272726,
+      "auc": 0.6652841032314032,
+      "forecast_won_eur": 78884720.45635,
+      "actual_won_eur": 51283125.08400001,
+      "forecast_error_pct": 0.5382198399013227,
+      "deals_tested": 550
+    }
+  ],
+  "top_drivers": [
+    {
+      "base_feature": "service_line",
+      "importance_share": 0.295461635567644
+    },
+    {
+      "base_feature": "stage",
+      "importance_share": 0.21570209213341812
+    },
+    {
+      "base_feature": "sales_manager",
+      "importance_share": 0.14892185067754649
+    },
+    {
+      "base_feature": "industry",
+      "importance_share": 0.13859282936608008
+    },
+    {
+      "base_feature": "sales_region",
+      "importance_share": 0.09912652091478066
+    }
+  ],
+  "model_weighted_pipeline_eur": 73766199.20607674,
+  "governed_weighted_pipeline_eur": 103994789.01929998,
+  "review_flags": 212,
+  "baseline_open_deal_probability": 0.41705145317673786
+}
