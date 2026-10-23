@@ -1,0 +1,19 @@
+{
+  "name": "Nexora Executive",
+  "dataColors": [
+    "#1F4E79",
+    "#2E75B6",
+    "#7FB2E5",
+    "#BDD7EE",
+    "#2E9E5B",
+    "#E0A526",
+    "#C0392B",
+    "#8C8C8C"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#1B2A41",
+  "tableAccent": "#1F4E79",
+  "good": "#2E9E5B",
+  "neutral": "#E0A526",
+  "bad": "#C0392B"
+}

@@ -1,0 +1,79 @@
+table dq_reconciliation
+	lineageTag: 07724242-858d-581f-8412-d0e7562bb925
+
+	column check_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 93ede261-7113-50b0-99bf-a0cb8fe53342
+		summarizeBy: none
+		sourceColumn: check_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column check_group
+		dataType: string
+		lineageTag: ddab20bf-134b-517b-9860-028477e6bba0
+		summarizeBy: none
+		sourceColumn: check_group
+
+		annotation SummarizationSetBy = Automatic
+
+	column check_name
+		dataType: string
+		lineageTag: ba9278d7-eb67-51fb-b3eb-7f6852f6d4ba
+		summarizeBy: none
+		sourceColumn: check_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column dimension
+		dataType: string
+		lineageTag: 0ac3eeb0-ba35-5d47-805c-91dadc97e6e8
+		summarizeBy: none
+		sourceColumn: dimension
+
+		annotation SummarizationSetBy = Automatic
+
+	column expected
+		dataType: double
+		lineageTag: 5479627f-89b6-53c0-a00f-be40f49e2f12
+		summarizeBy: none
+		sourceColumn: expected
+
+		annotation SummarizationSetBy = Automatic
+
+	column actual
+		dataType: double
+		lineageTag: c51579f9-7529-57ea-971c-914e0881431c
+		summarizeBy: none
+		sourceColumn: actual
+
+		annotation SummarizationSetBy = Automatic
+
+	column difference
+		dataType: double
+		lineageTag: 1bcb4a6c-4fc4-5e5e-922d-12acf7c45e49
+		summarizeBy: none
+		sourceColumn: difference
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: c7fc048d-5919-5cdf-9f52-828373e17dd1
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dq_reconciliation = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents(DataFolder & "dq_reconciliation.csv"), [Delimiter = ",", Columns = 8, Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"check_id", Int64.Type}, {"check_group", type text}, {"check_name", type text}, {"dimension", type text}, {"expected", type number}, {"actual", type number}, {"difference", type number}, {"status", type text}}, "en-US")
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,121 @@
+table sales_team
+	lineageTag: 03fb5b8e-0d70-58e7-8277-64edba34c767
+
+	column employee_id
+		dataType: string
+		lineageTag: 3814af6d-4159-5d24-ac31-1f9e9f25743a
+		summarizeBy: none
+		sourceColumn: employee_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column full_name
+		dataType: string
+		lineageTag: f6a1c2fd-c170-5f61-8bbc-e9fd7812eb17
+		summarizeBy: none
+		sourceColumn: full_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column owner_email
+		dataType: string
+		lineageTag: debd6abe-37b8-5594-96d4-c6b648566d28
+		summarizeBy: none
+		sourceColumn: owner_email
+
+		annotation SummarizationSetBy = Automatic
+
+	column department
+		dataType: string
+		lineageTag: 061fe726-948b-58df-8fa4-494d2f6b10da
+		summarizeBy: none
+		sourceColumn: department
+
+		annotation SummarizationSetBy = Automatic
+
+	column sales_manager
+		dataType: string
+		lineageTag: 9b6d1a4e-5596-5c9a-843f-f7aca01069b0
+		summarizeBy: none
+		sourceColumn: sales_manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column territory
+		dataType: string
+		lineageTag: ce233786-691a-5e25-a82a-b1cde9ab1690
+		summarizeBy: none
+		sourceColumn: territory
+
+		annotation SummarizationSetBy = Automatic
+
+	column hire_date
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 08c50bc3-6014-588d-bd0a-8941d5f1b43f
+		summarizeBy: none
+		sourceColumn: hire_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column leave_date
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: e9151bdd-8b92-5e26-89d1-aec9db3933a3
+		summarizeBy: none
+		sourceColumn: leave_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_active
+		dataType: boolean
+		lineageTag: d52b59f1-ef48-52d9-a997-c03113a5c3ba
+		summarizeBy: none
+		sourceColumn: is_active
+
+		annotation SummarizationSetBy = Automatic
+
+	column annual_quota_eur
+		dataType: double
+		lineageTag: 8c273270-3027-5d89-88dd-5d49d9a3f9b8
+		summarizeBy: sum
+		sourceColumn: annual_quota_eur
+
+		annotation SummarizationSetBy = Automatic
+
+	column active_days_ytd
+		dataType: int64
+		formatString: 0
+		lineageTag: 94265326-2b19-5a09-b493-3d5c5db1e28d
+		summarizeBy: none
+		sourceColumn: active_days_ytd
+
+		annotation SummarizationSetBy = Automatic
+
+	column prorated_quota_ytd_eur
+		dataType: double
+		lineageTag: e9612247-c096-54dc-a544-7191129294e8
+		summarizeBy: sum
+		sourceColumn: prorated_quota_ytd_eur
+
+		annotation SummarizationSetBy = Automatic
+
+	column bookings_ytd_eur
+		dataType: double
+		lineageTag: 8b7d53e7-ae2e-57c9-8d6b-b1756329eb0e
+		summarizeBy: sum
+		sourceColumn: bookings_ytd_eur
+
+		annotation SummarizationSetBy = Automatic
+
+	partition sales_team = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents(DataFolder & "sales_team.csv"), [Delimiter = ",", Columns = 13, Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"employee_id", type text}, {"full_name", type text}, {"owner_email", type text}, {"department", type text}, {"sales_manager", type text}, {"territory", type text}, {"hire_date", type date}, {"leave_date", type date}, {"is_active", type logical}, {"annual_quota_eur", type number}, {"active_days_ytd", Int64.Type}, {"prorated_quota_ytd_eur", type number}, {"bookings_ytd_eur", type number}}, "en-US")
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table

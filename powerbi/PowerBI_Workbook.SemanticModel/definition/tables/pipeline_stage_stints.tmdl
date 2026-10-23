@@ -1,0 +1,150 @@
+table pipeline_stage_stints
+	lineageTag: e2993b56-cb7c-5246-a669-c99102d9ca52
+
+	column opportunity_id
+		dataType: string
+		lineageTag: 271fe944-d89c-5b39-9bf7-307769dbd537
+		summarizeBy: none
+		sourceColumn: opportunity_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column stint_seq
+		dataType: int64
+		formatString: 0
+		lineageTag: c65cfc1c-ec81-52d9-9fda-d5f3ad2fefca
+		summarizeBy: none
+		sourceColumn: stint_seq
+
+		annotation SummarizationSetBy = Automatic
+
+	column stage
+		dataType: string
+		lineageTag: b1e87477-c813-56b7-aa4f-440b94335530
+		summarizeBy: none
+		sortByColumn: stage_order
+		sourceColumn: stage
+
+		annotation SummarizationSetBy = Automatic
+
+	column stage_order
+		dataType: int64
+		formatString: 0
+		lineageTag: 7f4c8004-680b-5ca1-8bc1-13f6c688e434
+		summarizeBy: none
+		sourceColumn: stage_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column governed_probability
+		dataType: double
+		lineageTag: b6ba7e01-807a-5ced-80bc-6353dc7e3a78
+		summarizeBy: none
+		sourceColumn: governed_probability
+
+		annotation SummarizationSetBy = Automatic
+
+	column stuck_after_days
+		dataType: int64
+		formatString: 0
+		lineageTag: 25a13bd0-f377-5703-a522-9cc44500805d
+		summarizeBy: none
+		sourceColumn: stuck_after_days
+
+		annotation SummarizationSetBy = Automatic
+
+	column entered_at
+		dataType: dateTime
+		formatString: dd mmm yyyy hh:mm
+		lineageTag: cc1a29b0-405f-50ce-8bc7-cf737c1a5f48
+		summarizeBy: none
+		sourceColumn: entered_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column exited_at
+		dataType: dateTime
+		formatString: dd mmm yyyy hh:mm
+		lineageTag: b5e012c1-720a-5dc4-89e7-e89219d975fc
+		summarizeBy: none
+		sourceColumn: exited_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column exit_type
+		dataType: string
+		lineageTag: 6022a40a-1292-56b1-83f2-46fa99f18648
+		summarizeBy: none
+		sourceColumn: exit_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column days_in_stage
+		dataType: int64
+		formatString: 0
+		lineageTag: 22c5d2c2-3a50-546a-b074-bd24fe41b905
+		summarizeBy: none
+		sourceColumn: days_in_stage
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_current_stint
+		dataType: boolean
+		lineageTag: 88198743-53a8-558a-b65e-2bb8036e271d
+		summarizeBy: none
+		sourceColumn: is_current_stint
+
+		annotation SummarizationSetBy = Automatic
+
+	column regressions_so_far
+		dataType: int64
+		formatString: 0
+		lineageTag: c3dc6de3-a2ee-5b65-9728-60b3be69e964
+		summarizeBy: none
+		sourceColumn: regressions_so_far
+
+		annotation SummarizationSetBy = Automatic
+
+	column department
+		dataType: string
+		lineageTag: e09de843-afa8-53c5-909e-64b8269f5b32
+		summarizeBy: none
+		sourceColumn: department
+
+		annotation SummarizationSetBy = Automatic
+
+	column service_line
+		dataType: string
+		lineageTag: 7b17c134-f8f8-5999-a591-25a0e009cd69
+		summarizeBy: none
+		sourceColumn: service_line
+
+		annotation SummarizationSetBy = Automatic
+
+	column sales_region
+		dataType: string
+		lineageTag: 7f9dbdb0-1a6e-53e8-9cd1-896dc6c0f9fc
+		summarizeBy: none
+		sourceColumn: sales_region
+
+		annotation SummarizationSetBy = Automatic
+
+	column owner_email
+		dataType: string
+		lineageTag: 8ad3ef67-c87b-5194-9913-d7fea3209e22
+		summarizeBy: none
+		sourceColumn: owner_email
+
+		annotation SummarizationSetBy = Automatic
+
+	partition pipeline_stage_stints = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents(DataFolder & "pipeline_stage_stints.csv"), [Delimiter = ",", Columns = 16, Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"opportunity_id", type text}, {"stint_seq", Int64.Type}, {"stage", type text}, {"stage_order", Int64.Type}, {"governed_probability", type number}, {"stuck_after_days", Int64.Type}, {"entered_at", type datetime}, {"exited_at", type datetime}, {"exit_type", type text}, {"days_in_stage", Int64.Type}, {"is_current_stint", type logical}, {"regressions_so_far", Int64.Type}, {"department", type text}, {"service_line", type text}, {"sales_region", type text}, {"owner_email", type text}}, "en-US")
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table

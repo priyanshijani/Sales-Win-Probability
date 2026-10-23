@@ -1,0 +1,113 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "395913d271c55f8d9422",
+  "position": {
+    "x": 30,
+    "y": 660,
+    "z": 14000,
+    "height": 330,
+    "width": 760,
+    "tabOrder": 14000
+  },
+  "visual": {
+    "visualType": "scatterChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pipeline_deals"
+                    }
+                  },
+                  "Property": "opportunity_id"
+                }
+              },
+              "queryRef": "pipeline_deals.opportunity_id",
+              "nativeQueryRef": "opportunity_id"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Days In Current Stage"
+                }
+              },
+              "queryRef": "_Measures.Days In Current Stage",
+              "nativeQueryRef": "Days In Current Stage"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Deal Amount EUR"
+                }
+              },
+              "queryRef": "_Measures.Deal Amount EUR",
+              "nativeQueryRef": "Deal Amount EUR"
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pipeline_deals"
+                    }
+                  },
+                  "Property": "stage"
+                }
+              },
+              "queryRef": "pipeline_deals.stage",
+              "nativeQueryRef": "stage"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Open deals: days in stage vs deal value'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

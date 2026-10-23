@@ -1,0 +1,347 @@
+table _Measures
+	lineageTag: 059c4d9d-c952-5aba-8a95-87824a219b66
+
+	measure 'Snapshot Date' = MAX ( pipeline_deals[snapshot_date] )
+		formatString: dd mmm yyyy
+		displayFolder: Context
+		lineageTag: dd4c3f29-b03b-5963-b9e7-37ad229cb7e1
+
+	measure 'Open Pipeline EUR' = CALCULATE ( SUM ( pipeline_deals[amount_eur] ), pipeline_deals[is_open] = TRUE () )
+		formatString: \€#,0.0,,\M
+		displayFolder: Pipeline health
+		lineageTag: 6ce3824e-4fa5-5d6c-b592-b2c40b58a296
+
+	measure 'Weighted Pipeline EUR' = SUM ( pipeline_deals[weighted_amount_eur] )
+		formatString: \€#,0.0,,\M
+		displayFolder: Pipeline health
+		lineageTag: 33b375c4-eb37-54c7-ab6b-7614a1c191cd
+
+	measure 'Open Deals' = CALCULATE ( COUNTROWS ( pipeline_deals ), pipeline_deals[is_open] = TRUE () )
+		formatString: #,0
+		displayFolder: Pipeline health
+		lineageTag: cb24dca8-5d22-5ee7-8bec-c8970133e712
+
+	measure 'Bookings EUR' = CALCULATE ( SUM ( pipeline_deals[amount_eur] ), pipeline_deals[is_won] = TRUE () )
+		formatString: \€#,0.0,,\M
+		displayFolder: Pipeline health
+		lineageTag: e34597d3-8737-5ded-8da4-e69102c92373
+
+	measure 'Won Deals' = CALCULATE ( COUNTROWS ( pipeline_deals ), pipeline_deals[is_won] = TRUE () )
+		formatString: #,0
+		displayFolder: Pipeline health
+		lineageTag: 5c7393f3-5a47-5fd2-9b10-0ce78b2130c9
+
+	measure 'Lost Deals' = CALCULATE ( COUNTROWS ( pipeline_deals ), pipeline_deals[is_lost] = TRUE () )
+		formatString: #,0
+		displayFolder: Pipeline health
+		lineageTag: caf5a881-08d7-5a03-8aca-e9ee28cffcd0
+
+	measure 'Avg Won Deal EUR' = DIVIDE ( [Bookings EUR], CALCULATE ( COUNTROWS ( pipeline_deals ), pipeline_deals[is_won] = TRUE (), NOT ISBLANK ( pipeline_deals[amount_eur] ) ) )
+		formatString: \€#,0,\K
+		displayFolder: Pipeline health
+		lineageTag: 4e3b3e8e-35a1-5fec-a99b-e9a30a423fdd
+
+	measure 'Win Rate (count)' = DIVIDE ( [Won Deals], [Won Deals] + [Lost Deals] )
+		formatString: 0.0%
+		displayFolder: Pipeline health
+		lineageTag: 234c9720-40f7-5bf9-821b-092d4b7fd362
+
+	measure 'Win Rate (value)' =
+			VAR won = [Bookings EUR]
+			VAR lost = CALCULATE ( SUM ( pipeline_deals[amount_eur] ), pipeline_deals[is_lost] = TRUE () )
+			RETURN DIVIDE ( won, won + lost )
+		formatString: 0.0%
+		displayFolder: Pipeline health
+		lineageTag: 60ecc82e-e9a4-596f-ba82-a6b5b1fe2701
+
+	measure 'Win Rate Last 12M' =
+			CALCULATE (
+			[Win Rate (count)],
+			DATESBETWEEN ( DimDate[Date], EDATE ( [Snapshot Date], -12 ) + 1, [Snapshot Date] )
+			)
+		formatString: 0.0%
+		displayFolder: Pipeline health
+		lineageTag: d95079de-50a0-56ad-a3e4-241270e75056
+
+	measure 'Target EUR' = SUM ( dept_quarter_summary[bookings_target_eur] )
+		formatString: \€#,0.0,,\M
+		displayFolder: Pipeline health
+		lineageTag: 4aa9166f-4bbf-53d5-bf1a-9c5c9f974127
+
+	measure 'Bookings vs Target %' = DIVIDE ( SUM ( dept_quarter_summary[bookings_eur] ), [Target EUR] )
+		formatString: 0.0%
+		displayFolder: Pipeline health
+		lineageTag: f3bfcdc8-90dd-574e-8116-1c4077ee6dbf
+
+	measure 'Pipeline Coverage x' = DIVIDE ( SUM ( dept_quarter_summary[open_pipeline_eur] ), [Target EUR] )   // healthy >= 3x
+		formatString: 0.0\x
+		displayFolder: Pipeline health
+		lineageTag: 9a64c9bc-3d23-51a2-a975-b7050d9d33ad
+
+	measure 'Commit EUR' = SUM ( dept_quarter_summary[commit_eur] )
+		formatString: \€#,0.0,,\M
+		displayFolder: Pipeline health
+		lineageTag: 2364fdab-4ed9-526b-9317-3bd328177054
+
+	measure 'Best Case EUR' = SUM ( dept_quarter_summary[best_case_eur] )
+		formatString: \€#,0.0,,\M
+		displayFolder: Pipeline health
+		lineageTag: 06bd281e-5eb8-5bb5-8b0b-4859d2299d8b
+
+	measure 'Pipeline Category EUR' = SUM ( dept_quarter_summary[pipeline_eur] )
+		formatString: \€#,0.0,,\M
+		displayFolder: Pipeline health
+		lineageTag: 2ed754e7-b634-5e3f-8782-dc5d66b9945a
+
+	measure 'Stuck Deals' = CALCULATE ( COUNTROWS ( pipeline_deals ), pipeline_deals[is_stuck] = TRUE () )
+		formatString: #,0
+		displayFolder: Velocity & risk
+		lineageTag: a4084a99-05ad-514b-a394-031a6fbdea33
+
+	measure 'Stuck EUR' = CALCULATE ( SUM ( pipeline_deals[amount_eur] ), pipeline_deals[is_stuck] = TRUE () )
+		formatString: \€#,0.0,,\M
+		displayFolder: Velocity & risk
+		lineageTag: db6fb87a-322d-50ed-866a-61ea0498406c
+
+	measure 'EUR At Risk' = CALCULATE ( SUM ( pipeline_deals[amount_eur] ), pipeline_deals[is_at_risk] = TRUE () )
+		formatString: #,0
+		displayFolder: Velocity & risk
+		lineageTag: 2d179701-276b-5621-8e42-dd507e398f95
+
+	measure 'At Risk Deals' = CALCULATE ( COUNTROWS ( pipeline_deals ), pipeline_deals[is_at_risk] = TRUE () )
+		formatString: #,0
+		displayFolder: Velocity & risk
+		lineageTag: cf385ca2-2ea9-5704-8b22-afe4f164b080
+
+	measure 'At Risk % of Pipeline' = DIVIDE ( [EUR At Risk], [Open Pipeline EUR] )
+		formatString: #,0
+		displayFolder: Velocity & risk
+		lineageTag: 4a8f72c2-1b5d-531d-823c-8c5631845d78
+
+	measure 'Avg Days in Stage' = AVERAGE ( pipeline_stage_stints[days_in_stage] )
+		formatString: 0.0
+		displayFolder: Velocity & risk
+		lineageTag: 34c40f0d-5410-502b-bbad-73e29a9a278e
+
+	measure 'Median Days in Stage' = MEDIAN ( pipeline_stage_stints[days_in_stage] )
+		formatString: 0.0
+		displayFolder: Velocity & risk
+		lineageTag: b43fe83e-60a4-5205-bb20-4c72f453d005
+
+	measure 'Avg Sales Cycle Days' = AVERAGE ( pipeline_deals[sales_cycle_days] )
+		formatString: 0.0
+		displayFolder: Velocity & risk
+		lineageTag: bf42d2a8-1ad1-5904-b24d-6ce2d70bc263
+
+	measure 'Deals Reached Stage' =
+			VAR n = SELECTEDVALUE ( DimStage[stage_order] )
+			RETURN CALCULATE ( COUNTROWS ( pipeline_deals ), pipeline_deals[max_stage_reached] >= n )
+		formatString: #,0
+		displayFolder: Velocity & risk
+		lineageTag: 27aefb8a-a981-5fba-9f8e-1212a86d46c3
+
+	measure 'Stage Conversion %' =
+			VAR n = SELECTEDVALUE ( DimStage[stage_order] )
+			RETURN
+			DIVIDE (
+			CALCULATE ( COUNTROWS ( pipeline_deals ), pipeline_deals[max_stage_reached] >= n + 1 ),
+			CALCULATE ( COUNTROWS ( pipeline_deals ), pipeline_deals[max_stage_reached] >= n )
+			)
+		formatString: 0.0%
+		displayFolder: Velocity & risk
+		lineageTag: ab65cf4a-6c0f-56e4-8122-e853ae0b161a
+
+	measure 'Forecast Honesty Gap (pts)' =
+			AVERAGEX (
+			FILTER ( pipeline_deals, pipeline_deals[is_open] && NOT ISBLANK ( pipeline_deals[rep_probability] ) ),
+			pipeline_deals[rep_probability] - pipeline_deals[governed_probability] * 100
+			)
+		formatString: 0.0
+		displayFolder: Velocity & risk
+		lineageTag: 4daef929-6a6c-5f7d-956c-ff1b68c58e63
+
+	measure 'Quota YTD EUR' = SUM ( sales_team[prorated_quota_ytd_eur] )
+		formatString: \€#,0.0,,\M
+		displayFolder: People
+		lineageTag: a5e6022d-7e92-5568-9f50-d8c407ed6725
+
+	measure 'Bookings YTD EUR' = SUM ( sales_team[bookings_ytd_eur] )
+		formatString: \€#,0.0,,\M
+		displayFolder: People
+		lineageTag: 266a4fef-2b5c-5af8-ba42-c9edf94fb28e
+
+	measure 'Quota Attainment YTD %' = DIVIDE ( [Bookings YTD EUR], [Quota YTD EUR] )
+		formatString: 0.0%
+		displayFolder: People
+		lineageTag: a69a444e-d35e-564f-9280-c20ee737af46
+
+	measure Accounts = DISTINCTCOUNT ( pipeline_deals[master_account_id] )
+		formatString: #,0
+		displayFolder: Market
+		lineageTag: 64152bd3-e3bd-581f-86ae-80ba5e6894a5
+
+	measure 'Open Pipeline per Account EUR' = DIVIDE ( [Open Pipeline EUR], [Accounts] )
+		formatString: \€#,0,\K
+		displayFolder: Market
+		lineageTag: c1492ff6-a0a9-5cb1-9a51-40bb38f6f31c
+
+	measure 'Model Weighted Pipeline EUR' = SUM ( model_scores[model_weighted_eur] )
+		formatString: \€#,0.0,,\M
+		displayFolder: Win probability model - advisory
+		lineageTag: b4318301-3ad6-5b26-8bec-f0a3ae29d420
+
+	measure 'Governed Weighted (scored deals) EUR' = SUMX ( FILTER ( model_scores, NOT ISBLANK ( model_scores[model_win_probability] ) ), model_scores[amount_eur] * model_scores[governed_probability] )
+		formatString: \€#,0.0,,\M
+		displayFolder: Win probability model - advisory
+		lineageTag: b8c9b08e-5338-5140-aab1-86ca7dcf3d5c
+
+	measure 'Model vs Governed Gap EUR' = [Model Weighted Pipeline EUR] - [Governed Weighted (scored deals) EUR]
+		formatString: \€#,0.0,,\M
+		displayFolder: Win probability model - advisory
+		lineageTag: e23aa638-a512-5887-84b5-c95159801697
+
+	measure 'Deals To Review' = CALCULATE ( COUNTROWS ( model_scores ), model_scores[model_review_flag] = "Review" )   // |model - governed| >= 25 pts
+		formatString: #,0
+		displayFolder: Win probability model - advisory
+		lineageTag: e3a06cd1-5be1-517e-9b6d-ed4d9d7ffa0a
+
+	measure 'Deals Not Scored' = CALCULATE ( COUNTROWS ( model_scores ), model_scores[model_status] <> "SCORED" )
+		formatString: #,0
+		displayFolder: Win probability model - advisory
+		lineageTag: 9b2b1b6f-b98f-56bc-b523-6537169d07d2
+
+	measure 'Checks Passed' = CALCULATE ( COUNTROWS ( dq_reconciliation ), dq_reconciliation[status] = "PASS" )
+		formatString: #,0
+		displayFolder: Data trust
+		lineageTag: 2188713f-a515-58fd-854b-6577942611db
+
+	measure 'Checks Total' = COUNTROWS ( dq_reconciliation )
+		formatString: #,0
+		displayFolder: Data trust
+		lineageTag: 73ceadbe-fe62-5b02-8cc0-2c3ecb924a08
+
+	measure 'Trust Score %' = DIVIDE ( [Checks Passed], [Checks Total] )
+		formatString: 0.0%
+		displayFolder: Data trust
+		lineageTag: c2bb7a02-ecb1-5aa5-97e1-17992e20d335
+
+	measure 'Rejected Records' = COUNTROWS ( rejected_records )
+		formatString: #,0
+		displayFolder: Data trust
+		lineageTag: 4558788a-4f06-5592-803a-74a6b5a84beb
+
+	measure 'Current Quarter' = VAR d = [Snapshot Date] RETURN YEAR ( d ) & "-Q" & QUARTER ( d )
+		displayFolder: Helper measures used by the report visuals
+		lineageTag: 4ef922b4-66a0-5daf-ae9f-71835172b5e2
+
+	measure 'Next Quarter' = VAR d = EDATE ( [Snapshot Date], 3 ) RETURN YEAR ( d ) & "-Q" & QUARTER ( d )
+		displayFolder: Helper measures used by the report visuals
+		lineageTag: 33ff81da-6dad-5bdd-ae26-b999f2227c7b
+
+	measure 'Current Quarter Attainment %' = VAR q = [Current Quarter] RETURN CALCULATE ( [Bookings vs Target %], dept_quarter_summary[quarter] = q )
+		formatString: 0.0%
+		displayFolder: Helper measures used by the report visuals
+		lineageTag: 4f2b4026-9140-57dc-840a-30ffa736f460
+
+	measure 'Next Quarter Coverage x' = VAR q = [Next Quarter] RETURN CALCULATE ( [Pipeline Coverage x], dept_quarter_summary[quarter] = q )
+		formatString: 0.0\x
+		displayFolder: Helper measures used by the report visuals
+		lineageTag: b1cb732d-eb98-5a5a-96a1-db9b701e176a
+
+	measure 'Deal Amount EUR' = SUM ( pipeline_deals[amount_eur] )
+		formatString: \€#,0.0,,\M
+		displayFolder: Helper measures used by the report visuals
+		lineageTag: 70e4617b-71fb-50be-8057-37a2de3a8056
+
+	measure 'Days In Current Stage' = AVERAGE ( pipeline_deals[days_in_current_stage] )
+		formatString: #,0
+		displayFolder: Helper measures used by the report visuals
+		lineageTag: d2c5154d-0988-562c-9d79-c9c8f546b3e0
+
+	measure 'Avg Stuck Threshold Days' = AVERAGE ( pipeline_stage_stints[stuck_after_days] )
+		formatString: 0.0
+		displayFolder: Helper measures used by the report visuals
+		lineageTag: 0efad495-065f-55fe-9001-0da783ff1791
+
+	measure 'Account Latitude' = AVERAGE ( dim_accounts[latitude] )
+		formatString: 0.0000
+		displayFolder: Helper measures used by the report visuals
+		lineageTag: 7c7c3463-3d10-5b22-a6e4-a4dde8bf4fdc
+
+	measure 'Account Longitude' = AVERAGE ( dim_accounts[longitude] )
+		formatString: 0.0000
+		displayFolder: Helper measures used by the report visuals
+		lineageTag: 0013c2bc-3918-5158-af76-1a6e46f34014
+
+	measure 'Predicted Win Rate' = AVERAGE ( model_calibration[avg_predicted] )
+		formatString: 0.0%
+		displayFolder: Helper measures used by the report visuals
+		lineageTag: 998f0fdb-f27c-5a4a-97be-230d5ad3488a
+
+	measure 'Actual Win Rate' = AVERAGE ( model_calibration[actual_win_rate] )
+		formatString: 0.0%
+		displayFolder: Helper measures used by the report visuals
+		lineageTag: 94ee9ec1-915d-5f57-b593-4e1153481b55
+
+	measure 'Calibration Deals' = SUM ( model_calibration[deals] )
+		formatString: #,0
+		displayFolder: Helper measures used by the report visuals
+		lineageTag: a122c093-c07f-54cc-ac38-5a147ef2651d
+
+	measure 'Backtest Forecast EUR' = SUM ( model_backtest[forecast_won_eur] )
+		formatString: \€#,0.0,,\M
+		displayFolder: Helper measures used by the report visuals
+		lineageTag: 089b481c-4b16-58d7-8aea-9ce54e34253b
+
+	measure 'Backtest Actual EUR' = SUM ( model_backtest[actual_won_eur] )
+		formatString: \€#,0.0,,\M
+		displayFolder: Helper measures used by the report visuals
+		lineageTag: 5da26810-ca42-5666-92ba-1c47c7d5e9b9
+
+	measure 'Feature Importance Share' = SUM ( model_feature_importance[importance_share] )
+		formatString: 0.0%
+		displayFolder: Helper measures used by the report visuals
+		lineageTag: d3fb01e2-14a4-5a50-8d63-9dbe81048551
+
+	measure 'Selected Model Win Probability' = AVERAGE ( model_scores[model_win_probability] )
+		formatString: 0.0%
+		displayFolder: Deal explainer: why does the model think this deal will convert?
+		lineageTag: 586ac350-ec09-53d3-8475-428aec58428b
+
+	measure 'Selected Governed Probability' = AVERAGE ( model_scores[governed_probability] )
+		formatString: 0.0%
+		displayFolder: Deal explainer: why does the model think this deal will convert?
+		lineageTag: 2fa33e84-e641-5daf-9fbe-eaff86aac045
+
+	measure 'Average Open Deal Probability' = CALCULATE ( AVERAGE ( model_scores[model_win_probability] ), ALL ( model_scores ) )
+		formatString: 0.0%
+		displayFolder: Deal explainer: why does the model think this deal will convert?
+		lineageTag: 55de1f7b-2e71-5a45-b646-b37bd6c367d6
+
+	measure 'Selected Deal Amount EUR' = SUM ( model_scores[amount_eur] )
+		formatString: \€#,0.0,,\M
+		displayFolder: Deal explainer: why does the model think this deal will convert?
+		lineageTag: d6c563c0-6c5a-536a-b414-e9fb4ac9cb7f
+
+	measure 'Impact (pts)' = AVERAGE ( model_explanations[impact_pts] )
+		formatString: +0.0;-0.0;0.0
+		displayFolder: Deal explainer: why does the model think this deal will convert?
+		lineageTag: c7abb79d-7c7b-51a8-9248-9a011d492538
+
+	measure 'Reasoning Text' = SELECTEDVALUE ( model_scores[model_reasoning], "Click a deal in the list on the left to see why the model rates it as it does." )
+		displayFolder: Deal explainer: why does the model think this deal will convert?
+		lineageTag: fd2ac351-afa2-5e9a-9b3f-8a4302b10962
+
+	column Dummy
+		isHidden
+		dataType: int64
+		formatString: 0
+		lineageTag: 516ca507-39a1-5e38-a93d-d2d0f11d8569
+		summarizeBy: none
+		sourceColumn: Dummy
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measures = m
+		mode: import
+		source = #table(type table [Dummy = Int64.Type], {{1}})

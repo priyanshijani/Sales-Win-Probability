@@ -1,0 +1,152 @@
+table dim_accounts
+	lineageTag: e11379e0-4123-5012-b93e-a27578d9167d
+
+	column master_account_id
+		dataType: string
+		lineageTag: 397877e7-5606-57de-afb2-69b3bb6f9706
+		summarizeBy: none
+		sourceColumn: master_account_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_name
+		dataType: string
+		lineageTag: 64b3316d-0c6c-5e1e-8823-55c84eb0f69f
+		summarizeBy: none
+		sourceColumn: account_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column industry
+		dataType: string
+		lineageTag: 0de2e374-af77-5c14-b491-47c1aff7c70c
+		summarizeBy: none
+		sourceColumn: industry
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_size_band
+		dataType: string
+		lineageTag: e900a7af-05c5-5231-8622-f115916643ea
+		summarizeBy: none
+		sourceColumn: company_size_band
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_code
+		dataType: string
+		lineageTag: 5583ff7a-ed57-52f1-bfeb-99591972228e
+		summarizeBy: none
+		sourceColumn: country_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_name
+		dataType: string
+		lineageTag: 4d01e351-92a7-588d-8c51-7ac1ac735086
+		summarizeBy: none
+		sourceColumn: country_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column sales_region
+		dataType: string
+		lineageTag: 34d35d2e-18e3-5015-a2f7-abc24df57304
+		summarizeBy: none
+		sourceColumn: sales_region
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: fae6977f-0bc6-5358-9563-4e40f2149d28
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitude
+		dataType: double
+		lineageTag: 924f6699-6d03-5a31-9797-78d05d9bd870
+		summarizeBy: none
+		sourceColumn: latitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column longitude
+		dataType: double
+		lineageTag: 11c9a5ae-b3c3-58aa-bcf5-2d975857172a
+		summarizeBy: none
+		sourceColumn: longitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column annual_revenue_eur_m
+		dataType: double
+		lineageTag: 3c92eb6d-4906-56bb-96c4-5ef525e15437
+		summarizeBy: none
+		sourceColumn: annual_revenue_eur_m
+
+		annotation SummarizationSetBy = Automatic
+
+	column coordinates_filled_from_city
+		dataType: boolean
+		lineageTag: 915fdda0-f3df-525c-ac59-f2c0331ff7a0
+		summarizeBy: none
+		sourceColumn: coordinates_filled_from_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column crm_records_merged
+		dataType: int64
+		formatString: 0
+		lineageTag: 81860908-9340-5fb7-94ae-4da8ef6c8547
+		summarizeBy: none
+		sourceColumn: crm_records_merged
+
+		annotation SummarizationSetBy = Automatic
+
+	column deal_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 4c0781fb-671c-592e-82cf-da5b3dcef071
+		summarizeBy: none
+		sourceColumn: deal_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column won_eur
+		dataType: double
+		lineageTag: 7a857e9d-c352-5191-bf13-1e98e8a57f90
+		summarizeBy: sum
+		sourceColumn: won_eur
+
+		annotation SummarizationSetBy = Automatic
+
+	column open_pipeline_eur
+		dataType: double
+		lineageTag: a8752d50-55ab-5cdf-b749-a0cf977ab5f0
+		summarizeBy: sum
+		sourceColumn: open_pipeline_eur
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_status
+		dataType: string
+		lineageTag: 5d1881ea-5751-506b-94cd-26568d672690
+		summarizeBy: none
+		sourceColumn: account_status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_accounts = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents(DataFolder & "dim_accounts.csv"), [Delimiter = ",", Columns = 17, Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"master_account_id", type text}, {"account_name", type text}, {"industry", type text}, {"company_size_band", type text}, {"country_code", type text}, {"country_name", type text}, {"sales_region", type text}, {"city", type text}, {"latitude", type number}, {"longitude", type number}, {"annual_revenue_eur_m", type number}, {"coordinates_filled_from_city", type logical}, {"crm_records_merged", Int64.Type}, {"deal_count", Int64.Type}, {"won_eur", type number}, {"open_pipeline_eur", type number}, {"account_status", type text}}, "en-US")
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table

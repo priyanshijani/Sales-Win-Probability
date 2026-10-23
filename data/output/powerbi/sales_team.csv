@@ -1,0 +1,30 @@
+employee_id,full_name,owner_email,department,sales_manager,territory,hire_date,leave_date,is_active,annual_quota_eur,active_days_ytd,prorated_quota_ytd_eur,bookings_ytd_eur
+E3001,Lukas Schneider,lukas.schneider@nexora-consulting.eu,Cloud & Infrastructure,Claudia Weber,DACH,2021-03-01,,true,1400000.0,258,989589.0410958905,3516463.572
+E3002,Freja Nielsen,freja.nielsen@nexora-consulting.eu,Cloud & Infrastructure,Claudia Weber,Nordics,2022-01-10,,true,1400000.0,258,989589.0410958905,5190621.787000001
+E3003,Pieter Janssens,pieter.janssens@nexora-consulting.eu,Cloud & Infrastructure,Claudia Weber,Benelux,2020-09-01,,true,1400000.0,258,989589.0410958905,2210000.0
+E3004,Tomáš Novák,tomas.novak@nexora-consulting.eu,Cloud & Infrastructure,Claudia Weber,CEE,2023-02-01,,true,1400000.0,258,989589.0410958905,3113623.626
+E3005,Oliver Hughes,oliver.hughes@nexora-consulting.eu,Cloud & Infrastructure,James Whitaker,UK & Ireland,2019-06-03,,true,1400000.0,258,989589.0410958905,2476062.0489999996
+E3006,Chloé Martin,chloe.martin@nexora-consulting.eu,Cloud & Infrastructure,James Whitaker,France,2021-11-15,,true,1400000.0,258,989589.0410958905,6404000.0
+E3007,Mateo López,mateo.lopez@nexora-consulting.eu,Cloud & Infrastructure,James Whitaker,Southern Europe,2022-04-04,,true,1400000.0,258,989589.0410958905,1333500.0
+E3008,Anna Müller,anna.muller@nexora-consulting.eu,Data & AI,Stefan Brandt,DACH,2020-02-01,,true,1200000.0,258,848219.1780821917,5850110.286
+E3009,Mikael Lindqvist,mikael.lindqvist@nexora-consulting.eu,Data & AI,Stefan Brandt,Nordics,2021-08-16,,true,1200000.0,258,848219.1780821917,4220991.981
+E3010,Emma de Vries,emma.devries@nexora-consulting.eu,Data & AI,Stefan Brandt,Benelux,2022-10-03,,true,1200000.0,258,848219.1780821917,3773500.0
+E3011,Katarzyna Nowak,katarzyna.nowak@nexora-consulting.eu,Data & AI,Stefan Brandt,CEE,2023-05-02,,true,1200000.0,258,848219.1780821917,4916916.612
+E3012,Ethan Clarke,ethan.clarke@nexora-consulting.eu,Data & AI,Richard Evans,UK & Ireland,2021-01-11,,true,1200000.0,258,848219.1780821917,1258041.26
+E3013,Hugo Laurent,hugo.laurent@nexora-consulting.eu,Data & AI,Richard Evans,France,2022-03-01,,true,1200000.0,258,848219.1780821917,665000.0
+E3014,Marco Rossi,marco.rossi@nexora-consulting.eu,Data & AI,Richard Evans,Southern Europe,2020-05-04,2025-08-31,false,1200000.0,0,0.0,40000.0
+E3015,Elena Bianchi,elena.bianchi@nexora-consulting.eu,Data & AI,Richard Evans,Southern Europe,2025-09-15,,true,1200000.0,258,848219.1780821917,1685000.0
+E3016,Niamh Walsh,niamh.walsh@nexora-consulting.eu,Data & AI,Richard Evans,UK & Ireland,2023-09-04,,true,1200000.0,258,848219.1780821917,1645741.4330000002
+E3017,Felix Wagner,felix.wagner@nexora-consulting.eu,Cybersecurity,Henrik Dahl,DACH,2020-07-01,,true,900000.0,258,636164.3835616439,4668020.455999999
+E3018,Sara Andersson,sara.andersson@nexora-consulting.eu,Cybersecurity,Henrik Dahl,Nordics; Benelux,2021-04-06,,true,900000.0,258,636164.3835616439,6554438.018000001
+E3019,Jan Kowalski,jan.kowalski@nexora-consulting.eu,Cybersecurity,Henrik Dahl,CEE,2022-06-01,,true,900000.0,258,636164.3835616439,6369024.3610000005
+E3020,Tom Barker,tom.barker@nexora-consulting.eu,Cybersecurity,Marie Lefèvre,UK & Ireland,2019-10-01,2026-03-31,false,900000.0,90,221917.80821917808,2197133.093
+E3021,Aoife Byrne,aoife.byrne@nexora-consulting.eu,Cybersecurity,Marie Lefèvre,UK & Ireland,2026-04-13,,true,900000.0,156,384657.5342465753,72863.997
+E3022,David Moreau,david.moreau@nexora-consulting.eu,Cybersecurity,Marie Lefèvre,France,2021-02-15,,true,900000.0,258,636164.3835616439,2219500.0
+E3023,Isabel Ferreira,isabel.ferreira@nexora-consulting.eu,Cybersecurity,Marie Lefèvre,Southern Europe,2022-09-12,,true,900000.0,258,636164.3835616439,3536500.0
+E3024,Julia Hoffmann,julia.hoffmann@nexora-consulting.eu,ERP & Business Apps,Katrin Vogel,DACH,2019-03-18,,true,1800000.0,258,1272328.7671232878,8749687.093
+E3025,Sven Johansson,sven.johansson@nexora-consulting.eu,ERP & Business Apps,Katrin Vogel,Nordics,2021-06-01,,true,1800000.0,258,1272328.7671232878,5226379.197000001
+E3026,Lena Fischer,lena.fischer@nexora-consulting.eu,ERP & Business Apps,Katrin Vogel,DACH; Benelux; CEE,2023-01-09,,true,1800000.0,258,1272328.7671232878,3984042.73
+E3027,Paolo Conti,paolo.conti@nexora-consulting.eu,ERP & Business Apps,Giulia Romano,Southern Europe,2020-11-02,,true,1800000.0,258,1272328.7671232878,3073000.0
+E3028,Grace Thompson,grace.thompson@nexora-consulting.eu,ERP & Business Apps,Giulia Romano,UK & Ireland,2022-02-14,,true,1800000.0,258,1272328.7671232878,930600.059
+E3029,Camille Bernard,camille.bernard@nexora-consulting.eu,ERP & Business Apps,Giulia Romano,France,2021-09-06,,true,1800000.0,258,1272328.7671232878,3873000.0

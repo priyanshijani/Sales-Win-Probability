@@ -1,0 +1,133 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "bc5fc5b4fa365fad8870",
+  "position": {
+    "x": 30,
+    "y": 240,
+    "z": 7000,
+    "height": 750,
+    "width": 820,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "model_scores"
+                    }
+                  },
+                  "Property": "deal_label"
+                }
+              },
+              "queryRef": "model_scores.deal_label",
+              "nativeQueryRef": "deal_label"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "model_scores"
+                    }
+                  },
+                  "Property": "amount_eur"
+                }
+              },
+              "queryRef": "model_scores.amount_eur",
+              "nativeQueryRef": "amount_eur"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "model_scores"
+                    }
+                  },
+                  "Property": "governed_probability"
+                }
+              },
+              "queryRef": "model_scores.governed_probability",
+              "nativeQueryRef": "governed_probability"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "model_scores"
+                    }
+                  },
+                  "Property": "model_win_probability"
+                }
+              },
+              "queryRef": "model_scores.model_win_probability",
+              "nativeQueryRef": "model_win_probability"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "model_scores"
+                    }
+                  },
+                  "Property": "model_vs_governed_pts"
+                }
+              },
+              "queryRef": "model_scores.model_vs_governed_pts",
+              "nativeQueryRef": "model_vs_governed_pts"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "model_scores"
+                  }
+                },
+                "Property": "amount_eur"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Open deals (click one)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "5f70bacbe3f959a19a95",
+  "position": {
+    "x": 670,
+    "y": 310,
+    "z": 13000,
+    "height": 330,
+    "width": 1220,
+    "tabOrder": 13000
+  },
+  "visual": {
+    "visualType": "lineStackedColumnComboChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dept_quarter_summary"
+                    }
+                  },
+                  "Property": "quarter"
+                }
+              },
+              "queryRef": "dept_quarter_summary.quarter",
+              "nativeQueryRef": "quarter"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Commit EUR"
+                }
+              },
+              "queryRef": "_Measures.Commit EUR",
+              "nativeQueryRef": "Commit EUR"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Best Case EUR"
+                }
+              },
+              "queryRef": "_Measures.Best Case EUR",
+              "nativeQueryRef": "Best Case EUR"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Pipeline Category EUR"
+                }
+              },
+              "queryRef": "_Measures.Pipeline Category EUR",
+              "nativeQueryRef": "Pipeline Category EUR"
+            }
+          ]
+        },
+        "Y2": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Target EUR"
+                }
+              },
+              "queryRef": "_Measures.Target EUR",
+              "nativeQueryRef": "Target EUR"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dept_quarter_summary"
+                  }
+                },
+                "Property": "quarter"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Forecast by expected close quarter vs target'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

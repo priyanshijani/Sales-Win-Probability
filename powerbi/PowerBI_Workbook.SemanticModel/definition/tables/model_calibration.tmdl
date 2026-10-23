@@ -1,0 +1,55 @@
+table model_calibration
+	lineageTag: 259a79c2-529e-50e9-b9de-8104551fd695
+
+	column method
+		dataType: string
+		lineageTag: ee58361b-b726-5f64-9333-a1975a5195d5
+		summarizeBy: none
+		sourceColumn: method
+
+		annotation SummarizationSetBy = Automatic
+
+	column prob_bin
+		dataType: double
+		lineageTag: c1b56a06-150e-51ed-afe0-239d62c89b88
+		summarizeBy: none
+		sourceColumn: prob_bin
+
+		annotation SummarizationSetBy = Automatic
+
+	column deals
+		dataType: int64
+		formatString: 0
+		lineageTag: c8b41aab-e826-5a4d-b6db-044ba80ee0c5
+		summarizeBy: none
+		sourceColumn: deals
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_predicted
+		dataType: double
+		lineageTag: 536fa04f-c242-517f-b254-51dcc65e7df1
+		summarizeBy: none
+		sourceColumn: avg_predicted
+
+		annotation SummarizationSetBy = Automatic
+
+	column actual_win_rate
+		dataType: double
+		lineageTag: ae01f9dc-a1d9-5d3c-8e28-45093dae8fe9
+		summarizeBy: none
+		sourceColumn: actual_win_rate
+
+		annotation SummarizationSetBy = Automatic
+
+	partition model_calibration = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents(DataFolder & "model_calibration.csv"), [Delimiter = ",", Columns = 5, Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"method", type text}, {"prob_bin", type number}, {"deals", Int64.Type}, {"avg_predicted", type number}, {"actual_win_rate", type number}}, "en-US")
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table

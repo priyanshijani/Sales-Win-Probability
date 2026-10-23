@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "84f9a4a9f6365222a009",
+  "position": {
+    "x": 30,
+    "y": 66,
+    "z": 1000,
+    "height": 30,
+    "width": 1500,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "ADVISORY - never replaces the governed forecast · backtest: trained before 1 Mar 2026, tested on 550 deals · see docs/model_card.md",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#4A5568"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
