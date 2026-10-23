@@ -24,7 +24,7 @@ for folder, tables in EXPORTS.items():
     for t in tables:
         name = t.split(".")[-1]
         con.execute(f"copy (select * from {t}) to '{(out / (name + '.csv')).as_posix()}' (header, delimiter ',')")
-        n = con.sql(f"select count(*) from {t}").fetchone()[0]
+        n = con.execute(f"select count(*) from {t}").fetchone()[0]
         print(f"{folder}/{name}.csv  {n:>6,} rows")
 
 # --- AI experiment inputs -------------------------------------------------------------------------------------------

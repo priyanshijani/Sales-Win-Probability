@@ -186,7 +186,7 @@ select
         case when is_stuck then 'STUCK' end,
         case when is_stale then 'STALE' end,
         case when is_past_due then 'PAST_DUE' end,
-        case when not owner_is_active then 'OWNER_LEFT' end], x -> x is not null), ';') end as risk_reasons,
+        case when not owner_is_active then 'OWNER_LEFT' end], lambda x: x is not null), ';') end as risk_reasons,
     array_to_string(list_filter([
         case when f_amount_missing then 'AMOUNT_MISSING' end,
         case when f_amount_negative then 'AMOUNT_NEGATIVE' end,
@@ -194,6 +194,6 @@ select
         case when f_account_missing then 'ACCOUNT_MISSING' end,
         case when f_currency_filled then 'CURRENCY_FILLED' end,
         case when f_close_date_from_log then 'CLOSE_DATE_FROM_LOG' end,
-        case when is_open and not owner_is_active then 'OWNER_LEFT' end], x -> x is not null), ';') as dq_flags,
+        case when is_open and not owner_is_active then 'OWNER_LEFT' end], lambda x: x is not null), ';') as dq_flags,
     date '{{ var("snapshot_date") }}'                                               as snapshot_date
 from scored

@@ -28,13 +28,13 @@ AMBER, GREEN, RED, GREY, WHITE = "#F2A900", "#2E9E5B", "#C0392B", "#6B7280", "#F
 con = duckdb.connect(str(ROOT / "warehouse" / "nexora.duckdb"), read_only=True)
 m = json.load(open(ROOT / "ml" / "outputs" / "metrics.json", encoding="utf-8"))
 N = {
-    "raw_rows": con.sql("select count(*) from stg_crm__opportunities").fetchone()[0],
-    "deals": con.sql("select count(*) from pipeline_deals").fetchone()[0],
-    "checks": con.sql("select count(*) from dq_reconciliation").fetchone()[0],
-    "open_eur": con.sql("select sum(amount_eur) from pipeline_deals where is_open").fetchone()[0] / 1e6,
-    "risk_eur": con.sql("select sum(amount_eur) from pipeline_deals where is_at_risk").fetchone()[0] / 1e6,
-    "flag_n": con.sql("select count(*) from ml.model_scores where model_vs_governed_pts <= -25").fetchone()[0],
-    "flag_eur": con.sql("select sum(amount_eur) from ml.model_scores where model_vs_governed_pts <= -25").fetchone()[0] / 1e6,
+    "raw_rows": con.execute("select count(*) from stg_crm__opportunities").fetchone()[0],
+    "deals": con.execute("select count(*) from pipeline_deals").fetchone()[0],
+    "checks": con.execute("select count(*) from dq_reconciliation").fetchone()[0],
+    "open_eur": con.execute("select sum(amount_eur) from pipeline_deals where is_open").fetchone()[0] / 1e6,
+    "risk_eur": con.execute("select sum(amount_eur) from pipeline_deals where is_at_risk").fetchone()[0] / 1e6,
+    "flag_n": con.execute("select count(*) from ml.model_scores where model_vs_governed_pts <= -25").fetchone()[0],
+    "flag_eur": con.execute("select sum(amount_eur) from ml.model_scores where model_vs_governed_pts <= -25").fetchone()[0] / 1e6,
     "scored": m["scored"],
     "train_deals": m["train_deals"],
     "test_deals": m["test_deals"],

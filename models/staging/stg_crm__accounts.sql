@@ -12,7 +12,7 @@ typed as (
         trim("Account Name")                                    as account_name,
         {{ alias('industry', '"Industry"') }}                   as industry,
         {{ alias('country', '"Country"') }}                      as country_code,
-        array_to_string(list_transform(string_split(lower(trim("City")), ' '), x -> upper(left(x, 1)) || substr(x, 2)), ' ') as city,
+        array_to_string(list_transform(string_split(lower(trim("City")), ' '), lambda x: upper(left(x, 1)) || substr(x, 2)), ' ') as city,
         {{ alias('company_size', '"Employees"') }}              as company_size_band,
         try_cast("Annual Revenue (EUR m)" as double)            as annual_revenue_eur_m,
         try_cast("Latitude" as double)                          as latitude_raw,
