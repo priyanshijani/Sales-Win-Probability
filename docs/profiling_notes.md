@@ -20,7 +20,7 @@
 |15|Opportunities_YYYY_MM (v1)|Opportunity Owner|v1 has no email, only the owner's name written in different ways|"Hughes, Oliver", "S. Andersson"|Join to roster in passes: reorder "Last, First" → match on name; unmatched → match on initial + surname; rest → aliases. v2 joins directly on lowercase email (Phase 4)|
 
 ## Profiling results (Phase 1)
-Counted across **all 24 opportunity files** (5,012 rows), the stage history log, the accounts file (765 records) and the sales roster. Workflow: `alteryx/00_profiling.yxmd`.
+Counted across **all 24 opportunity files** (5,012 rows), the stage history log, the accounts file (765 records) and the sales roster. Originally profiled with an Alteryx workflow (`archive/alteryx_v1/alteryx/00_profiling.yxmd`); in dbt the same counts are enforced by `not_null` tests on every alias-mapped column.
 
 | Domain | Distinct raw spellings | Standard values | Where |
 |---|---|---|---|

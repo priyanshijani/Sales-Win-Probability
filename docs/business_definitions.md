@@ -3,7 +3,7 @@
 
 > **Version** 1.0 · **As-of date** 15 Sep 2026 (`SnapshotDate`) · **Owner** Sales Operations (you) · **Status** Draft for CRO sign-off
 > Each rule states **what**, **how it's calculated**, **why we chose it**, and **where it's implemented**.
-> "Alteryx" = calculated at row level in the data prep layer. "Tableau" = aggregation on the dashboard.
+> "dbt" = calculated at row level in the transformation layer (`models/marts/pipeline_deals.sql`). "Power BI" = aggregation in a DAX measure (`powerbi/measures.dax`).
 
 ---
 
@@ -18,12 +18,12 @@
 | 5 | Closed Won | 100% | 100% | Closed Won | — |
 | 0 | Closed Lost | 0% | 0% | Closed Lost | — |
 
-- **Stored in** `data/reference/stage_rules.csv` so Sales Ops can change a threshold without editing the workflow.
+- **Stored in** `data/reference/stage_rules.csv` so Sales Ops can change a threshold without editing any SQL.
 - **Why governed probabilities?** Reps type their own probability, and some teams are consistently optimistic. A forecast must not depend on who typed it. We keep the rep's number as `rep_probability` to *measure* forecast honesty, but we never forecast with it.
 - **Why these stuck thresholds?** Roughly 1.5× the typical (median) time deals spend in each stage over the last 24 months. Beyond that, the chance of winning drops sharply.
 - **Forecast category** is derived from the stage, not taken from the rep-entered `Forecast_Category` field (which disagrees with the stage in ~15% of v2 records).
 
-## 2. Deal-level definitions (Alteryx)
+## 2. Deal-level definitions (dbt)
 
 | Term | Definition | Why |
 |---|---|---|
@@ -49,7 +49,7 @@
 | **Deal size band** | < €50k · €50–150k · €150–500k · €500k–1M · > €1M. | Matches how the CRO talks about deals. |
 | **Deal type** | **Expansion** if the account had a Closed Won deal *before* this deal was created; otherwise **New Logo**. | Rep-entered "Lead Source = Upsell" is unreliable; the account's history is not. |
 
-## 3. Account definitions (Alteryx)
+## 3. Account definitions (dbt)
 
 | Term | Definition | Why |
 |---|---|---|
@@ -61,7 +61,7 @@
 | **Coordinates** | If latitude/longitude are missing, use the average of other accounts in the same city. If they look swapped (latitude outside 34–72 and longitude inside it), swap them back. | Keeps every account on the map without inventing locations. |
 | **Unknown account** | Deals pointing to an account deleted in the CRM keep their value in totals with account "Unknown (deleted in CRM)" and are flagged `ACCOUNT_MISSING`. | Removing them would make totals disagree with the CRM. |
 
-## 4. People definitions (Alteryx)
+## 4. People definitions (dbt)
 
 | Term | Definition |
 |---|---|
@@ -70,7 +70,7 @@
 | **Department** | From the deal record, standardised via `value_aliases.csv` (v2 codes like `DATA_AI` → Data & AI). |
 | **Prorated quota (YTD)** | Annual quota × (days elapsed in 2026 ÷ 365). Leavers and joiners are prorated to their active days. |
 
-## 5. Dashboard metrics (Tableau)
+## 5. Dashboard metrics (Power BI)
 
 | Metric | Formula | Notes |
 |---|---|---|
@@ -93,6 +93,7 @@
 | **Model win probability** | Probability (0–1) that an open deal ends Closed Won, from model `wp-v1-2026-09-15` (see `docs/model_card.md`). Uses only information known while the deal is open. | Stage alone treats all Proposal deals the same; history shows size, industry, region, team and time-in-stage matter. |
 | **Model-weighted pipeline €** | `SUM(amount_eur × model_win_probability)` for scored open deals. | Compared with the governed weighted pipeline to test the forecast. |
 | **Model review flag** | "Review" when model and governed probability differ by 25 points or more. | Points the Monday review at the deals where "the rule" and "the data" disagree most. |
+| **Driver impact (pts)** | How many percentage points one fact about an open deal (e.g. its industry or stage) adds to or removes from the model's win probability, compared with a neutral value of that fact (the average across the open pipeline). Computed one fact at a time, so close to but not exactly additive. | Lets a manager see *why* the model rates a deal as it does, and challenge it. Drivers describe past patterns, not causes. |
 | **Status** | *Advisory*: shown next to, never instead of, the governed forecast until it beats it for two consecutive quarters with CRO sign-off. | A model must earn trust before it drives commitments. |
 
 ## 6. Known limitations

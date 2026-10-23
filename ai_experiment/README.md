@@ -4,7 +4,7 @@
 business logic behind the data?
 
 **Method:** Ask a free AI assistant the same five questions twice, then compare both answers with the
-Tableau dashboard (the reconciled "ground truth").
+Power BI dashboard (the reconciled "ground truth").
 
 ## Setup
 - Tool used: ______________________ (e.g. Claude, ChatGPT, Gemini — free tier) · Date: __________
@@ -43,11 +43,11 @@ Answer these five questions with a single number or name each, and cite the defi
 Using the same files and definitions, write a 5-bullet Monday pipeline summary for our Chief Revenue
 Officer: what's healthy, what's at risk, and one recommended action. Include numbers.
 ```
-Then verify every number/claim in Tableau and fill in the validation log.
+Then verify every number/claim in Power BI and fill in the validation log.
 
 ## Results
 
-| Q | Tableau ground truth | Round A answer | Round A error | Round B answer | Round B error | What went wrong in Round A |
+| Q | Dashboard ground truth | Round A answer | Round A error | Round B answer | Round B error | What went wrong in Round A |
 |---|---|---|---|---|---|---|
 | Q1 | 4,800 | | | | | *e.g. counted rows, not unique IDs; didn't remove duplicates or test records* |
 | Q2 | € | | | | | *e.g. added GBP/SEK amounts as if EUR; included outliers* |
@@ -58,7 +58,7 @@ Then verify every number/claim in Tableau and fill in the validation log.
 **Score:** Round A ___ / 5 within 2% · Round B ___ / 5 within 2%
 
 ## Round C validation log
-| # | Claim made by the AI | Tableau value | Correct? | Note |
+| # | Claim made by the AI | Dashboard value | Correct? | Note |
 |---|---|---|---|---|
 | 1 | | | | |
 | 2 | | | | |
