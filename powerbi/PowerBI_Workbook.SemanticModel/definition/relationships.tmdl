@@ -1,0 +1,43 @@
+relationship 836543ba-ca21-5b3c-b639-89bc3ccc87e8
+	fromColumn: pipeline_deals.actual_close_date
+	toColumn: DimDate.Date
+
+relationship 96d163a9-b20e-531b-a781-339b18e1a0a1
+	isActive: false
+	fromColumn: pipeline_deals.created_date
+	toColumn: DimDate.Date
+
+relationship 4e90de64-3ed9-5a3e-8f77-97c85d80ef27
+	isActive: false
+	fromColumn: pipeline_deals.expected_close_date
+	toColumn: DimDate.Date
+
+relationship a069a4b4-88b5-51a2-b922-542095bbecaf
+	fromColumn: pipeline_deals.department
+	toColumn: DimDepartment.department
+
+relationship bed5abf0-eb23-5f44-b490-dcb631d417d8
+	fromColumn: dept_quarter_summary.department
+	toColumn: DimDepartment.department
+
+relationship 3f99f74c-e59f-5d6e-9e0e-4e144cd2f345
+	fromColumn: pipeline_stage_stints.opportunity_id
+	toColumn: pipeline_deals.opportunity_id
+
+relationship af62ecef-780a-5bc3-bb3f-dcd7827e2e30
+	fromColumn: pipeline_deals.owner_email
+	toColumn: sales_team.owner_email
+
+relationship 1d0b60d6-9ba8-54a3-a345-1a590fcf557f
+	fromColumn: pipeline_deals.master_account_id
+	toColumn: dim_accounts.master_account_id
+
+relationship 8c653179-98a7-5b79-999a-78c807061654
+	fromCardinality: one
+	crossFilteringBehavior: bothDirections
+	fromColumn: model_scores.opportunity_id
+	toColumn: pipeline_deals.opportunity_id
+
+relationship 700daa29-7912-5b31-9559-0705e3f5a18b
+	fromColumn: model_explanations.opportunity_id
+	toColumn: model_scores.opportunity_id

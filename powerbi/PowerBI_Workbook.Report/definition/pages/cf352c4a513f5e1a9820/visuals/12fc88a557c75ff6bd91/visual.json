@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "12fc88a557c75ff6bd91",
+  "position": {
+    "x": 30,
+    "y": 66,
+    "z": 1000,
+    "height": 30,
+    "width": 1500,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "ADVISORY - click a deal in the list · bars show how many probability points each fact about the deal adds or removes compared with the average open deal",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#4A5568"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

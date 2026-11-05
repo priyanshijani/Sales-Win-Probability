@@ -1,0 +1,29 @@
+table DimStage
+	lineageTag: ed65510b-f359-5137-9f9f-ee6b9f9172a5
+
+	column stage_order
+		dataType: int64
+		formatString: 0
+		isDataTypeInferred
+		lineageTag: d2f293f7-69a9-589a-a13d-01b2f8cdf3c6
+		summarizeBy: none
+		sourceColumn: [stage_order]
+
+		annotation SummarizationSetBy = Automatic
+
+	column stage
+		dataType: string
+		isDataTypeInferred
+		lineageTag: 7c66c1f6-4236-58df-b514-72cdfa12fee5
+		summarizeBy: none
+		sourceColumn: [stage]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimStage = calculated
+		mode: import
+		source =
+				DATATABLE (
+				    "stage_order", INTEGER, "stage", STRING,
+				    { { 1, "Discovery" }, { 2, "Solution Design" }, { 3, "Proposal" }, { 4, "Negotiation" }, { 5, "Closed Won" } }
+				)

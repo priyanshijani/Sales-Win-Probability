@@ -1,0 +1,35 @@
+name: nexora_pipeline
+version: "1.0.0"
+config-version: 2
+profile: nexora_pipeline
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+seed-paths: ["data/reference"]
+clean-targets: ["target", "dbt_packages"]
+
+vars:
+  # One constant drives every "as of" calculation (see docs/business_definitions.md)
+  snapshot_date: "2026-09-15"
+  backtest_date: "2026-03-01"
+  raw_dir: "data/raw/crm_exports"
+  outlier_threshold_eur: 5000000
+  stale_after_days: 30
+
+seeds:
+  nexora_pipeline:
+    +quote_columns: true
+    fx_rates_monthly:
+      +column_types: {Month: varchar, Currency: varchar}
+    department_targets_quarterly:
+      +column_types: {Quarter: varchar}
+
+models:
+  nexora_pipeline:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: view
+    marts:
+      +materialized: table

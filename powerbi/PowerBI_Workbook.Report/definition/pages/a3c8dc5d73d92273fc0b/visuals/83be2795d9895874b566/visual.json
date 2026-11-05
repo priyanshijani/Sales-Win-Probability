@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "83be2795d9895874b566",
+  "position": {
+    "x": 1590,
+    "y": 184,
+    "z": 11000,
+    "height": 110,
+    "width": 296,
+    "tabOrder": 11000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Avg Won Deal EUR"
+                }
+              },
+              "queryRef": "_Measures.Avg Won Deal EUR",
+              "nativeQueryRef": "Avg Won Deal EUR"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Average won deal'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

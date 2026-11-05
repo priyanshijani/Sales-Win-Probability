@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "2fc5a70460765ae0ac43",
+  "position": {
+    "x": 1437,
+    "y": 110,
+    "z": 6000,
+    "height": 110,
+    "width": 453,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Selected Deal Amount EUR"
+                }
+              },
+              "queryRef": "_Measures.Selected Deal Amount EUR",
+              "nativeQueryRef": "Selected Deal Amount EUR"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Deal value'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "db3221b2e9675dc9aab4",
+  "position": {
+    "x": 499,
+    "y": 110,
+    "z": 4000,
+    "height": 110,
+    "width": 453,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Selected Governed Probability"
+                }
+              },
+              "queryRef": "_Measures.Selected Governed Probability",
+              "nativeQueryRef": "Selected Governed Probability"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'CRM stage default'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

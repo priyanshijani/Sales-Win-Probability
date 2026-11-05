@@ -1,0 +1,63 @@
+table DimDate
+	dataCategory: Time
+	lineageTag: b7c961d8-4b0e-5b94-afdb-f63c7d0b6633
+
+	column Date
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		isKey
+		isDataTypeInferred
+		lineageTag: acf68c95-bbae-54ea-b1be-bb24b7074967
+		summarizeBy: none
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		isDataTypeInferred
+		lineageTag: c6509ac5-517c-5abc-90b6-9d89eb56cba0
+		summarizeBy: none
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: string
+		isDataTypeInferred
+		lineageTag: 1fdffa7c-cd96-5940-b922-70dc599b8387
+		summarizeBy: none
+		sourceColumn: [Quarter]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: string
+		isDataTypeInferred
+		lineageTag: e3549873-5ca1-593c-8732-68458573e43b
+		summarizeBy: none
+		sourceColumn: [Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Start'
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		isDataTypeInferred
+		lineageTag: 0d24b3cb-eb28-5afb-a632-40d1a4323645
+		summarizeBy: none
+		sourceColumn: [Month Start]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimDate = calculated
+		mode: import
+		source =
+				ADDCOLUMNS (
+				    CALENDAR ( DATE ( 2024, 4, 1 ), DATE ( 2027, 12, 31 ) ),
+				    "Year", YEAR ( [Date] ),
+				    "Quarter", YEAR ( [Date] ) & "-Q" & QUARTER ( [Date] ),
+				    "Month", FORMAT ( [Date], "yyyy-MM" ),
+				    "Month Start", DATE ( YEAR ( [Date] ), MONTH ( [Date] ), 1 )
+				)

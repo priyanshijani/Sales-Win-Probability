@@ -1,0 +1,95 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "9473f7d2fd2c5fcb9d9d",
+  "position": {
+    "x": 810,
+    "y": 660,
+    "z": 15000,
+    "height": 330,
+    "width": 1080,
+    "tabOrder": 15000
+  },
+  "visual": {
+    "visualType": "hundredPercentStackedBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pipeline_deals"
+                    }
+                  },
+                  "Property": "department"
+                }
+              },
+              "queryRef": "pipeline_deals.department",
+              "nativeQueryRef": "department"
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pipeline_deals"
+                    }
+                  },
+                  "Property": "loss_reason"
+                }
+              },
+              "queryRef": "pipeline_deals.loss_reason",
+              "nativeQueryRef": "loss_reason"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Lost Deals"
+                }
+              },
+              "queryRef": "_Measures.Lost Deals",
+              "nativeQueryRef": "Lost Deals"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Loss reasons by department'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

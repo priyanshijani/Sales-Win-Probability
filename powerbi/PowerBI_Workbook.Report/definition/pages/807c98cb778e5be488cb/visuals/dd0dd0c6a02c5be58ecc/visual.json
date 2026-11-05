@@ -1,0 +1,91 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "dd0dd0c6a02c5be58ecc",
+  "position": {
+    "x": 1310,
+    "y": 310,
+    "z": 13000,
+    "height": 330,
+    "width": 580,
+    "tabOrder": 13000
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pipeline_deals"
+                    }
+                  },
+                  "Property": "department"
+                }
+              },
+              "queryRef": "pipeline_deals.department",
+              "nativeQueryRef": "department"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Stuck EUR"
+                }
+              },
+              "queryRef": "_Measures.Stuck EUR",
+              "nativeQueryRef": "Stuck EUR"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "EUR At Risk"
+                }
+              },
+              "queryRef": "_Measures.EUR At Risk",
+              "nativeQueryRef": "EUR At Risk"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Stuck and at-risk pipeline by department'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

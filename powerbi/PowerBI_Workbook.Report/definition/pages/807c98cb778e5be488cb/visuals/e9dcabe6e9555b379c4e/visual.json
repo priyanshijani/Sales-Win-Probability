@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "e9dcabe6e9555b379c4e",
+  "position": {
+    "x": 405,
+    "y": 184,
+    "z": 7000,
+    "height": 110,
+    "width": 359,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "At Risk % of Pipeline"
+                }
+              },
+              "queryRef": "_Measures.At Risk % of Pipeline",
+              "nativeQueryRef": "At Risk % of Pipeline"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Share of open pipeline at risk'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

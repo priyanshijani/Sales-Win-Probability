@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "2b1927b2d86e5e1e82e0",
+  "position": {
+    "x": 870,
+    "y": 240,
+    "z": 8000,
+    "height": 170,
+    "width": 1020,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Reasoning Text"
+                }
+              },
+              "queryRef": "_Measures.Reasoning Text",
+              "nativeQueryRef": "Reasoning Text"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'In plain words'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

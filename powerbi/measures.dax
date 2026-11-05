@@ -1,0 +1,141 @@
+// =====================================================================================================
+// Nexora Pipeline Intelligence - DAX measures (definitions mirror docs/business_definitions.md section 5)
+// Row-level logic (FX, probabilities, risk flags) is done in dbt; DAX only aggregates.
+// Create a table called "_Measures" (Enter data -> empty) and paste each measure into it.
+// =====================================================================================================
+
+// ---- Calculated tables -------------------------------------------------------------------------------
+DimDate =
+ADDCOLUMNS (
+    CALENDAR ( DATE ( 2024, 4, 1 ), DATE ( 2027, 12, 31 ) ),
+    "Year", YEAR ( [Date] ),
+    "Quarter", YEAR ( [Date] ) & "-Q" & QUARTER ( [Date] ),
+    "Month", FORMAT ( [Date], "yyyy-MM" ),
+    "Month Start", DATE ( YEAR ( [Date] ), MONTH ( [Date] ), 1 )
+)
+
+// Fixed list (the 4 governed departments). DISTINCT(pipeline_deals[department]) would be circular because a
+// relationship points back to that column.
+DimDepartment =
+DATATABLE (
+    "department", STRING,
+    { { "Cloud & Infrastructure" }, { "Data & AI" }, { "Cybersecurity" }, { "ERP & Business Apps" } }
+)
+
+DimStage =
+DATATABLE (
+    "stage_order", INTEGER, "stage", STRING,
+    { { 1, "Discovery" }, { 2, "Solution Design" }, { 3, "Proposal" }, { 4, "Negotiation" }, { 5, "Closed Won" } }
+)
+
+// ---- Context -----------------------------------------------------------------------------------------
+Snapshot Date = MAX ( pipeline_deals[snapshot_date] )
+
+// ---- Pipeline health (page 1) ------------------------------------------------------------------------
+Open Pipeline EUR = CALCULATE ( SUM ( pipeline_deals[amount_eur] ), pipeline_deals[is_open] = TRUE () )
+Weighted Pipeline EUR = SUM ( pipeline_deals[weighted_amount_eur] )
+Open Deals = CALCULATE ( COUNTROWS ( pipeline_deals ), pipeline_deals[is_open] = TRUE () )
+Bookings EUR = CALCULATE ( SUM ( pipeline_deals[amount_eur] ), pipeline_deals[is_won] = TRUE () )
+Won Deals = CALCULATE ( COUNTROWS ( pipeline_deals ), pipeline_deals[is_won] = TRUE () )
+Lost Deals = CALCULATE ( COUNTROWS ( pipeline_deals ), pipeline_deals[is_lost] = TRUE () )
+Avg Won Deal EUR = DIVIDE ( [Bookings EUR], CALCULATE ( COUNTROWS ( pipeline_deals ), pipeline_deals[is_won] = TRUE (), NOT ISBLANK ( pipeline_deals[amount_eur] ) ) )
+
+// Open deals are excluded from the denominator - they have not been decided yet.
+Win Rate (count) = DIVIDE ( [Won Deals], [Won Deals] + [Lost Deals] )
+Win Rate (value) =
+VAR won = [Bookings EUR]
+VAR lost = CALCULATE ( SUM ( pipeline_deals[amount_eur] ), pipeline_deals[is_lost] = TRUE () )
+RETURN DIVIDE ( won, won + lost )
+
+Win Rate Last 12M =
+CALCULATE (
+    [Win Rate (count)],
+    DATESBETWEEN ( DimDate[Date], EDATE ( [Snapshot Date], -12 ) + 1, [Snapshot Date] )
+)
+
+// Targets live in dept_quarter_summary (department x quarter); relate it to DimDepartment.
+Target EUR = SUM ( dept_quarter_summary[bookings_target_eur] )
+Bookings vs Target % = DIVIDE ( SUM ( dept_quarter_summary[bookings_eur] ), [Target EUR] )
+Pipeline Coverage x = DIVIDE ( SUM ( dept_quarter_summary[open_pipeline_eur] ), [Target EUR] )   // healthy >= 3x
+Commit EUR = SUM ( dept_quarter_summary[commit_eur] )
+Best Case EUR = SUM ( dept_quarter_summary[best_case_eur] )
+Pipeline Category EUR = SUM ( dept_quarter_summary[pipeline_eur] )
+
+// ---- Velocity & risk (page 2) ------------------------------------------------------------------------
+Stuck Deals = CALCULATE ( COUNTROWS ( pipeline_deals ), pipeline_deals[is_stuck] = TRUE () )
+Stuck EUR = CALCULATE ( SUM ( pipeline_deals[amount_eur] ), pipeline_deals[is_stuck] = TRUE () )
+EUR At Risk = CALCULATE ( SUM ( pipeline_deals[amount_eur] ), pipeline_deals[is_at_risk] = TRUE () )
+At Risk Deals = CALCULATE ( COUNTROWS ( pipeline_deals ), pipeline_deals[is_at_risk] = TRUE () )
+At Risk % of Pipeline = DIVIDE ( [EUR At Risk], [Open Pipeline EUR] )
+Avg Days in Stage = AVERAGE ( pipeline_stage_stints[days_in_stage] )
+Median Days in Stage = MEDIAN ( pipeline_stage_stints[days_in_stage] )
+Avg Sales Cycle Days = AVERAGE ( pipeline_deals[sales_cycle_days] )
+
+// Stage conversion: deals that reached stage N+1 / deals that reached stage N (by creation period).
+Deals Reached Stage =
+VAR n = SELECTEDVALUE ( DimStage[stage_order] )
+RETURN CALCULATE ( COUNTROWS ( pipeline_deals ), pipeline_deals[max_stage_reached] >= n )
+
+Stage Conversion % =
+VAR n = SELECTEDVALUE ( DimStage[stage_order] )
+RETURN
+    DIVIDE (
+        CALCULATE ( COUNTROWS ( pipeline_deals ), pipeline_deals[max_stage_reached] >= n + 1 ),
+        CALCULATE ( COUNTROWS ( pipeline_deals ), pipeline_deals[max_stage_reached] >= n )
+    )
+
+// Positive = reps are more optimistic than the governed probabilities.
+Forecast Honesty Gap (pts) =
+AVERAGEX (
+    FILTER ( pipeline_deals, pipeline_deals[is_open] && NOT ISBLANK ( pipeline_deals[rep_probability] ) ),
+    pipeline_deals[rep_probability] - pipeline_deals[governed_probability] * 100
+)
+
+// ---- People (page 3) ---------------------------------------------------------------------------------
+Quota YTD EUR = SUM ( sales_team[prorated_quota_ytd_eur] )
+Bookings YTD EUR = SUM ( sales_team[bookings_ytd_eur] )
+Quota Attainment YTD % = DIVIDE ( [Bookings YTD EUR], [Quota YTD EUR] )
+
+// ---- Market (page 4) ---------------------------------------------------------------------------------
+Accounts = DISTINCTCOUNT ( pipeline_deals[master_account_id] )
+Open Pipeline per Account EUR = DIVIDE ( [Open Pipeline EUR], [Accounts] )
+
+// ---- Win probability model - advisory (page 5) -------------------------------------------------------
+Model Weighted Pipeline EUR = SUM ( model_scores[model_weighted_eur] )
+Governed Weighted (scored deals) EUR =
+SUMX ( FILTER ( model_scores, NOT ISBLANK ( model_scores[model_win_probability] ) ), model_scores[amount_eur] * model_scores[governed_probability] )
+Model vs Governed Gap EUR = [Model Weighted Pipeline EUR] - [Governed Weighted (scored deals) EUR]
+Deals To Review = CALCULATE ( COUNTROWS ( model_scores ), model_scores[model_review_flag] = "Review" )   // |model - governed| >= 25 pts
+Deals Not Scored = CALCULATE ( COUNTROWS ( model_scores ), model_scores[model_status] <> "SCORED" )
+
+// ---- Data trust (page 6) -----------------------------------------------------------------------------
+Checks Passed = CALCULATE ( COUNTROWS ( dq_reconciliation ), dq_reconciliation[status] = "PASS" )
+Checks Total = COUNTROWS ( dq_reconciliation )
+Trust Score % = DIVIDE ( [Checks Passed], [Checks Total] )
+Rejected Records = COUNTROWS ( rejected_records )
+
+// ---- Helper measures used by the report visuals (charts need measures, not raw columns) -------------------
+Current Quarter = VAR d = [Snapshot Date] RETURN YEAR ( d ) & "-Q" & QUARTER ( d )
+Next Quarter = VAR d = EDATE ( [Snapshot Date], 3 ) RETURN YEAR ( d ) & "-Q" & QUARTER ( d )
+Current Quarter Attainment % = VAR q = [Current Quarter] RETURN CALCULATE ( [Bookings vs Target %], dept_quarter_summary[quarter] = q )
+Next Quarter Coverage x = VAR q = [Next Quarter] RETURN CALCULATE ( [Pipeline Coverage x], dept_quarter_summary[quarter] = q )
+Deal Amount EUR = SUM ( pipeline_deals[amount_eur] )
+Days In Current Stage = AVERAGE ( pipeline_deals[days_in_current_stage] )
+Avg Stuck Threshold Days = AVERAGE ( pipeline_stage_stints[stuck_after_days] )
+Account Latitude = AVERAGE ( dim_accounts[latitude] )
+Account Longitude = AVERAGE ( dim_accounts[longitude] )
+Predicted Win Rate = AVERAGE ( model_calibration[avg_predicted] )
+Actual Win Rate = AVERAGE ( model_calibration[actual_win_rate] )
+Calibration Deals = SUM ( model_calibration[deals] )
+Backtest Forecast EUR = SUM ( model_backtest[forecast_won_eur] )
+Backtest Actual EUR = SUM ( model_backtest[actual_won_eur] )
+Feature Importance Share = SUM ( model_feature_importance[importance_share] )
+
+// ---- Deal explainer: why does the model think this deal will (not) convert? (page 6) ----------------------
+// Click a deal in the list: every measure below then describes that one deal. With no selection they show the pipeline average.
+Selected Model Win Probability = AVERAGE ( model_scores[model_win_probability] )
+Selected Governed Probability = AVERAGE ( model_scores[governed_probability] )
+Average Open Deal Probability = CALCULATE ( AVERAGE ( model_scores[model_win_probability] ), ALL ( model_scores ) )
+Selected Deal Amount EUR = SUM ( model_scores[amount_eur] )
+Impact (pts) = AVERAGE ( model_explanations[impact_pts] )
+Reasoning Text = SELECTEDVALUE ( model_scores[model_reasoning], "Click a deal in the list on the left to see why the model rates it as it does." )

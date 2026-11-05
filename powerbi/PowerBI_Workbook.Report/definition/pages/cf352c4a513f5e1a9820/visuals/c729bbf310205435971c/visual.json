@@ -1,0 +1,105 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "c729bbf310205435971c",
+  "position": {
+    "x": 870,
+    "y": 780,
+    "z": 10000,
+    "height": 210,
+    "width": 1020,
+    "tabOrder": 10000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "model_explanations"
+                    }
+                  },
+                  "Property": "feature_label"
+                }
+              },
+              "queryRef": "model_explanations.feature_label",
+              "nativeQueryRef": "feature_label"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "model_explanations"
+                    }
+                  },
+                  "Property": "insight"
+                }
+              },
+              "queryRef": "model_explanations.insight",
+              "nativeQueryRef": "insight"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Impact (pts)"
+                }
+              },
+              "queryRef": "_Measures.Impact (pts)",
+              "nativeQueryRef": "Impact (pts)"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  }
+                },
+                "Property": "Impact (pts)"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'The reasons, in a few words'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

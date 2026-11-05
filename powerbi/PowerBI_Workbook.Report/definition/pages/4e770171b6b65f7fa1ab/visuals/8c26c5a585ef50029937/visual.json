@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "8c26c5a585ef50029937",
+  "position": {
+    "x": 780,
+    "y": 110,
+    "z": 5000,
+    "height": 110,
+    "width": 359,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Governed Weighted (scored deals) EUR"
+                }
+              },
+              "queryRef": "_Measures.Governed Weighted (scored deals) EUR",
+              "nativeQueryRef": "Governed Weighted (scored deals) EUR"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Governed, scored deals only'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

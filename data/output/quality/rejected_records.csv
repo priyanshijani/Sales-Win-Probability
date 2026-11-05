@@ -1,0 +1,213 @@
+opportunity_id,source_file,crm_version,last_modified,opportunity_name,reject_reason
+OPP-000567,opps_2024_10.csv,v1,2024-08-05 00:57:09,Stellaris Motorenwerk - Managed SOC,DUPLICATE_OLDER_VERSION
+OPP-001193,opps_2024_12.csv,v1,2025-04-24 19:17:43,Vektor Shipping - SAP S/4HANA Implementation,DUPLICATE_OLDER_VERSION
+OPP-001681,opps_2025_03.csv,v1,2025-05-21 17:33:54,Brightwater Finance - Application Support,DUPLICATE_OLDER_VERSION
+OPP-002043,opps_2025_06.csv,v1,2025-08-26 19:18:48,Rhein Automotive - Cloud Migration,DUPLICATE_OLDER_VERSION
+OPP-002160,opps_2025_06.csv,v1,2025-09-03 17:00:00,Riviera Grid - DevOps & Platform Engineering,DUPLICATE_OLDER_VERSION
+OPP-002185,opps_2025_07.csv,v2,2025-07-13 13:56:00,Baltica Precision - Salesforce Implementation,DUPLICATE_OLDER_VERSION
+OPP-002423,opps_2025_08.csv,v2,2026-01-09 01:58:00,Karlsson Grid - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-002963,opps_2025_11.csv,v2,2026-02-20 18:01:00,Silverline Automotive - Cloud Migration,DUPLICATE_OLDER_VERSION
+OPP-003282,opps_2026_01.csv,v2,2026-03-11 00:31:00,Estrella Grid - Application Support,DUPLICATE_OLDER_VERSION
+OPP-003520,opps_2026_02.csv,v2,2026-05-30 17:00:00,Elbe Power - Data Platform Modernisation,DUPLICATE_OLDER_VERSION
+OPP-003775,opps_2026_03.csv,v2,2026-04-11 14:21:00,Vektor Components - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-003835,opps_2026_04.csv,v2,2026-09-07 17:00:00,Dunmore Automotive - Managed Cloud Services,DUPLICATE_OLDER_VERSION
+OPP-004136,opps_2026_05.csv,v2,2026-07-04 21:05:00,Lumen Components - Cloud Migration,DUPLICATE_OLDER_VERSION
+OPP-000182,opps_2024_10.csv,v1,2024-07-11 17:11:51,Delta Components - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-000514,opps_2024_10.csv,v1,2024-10-18 16:41:42,Bergmann Logistics - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-000862,opps_2024_10.csv,v1,2025-05-06 17:38:17,Vistula Authority - Salesforce Implementation,DUPLICATE_OLDER_VERSION
+OPP-000960,opps_2024_10.csv,v1,2024-12-06 17:00:00,Noord Components - Cloud Migration,DUPLICATE_OLDER_VERSION
+OPP-001213,opps_2024_12.csv,v1,2025-03-09 17:00:00,Oakridge Capital - Managed SOC,DUPLICATE_OLDER_VERSION
+OPP-001625,opps_2025_03.csv,v1,2025-04-10 23:52:28,Saxon Foods - AI & GenAI Solutions,DUPLICATE_OLDER_VERSION
+OPP-001898,opps_2025_05.csv,v1,2025-08-24 11:42:33,Noord Components - Managed SOC,DUPLICATE_OLDER_VERSION
+OPP-002042,opps_2025_06.csv,v1,2026-01-03 17:00:00,Alpenkraft Capital - Data Platform Modernisation,DUPLICATE_OLDER_VERSION
+OPP-002970,opps_2025_11.csv,v2,2025-12-30 16:34:00,Isola Mobility - Security Assessment,DUPLICATE_OLDER_VERSION
+OPP-003008,opps_2025_11.csv,v2,2026-06-18 03:28:00,Rhein Freight - Data Platform Modernisation,DUPLICATE_OLDER_VERSION
+OPP-003227,opps_2025_12.csv,v2,2026-01-03 13:22:00,Helvetia Brands - Salesforce Implementation,DUPLICATE_OLDER_VERSION
+OPP-003675,opps_2026_03.csv,v2,2026-08-04 07:13:00,Zentra Stores - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-003717,opps_2026_03.csv,v2,2026-05-18 17:00:00,Noord Health - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-004413,opps_2026_07.csv,v2,2026-08-19 17:00:00,Tamsin Grid - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-004696,opps_2026_08.csv,v2,2026-08-31 17:00:00,Noord Retail - AI & GenAI Solutions,DUPLICATE_OLDER_VERSION
+OPP-000307,opps_2024_10.csv,v1,2024-08-12 17:00:00,Oakridge Assurance - DevOps & Platform Engineering,DUPLICATE_OLDER_VERSION
+OPP-000312,opps_2024_10.csv,v1,2024-11-04 13:30:04,Novara Authority - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-000896,opps_2024_10.csv,v1,2025-04-02 21:42:10,Falkner Broadcast - Salesforce Implementation,DUPLICATE_OLDER_VERSION
+OPP-001168,opps_2024_12.csv,v1,2025-08-05 12:50:04,Cygnus Consumer - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-001599,opps_2025_03.csv,v1,2025-05-29 16:47:58,Castellan Capital - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-001849,opps_2025_04.csv,v1,2025-07-30 17:00:00,Granite Power - Identity & Access Management,DUPLICATE_OLDER_VERSION
+OPP-001923,opps_2025_05.csv,v1,2025-08-04 18:15:00,Fontaine Finance - Managed SOC,DUPLICATE_OLDER_VERSION
+OPP-002096,opps_2025_06.csv,v1,2026-04-05 17:00:00,Fontaine Invest - AI & GenAI Solutions,DUPLICATE_OLDER_VERSION
+OPP-002577,opps_2025_09.csv,v2,2025-11-21 18:24:00,Gallway Consumer - AI & GenAI Solutions,DUPLICATE_OLDER_VERSION
+OPP-002666,opps_2025_09.csv,v2,2025-11-30 06:06:00,Alpenkraft Grid - DevOps & Platform Engineering,DUPLICATE_OLDER_VERSION
+OPP-003634,opps_2026_03.csv,v2,2026-06-20 00:43:00,Karlsson Connect - Application Support,DUPLICATE_OLDER_VERSION
+OPP-004175,opps_2026_06.csv,v2,2026-08-18 11:56:00,Silverline Industries - SAP S/4HANA Implementation,DUPLICATE_OLDER_VERSION
+OPP-004201,opps_2026_06.csv,v2,2026-08-27 11:58:00,Noord Components - Cloud Migration,DUPLICATE_OLDER_VERSION
+OPP-004327,opps_2026_06.csv,v2,2026-07-07 23:59:00,Alpenkraft Industries - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-004448,opps_2026_07.csv,v2,2026-08-08 06:03:00,Aurora Broadcast - Data Platform Modernisation,DUPLICATE_OLDER_VERSION
+OPP-004660,opps_2026_08.csv,v2,2026-09-06 16:14:00,Vistula Precision - Cloud Migration,DUPLICATE_OLDER_VERSION
+OPP-990002,opps_2025_03.csv,v1,2025-04-04 21:29:15,TEST - please ignore,TEST_RECORD
+OPP-000392,opps_2024_10.csv,v1,2024-07-02 12:55:12,Westbrook Power - Application Support,DUPLICATE_OLDER_VERSION
+OPP-000604,opps_2024_10.csv,v1,2025-02-23 23:01:17,Vektor Shipping - Salesforce Implementation,DUPLICATE_OLDER_VERSION
+OPP-001654,opps_2025_03.csv,v1,2025-06-04 17:00:00,Silverline Public Services - Application Support,DUPLICATE_OLDER_VERSION
+OPP-001828,opps_2025_04.csv,v1,2025-09-11 08:28:49,Noord Assurance - DevOps & Platform Engineering,DUPLICATE_OLDER_VERSION
+OPP-002048,opps_2025_06.csv,v1,2025-09-19 17:00:00,Oakridge Invest - Security Assessment,DUPLICATE_OLDER_VERSION
+OPP-002613,opps_2025_09.csv,v2,2025-11-03 22:49:00,Stellaris Biotech - Data Platform Modernisation,DUPLICATE_OLDER_VERSION
+OPP-003059,opps_2025_12.csv,v2,2026-02-24 04:25:00,Invicta Consumer - DevOps & Platform Engineering,DUPLICATE_OLDER_VERSION
+OPP-003497,opps_2026_02.csv,v2,2026-07-08 17:00:00,Harbour Capital - Cloud Migration,DUPLICATE_OLDER_VERSION
+OPP-003724,opps_2026_03.csv,v2,2026-05-29 17:00:00,Fontaine Motorenwerk - Managed Cloud Services,DUPLICATE_OLDER_VERSION
+OPP-003859,opps_2026_04.csv,v2,2026-09-12 17:00:00,Rhein Freight - DevOps & Platform Engineering,DUPLICATE_OLDER_VERSION
+OPP-000348,opps_2024_10.csv,v1,2025-07-07 08:06:56,Kronberg Municipal Services - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-000670,opps_2024_10.csv,v1,2024-10-25 17:00:00,Orion Industries - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-000710,opps_2024_10.csv,v1,2025-02-16 03:56:36,Ysolde Transport - SAP S/4HANA Implementation,DUPLICATE_OLDER_VERSION
+OPP-002274,opps_2025_07.csv,v2,2025-11-17 04:00:00,Riviera Renewables - Data Platform Modernisation,DUPLICATE_OLDER_VERSION
+OPP-002623,opps_2025_09.csv,v2,2026-06-12 13:44:00,Solvik Telecom - Data Platform Modernisation,DUPLICATE_OLDER_VERSION
+OPP-002656,opps_2025_09.csv,v2,2026-02-04 21:18:00,Fjordline Motorenwerk - Data Platform Modernisation,DUPLICATE_OLDER_VERSION
+OPP-003464,opps_2026_02.csv,v2,2026-05-22 17:00:00,Atlas Renewables - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-003781,opps_2026_04.csv,v2,2026-06-04 17:02:00,Orion Automotive - Cloud Migration,DUPLICATE_OLDER_VERSION
+OPP-003854,opps_2026_04.csv,v2,2026-05-29 16:29:00,Castellan Invest - AI & GenAI Solutions,DUPLICATE_OLDER_VERSION
+OPP-004522,opps_2026_07.csv,v2,2026-08-09 02:08:00,Lusitania Renewables - Security Assessment,DUPLICATE_OLDER_VERSION
+OPP-000316,opps_2024_10.csv,v1,2024-12-12 23:03:57,Polaris Precision - Managed Cloud Services,DUPLICATE_OLDER_VERSION
+OPP-000767,opps_2024_10.csv,v1,2024-11-27 18:10:21,Karlsson Freight - Application Support,DUPLICATE_OLDER_VERSION
+OPP-000791,opps_2024_10.csv,v1,2024-12-21 09:31:34,Gallway Retail - Managed SOC,DUPLICATE_OLDER_VERSION
+OPP-001108,opps_2024_11.csv,v1,2025-04-20 02:04:13,Jadeport Logistics - Security Assessment,DUPLICATE_OLDER_VERSION
+OPP-002519,opps_2025_08.csv,v2,2026-02-13 07:24:00,Valora Stores - Cloud Migration,DUPLICATE_OLDER_VERSION
+OPP-003536,opps_2026_02.csv,v2,2026-08-27 17:00:00,Hansa Municipal Services - Managed Cloud Services,DUPLICATE_OLDER_VERSION
+OPP-003593,opps_2026_03.csv,v2,2026-05-23 17:00:00,Lumen Pharma - SAP S/4HANA Implementation,DUPLICATE_OLDER_VERSION
+OPP-003738,opps_2026_03.csv,v2,2026-05-07 06:43:00,Harbour Automotive - DevOps & Platform Engineering,DUPLICATE_OLDER_VERSION
+OPP-004269,opps_2026_06.csv,v2,2026-07-07 17:58:00,Jadeport Foods - DevOps & Platform Engineering,DUPLICATE_OLDER_VERSION
+OPP-004491,opps_2026_07.csv,v2,2026-08-22 17:00:00,Meridian Freight - Security Assessment,DUPLICATE_OLDER_VERSION
+OPP-000281,opps_2024_10.csv,v1,2024-11-07 19:00:35,Falkner Pharma - Salesforce Implementation,DUPLICATE_OLDER_VERSION
+OPP-000362,opps_2024_10.csv,v1,2024-10-24 09:15:56,Vektor Shipping - DevOps & Platform Engineering,DUPLICATE_OLDER_VERSION
+OPP-000590,opps_2024_10.csv,v1,2025-01-26 10:19:07,Noord Authority - Data Platform Modernisation,DUPLICATE_OLDER_VERSION
+OPP-001043,opps_2024_11.csv,v1,2025-09-16 09:15:52,Moselle Capital - Identity & Access Management,DUPLICATE_OLDER_VERSION
+OPP-001273,opps_2025_01.csv,v1,2025-03-08 21:20:39,Castellan Telecom - Cloud Migration,DUPLICATE_OLDER_VERSION
+OPP-001578,opps_2025_03.csv,v1,2025-05-16 17:00:00,Corvina Automotive - Managed Cloud Services,DUPLICATE_OLDER_VERSION
+OPP-001701,opps_2025_03.csv,v1,2025-05-08 20:14:39,Gallway Agency - Application Support,DUPLICATE_OLDER_VERSION
+OPP-001889,opps_2025_05.csv,v1,2025-07-13 01:23:47,Ysolde Renewables - Managed Cloud Services,DUPLICATE_OLDER_VERSION
+OPP-002446,opps_2025_08.csv,v2,2025-10-03 20:47:00,Estrella Motorenwerk - AI & GenAI Solutions,DUPLICATE_OLDER_VERSION
+OPP-002683,opps_2025_09.csv,v2,2026-01-03 15:47:00,Aurora Grid - Security Assessment,DUPLICATE_OLDER_VERSION
+OPP-002699,opps_2025_09.csv,v2,2025-10-06 17:00:00,Tauern Retail - Managed Cloud Services,DUPLICATE_OLDER_VERSION
+OPP-003598,opps_2026_03.csv,v2,2026-04-17 20:36:00,Valora Motorenwerk - DevOps & Platform Engineering,DUPLICATE_OLDER_VERSION
+OPP-004698,opps_2026_08.csv,v2,2026-08-29 09:56:00,Vektor Renewables - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-004803,opps_2026_09.csv,v2,2026-09-12 17:00:00,Zentra Shipping - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-990004,opps_2025_09.csv,v2,2025-11-22 17:00:00,TEST - please ignore,TEST_RECORD
+OPP-000169,opps_2024_10.csv,v1,2024-09-23 18:55:57,Delta Automotive - Identity & Access Management,DUPLICATE_OLDER_VERSION
+OPP-000232,opps_2024_10.csv,v1,2025-01-10 19:40:38,Lindholm Telecom - DevOps & Platform Engineering,DUPLICATE_OLDER_VERSION
+OPP-000311,opps_2024_10.csv,v1,2024-08-21 04:37:53,Rhein Freight - Application Support,DUPLICATE_OLDER_VERSION
+OPP-000872,opps_2024_10.csv,v1,2024-11-12 18:09:48,Oakridge Assurance - SAP S/4HANA Implementation,DUPLICATE_OLDER_VERSION
+OPP-001142,opps_2024_12.csv,v1,2024-12-28 13:20:02,Invicta Logistics - SAP S/4HANA Implementation,DUPLICATE_OLDER_VERSION
+OPP-001165,opps_2024_12.csv,v1,2025-01-18 17:43:52,Invicta Capital - Data Platform Modernisation,DUPLICATE_OLDER_VERSION
+OPP-001696,opps_2025_03.csv,v1,2025-04-17 17:00:00,Meridian Renewables - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-001831,opps_2025_04.csv,v1,2025-10-18 17:00:00,Harbour Capital - DevOps & Platform Engineering,DUPLICATE_OLDER_VERSION
+OPP-002384,opps_2025_08.csv,v2,2026-04-16 17:00:00,Danubia Clinics - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-002537,opps_2025_08.csv,v2,2025-11-10 19:31:00,Stellaris Motorenwerk - AI & GenAI Solutions,DUPLICATE_OLDER_VERSION
+OPP-003905,opps_2026_04.csv,v2,2026-04-21 09:32:00,Solvik Agency - Security Assessment,DUPLICATE_OLDER_VERSION
+OPP-003939,opps_2026_04.csv,v2,2026-08-17 17:00:00,Castellan Energy - Cloud Migration,DUPLICATE_OLDER_VERSION
+OPP-004029,opps_2026_05.csv,v2,2026-06-13 12:31:00,Silverline Medical - Managed SOC,DUPLICATE_OLDER_VERSION
+OPP-004297,opps_2026_06.csv,v2,2026-08-13 10:59:00,Brightwater Bank - DevOps & Platform Engineering,DUPLICATE_OLDER_VERSION
+OPP-004785,opps_2026_09.csv,v2,2026-09-07 17:00:00,Vistula Authority - Application Support,DUPLICATE_OLDER_VERSION
+OPP-000519,opps_2024_10.csv,v1,2024-08-07 22:42:01,Stellaris Freight - Identity & Access Management,DUPLICATE_OLDER_VERSION
+OPP-000676,opps_2024_10.csv,v1,2024-09-12 10:01:44,Estrella Consumer - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-000752,opps_2024_10.csv,v1,2024-11-24 21:17:25,Vektor Shipping - Application Support,DUPLICATE_OLDER_VERSION
+OPP-001015,opps_2024_11.csv,v1,2025-02-21 05:43:04,Kronberg Stores - Security Assessment,DUPLICATE_OLDER_VERSION
+OPP-001456,opps_2025_02.csv,v1,2025-05-13 20:20:44,Corvina Brands - Application Support,DUPLICATE_OLDER_VERSION
+OPP-002117,opps_2025_06.csv,v1,2025-09-30 17:00:00,Wexford Clinics - Salesforce Implementation,DUPLICATE_OLDER_VERSION
+OPP-003155,opps_2025_12.csv,v2,2026-02-21 20:04:00,Westbrook Power - Data Platform Modernisation,DUPLICATE_OLDER_VERSION
+OPP-003273,opps_2026_01.csv,v2,2026-01-30 16:08:00,Aurora Invest - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-003321,opps_2026_01.csv,v2,2026-02-19 11:25:00,Corvina Finance - DevOps & Platform Engineering,DUPLICATE_OLDER_VERSION
+OPP-003349,opps_2026_01.csv,v2,2026-02-04 18:31:00,Karlsson Automotive - Managed SOC,DUPLICATE_OLDER_VERSION
+OPP-003408,opps_2026_01.csv,v2,2026-03-13 17:00:00,Castellan Motorenwerk - DevOps & Platform Engineering,DUPLICATE_OLDER_VERSION
+OPP-003813,opps_2026_04.csv,v2,2026-07-19 17:00:00,Bergmann Pharma - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-003861,opps_2026_04.csv,v2,2026-07-16 11:36:00,Saxon Foods - Managed Cloud Services,DUPLICATE_OLDER_VERSION
+OPP-003876,opps_2026_04.csv,v2,2026-08-01 02:54:00,Riviera Finance - Managed Cloud Services,DUPLICATE_OLDER_VERSION
+OPP-004154,opps_2026_05.csv,v2,2026-09-13 17:00:00,Noord Authority - Data Platform Modernisation,DUPLICATE_OLDER_VERSION
+OPP-000860,opps_2024_10.csv,v1,2025-02-28 17:00:00,Hansa Bank - Security Assessment,DUPLICATE_OLDER_VERSION
+OPP-001283,opps_2025_01.csv,v1,2025-05-19 14:51:20,Hansa Clinics - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-003280,opps_2026_01.csv,v2,2026-08-19 17:00:00,Corvina Industries - Cloud Migration,DUPLICATE_OLDER_VERSION
+OPP-003318,opps_2026_01.csv,v2,2026-03-17 09:47:00,Baltica Telecom - Managed Cloud Services,DUPLICATE_OLDER_VERSION
+OPP-003764,opps_2026_03.csv,v2,2026-05-12 17:00:00,Lindholm Public Services - SAP S/4HANA Implementation,DUPLICATE_OLDER_VERSION
+OPP-004398,opps_2026_07.csv,v2,2026-08-12 18:42:00,Zentra Transport - Data Platform Modernisation,DUPLICATE_OLDER_VERSION
+OPP-990005,opps_2025_09.csv,v2,2025-11-22 17:00:00,TEST - please ignore,TEST_RECORD
+OPP-000239,opps_2024_10.csv,v1,2024-07-03 23:18:33,Vektor Invest - Salesforce Implementation,DUPLICATE_OLDER_VERSION
+OPP-000393,opps_2024_10.csv,v1,2024-08-08 08:40:39,Saxon Precision - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-000525,opps_2024_10.csv,v1,2024-09-08 17:00:00,Arcadia Industries - Cloud Migration,DUPLICATE_OLDER_VERSION
+OPP-001008,opps_2024_11.csv,v1,2025-03-27 18:34:00,Alpenkraft Finance - Managed Cloud Services,DUPLICATE_OLDER_VERSION
+OPP-001386,opps_2025_01.csv,v1,2025-04-07 18:18:13,Zentra Shipping - SAP S/4HANA Implementation,DUPLICATE_OLDER_VERSION
+OPP-001610,opps_2025_03.csv,v1,2025-05-01 17:00:00,Quadra Retail - DevOps & Platform Engineering,DUPLICATE_OLDER_VERSION
+OPP-001780,opps_2025_04.csv,v1,2025-12-25 16:55:16,Olympia Logistics - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-002210,opps_2025_07.csv,v2,2025-10-02 17:00:00,Pionier Brands - Cloud Migration,DUPLICATE_OLDER_VERSION
+OPP-002390,opps_2025_08.csv,v2,2025-09-18 17:00:00,Lindholm Bank - Managed Cloud Services,DUPLICATE_OLDER_VERSION
+OPP-002432,opps_2025_08.csv,v2,2025-09-15 15:41:00,Zentra Transport - Managed Cloud Services,DUPLICATE_OLDER_VERSION
+OPP-002643,opps_2025_09.csv,v2,2025-11-09 04:46:00,Meridian Agency - AI & GenAI Solutions,DUPLICATE_OLDER_VERSION
+OPP-003336,opps_2026_01.csv,v2,2026-04-24 13:41:00,Karlsson Freight - Data Platform Modernisation,DUPLICATE_OLDER_VERSION
+OPP-003508,opps_2026_02.csv,v2,2026-03-31 21:29:00,Jadeport Pharma - Identity & Access Management,DUPLICATE_OLDER_VERSION
+OPP-004054,opps_2026_05.csv,v2,2026-07-17 04:56:00,Lindholm Precision - DevOps & Platform Engineering,DUPLICATE_OLDER_VERSION
+OPP-004568,opps_2026_08.csv,v2,2026-09-09 15:23:00,Saxon Finance - AI & GenAI Solutions,DUPLICATE_OLDER_VERSION
+OPP-004708,opps_2026_08.csv,v2,2026-09-03 17:00:00,Baltica Motorenwerk - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-000364,opps_2024_10.csv,v1,2024-10-12 09:44:18,Hansa Bank - Identity & Access Management,DUPLICATE_OLDER_VERSION
+OPP-000571,opps_2024_10.csv,v1,2024-11-07 05:14:11,Estrella Precision - Salesforce Implementation,DUPLICATE_OLDER_VERSION
+OPP-001039,opps_2024_11.csv,v1,2025-06-06 03:57:08,Harbour Biotech - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-001176,opps_2024_12.csv,v1,2025-02-21 01:41:32,Nordwind Utilities - DevOps & Platform Engineering,DUPLICATE_OLDER_VERSION
+OPP-001522,opps_2025_02.csv,v1,2025-06-24 18:58:56,Tamsin Freight - Data Platform Modernisation,DUPLICATE_OLDER_VERSION
+OPP-001942,opps_2025_05.csv,v1,2025-10-21 08:42:52,Saxon Clinics - Security Assessment,DUPLICATE_OLDER_VERSION
+OPP-002508,opps_2025_08.csv,v2,2025-08-27 18:24:00,Dunmore Motorenwerk - AI & GenAI Solutions,DUPLICATE_OLDER_VERSION
+OPP-002765,opps_2025_10.csv,v2,2025-10-24 21:28:00,Baltica Precision - Application Support,DUPLICATE_OLDER_VERSION
+OPP-002769,opps_2025_10.csv,v2,2026-02-02 21:02:00,Olympia Media - Security Assessment,DUPLICATE_OLDER_VERSION
+OPP-004547,opps_2026_07.csv,v2,2026-08-24 17:24:00,Bergmann Industries - DevOps & Platform Engineering,DUPLICATE_OLDER_VERSION
+OPP-004606,opps_2026_08.csv,v2,2026-09-03 17:00:00,Delta Utilities - Identity & Access Management,DUPLICATE_OLDER_VERSION
+OPP-004736,opps_2026_08.csv,v2,2026-09-08 17:00:00,Zentra Shipping - Salesforce Implementation,DUPLICATE_OLDER_VERSION
+OPP-990003,opps_2025_06.csv,v1,2025-10-09 17:00:00,TEST - please ignore,TEST_RECORD
+OPP-990006,opps_2025_11.csv,v2,2026-02-09 17:00:00,TEST - please ignore,TEST_RECORD
+OPP-000192,opps_2024_10.csv,v1,2024-05-29 00:47:16,Karlsson Industries - Data Platform Modernisation,DUPLICATE_OLDER_VERSION
+OPP-000623,opps_2024_10.csv,v1,2024-11-19 17:00:00,Gallway Assurance - Salesforce Implementation,DUPLICATE_OLDER_VERSION
+OPP-000883,opps_2024_10.csv,v1,2025-02-20 05:50:05,Quadra Broadcast - Identity & Access Management,DUPLICATE_OLDER_VERSION
+OPP-002541,opps_2025_08.csv,v2,2026-02-28 07:43:00,Bergmann Invest - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-002557,opps_2025_09.csv,v2,2026-02-17 20:27:00,Saxon Stores - Data Platform Modernisation,DUPLICATE_OLDER_VERSION
+OPP-003135,opps_2025_12.csv,v2,2026-06-22 17:02:00,Dunmore Motorenwerk - Salesforce Implementation,DUPLICATE_OLDER_VERSION
+OPP-003316,opps_2026_01.csv,v2,2026-05-10 07:21:00,Borealis Consumer - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-003680,opps_2026_03.csv,v2,2026-05-17 03:25:00,Isola Components - Managed Cloud Services,DUPLICATE_OLDER_VERSION
+OPP-004536,opps_2026_07.csv,v2,2026-09-09 17:00:00,Zephyr Transport - Security Assessment,DUPLICATE_OLDER_VERSION
+OPP-990001,opps_2024_11.csv,v1,2024-11-28 17:00:00,TEST - please ignore,TEST_RECORD
+OPP-000520,opps_2024_10.csv,v1,2024-07-27 06:56:28,Iberia Institute - SAP S/4HANA Implementation,DUPLICATE_OLDER_VERSION
+OPP-001026,opps_2024_11.csv,v1,2024-12-14 01:16:39,Zentra Motorenwerk - AI & GenAI Solutions,DUPLICATE_OLDER_VERSION
+OPP-001238,opps_2024_12.csv,v1,2025-08-01 23:13:39,Zentra Power - Security Assessment,DUPLICATE_OLDER_VERSION
+OPP-001469,opps_2025_02.csv,v1,2025-06-22 00:30:05,Noord Clinics - DevOps & Platform Engineering,DUPLICATE_OLDER_VERSION
+OPP-001744,opps_2025_04.csv,v1,2025-06-09 17:00:00,Granite Invest - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-001775,opps_2025_04.csv,v1,2025-05-09 15:49:05,Gallway Mobility - Salesforce Implementation,DUPLICATE_OLDER_VERSION
+OPP-001876,opps_2025_05.csv,v1,2025-10-18 05:21:27,Corvina Industries - Data Platform Modernisation,DUPLICATE_OLDER_VERSION
+OPP-001876,opps_2025_05.csv,v1,2025-10-18 05:21:27,Corvina Industries - Data Platform Modernisation,DUPLICATE_OLDER_VERSION
+OPP-001990,opps_2025_05.csv,v1,2025-09-13 01:11:46,Atlas Medical - Data Platform Modernisation,DUPLICATE_OLDER_VERSION
+OPP-002127,opps_2025_06.csv,v1,2025-08-12 17:06:08,Harbour Finance - Security Assessment,DUPLICATE_OLDER_VERSION
+OPP-002607,opps_2025_09.csv,v2,2025-12-22 17:00:00,Stellaris Industries - DevOps & Platform Engineering,DUPLICATE_OLDER_VERSION
+OPP-002651,opps_2025_09.csv,v2,2025-10-28 20:25:00,Vektor Motorenwerk - DevOps & Platform Engineering,DUPLICATE_OLDER_VERSION
+OPP-002873,opps_2025_10.csv,v2,2025-12-07 10:41:00,Juniper Medical - DevOps & Platform Engineering,DUPLICATE_OLDER_VERSION
+OPP-003324,opps_2026_01.csv,v2,2026-01-28 20:23:00,Westbrook Power - DevOps & Platform Engineering,DUPLICATE_OLDER_VERSION
+OPP-003409,opps_2026_01.csv,v2,2026-07-09 02:40:00,Falkner Finance - Managed SOC,DUPLICATE_OLDER_VERSION
+OPP-003844,opps_2026_04.csv,v2,2026-05-13 17:00:00,Polaris Broadcast - Data Platform Modernisation,DUPLICATE_OLDER_VERSION
+OPP-004126,opps_2026_05.csv,v2,2026-08-20 21:16:00,Noord Authority - Managed Cloud Services,DUPLICATE_OLDER_VERSION
+OPP-000046,opps_2024_10.csv,v1,2024-07-17 00:11:44,Tauern Consumer - Identity & Access Management,DUPLICATE_OLDER_VERSION
+OPP-000453,opps_2024_10.csv,v1,2024-10-07 17:00:00,Meridian Freight - DevOps & Platform Engineering,DUPLICATE_OLDER_VERSION
+OPP-000504,opps_2024_10.csv,v1,2025-07-03 13:10:48,Saxon Motorenwerk - Application Support,DUPLICATE_OLDER_VERSION
+OPP-000795,opps_2024_10.csv,v1,2025-04-09 03:26:33,Falkner Municipal Services - SAP S/4HANA Implementation,DUPLICATE_OLDER_VERSION
+OPP-000837,opps_2024_10.csv,v1,2024-12-29 18:33:08,Lusitania Renewables - Identity & Access Management,DUPLICATE_OLDER_VERSION
+OPP-001009,opps_2024_11.csv,v1,2024-12-18 04:48:23,Falkner Finance - Identity & Access Management,DUPLICATE_OLDER_VERSION
+OPP-001398,opps_2025_01.csv,v1,2025-07-18 16:15:49,Orion Health - Managed Cloud Services,DUPLICATE_OLDER_VERSION
+OPP-002449,opps_2025_08.csv,v2,2026-08-25 09:49:00,Lusitania Health - SAP S/4HANA Implementation,DUPLICATE_OLDER_VERSION
+OPP-002701,opps_2025_09.csv,v2,2025-12-07 20:01:00,Bergmann Invest - Identity & Access Management,DUPLICATE_OLDER_VERSION
+OPP-002779,opps_2025_10.csv,v2,2025-10-26 17:00:00,Vektor Finance - Data Platform Modernisation,DUPLICATE_OLDER_VERSION
+OPP-002791,opps_2025_10.csv,v2,2026-01-01 17:00:00,Arcadia Precision - Managed SOC,DUPLICATE_OLDER_VERSION
+OPP-003111,opps_2025_12.csv,v2,2026-01-17 21:11:00,Jadeport Industries - Cloud Migration,DUPLICATE_OLDER_VERSION
+OPP-003716,opps_2026_03.csv,v2,2026-08-20 02:26:00,Arcadia Consumer - Data Platform Modernisation,DUPLICATE_OLDER_VERSION
+OPP-000084,opps_2024_10.csv,v1,2024-06-11 09:24:41,Arcadia Utilities - Identity & Access Management,DUPLICATE_OLDER_VERSION
+OPP-001130,opps_2024_12.csv,v1,2025-04-23 19:16:28,Nordwind Foods - Salesforce Implementation,DUPLICATE_OLDER_VERSION
+OPP-001215,opps_2024_12.csv,v1,2025-08-21 16:45:48,Alpenkraft Utilities - Application Support,DUPLICATE_OLDER_VERSION
+OPP-001448,opps_2025_02.csv,v1,2025-07-11 23:18:19,Falkner Municipal Services - Security Assessment,DUPLICATE_OLDER_VERSION
+OPP-001504,opps_2025_02.csv,v1,2025-06-12 19:14:36,Stellaris Assurance - AI & GenAI Solutions,DUPLICATE_OLDER_VERSION
+OPP-001752,opps_2025_04.csv,v1,2025-04-06 11:43:43,Moselle Retail - Analytics & BI,DUPLICATE_OLDER_VERSION
+OPP-001850,opps_2025_04.csv,v1,2025-05-08 01:39:32,Iberia Agency - Managed Cloud Services,DUPLICATE_OLDER_VERSION
+OPP-002493,opps_2025_08.csv,v2,2025-11-24 00:34:00,Novara Finance - Managed Cloud Services,DUPLICATE_OLDER_VERSION
+OPP-002516,opps_2025_08.csv,v2,2025-10-21 00:56:00,Alpenkraft Renewables - AI & GenAI Solutions,DUPLICATE_OLDER_VERSION
+OPP-002560,opps_2025_09.csv,v2,2025-10-09 09:45:00,Borealis Networks - Application Support,DUPLICATE_OLDER_VERSION
+OPP-002732,opps_2025_10.csv,v2,2025-12-18 14:26:00,Borealis Clinics - AI & GenAI Solutions,DUPLICATE_OLDER_VERSION
+OPP-002771,opps_2025_10.csv,v2,2026-02-22 12:34:00,Iberia Pharma - Cloud Migration,DUPLICATE_OLDER_VERSION
+OPP-002840,opps_2025_10.csv,v2,2025-11-01 20:00:00,Bergmann Media - SAP S/4HANA Implementation,DUPLICATE_OLDER_VERSION
+OPP-003019,opps_2025_11.csv,v2,2026-05-24 02:28:00,Quadra Logistics - Application Support,DUPLICATE_OLDER_VERSION
+OPP-003068,opps_2025_12.csv,v2,2026-01-11 20:08:00,Ysolde Brands - Data Platform Modernisation,DUPLICATE_OLDER_VERSION

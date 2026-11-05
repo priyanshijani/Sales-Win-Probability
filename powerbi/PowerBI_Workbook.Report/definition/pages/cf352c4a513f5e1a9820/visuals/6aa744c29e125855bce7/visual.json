@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "6aa744c29e125855bce7",
+  "position": {
+    "x": 30,
+    "y": 110,
+    "z": 3000,
+    "height": 110,
+    "width": 453,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Selected Model Win Probability"
+                }
+              },
+              "queryRef": "_Measures.Selected Model Win Probability",
+              "nativeQueryRef": "Selected Model Win Probability"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Model win probability'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

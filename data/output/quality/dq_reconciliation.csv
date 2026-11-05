@@ -1,0 +1,28 @@
+check_id,check_group,check_name,dimension,expected,actual,difference,status
+1,Row bridge,Account records = master accounts + merged duplicates,All,765.0,765.0,0.0,PASS
+2,Row bridge,Raw rows = deals + older versions + test records,All,5012.0,5012.0,0.0,PASS
+3,Row bridge,Stage stints = open-stage sittings in the audit log,All,12017.0,12017.0,0.0,PASS
+4,Integrity,Closed deals still without a close date,All,0.0,0.0,0.0,PASS
+5,Integrity,"Deals pointing to a deleted account (kept, flagged)",All,10.0,10.0,0.0,PASS
+6,Integrity,Deals whose owner could not be resolved,All,0.0,0.0,0.0,PASS
+7,Integrity,Deals with an unmapped stage / department,All,0.0,0.0,0.0,PASS
+8,Integrity,Deals with no FX rate,All,0.0,0.0,0.0,PASS
+9,Integrity,Open deals without a current stage entry date,All,0.0,0.0,0.0,PASS
+10,CRM control total,Account records in CRM,All,765.0,765.0,0.0,PASS
+11,CRM control total,Opportunities by stage (excl. test records),Closed Lost,2969.0,2969.0,0.0,PASS
+12,CRM control total,Opportunities by stage (excl. test records),Closed Won,1107.0,1107.0,0.0,PASS
+13,CRM control total,Opportunities by stage (excl. test records),Discovery,233.0,233.0,0.0,PASS
+14,CRM control total,Opportunities by stage (excl. test records),Negotiation,79.0,79.0,0.0,PASS
+15,CRM control total,Opportunities by stage (excl. test records),Proposal,194.0,194.0,0.0,PASS
+16,CRM control total,Opportunities by stage (excl. test records),Solution Design,218.0,218.0,0.0,PASS
+17,CRM control total,Opportunities with blank Amount (excl. test records),All,44.0,44.0,0.0,PASS
+18,CRM control total,"Sum of Amount as stored, local currency (excl. test records)",(blank),53235300.0,53235300.0,0.0,PASS
+19,CRM control total,"Sum of Amount as stored, local currency (excl. test records)",CHF,39712800.0,39712800.0,0.0,PASS
+20,CRM control total,"Sum of Amount as stored, local currency (excl. test records)",CZK,792713100.0,792713100.0,0.0,PASS
+21,CRM control total,"Sum of Amount as stored, local currency (excl. test records)",DKK,305217600.0,305217600.0,0.0,PASS
+22,CRM control total,"Sum of Amount as stored, local currency (excl. test records)",EUR,832123000.0,832123000.0,0.0,PASS
+23,CRM control total,"Sum of Amount as stored, local currency (excl. test records)",GBP,171014200.0,171014200.0,0.0,PASS
+24,CRM control total,"Sum of Amount as stored, local currency (excl. test records)",NOK,341563300.0,341563300.0,0.0,PASS
+25,CRM control total,"Sum of Amount as stored, local currency (excl. test records)",PLN,369939600.0,369939600.0,0.0,PASS
+26,CRM control total,"Sum of Amount as stored, local currency (excl. test records)",SEK,584321000.0,584321000.0,0.0,PASS
+27,CRM control total,Unique opportunities in CRM (incl. test records),All,4806.0,4806.0,0.0,PASS

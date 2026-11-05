@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: stg_value_aliases
+    description: Governed alias table, lower-cased for case-insensitive lookup.
+    tests:
+      - dbt_utils_free_unique_alias
+  - name: stg_crm__opportunities
+    description: One row per opportunity version across all 24 extracts and both CRM schemas, typed and parsed.
+    columns:
+      - name: opportunity_id
+        tests: [not_null]
+      - name: stage
+        description: Standardised via value_aliases. NULL means an unmapped spelling.
+        tests: [not_null]
+      - name: department
+        tests: [not_null]
+      - name: created_date
+        tests: [not_null]
+      - name: last_modified
+        tests: [not_null]
+  - name: stg_crm__accounts
+    columns:
+      - name: account_id
+        tests: [unique, not_null]
+      - name: country_code
+        tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('country_region_mapping'), field: country_code}
+      - name: industry
+        tests: [not_null]
+      - name: company_size_band
+        tests: [not_null]
+  - name: stg_crm__sales_roster
+    columns:
+      - name: email
+        tests: [unique, not_null]
+      - name: department
+        tests: [not_null]
+  - name: stg_crm__stage_history
+    columns:
+      - name: changed_at
+        tests: [not_null]
+      - name: to_stage
+        tests: [not_null]

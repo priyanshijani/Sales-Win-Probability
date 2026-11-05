@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "a42846d7b43d5cb89c72",
+  "position": {
+    "x": 1437,
+    "y": 184,
+    "z": 9000,
+    "height": 110,
+    "width": 453,
+    "tabOrder": 9000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Open Pipeline per Account EUR"
+                }
+              },
+              "queryRef": "_Measures.Open Pipeline per Account EUR",
+              "nativeQueryRef": "Open Pipeline per Account EUR"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Open pipeline per account'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

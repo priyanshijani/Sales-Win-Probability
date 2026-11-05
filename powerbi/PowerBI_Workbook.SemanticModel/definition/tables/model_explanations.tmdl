@@ -1,0 +1,78 @@
+table model_explanations
+	lineageTag: 3220f1d9-45c5-5acd-a1c8-49224416d974
+
+	column opportunity_id
+		dataType: string
+		lineageTag: 0ca8d215-727d-5a65-975d-5ef8d529f0fc
+		summarizeBy: none
+		sourceColumn: opportunity_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column feature
+		dataType: string
+		lineageTag: a7cb7f05-3843-5015-a7c1-a4ee27f36321
+		summarizeBy: none
+		sourceColumn: feature
+
+		annotation SummarizationSetBy = Automatic
+
+	column feature_label
+		dataType: string
+		lineageTag: 9cc5e435-b956-5a8e-b360-72d5d2ab0282
+		summarizeBy: none
+		sourceColumn: feature_label
+
+		annotation SummarizationSetBy = Automatic
+
+	column feature_value
+		dataType: string
+		lineageTag: a0ee3ce2-b66e-5183-871f-d283fa4cd0c8
+		summarizeBy: none
+		sourceColumn: feature_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column impact_pts
+		dataType: double
+		lineageTag: 6c112e4e-f2c4-5019-b184-bb53a2c83f7e
+		summarizeBy: none
+		sourceColumn: impact_pts
+
+		annotation SummarizationSetBy = Automatic
+
+	column insight
+		dataType: string
+		lineageTag: ad7e342d-6a94-5999-9027-eee08bf10c3b
+		summarizeBy: none
+		sourceColumn: insight
+
+		annotation SummarizationSetBy = Automatic
+
+	column abs_impact_pts
+		dataType: double
+		lineageTag: e032a7c6-96e7-52cd-b836-4624256e4e6d
+		summarizeBy: none
+		sourceColumn: abs_impact_pts
+
+		annotation SummarizationSetBy = Automatic
+
+	column direction
+		dataType: string
+		lineageTag: 0869aabe-4ebd-5055-a0df-e3e11e6686a9
+		summarizeBy: none
+		sourceColumn: direction
+
+		annotation SummarizationSetBy = Automatic
+
+	partition model_explanations = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents(DataFolder & "model_explanations.csv"), [Delimiter = ",", Columns = 8, Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"opportunity_id", type text}, {"feature", type text}, {"feature_label", type text}, {"feature_value", type text}, {"impact_pts", type number}, {"insight", type text}, {"abs_impact_pts", type number}, {"direction", type text}}, "en-US")
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table
