@@ -258,7 +258,20 @@ python scripts/run_pipeline.py     # dbt build → model → CSV exports → doc
 ```
 Then open `powerbi/PowerBI_Workbook.pbip` and refresh. See [`powerbi/README.md`](powerbi/README.md).
 
-## 12. About
+## 12. Road to production and automation
+*Today this runs end to end on synthetic data with one command. This is what a real CRM would add. It is a plan, not built yet.*
+
+| Area | Today | To ship |
+|---|---|---|
+| **Ingest** | 24 CSV drops, mapped by a field-mapping table | Managed connector from the CRM (API or CDC) into a raw layer. Only the mapping and alias tables change per company |
+| **Scale** | Full rebuild in DuckDB | Incremental dbt models and snapshots; adapter swap to Snowflake, Databricks or BigQuery |
+| **Orchestration** | GitHub Actions on every push | Scheduled daily run (Airflow, Dagster or dbt Cloud), then dbt, model and export in order, with retries |
+| **Quality** | 27 reconciliation checks and 40 tests stop the build | Source-freshness checks, data contracts and alerts to Teams or Slack when a check fails |
+| **Model** | Retrained by hand, status "Advisory" | Scheduled retrain, versioned in a model registry, calibration and drift monitoring, promoted only after two quarters of beating the governed forecast |
+| **Power BI** | Local `.pbip` project | Publish to the Service with scheduled refresh, dev / test / prod deployment pipelines, row-level security by manager and region |
+| **Security & ops** | Synthetic data, no secrets | Secrets in a vault, least-privilege access, PII review, run logs and cost monitoring |
+
+## 13. About
 Built by **Priyanshi Jani** as a worked example of sales-operations analytics: a trusted data layer, a forecast you can defend and dashboards a CRO can act on.
 GitHub: [priyanshijani](https://github.com/priyanshijani) · [Tech stack](#tech-stack)
 
