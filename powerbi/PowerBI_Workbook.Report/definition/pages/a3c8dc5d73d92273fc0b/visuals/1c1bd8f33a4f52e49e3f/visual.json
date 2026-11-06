@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "1c1bd8f33a4f52e49e3f",
   "position": {
     "x": 990,
@@ -28,6 +28,7 @@
               },
               "queryRef": "pipeline_deals.forecast_category",
               "nativeQueryRef": "forecast_category",
+              "active": true,
               "displayName": "Forecast Category"
             }
           ]

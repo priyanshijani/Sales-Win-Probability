@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "9473f7d2fd2c5fcb9d9d",
   "position": {
     "x": 1350,
@@ -28,43 +28,8 @@
               },
               "queryRef": "sales_team.sales_manager",
               "nativeQueryRef": "sales_manager",
+              "active": true,
               "displayName": "Sales Manager"
-            }
-          ]
-        },
-        "X": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Open Pipeline EUR"
-                }
-              },
-              "queryRef": "_Measures.Open Pipeline EUR",
-              "nativeQueryRef": "Open Pipeline EUR"
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Win Rate (count)"
-                }
-              },
-              "queryRef": "_Measures.Win Rate (count)",
-              "nativeQueryRef": "Win Rate (count)"
             }
           ]
         },
@@ -83,6 +48,43 @@
               },
               "queryRef": "_Measures.Bookings YTD EUR",
               "nativeQueryRef": "Bookings YTD EUR"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Open Pipeline EUR"
+                }
+              },
+              "queryRef": "_Measures.Open Pipeline EUR",
+              "nativeQueryRef": "Open Pipeline EUR",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Win Rate (count)"
+                }
+              },
+              "queryRef": "_Measures.Win Rate (count)",
+              "nativeQueryRef": "Win Rate (count)"
             }
           ]
         }

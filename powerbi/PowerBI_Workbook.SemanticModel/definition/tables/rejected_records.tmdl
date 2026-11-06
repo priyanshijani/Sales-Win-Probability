@@ -61,3 +61,4 @@ table rejected_records
 				  #"Changed column type"
 
 	annotation PBI_ResultType = Table
+

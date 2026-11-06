@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "395913d271c55f8d9422",
   "position": {
     "x": 670,
@@ -13,25 +13,6 @@
     "visualType": "pivotTable",
     "query": {
       "queryState": {
-        "Rows": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "pipeline_stage_stints"
-                    }
-                  },
-                  "Property": "department"
-                }
-              },
-              "queryRef": "pipeline_stage_stints.department",
-              "nativeQueryRef": "department",
-              "displayName": "Department"
-            }
-          ]
-        },
         "Columns": {
           "projections": [
             {
@@ -47,7 +28,28 @@
               },
               "queryRef": "pipeline_stage_stints.stage",
               "nativeQueryRef": "stage",
+              "active": true,
               "displayName": "Stage"
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pipeline_stage_stints"
+                    }
+                  },
+                  "Property": "department"
+                }
+              },
+              "queryRef": "pipeline_stage_stints.department",
+              "nativeQueryRef": "department",
+              "active": true,
+              "displayName": "Department"
             }
           ]
         },

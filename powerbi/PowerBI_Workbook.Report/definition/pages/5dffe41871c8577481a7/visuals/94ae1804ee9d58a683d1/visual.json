@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "94ae1804ee9d58a683d1",
   "position": {
     "x": 30,
@@ -28,6 +28,7 @@
               },
               "queryRef": "DimDepartment.department",
               "nativeQueryRef": "department",
+              "active": true,
               "displayName": "Department"
             }
           ]
@@ -54,7 +55,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }
@@ -69,7 +70,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -97,5 +98,23 @@
         }
       ]
     }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e14440f890d506a80d60",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimDepartment"
+              }
+            },
+            "Property": "department"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

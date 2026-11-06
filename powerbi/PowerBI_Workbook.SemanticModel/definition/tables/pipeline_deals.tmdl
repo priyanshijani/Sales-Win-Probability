@@ -84,7 +84,7 @@ table pipeline_deals
 	column latitude
 		dataType: double
 		lineageTag: 3792bdb4-3e35-5c1a-820d-b6a7e6d528c9
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: latitude
 
 		annotation SummarizationSetBy = Automatic
@@ -92,7 +92,7 @@ table pipeline_deals
 	column longitude
 		dataType: double
 		lineageTag: 752e2923-c51f-5597-9317-8f4c977f303f
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: longitude
 
 		annotation SummarizationSetBy = Automatic
@@ -189,8 +189,8 @@ table pipeline_deals
 		dataType: string
 		lineageTag: 0329f65e-7b7f-5e40-99ca-d03edcd84c0a
 		summarizeBy: none
-		sortByColumn: stage_order
 		sourceColumn: stage
+		sortByColumn: stage_order
 
 		annotation SummarizationSetBy = Automatic
 
@@ -198,7 +198,7 @@ table pipeline_deals
 		dataType: int64
 		formatString: 0
 		lineageTag: a945cd37-3d0a-5246-8132-5516d0081107
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: stage_order
 
 		annotation SummarizationSetBy = Automatic
@@ -247,7 +247,7 @@ table pipeline_deals
 		dataType: int64
 		formatString: 0
 		lineageTag: 92c4adfa-f54f-516e-abd9-b3964da724f7
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: max_stage_reached
 
 		annotation SummarizationSetBy = Automatic
@@ -255,7 +255,7 @@ table pipeline_deals
 	column amount_local
 		dataType: double
 		lineageTag: 6093e25c-22e0-5bec-97a0-575d420dea99
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: amount_local
 
 		annotation SummarizationSetBy = Automatic
@@ -271,7 +271,7 @@ table pipeline_deals
 	column fx_rate
 		dataType: double
 		lineageTag: fe9fa06c-4dca-5b7d-8158-d3ee311af34b
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: fx_rate
 
 		annotation SummarizationSetBy = Automatic
@@ -287,7 +287,7 @@ table pipeline_deals
 	column governed_probability
 		dataType: double
 		lineageTag: 0daf5698-31f1-5acc-8fb3-845513d69fc6
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: governed_probability
 
 		annotation SummarizationSetBy = Automatic
@@ -303,7 +303,7 @@ table pipeline_deals
 	column rep_probability
 		dataType: double
 		lineageTag: 4270c694-c9e0-55a4-a162-e3d097cf38b3
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: rep_probability
 
 		annotation SummarizationSetBy = Automatic
@@ -311,7 +311,7 @@ table pipeline_deals
 	column probability_gap_pts
 		dataType: double
 		lineageTag: 98d46f72-790a-5abd-bd46-fb5ab50e249b
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: probability_gap_pts
 
 		annotation SummarizationSetBy = Automatic
@@ -333,6 +333,8 @@ table pipeline_deals
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation UnderlyingDateTimeDataType = Date
+
 	column expected_close_date
 		dataType: dateTime
 		formatString: dd mmm yyyy
@@ -341,6 +343,8 @@ table pipeline_deals
 		sourceColumn: expected_close_date
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column actual_close_date
 		dataType: dateTime
@@ -351,6 +355,8 @@ table pipeline_deals
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation UnderlyingDateTimeDataType = Date
+
 	column last_activity_date
 		dataType: dateTime
 		formatString: dd mmm yyyy
@@ -358,7 +364,14 @@ table pipeline_deals
 		summarizeBy: none
 		sourceColumn: last_activity_date
 
+		variation Variation
+			isDefault
+			relationship: e5a2c5f0-49fa-4897-bfb0-5bae8d4e4f5b
+			defaultHierarchy: LocalDateTable_3289e6aa-2ac2-4775-a49b-327d2c5d0bbb.'Date Hierarchy'
+
 		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column stage_entered_date
 		dataType: dateTime
@@ -367,7 +380,14 @@ table pipeline_deals
 		summarizeBy: none
 		sourceColumn: stage_entered_date
 
+		variation Variation
+			isDefault
+			relationship: 3187d3ec-88ff-4a67-be55-0bf9c54c9c60
+			defaultHierarchy: LocalDateTable_2339f8fd-bc7b-451d-a736-d40abeee9fbe.'Date Hierarchy'
+
 		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column close_quarter
 		dataType: string
@@ -389,7 +409,7 @@ table pipeline_deals
 		dataType: int64
 		formatString: 0
 		lineageTag: 29000170-62aa-5b26-a678-e5fb7b11f247
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: days_in_current_stage
 
 		annotation SummarizationSetBy = Automatic
@@ -398,7 +418,7 @@ table pipeline_deals
 		dataType: int64
 		formatString: 0
 		lineageTag: aafc914e-1ef8-5ff4-a5a7-0edd3469bd80
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: stuck_after_days
 
 		annotation SummarizationSetBy = Automatic
@@ -415,7 +435,7 @@ table pipeline_deals
 		dataType: int64
 		formatString: 0
 		lineageTag: 08e886bc-fb48-5bd8-9f84-ef8c86bf9129
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: days_since_activity
 
 		annotation SummarizationSetBy = Automatic
@@ -440,7 +460,7 @@ table pipeline_deals
 		dataType: int64
 		formatString: 0
 		lineageTag: 7941b591-2e66-5a63-bdc7-10f89a060233
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: regression_count
 
 		annotation SummarizationSetBy = Automatic
@@ -449,7 +469,7 @@ table pipeline_deals
 		dataType: int64
 		formatString: 0
 		lineageTag: 94a7d9a2-3d95-59f0-9505-fc26d01e6f91
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: sales_cycle_days
 
 		annotation SummarizationSetBy = Automatic
@@ -493,7 +513,14 @@ table pipeline_deals
 		summarizeBy: none
 		sourceColumn: snapshot_date
 
+		variation Variation
+			isDefault
+			relationship: cc9b5412-3297-4f5b-a820-67d619d18f94
+			defaultHierarchy: LocalDateTable_ba7ce3e0-019d-4980-ad43-28a40d5cc244.'Date Hierarchy'
+
 		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	partition pipeline_deals = m
 		mode: import
@@ -506,3 +533,4 @@ table pipeline_deals
 				  #"Changed column type"
 
 	annotation PBI_ResultType = Table
+

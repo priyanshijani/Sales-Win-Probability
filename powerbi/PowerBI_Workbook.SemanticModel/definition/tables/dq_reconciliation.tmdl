@@ -77,3 +77,4 @@ table dq_reconciliation
 				  #"Changed column type"
 
 	annotation PBI_ResultType = Table
+

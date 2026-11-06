@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "7e8d7f4f10db555a8c65",
   "position": {
     "x": 870,
@@ -28,7 +28,40 @@
               },
               "queryRef": "model_explanations.feature_label",
               "nativeQueryRef": "feature_label",
+              "active": true,
               "displayName": "Feature Label"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Impact (pts)"
+                }
+              },
+              "queryRef": "_Measures.Impact (pts)",
+              "nativeQueryRef": "Impact (pts)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Impact Size"
+                }
+              },
+              "queryRef": "_Measures.Impact Size",
+              "nativeQueryRef": "Impact Size"
             }
           ]
         },
@@ -78,38 +111,6 @@
               "queryRef": "_Measures.Impact Minor (pts)",
               "nativeQueryRef": "Impact Minor (pts)",
               "displayName": "Negligible (under 2 pts)"
-            }
-          ]
-        },
-        "Tooltips": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Impact (pts)"
-                }
-              },
-              "queryRef": "_Measures.Impact (pts)",
-              "nativeQueryRef": "Impact (pts)"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Impact Size"
-                }
-              },
-              "queryRef": "_Measures.Impact Size",
-              "nativeQueryRef": "Impact Size"
             }
           ]
         }

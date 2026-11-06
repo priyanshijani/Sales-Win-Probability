@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "dd0dd0c6a02c5be58ecc",
   "position": {
     "x": 30,
@@ -28,6 +28,7 @@
               },
               "queryRef": "pipeline_stage_stints.stage",
               "nativeQueryRef": "stage",
+              "active": true,
               "displayName": "Stage"
             }
           ]

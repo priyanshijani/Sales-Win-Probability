@@ -541,8 +541,8 @@ table _Measures
 		lineageTag: 0f159149-7e1d-5f63-8d0c-42c592d482ab
 
 	column Dummy
-		isHidden
 		dataType: int64
+		isHidden
 		formatString: 0
 		lineageTag: 516ca507-39a1-5e38-a93d-d2d0f11d8569
 		summarizeBy: none
@@ -553,3 +553,4 @@ table _Measures
 	partition _Measures = m
 		mode: import
 		source = #table(type table [Dummy = Int64.Type], {{1}})
+

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "d8c65f49ee17532e9a91",
   "position": {
     "x": 30,
@@ -28,6 +28,7 @@
               },
               "queryRef": "model_calibration.prob_bin",
               "nativeQueryRef": "prob_bin",
+              "active": true,
               "displayName": "Prob Bin"
             }
           ]
@@ -51,6 +52,24 @@
             }
           ]
         },
+        "Size": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Calibration Deals"
+                }
+              },
+              "queryRef": "_Measures.Calibration Deals",
+              "nativeQueryRef": "Calibration Deals"
+            }
+          ]
+        },
         "X": {
           "projections": [
             {
@@ -65,7 +84,8 @@
                 }
               },
               "queryRef": "_Measures.Predicted Win Rate",
-              "nativeQueryRef": "Predicted Win Rate"
+              "nativeQueryRef": "Predicted Win Rate",
+              "active": true
             }
           ]
         },
@@ -84,24 +104,6 @@
               },
               "queryRef": "_Measures.Actual Win Rate",
               "nativeQueryRef": "Actual Win Rate"
-            }
-          ]
-        },
-        "Size": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Calibration Deals"
-                }
-              },
-              "queryRef": "_Measures.Calibration Deals",
-              "nativeQueryRef": "Calibration Deals"
             }
           ]
         }

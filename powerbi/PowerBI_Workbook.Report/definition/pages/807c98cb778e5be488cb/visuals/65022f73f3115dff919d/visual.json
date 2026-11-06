@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "65022f73f3115dff919d",
   "position": {
     "x": 30,
@@ -28,7 +28,27 @@
               },
               "queryRef": "pipeline_deals.opportunity_id",
               "nativeQueryRef": "opportunity_id",
+              "active": true,
               "displayName": "Opportunity ID"
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pipeline_deals"
+                    }
+                  },
+                  "Property": "stage"
+                }
+              },
+              "queryRef": "pipeline_deals.stage",
+              "nativeQueryRef": "stage",
+              "displayName": "Stage"
             }
           ]
         },
@@ -47,6 +67,7 @@
               },
               "queryRef": "_Measures.Days In Current Stage",
               "nativeQueryRef": "Days In Current Stage",
+              "active": true,
               "displayName": "Days in stage"
             }
           ]
@@ -67,25 +88,6 @@
               "queryRef": "_Measures.Deal Amount EUR",
               "nativeQueryRef": "Deal Amount EUR",
               "displayName": "Deal value"
-            }
-          ]
-        },
-        "Series": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "pipeline_deals"
-                    }
-                  },
-                  "Property": "stage"
-                }
-              },
-              "queryRef": "pipeline_deals.stage",
-              "nativeQueryRef": "stage",
-              "displayName": "Stage"
             }
           ]
         }

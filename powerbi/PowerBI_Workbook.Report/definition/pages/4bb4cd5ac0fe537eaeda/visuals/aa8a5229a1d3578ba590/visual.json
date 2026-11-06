@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "aa8a5229a1d3578ba590",
   "position": {
     "x": 30,
@@ -28,7 +28,26 @@
               },
               "queryRef": "sales_team.sales_manager",
               "nativeQueryRef": "sales_manager",
+              "active": true,
               "displayName": "Sales Manager"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Forecast Honesty Gap (pts)"
+                }
+              },
+              "queryRef": "_Measures.Forecast Honesty Gap (pts)",
+              "nativeQueryRef": "Forecast Honesty Gap (pts)"
             }
           ]
         },
@@ -63,24 +82,6 @@
               "queryRef": "_Measures.Honesty Cautious (pts)",
               "nativeQueryRef": "Honesty Cautious (pts)",
               "displayName": "More cautious than governed"
-            }
-          ]
-        },
-        "Tooltips": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Forecast Honesty Gap (pts)"
-                }
-              },
-              "queryRef": "_Measures.Forecast Honesty Gap (pts)",
-              "nativeQueryRef": "Forecast Honesty Gap (pts)"
             }
           ]
         }

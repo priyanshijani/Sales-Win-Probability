@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "26645a8b273456e88547",
   "position": {
     "x": 810,
@@ -28,7 +28,26 @@
               },
               "queryRef": "sales_team.full_name",
               "nativeQueryRef": "full_name",
+              "active": true,
               "displayName": "Full Name"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Quota Attainment YTD %"
+                }
+              },
+              "queryRef": "_Measures.Quota Attainment YTD %",
+              "nativeQueryRef": "Quota Attainment YTD %"
             }
           ]
         },
@@ -63,24 +82,6 @@
               "queryRef": "_Measures.Quota Missed %",
               "nativeQueryRef": "Quota Missed %",
               "displayName": "Below quota"
-            }
-          ]
-        },
-        "Tooltips": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Quota Attainment YTD %"
-                }
-              },
-              "queryRef": "_Measures.Quota Attainment YTD %",
-              "nativeQueryRef": "Quota Attainment YTD %"
             }
           ]
         }

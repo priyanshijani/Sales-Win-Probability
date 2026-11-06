@@ -44,3 +44,4 @@ table model_feature_importance
 				  #"Changed column type"
 
 	annotation PBI_ResultType = Table
+
