@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "fa7a3dbbaafc52648b29",
   "position": {
-    "x": 968,
-    "y": 110,
+    "x": 30,
+    "y": 112,
     "z": 5000,
-    "height": 110,
+    "height": 118,
     "width": 453,
     "tabOrder": 5000
   },
@@ -23,11 +23,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Average Open Deal Probability"
+                  "Property": "Selected Model Win Probability"
                 }
               },
-              "queryRef": "_Measures.Average Open Deal Probability",
-              "nativeQueryRef": "Average Open Deal Probability"
+              "queryRef": "_Measures.Selected Model Win Probability",
+              "nativeQueryRef": "Selected Model Win Probability"
             }
           ]
         }
@@ -47,7 +47,61 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Average open deal (model)'"
+                  "Value": "'Model win probability'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Model win probability'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Model vs CRM Label"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Model vs CRM Color"
+                    }
+                  }
                 }
               }
             }

@@ -2,63 +2,186 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "3ceb1750b97f5a97a738",
   "position": {
-    "x": 1290,
-    "y": 620,
+    "x": 30,
+    "y": 240,
     "z": 9000,
-    "height": 370,
-    "width": 600,
+    "height": 750,
+    "width": 1240,
     "tabOrder": 9000
   },
   "visual": {
-    "visualType": "textbox",
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dq_reconciliation"
+                    }
+                  },
+                  "Property": "check_group"
+                }
+              },
+              "queryRef": "dq_reconciliation.check_group",
+              "nativeQueryRef": "check_group",
+              "displayName": "Check Group"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dq_reconciliation"
+                    }
+                  },
+                  "Property": "check_name"
+                }
+              },
+              "queryRef": "dq_reconciliation.check_name",
+              "nativeQueryRef": "check_name",
+              "displayName": "Check Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dq_reconciliation"
+                    }
+                  },
+                  "Property": "dimension"
+                }
+              },
+              "queryRef": "dq_reconciliation.dimension",
+              "nativeQueryRef": "dimension",
+              "displayName": "Dimension"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dq_reconciliation"
+                    }
+                  },
+                  "Property": "expected"
+                }
+              },
+              "queryRef": "dq_reconciliation.expected",
+              "nativeQueryRef": "expected",
+              "displayName": "Expected"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dq_reconciliation"
+                    }
+                  },
+                  "Property": "actual"
+                }
+              },
+              "queryRef": "dq_reconciliation.actual",
+              "nativeQueryRef": "actual",
+              "displayName": "Actual"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dq_reconciliation"
+                    }
+                  },
+                  "Property": "difference"
+                }
+              },
+              "queryRef": "dq_reconciliation.difference",
+              "nativeQueryRef": "difference",
+              "displayName": "Difference"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Check Status Marker"
+                }
+              },
+              "queryRef": "_Measures.Check Status Marker",
+              "nativeQueryRef": "Check Status Marker",
+              "displayName": "Status"
+            }
+          ]
+        }
+      }
+    },
     "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Check Status Color"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Check Status Marker"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Reconciliation checks'"
+                }
+              }
+            }
+          }
+        }
+      ],
       "general": [
         {
           "properties": {
-            "paragraphs": [
-              {
-                "textRuns": [
-                  {
-                    "value": "Row bridge",
-                    "textStyle": {
-                      "fontWeight": "bold",
-                      "fontSize": "16pt",
-                      "color": "#1B2A41"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "5,012 raw CRM rows = 4,800 opportunities + 206 older versions + 6 test records.",
-                    "textStyle": {
-                      "fontSize": "13pt"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "765 account records = 720 master accounts + 45 merged duplicates.",
-                    "textStyle": {
-                      "fontSize": "13pt"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Nothing is silently deleted: every rejected row is in rejected_records with a reason.",
-                    "textStyle": {
-                      "fontSize": "13pt"
-                    }
-                  }
-                ]
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Reconciliation checks'"
+                }
               }
-            ]
+            }
           }
         }
       ]

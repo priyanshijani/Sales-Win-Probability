@@ -2,18 +2,18 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "48b9052b73015e108954",
   "position": {
-    "x": 30,
-    "y": 660,
+    "x": 810,
+    "y": 310,
     "z": 13000,
     "height": 330,
-    "width": 940,
+    "width": 520,
     "tabOrder": 13000
   },
   "visual": {
-    "visualType": "pivotTable",
+    "visualType": "clusteredBarChart",
     "query": {
       "queryState": {
-        "Rows": {
+        "Category": {
           "projections": [
             {
               "field": {
@@ -23,33 +23,16 @@
                       "Entity": "pipeline_deals"
                     }
                   },
-                  "Property": "industry"
+                  "Property": "country_name"
                 }
               },
-              "queryRef": "pipeline_deals.industry",
-              "nativeQueryRef": "industry"
+              "queryRef": "pipeline_deals.country_name",
+              "nativeQueryRef": "country_name",
+              "displayName": "Country Name"
             }
           ]
         },
-        "Columns": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "pipeline_deals"
-                    }
-                  },
-                  "Property": "sales_region"
-                }
-              },
-              "queryRef": "pipeline_deals.sales_region",
-              "nativeQueryRef": "sales_region"
-            }
-          ]
-        },
-        "Values": {
+        "Y": {
           "projections": [
             {
               "field": {
@@ -59,14 +42,32 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Win Rate (count)"
+                  "Property": "Open Pipeline EUR"
                 }
               },
-              "queryRef": "_Measures.Win Rate (count)",
-              "nativeQueryRef": "Win Rate (count)"
+              "queryRef": "_Measures.Open Pipeline EUR",
+              "nativeQueryRef": "Open Pipeline EUR"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  }
+                },
+                "Property": "Open Pipeline EUR"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
       }
     },
     "visualContainerObjects": {
@@ -83,7 +84,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Win rate: industry x sales region'"
+                  "Value": "'Open pipeline by country'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Open pipeline by country'"
                 }
               }
             }

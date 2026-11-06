@@ -2,36 +2,65 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "e9dcabe6e9555b379c4e",
   "position": {
-    "x": 405,
-    "y": 184,
+    "x": 670,
+    "y": 114,
     "z": 7000,
-    "height": 110,
-    "width": 359,
+    "height": 62,
+    "width": 300,
     "tabOrder": 7000
   },
   "visual": {
-    "visualType": "card",
+    "visualType": "slicer",
     "query": {
       "queryState": {
         "Values": {
           "projections": [
             {
               "field": {
-                "Measure": {
+                "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Measures"
+                      "Entity": "pipeline_deals"
                     }
                   },
-                  "Property": "At Risk % of Pipeline"
+                  "Property": "service_line"
                 }
               },
-              "queryRef": "_Measures.At Risk % of Pipeline",
-              "nativeQueryRef": "At Risk % of Pipeline"
+              "queryRef": "pipeline_deals.service_line",
+              "nativeQueryRef": "service_line",
+              "displayName": "Service Line"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [
@@ -47,7 +76,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Share of open pipeline at risk'"
+                  "Value": "'Service line'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Service line'"
                 }
               }
             }

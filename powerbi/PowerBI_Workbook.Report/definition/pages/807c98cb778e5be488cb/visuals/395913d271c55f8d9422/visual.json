@@ -2,86 +2,70 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "395913d271c55f8d9422",
   "position": {
-    "x": 30,
-    "y": 660,
+    "x": 670,
+    "y": 310,
     "z": 14000,
     "height": 330,
-    "width": 760,
+    "width": 620,
     "tabOrder": 14000
   },
   "visual": {
-    "visualType": "scatterChart",
+    "visualType": "pivotTable",
     "query": {
       "queryState": {
-        "Category": {
+        "Rows": {
           "projections": [
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "pipeline_deals"
+                      "Entity": "pipeline_stage_stints"
                     }
                   },
-                  "Property": "opportunity_id"
+                  "Property": "department"
                 }
               },
-              "queryRef": "pipeline_deals.opportunity_id",
-              "nativeQueryRef": "opportunity_id"
+              "queryRef": "pipeline_stage_stints.department",
+              "nativeQueryRef": "department",
+              "displayName": "Department"
             }
           ]
         },
-        "X": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Days In Current Stage"
-                }
-              },
-              "queryRef": "_Measures.Days In Current Stage",
-              "nativeQueryRef": "Days In Current Stage"
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Deal Amount EUR"
-                }
-              },
-              "queryRef": "_Measures.Deal Amount EUR",
-              "nativeQueryRef": "Deal Amount EUR"
-            }
-          ]
-        },
-        "Series": {
+        "Columns": {
           "projections": [
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "pipeline_deals"
+                      "Entity": "pipeline_stage_stints"
                     }
                   },
                   "Property": "stage"
                 }
               },
-              "queryRef": "pipeline_deals.stage",
-              "nativeQueryRef": "stage"
+              "queryRef": "pipeline_stage_stints.stage",
+              "nativeQueryRef": "stage",
+              "displayName": "Stage"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Median Days in Stage"
+                }
+              },
+              "queryRef": "_Measures.Median Days in Stage",
+              "nativeQueryRef": "Median Days in Stage"
             }
           ]
         }
@@ -101,7 +85,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Open deals: days in stage vs deal value'"
+                  "Value": "'Median days in stage: department x stage'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Median days in stage: department x stage'"
                 }
               }
             }

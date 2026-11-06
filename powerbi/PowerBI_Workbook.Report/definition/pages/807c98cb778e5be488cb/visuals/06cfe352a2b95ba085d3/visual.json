@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "06cfe352a2b95ba085d3",
   "position": {
-    "x": 1155,
+    "x": 405,
     "y": 184,
     "z": 9000,
-    "height": 110,
+    "height": 124,
     "width": 359,
     "tabOrder": 9000
   },
@@ -23,15 +23,39 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Avg Sales Cycle Days"
+                  "Property": "At Risk % of Pipeline"
                 }
               },
-              "queryRef": "_Measures.Avg Sales Cycle Days",
-              "nativeQueryRef": "Avg Sales Cycle Days"
+              "queryRef": "_Measures.At Risk % of Pipeline",
+              "nativeQueryRef": "At Risk % of Pipeline"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Color Bad"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [
@@ -47,7 +71,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Avg sales cycle, won (days)'"
+                  "Value": "'At risk, % of pipeline'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'At risk, % of pipeline'"
                 }
               }
             }

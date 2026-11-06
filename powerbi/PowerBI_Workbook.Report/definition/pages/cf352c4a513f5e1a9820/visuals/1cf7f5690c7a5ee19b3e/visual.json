@@ -1,0 +1,148 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "1cf7f5690c7a5ee19b3e",
+  "position": {
+    "x": 870,
+    "y": 780,
+    "z": 12000,
+    "height": 210,
+    "width": 1020,
+    "tabOrder": 12000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "model_explanations"
+                    }
+                  },
+                  "Property": "feature_label"
+                }
+              },
+              "queryRef": "model_explanations.feature_label",
+              "nativeQueryRef": "feature_label",
+              "displayName": "Feature Label"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "model_explanations"
+                    }
+                  },
+                  "Property": "insight"
+                }
+              },
+              "queryRef": "model_explanations.insight",
+              "nativeQueryRef": "insight",
+              "displayName": "Insight"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Impact Marker"
+                }
+              },
+              "queryRef": "_Measures.Impact Marker",
+              "nativeQueryRef": "Impact Marker",
+              "displayName": "Impact (pts)"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  }
+                },
+                "Property": "Impact (pts)"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Impact Color"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Impact Marker"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'The reasons, in a few words'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'The reasons, in a few words'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

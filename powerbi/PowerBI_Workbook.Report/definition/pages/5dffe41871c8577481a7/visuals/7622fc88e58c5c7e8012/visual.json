@@ -2,75 +2,38 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "7622fc88e58c5c7e8012",
   "position": {
-    "x": 990,
-    "y": 660,
+    "x": 1350,
+    "y": 310,
     "z": 14000,
     "height": 330,
-    "width": 900,
+    "width": 540,
     "tabOrder": 14000
   },
   "visual": {
-    "visualType": "tableEx",
+    "visualType": "clusteredBarChart",
     "query": {
       "queryState": {
-        "Values": {
+        "Category": {
           "projections": [
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dim_accounts"
+                      "Entity": "pipeline_deals"
                     }
                   },
-                  "Property": "account_name"
+                  "Property": "service_line"
                 }
               },
-              "queryRef": "dim_accounts.account_name",
-              "nativeQueryRef": "account_name"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "dim_accounts"
-                    }
-                  },
-                  "Property": "country_name"
-                }
-              },
-              "queryRef": "dim_accounts.country_name",
-              "nativeQueryRef": "country_name"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "dim_accounts"
-                    }
-                  },
-                  "Property": "industry"
-                }
-              },
-              "queryRef": "dim_accounts.industry",
-              "nativeQueryRef": "industry"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "dim_accounts"
-                    }
-                  },
-                  "Property": "account_status"
-                }
-              },
-              "queryRef": "dim_accounts.account_status",
-              "nativeQueryRef": "account_status"
-            },
+              "queryRef": "pipeline_deals.service_line",
+              "nativeQueryRef": "service_line",
+              "displayName": "Service Line"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
             {
               "field": {
                 "Measure": {
@@ -84,20 +47,6 @@
               },
               "queryRef": "_Measures.Open Pipeline EUR",
               "nativeQueryRef": "Open Pipeline EUR"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Bookings EUR"
-                }
-              },
-              "queryRef": "_Measures.Bookings EUR",
-              "nativeQueryRef": "Bookings EUR"
             }
           ]
         }
@@ -135,7 +84,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top accounts by open pipeline'"
+                  "Value": "'Open pipeline by service line'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Open pipeline by service line'"
                 }
               }
             }

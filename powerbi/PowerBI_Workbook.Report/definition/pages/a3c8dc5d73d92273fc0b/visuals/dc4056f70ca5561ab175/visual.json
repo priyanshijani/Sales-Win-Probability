@@ -2,36 +2,65 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "dc4056f70ca5561ab175",
   "position": {
-    "x": 30,
-    "y": 184,
+    "x": 350,
+    "y": 114,
     "z": 6000,
-    "height": 110,
-    "width": 296,
+    "height": 62,
+    "width": 300,
     "tabOrder": 6000
   },
   "visual": {
-    "visualType": "card",
+    "visualType": "slicer",
     "query": {
       "queryState": {
         "Values": {
           "projections": [
             {
               "field": {
-                "Measure": {
+                "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Measures"
+                      "Entity": "pipeline_deals"
                     }
                   },
-                  "Property": "Open Pipeline EUR"
+                  "Property": "sales_region"
                 }
               },
-              "queryRef": "_Measures.Open Pipeline EUR",
-              "nativeQueryRef": "Open Pipeline EUR"
+              "queryRef": "pipeline_deals.sales_region",
+              "nativeQueryRef": "sales_region",
+              "displayName": "Sales Region"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [
@@ -47,7 +76,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Open pipeline'"
+                  "Value": "'Sales region'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Sales region'"
                 }
               }
             }

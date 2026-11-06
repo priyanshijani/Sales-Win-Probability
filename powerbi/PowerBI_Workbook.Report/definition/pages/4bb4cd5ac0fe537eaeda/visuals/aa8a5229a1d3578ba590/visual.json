@@ -3,32 +3,178 @@
   "name": "aa8a5229a1d3578ba590",
   "position": {
     "x": 30,
-    "y": 1010,
+    "y": 660,
     "z": 16000,
-    "height": 50,
-    "width": 1860,
+    "height": 330,
+    "width": 760,
     "tabOrder": 16000
   },
   "visual": {
-    "visualType": "textbox",
+    "visualType": "barChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "sales_team"
+                    }
+                  },
+                  "Property": "sales_manager"
+                }
+              },
+              "queryRef": "sales_team.sales_manager",
+              "nativeQueryRef": "sales_manager",
+              "displayName": "Sales Manager"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Honesty Optimistic (pts)"
+                }
+              },
+              "queryRef": "_Measures.Honesty Optimistic (pts)",
+              "nativeQueryRef": "Honesty Optimistic (pts)",
+              "displayName": "More optimistic than governed"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Honesty Cautious (pts)"
+                }
+              },
+              "queryRef": "_Measures.Honesty Cautious (pts)",
+              "nativeQueryRef": "Honesty Cautious (pts)",
+              "displayName": "More cautious than governed"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Forecast Honesty Gap (pts)"
+                }
+              },
+              "queryRef": "_Measures.Forecast Honesty Gap (pts)",
+              "nativeQueryRef": "Forecast Honesty Gap (pts)"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  }
+                },
+                "Property": "Forecast Honesty Gap (pts)"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
     "objects": {
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#D32F2F'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Honesty Optimistic (pts)"
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1E9E5A'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Honesty Cautious (pts)"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Forecast honesty gap by manager (points vs governed probability)'"
+                }
+              }
+            }
+          }
+        }
+      ],
       "general": [
         {
           "properties": {
-            "paragraphs": [
-              {
-                "textRuns": [
-                  {
-                    "value": "So what: (write your one-line takeaway for the CRO here)",
-                    "textStyle": {
-                      "fontSize": "13pt",
-                      "color": "#1F4E79",
-                      "fontWeight": "bold"
-                    }
-                  }
-                ]
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Forecast honesty gap by manager (points vs governed probability)'"
+                }
               }
-            ]
+            }
           }
         }
       ]

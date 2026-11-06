@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "52e15dd5db235375a6c4",
   "position": {
-    "x": 1437,
-    "y": 110,
+    "x": 499,
+    "y": 112,
     "z": 6000,
-    "height": 110,
+    "height": 118,
     "width": 453,
     "tabOrder": 6000
   },
@@ -23,11 +23,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Rejected Records"
+                  "Property": "Checks Total"
                 }
               },
-              "queryRef": "_Measures.Rejected Records",
-              "nativeQueryRef": "Rejected Records"
+              "queryRef": "_Measures.Checks Total",
+              "nativeQueryRef": "Checks Total"
             }
           ]
         }
@@ -47,7 +47,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Raw rows not turned into deals'"
+                  "Value": "'Checks total'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Checks total'"
                 }
               }
             }

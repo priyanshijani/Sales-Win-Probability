@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "ce0ad7a06a4a51efa7f0",
   "position": {
-    "x": 30,
-    "y": 14,
+    "x": 0,
+    "y": 0,
     "z": 0,
-    "height": 56,
-    "width": 1500,
+    "height": 100,
+    "width": 1920,
     "tabOrder": 0
   },
   "visual": {
@@ -19,16 +19,44 @@
               {
                 "textRuns": [
                   {
-                    "value": "Does a data-driven win probability beat the CRM's stage probabilities?",
-                    "textStyle": {
-                      "fontSize": "26pt",
-                      "color": "#1B2A41",
-                      "fontWeight": "bold"
-                    }
+                    "value": " "
                   }
                 ]
               }
             ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#111111'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
           }
         }
       ]

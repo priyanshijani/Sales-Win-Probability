@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "a42846d7b43d5cb89c72",
   "position": {
-    "x": 1437,
+    "x": 499,
     "y": 184,
     "z": 9000,
-    "height": 110,
+    "height": 124,
     "width": 453,
     "tabOrder": 9000
   },
@@ -23,11 +23,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Open Pipeline per Account EUR"
+                  "Property": "Win Rate (count)"
                 }
               },
-              "queryRef": "_Measures.Open Pipeline per Account EUR",
-              "nativeQueryRef": "Open Pipeline per Account EUR"
+              "queryRef": "_Measures.Win Rate (count)",
+              "nativeQueryRef": "Win Rate (count)"
             }
           ]
         }
@@ -47,7 +47,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Open pipeline per account'"
+                  "Value": "'Win rate'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Win rate'"
                 }
               }
             }

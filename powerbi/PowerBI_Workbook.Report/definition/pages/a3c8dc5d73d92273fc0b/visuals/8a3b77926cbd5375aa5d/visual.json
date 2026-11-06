@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "8a3b77926cbd5375aa5d",
   "position": {
-    "x": 654,
+    "x": 30,
     "y": 184,
     "z": 8000,
-    "height": 110,
-    "width": 296,
+    "height": 124,
+    "width": 252,
     "tabOrder": 8000
   },
   "visual": {
@@ -23,15 +23,30 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Current Quarter Attainment %"
+                  "Property": "Open Pipeline EUR"
                 }
               },
-              "queryRef": "_Measures.Current Quarter Attainment %",
-              "nativeQueryRef": "Current Quarter Attainment %"
+              "queryRef": "_Measures.Open Pipeline EUR",
+              "nativeQueryRef": "Open Pipeline EUR"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [
@@ -47,7 +62,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Bookings vs target, this quarter'"
+                  "Value": "'Open pipeline'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Open pipeline'"
                 }
               }
             }

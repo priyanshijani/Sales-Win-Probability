@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "54436dff8b2652d0a353",
   "position": {
-    "x": 1530,
+    "x": 780,
     "y": 184,
     "z": 10000,
-    "height": 110,
+    "height": 124,
     "width": 359,
     "tabOrder": 10000
   },
@@ -23,15 +23,39 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "At Risk Deals"
+                  "Property": "Stuck Deals"
                 }
               },
-              "queryRef": "_Measures.At Risk Deals",
-              "nativeQueryRef": "At Risk Deals"
+              "queryRef": "_Measures.Stuck Deals",
+              "nativeQueryRef": "Stuck Deals"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Color Bad"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [
@@ -47,7 +71,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'At-risk deals'"
+                  "Value": "'Stuck deals'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Stuck deals'"
                 }
               }
             }

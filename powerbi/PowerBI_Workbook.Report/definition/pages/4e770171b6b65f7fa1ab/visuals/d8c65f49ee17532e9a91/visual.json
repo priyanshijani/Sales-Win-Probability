@@ -3,102 +3,56 @@
   "name": "d8c65f49ee17532e9a91",
   "position": {
     "x": 30,
-    "y": 660,
+    "y": 240,
     "z": 11000,
-    "height": 330,
-    "width": 1860,
+    "height": 400,
+    "width": 620,
     "tabOrder": 11000
   },
   "visual": {
-    "visualType": "tableEx",
+    "visualType": "scatterChart",
     "query": {
       "queryState": {
-        "Values": {
+        "Category": {
           "projections": [
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "model_scores"
+                      "Entity": "model_calibration"
                     }
                   },
-                  "Property": "opportunity_id"
+                  "Property": "prob_bin"
                 }
               },
-              "queryRef": "model_scores.opportunity_id",
-              "nativeQueryRef": "opportunity_id"
-            },
+              "queryRef": "model_calibration.prob_bin",
+              "nativeQueryRef": "prob_bin",
+              "displayName": "Prob Bin"
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "model_scores"
+                      "Entity": "model_calibration"
                     }
                   },
-                  "Property": "stage"
+                  "Property": "method"
                 }
               },
-              "queryRef": "model_scores.stage",
-              "nativeQueryRef": "stage"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "model_scores"
-                    }
-                  },
-                  "Property": "amount_eur"
-                }
-              },
-              "queryRef": "model_scores.amount_eur",
-              "nativeQueryRef": "amount_eur"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "model_scores"
-                    }
-                  },
-                  "Property": "governed_probability"
-                }
-              },
-              "queryRef": "model_scores.governed_probability",
-              "nativeQueryRef": "governed_probability"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "model_scores"
-                    }
-                  },
-                  "Property": "model_win_probability"
-                }
-              },
-              "queryRef": "model_scores.model_win_probability",
-              "nativeQueryRef": "model_win_probability"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "model_scores"
-                    }
-                  },
-                  "Property": "model_vs_governed_pts"
-                }
-              },
-              "queryRef": "model_scores.model_vs_governed_pts",
-              "nativeQueryRef": "model_vs_governed_pts"
-            },
+              "queryRef": "model_calibration.method",
+              "nativeQueryRef": "method",
+              "displayName": "Method"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
             {
               "field": {
                 "Measure": {
@@ -107,32 +61,50 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Deals To Review"
+                  "Property": "Predicted Win Rate"
                 }
               },
-              "queryRef": "_Measures.Deals To Review",
-              "nativeQueryRef": "Deals To Review"
+              "queryRef": "_Measures.Predicted Win Rate",
+              "nativeQueryRef": "Predicted Win Rate"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Actual Win Rate"
+                }
+              },
+              "queryRef": "_Measures.Actual Win Rate",
+              "nativeQueryRef": "Actual Win Rate"
+            }
+          ]
+        },
+        "Size": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Calibration Deals"
+                }
+              },
+              "queryRef": "_Measures.Calibration Deals",
+              "nativeQueryRef": "Calibration Deals"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "model_scores"
-                  }
-                },
-                "Property": "amount_eur"
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
-        "isDefaultSort": true
       }
     },
     "visualContainerObjects": {
@@ -149,7 +121,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Open deals where the model and the governed probability disagree by 25 points or more'"
+                  "Value": "'Calibration: predicted vs actual win rate (closer to the diagonal is better)'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Calibration: predicted vs actual win rate (closer to the diagonal is better)'"
                 }
               }
             }

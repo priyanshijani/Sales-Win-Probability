@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "a746b92f5fd55035bc02",
   "position": {
-    "x": 1155,
+    "x": 405,
     "y": 184,
     "z": 9000,
-    "height": 110,
+    "height": 124,
     "width": 359,
     "tabOrder": 9000
   },
@@ -23,11 +23,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Open Pipeline EUR"
+                  "Property": "Quota Attainment YTD %"
                 }
               },
-              "queryRef": "_Measures.Open Pipeline EUR",
-              "nativeQueryRef": "Open Pipeline EUR"
+              "queryRef": "_Measures.Quota Attainment YTD %",
+              "nativeQueryRef": "Quota Attainment YTD %"
             }
           ]
         }
@@ -47,7 +47,61 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Open pipeline'"
+                  "Value": "'Quota attainment YTD'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Quota attainment YTD'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Quota Label"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Quota Color"
+                    }
+                  }
                 }
               }
             }

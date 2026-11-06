@@ -2,54 +2,18 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "298e8afb900c55e8bdfd",
   "position": {
-    "x": 30,
-    "y": 240,
+    "x": 966,
+    "y": 112,
     "z": 8000,
-    "height": 400,
-    "width": 620,
+    "height": 118,
+    "width": 296,
     "tabOrder": 8000
   },
   "visual": {
-    "visualType": "scatterChart",
+    "visualType": "card",
     "query": {
       "queryState": {
-        "Category": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "model_calibration"
-                    }
-                  },
-                  "Property": "prob_bin"
-                }
-              },
-              "queryRef": "model_calibration.prob_bin",
-              "nativeQueryRef": "prob_bin"
-            }
-          ]
-        },
-        "Series": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "model_calibration"
-                    }
-                  },
-                  "Property": "method"
-                }
-              },
-              "queryRef": "model_calibration.method",
-              "nativeQueryRef": "method"
-            }
-          ]
-        },
-        "X": {
+        "Values": {
           "projections": [
             {
               "field": {
@@ -59,51 +23,30 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Predicted Win Rate"
+                  "Property": "Model vs Governed Gap EUR"
                 }
               },
-              "queryRef": "_Measures.Predicted Win Rate",
-              "nativeQueryRef": "Predicted Win Rate"
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Actual Win Rate"
-                }
-              },
-              "queryRef": "_Measures.Actual Win Rate",
-              "nativeQueryRef": "Actual Win Rate"
-            }
-          ]
-        },
-        "Size": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Calibration Deals"
-                }
-              },
-              "queryRef": "_Measures.Calibration Deals",
-              "nativeQueryRef": "Calibration Deals"
+              "queryRef": "_Measures.Model vs Governed Gap EUR",
+              "nativeQueryRef": "Model vs Governed Gap EUR"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [
@@ -119,7 +62,61 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Calibration: predicted vs actual win rate (closer to the diagonal is better)'"
+                  "Value": "'Model minus governed'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Model minus governed'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Model Gap Label"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Model Gap Color"
+                    }
+                  }
                 }
               }
             }

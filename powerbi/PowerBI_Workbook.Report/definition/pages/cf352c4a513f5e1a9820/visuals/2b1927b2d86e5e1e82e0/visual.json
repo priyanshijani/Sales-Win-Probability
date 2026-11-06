@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "2b1927b2d86e5e1e82e0",
   "position": {
-    "x": 870,
-    "y": 240,
+    "x": 1437,
+    "y": 112,
     "z": 8000,
-    "height": 170,
-    "width": 1020,
+    "height": 118,
+    "width": 453,
     "tabOrder": 8000
   },
   "visual": {
@@ -23,15 +23,30 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Reasoning Text"
+                  "Property": "Selected Deal Amount EUR"
                 }
               },
-              "queryRef": "_Measures.Reasoning Text",
-              "nativeQueryRef": "Reasoning Text"
+              "queryRef": "_Measures.Selected Deal Amount EUR",
+              "nativeQueryRef": "Selected Deal Amount EUR"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [
@@ -47,7 +62,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'In plain words'"
+                  "Value": "'Deal value'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Deal value'"
                 }
               }
             }

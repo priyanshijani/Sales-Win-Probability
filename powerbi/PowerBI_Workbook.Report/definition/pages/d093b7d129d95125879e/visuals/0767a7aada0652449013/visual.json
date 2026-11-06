@@ -2,36 +2,18 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "0767a7aada0652449013",
   "position": {
-    "x": 1290,
-    "y": 240,
+    "x": 1437,
+    "y": 112,
     "z": 8000,
-    "height": 360,
-    "width": 600,
+    "height": 118,
+    "width": 453,
     "tabOrder": 8000
   },
   "visual": {
-    "visualType": "clusteredBarChart",
+    "visualType": "card",
     "query": {
       "queryState": {
-        "Category": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "rejected_records"
-                    }
-                  },
-                  "Property": "reject_reason"
-                }
-              },
-              "queryRef": "rejected_records.reject_reason",
-              "nativeQueryRef": "reject_reason"
-            }
-          ]
-        },
-        "Y": {
+        "Values": {
           "projections": [
             {
               "field": {
@@ -65,7 +47,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Why raw rows were rejected'"
+                  "Value": "'Rejected raw rows'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Rejected raw rows'"
                 }
               }
             }

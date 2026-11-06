@@ -2,15 +2,15 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "ae6111296cc756aead46",
   "position": {
-    "x": 990,
-    "y": 660,
+    "x": 30,
+    "y": 310,
     "z": 15000,
     "height": 330,
-    "width": 900,
+    "width": 620,
     "tabOrder": 15000
   },
   "visual": {
-    "visualType": "clusteredColumnChart",
+    "visualType": "clusteredBarChart",
     "query": {
       "queryState": {
         "Category": {
@@ -23,11 +23,12 @@
                       "Entity": "pipeline_deals"
                     }
                   },
-                  "Property": "forecast_category"
+                  "Property": "stage"
                 }
               },
-              "queryRef": "pipeline_deals.forecast_category",
-              "nativeQueryRef": "forecast_category"
+              "queryRef": "pipeline_deals.stage",
+              "nativeQueryRef": "stage",
+              "displayName": "Stage"
             }
           ]
         },
@@ -46,23 +47,27 @@
               },
               "queryRef": "_Measures.Open Pipeline EUR",
               "nativeQueryRef": "Open Pipeline EUR"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Weighted Pipeline EUR"
-                }
-              },
-              "queryRef": "_Measures.Weighted Pipeline EUR",
-              "nativeQueryRef": "Weighted Pipeline EUR"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "pipeline_deals"
+                  }
+                },
+                "Property": "stage"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
       }
     },
     "visualContainerObjects": {
@@ -79,7 +84,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Open vs weighted pipeline by forecast category'"
+                  "Value": "'Open pipeline by stage'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Open pipeline by stage'"
                 }
               }
             }

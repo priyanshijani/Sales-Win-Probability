@@ -7,12 +7,12 @@ table _Measures
 		lineageTag: dd4c3f29-b03b-5963-b9e7-37ad229cb7e1
 
 	measure 'Open Pipeline EUR' = CALCULATE ( SUM ( pipeline_deals[amount_eur] ), pipeline_deals[is_open] = TRUE () )
-		formatString: \€#,0.0,,\M
+		formatString: \€#,0
 		displayFolder: Pipeline health
 		lineageTag: 6ce3824e-4fa5-5d6c-b592-b2c40b58a296
 
 	measure 'Weighted Pipeline EUR' = SUM ( pipeline_deals[weighted_amount_eur] )
-		formatString: \€#,0.0,,\M
+		formatString: \€#,0
 		displayFolder: Pipeline health
 		lineageTag: 33b375c4-eb37-54c7-ab6b-7614a1c191cd
 
@@ -22,7 +22,7 @@ table _Measures
 		lineageTag: cb24dca8-5d22-5ee7-8bec-c8970133e712
 
 	measure 'Bookings EUR' = CALCULATE ( SUM ( pipeline_deals[amount_eur] ), pipeline_deals[is_won] = TRUE () )
-		formatString: \€#,0.0,,\M
+		formatString: \€#,0
 		displayFolder: Pipeline health
 		lineageTag: e34597d3-8737-5ded-8da4-e69102c92373
 
@@ -37,7 +37,7 @@ table _Measures
 		lineageTag: caf5a881-08d7-5a03-8aca-e9ee28cffcd0
 
 	measure 'Avg Won Deal EUR' = DIVIDE ( [Bookings EUR], CALCULATE ( COUNTROWS ( pipeline_deals ), pipeline_deals[is_won] = TRUE (), NOT ISBLANK ( pipeline_deals[amount_eur] ) ) )
-		formatString: \€#,0,\K
+		formatString: \€#,0
 		displayFolder: Pipeline health
 		lineageTag: 4e3b3e8e-35a1-5fec-a99b-e9a30a423fdd
 
@@ -64,7 +64,7 @@ table _Measures
 		lineageTag: d95079de-50a0-56ad-a3e4-241270e75056
 
 	measure 'Target EUR' = SUM ( dept_quarter_summary[bookings_target_eur] )
-		formatString: \€#,0.0,,\M
+		formatString: \€#,0
 		displayFolder: Pipeline health
 		lineageTag: 4aa9166f-4bbf-53d5-bf1a-9c5c9f974127
 
@@ -79,17 +79,17 @@ table _Measures
 		lineageTag: 9a64c9bc-3d23-51a2-a975-b7050d9d33ad
 
 	measure 'Commit EUR' = SUM ( dept_quarter_summary[commit_eur] )
-		formatString: \€#,0.0,,\M
+		formatString: \€#,0
 		displayFolder: Pipeline health
 		lineageTag: 2364fdab-4ed9-526b-9317-3bd328177054
 
 	measure 'Best Case EUR' = SUM ( dept_quarter_summary[best_case_eur] )
-		formatString: \€#,0.0,,\M
+		formatString: \€#,0
 		displayFolder: Pipeline health
 		lineageTag: 06bd281e-5eb8-5bb5-8b0b-4859d2299d8b
 
 	measure 'Pipeline Category EUR' = SUM ( dept_quarter_summary[pipeline_eur] )
-		formatString: \€#,0.0,,\M
+		formatString: \€#,0
 		displayFolder: Pipeline health
 		lineageTag: 2ed754e7-b634-5e3f-8782-dc5d66b9945a
 
@@ -99,7 +99,7 @@ table _Measures
 		lineageTag: a4084a99-05ad-514b-a394-031a6fbdea33
 
 	measure 'Stuck EUR' = CALCULATE ( SUM ( pipeline_deals[amount_eur] ), pipeline_deals[is_stuck] = TRUE () )
-		formatString: \€#,0.0,,\M
+		formatString: \€#,0
 		displayFolder: Velocity & risk
 		lineageTag: db6fb87a-322d-50ed-866a-61ea0498406c
 
@@ -161,12 +161,12 @@ table _Measures
 		lineageTag: 4daef929-6a6c-5f7d-956c-ff1b68c58e63
 
 	measure 'Quota YTD EUR' = SUM ( sales_team[prorated_quota_ytd_eur] )
-		formatString: \€#,0.0,,\M
+		formatString: \€#,0
 		displayFolder: People
 		lineageTag: a5e6022d-7e92-5568-9f50-d8c407ed6725
 
 	measure 'Bookings YTD EUR' = SUM ( sales_team[bookings_ytd_eur] )
-		formatString: \€#,0.0,,\M
+		formatString: \€#,0
 		displayFolder: People
 		lineageTag: 266a4fef-2b5c-5af8-ba42-c9edf94fb28e
 
@@ -181,22 +181,22 @@ table _Measures
 		lineageTag: 64152bd3-e3bd-581f-86ae-80ba5e6894a5
 
 	measure 'Open Pipeline per Account EUR' = DIVIDE ( [Open Pipeline EUR], [Accounts] )
-		formatString: \€#,0,\K
+		formatString: \€#,0
 		displayFolder: Market
 		lineageTag: c1492ff6-a0a9-5cb1-9a51-40bb38f6f31c
 
 	measure 'Model Weighted Pipeline EUR' = SUM ( model_scores[model_weighted_eur] )
-		formatString: \€#,0.0,,\M
+		formatString: \€#,0
 		displayFolder: Win probability model - advisory
 		lineageTag: b4318301-3ad6-5b26-8bec-f0a3ae29d420
 
 	measure 'Governed Weighted (scored deals) EUR' = SUMX ( FILTER ( model_scores, NOT ISBLANK ( model_scores[model_win_probability] ) ), model_scores[amount_eur] * model_scores[governed_probability] )
-		formatString: \€#,0.0,,\M
+		formatString: \€#,0
 		displayFolder: Win probability model - advisory
 		lineageTag: b8c9b08e-5338-5140-aab1-86ca7dcf3d5c
 
 	measure 'Model vs Governed Gap EUR' = [Model Weighted Pipeline EUR] - [Governed Weighted (scored deals) EUR]
-		formatString: \€#,0.0,,\M
+		formatString: \€#,0
 		displayFolder: Win probability model - advisory
 		lineageTag: e23aa638-a512-5887-84b5-c95159801697
 
@@ -249,7 +249,7 @@ table _Measures
 		lineageTag: b1cb732d-eb98-5a5a-96a1-db9b701e176a
 
 	measure 'Deal Amount EUR' = SUM ( pipeline_deals[amount_eur] )
-		formatString: \€#,0.0,,\M
+		formatString: \€#,0
 		displayFolder: Helper measures used by the report visuals
 		lineageTag: 70e4617b-71fb-50be-8057-37a2de3a8056
 
@@ -289,12 +289,12 @@ table _Measures
 		lineageTag: a122c093-c07f-54cc-ac38-5a147ef2651d
 
 	measure 'Backtest Forecast EUR' = SUM ( model_backtest[forecast_won_eur] )
-		formatString: \€#,0.0,,\M
+		formatString: \€#,0
 		displayFolder: Helper measures used by the report visuals
 		lineageTag: 089b481c-4b16-58d7-8aea-9ce54e34253b
 
 	measure 'Backtest Actual EUR' = SUM ( model_backtest[actual_won_eur] )
-		formatString: \€#,0.0,,\M
+		formatString: \€#,0
 		displayFolder: Helper measures used by the report visuals
 		lineageTag: 5da26810-ca42-5666-92ba-1c47c7d5e9b9
 
@@ -319,7 +319,7 @@ table _Measures
 		lineageTag: 55de1f7b-2e71-5a45-b646-b37bd6c367d6
 
 	measure 'Selected Deal Amount EUR' = SUM ( model_scores[amount_eur] )
-		formatString: \€#,0.0,,\M
+		formatString: \€#,0
 		displayFolder: Deal explainer: why does the model think this deal will convert?
 		lineageTag: d6c563c0-6c5a-536a-b414-e9fb4ac9cb7f
 
@@ -331,6 +331,214 @@ table _Measures
 	measure 'Reasoning Text' = SELECTEDVALUE ( model_scores[model_reasoning], "Click a deal in the list on the left to see why the model rates it as it does." )
 		displayFolder: Deal explainer: why does the model think this deal will convert?
 		lineageTag: fd2ac351-afa2-5e9a-9b3f-8a4302b10962
+
+	measure 'Color Good' = "#1E9E5A"
+		displayFolder: KPI markers
+		lineageTag: 9993126b-cf9e-5c46-bfe1-28cc5ce2a1c7
+
+	measure 'Color Bad' = "#D32F2F"
+		displayFolder: KPI markers
+		lineageTag: 4f6fcb8e-7af4-5ea2-a5f5-53aa8e4a8df6
+
+	measure 'Color Neutral' = "#6B6B6B"
+		displayFolder: KPI markers
+		lineageTag: 55b7e3e8-8900-5d96-970d-35f3402a7f69
+
+	measure 'Bookings L3M EUR' = CALCULATE ( [Bookings EUR], DATESBETWEEN ( DimDate[Date], EDATE ( [Snapshot Date], -3 ) + 1, [Snapshot Date] ) )
+		formatString: \€#,0
+		displayFolder: KPI markers
+		lineageTag: f69d714e-7d79-5f77-9e8d-7a681c57fdc3
+
+	measure 'Bookings Prior 3M EUR' = CALCULATE ( [Bookings EUR], DATESBETWEEN ( DimDate[Date], EDATE ( [Snapshot Date], -6 ) + 1, EDATE ( [Snapshot Date], -3 ) ) )
+		formatString: \€#,0
+		displayFolder: KPI markers
+		lineageTag: 850fc914-e957-502a-9c81-c2641f8341ec
+
+	measure 'Bookings L3M Change %' = DIVIDE ( [Bookings L3M EUR] - [Bookings Prior 3M EUR], [Bookings Prior 3M EUR] )
+		formatString: 0.0%
+		displayFolder: KPI markers
+		lineageTag: 29d9b081-40c1-5cb6-a4c2-fe81624d8aac
+
+	measure 'Bookings L3M Label' = VAR d = [Bookings L3M Change %] RETURN IF ( ISBLANK ( d ), "no prior period", IF ( d >= 0, "▲ +", "▼ " ) & FORMAT ( d, "0.0%" ) & " vs prior 3 months" )
+		displayFolder: KPI markers
+		lineageTag: 1bd5e783-87c3-56ef-b39b-e989c0ecd6d9
+
+	measure 'Bookings L3M Color' = IF ( [Bookings L3M Change %] >= 0, [Color Good], [Color Bad] )
+		displayFolder: KPI markers
+		lineageTag: 67367f5c-833f-54f6-8605-8bf4b903ea98
+
+	measure 'Win Rate Prior 12M' = CALCULATE ( [Win Rate (count)], DATESBETWEEN ( DimDate[Date], EDATE ( [Snapshot Date], -24 ) + 1, EDATE ( [Snapshot Date], -12 ) ) )
+		formatString: 0.0%
+		displayFolder: KPI markers
+		lineageTag: da4febfc-416f-580b-894a-8a66329bce0c
+
+	measure 'Win Rate Change (pts)' = ( [Win Rate Last 12M] - [Win Rate Prior 12M] ) * 100
+		formatString: +0.0;-0.0;0.0
+		displayFolder: KPI markers
+		lineageTag: 3dc3cb02-272b-5483-994f-2fd27d1a216d
+
+	measure 'Win Rate Label' = VAR d = [Win Rate Change (pts)] RETURN IF ( ISBLANK ( d ), "no prior year", IF ( d >= 0, "▲ +", "▼ " ) & FORMAT ( d, "0.0" ) & " pts vs prior 12 months" )
+		displayFolder: KPI markers
+		lineageTag: 1d2c88e1-e710-5da3-aded-10a3183b7e5b
+
+	measure 'Win Rate Color' = IF ( [Win Rate Change (pts)] >= 0, [Color Good], [Color Bad] )
+		displayFolder: KPI markers
+		lineageTag: 32a2ef00-cb70-592f-9ddc-02db3714e807
+
+	measure 'Attainment Gap (pts)' = ( [Current Quarter Attainment %] - 1 ) * 100
+		formatString: +0.0;-0.0;0.0
+		displayFolder: KPI markers
+		lineageTag: e1ac4b5a-b590-5986-9775-2be41e703896
+
+	measure 'Attainment Label' = VAR d = [Attainment Gap (pts)] RETURN IF ( ISBLANK ( d ), BLANK (), IF ( d >= 0, "▲ +", "▼ " ) & FORMAT ( d, "0.0" ) & " pts vs target" )
+		displayFolder: KPI markers
+		lineageTag: 7b705bb1-d37c-5878-b288-9fa359c8dc0b
+
+	measure 'Attainment Color' = IF ( [Attainment Gap (pts)] >= 0, [Color Good], [Color Bad] )
+		displayFolder: KPI markers
+		lineageTag: 0e544487-2f49-500c-b1c2-52e0bffd8402
+
+	measure 'Coverage Gap x' = [Next Quarter Coverage x] - 3
+		formatString: 0.0\x
+		displayFolder: KPI markers
+		lineageTag: 009ace2c-08c8-540f-95e9-1028428772ad
+
+	measure 'Coverage Label' = VAR d = [Coverage Gap x] RETURN IF ( ISBLANK ( d ), BLANK (), IF ( d >= 0, "▲ +", "▼ " ) & FORMAT ( d, "0.0" ) & "x vs 3.0x healthy" )
+		displayFolder: KPI markers
+		lineageTag: 64a6dee9-56e2-5d44-97fa-912917fa1b27
+
+	measure 'Coverage Color' = IF ( [Coverage Gap x] >= 0, [Color Good], [Color Bad] )
+		displayFolder: KPI markers
+		lineageTag: 08698440-4239-5269-ab0d-30b185931bc8
+
+	measure 'Quota Gap (pts)' = ( [Quota Attainment YTD %] - 1 ) * 100
+		formatString: +0.0;-0.0;0.0
+		displayFolder: KPI markers
+		lineageTag: ecafeb03-0dec-5f02-b550-bbaec42c2661
+
+	measure 'Quota Label' = VAR d = [Quota Gap (pts)] RETURN IF ( ISBLANK ( d ), BLANK (), IF ( d >= 0, "▲ +", "▼ " ) & FORMAT ( d, "0.0" ) & " pts vs quota" )
+		displayFolder: KPI markers
+		lineageTag: 3bc77e13-d278-56fb-9394-cd76327b2a7f
+
+	measure 'Quota Color' = IF ( [Quota Gap (pts)] >= 0, [Color Good], [Color Bad] )
+		displayFolder: KPI markers
+		lineageTag: 36811fd2-c19e-5a92-88fb-39aaae8104fd
+
+	measure 'Honesty Label' = VAR d = [Forecast Honesty Gap (pts)] RETURN IF ( ISBLANK ( d ), BLANK (), IF ( d > 0, "▲ +", "▼ " ) & FORMAT ( d, "0.0" ) & IF ( d > 0, " pts more optimistic", " pts more cautious" ) )
+		displayFolder: KPI markers
+		lineageTag: de10a435-f463-575f-b561-32dbe8d22616
+
+	measure 'Honesty Color' = IF ( [Forecast Honesty Gap (pts)] > 0, [Color Bad], [Color Good] )
+		displayFolder: KPI markers
+		lineageTag: 7b380a1e-d2b4-5536-8d18-ce916e344cc1
+
+	measure 'Model Gap Label' = VAR d = [Model vs Governed Gap EUR] RETURN IF ( ISBLANK ( d ), BLANK (), IF ( d >= 0, "▲ +€", "▼ -€" ) & FORMAT ( ABS ( d ) / 1000000, "0.0" ) & "M vs governed" )
+		displayFolder: KPI markers
+		lineageTag: 212f747c-f153-55ed-b73e-53d86711bdc0
+
+	measure 'Model Gap Color' = IF ( [Model vs Governed Gap EUR] >= 0, [Color Good], [Color Bad] )
+		displayFolder: KPI markers
+		lineageTag: 5a2036db-c90d-513a-8034-e40796d2a76c
+
+	measure 'Model vs CRM Label' = VAR d = ( [Selected Model Win Probability] - [Selected Governed Probability] ) * 100 RETURN IF ( ISBLANK ( d ), BLANK (), IF ( d >= 0, "▲ +", "▼ " ) & FORMAT ( d, "0" ) & " pts vs CRM stage default" )
+		displayFolder: KPI markers
+		lineageTag: cb1adab0-7997-5468-ba08-bb30b10bebf6
+
+	measure 'Model vs CRM Color' = IF ( [Selected Model Win Probability] >= [Selected Governed Probability], [Color Good], [Color Bad] )
+		displayFolder: KPI markers
+		lineageTag: 27ca090a-35b7-5933-b50d-8a69fe9ecc41
+
+	measure 'Impact Marker' = VAR d = [Impact (pts)] RETURN IF ( ISBLANK ( d ), BLANK (), IF ( d >= 0, "▲ +", "▼ " ) & FORMAT ( d, "0.0" ) )
+		displayFolder: KPI markers
+		lineageTag: e323adce-dc31-5310-8889-a83eb024ac6c
+
+	measure 'Impact Color' = IF ( [Impact (pts)] >= 0, [Color Good], [Color Bad] )
+		displayFolder: KPI markers
+		lineageTag: 03bb7ca0-2e06-5886-b331-0e3fede340a8
+
+	measure 'Gap vs Governed Marker' = VAR d = AVERAGE ( model_scores[model_vs_governed_pts] ) RETURN IF ( ISBLANK ( d ), BLANK (), IF ( d >= 0, "▲ +", "▼ " ) & FORMAT ( d, "0" ) & " pts" )
+		displayFolder: KPI markers
+		lineageTag: 7189bed6-7f7e-5fed-9d7f-9a88d4898a94
+
+	measure 'Gap vs Governed Color' = IF ( AVERAGE ( model_scores[model_vs_governed_pts] ) >= 0, [Color Good], [Color Bad] )
+		displayFolder: KPI markers
+		lineageTag: 162c1919-3b4a-583e-892d-d96eb0172db6
+
+	measure 'Trust Label' = IF ( [Trust Score %] = 1, "● All checks pass", "● " & ( [Checks Total] - [Checks Passed] ) & " checks failing" )
+		displayFolder: KPI markers
+		lineageTag: 113a523e-92c9-5ee3-b3e6-f8e1ab8beb3a
+
+	measure 'Trust Color' = IF ( [Trust Score %] = 1, [Color Good], [Color Bad] )
+		displayFolder: KPI markers
+		lineageTag: 09c91ff8-625d-53b0-a700-1f66a0791335
+
+	measure 'Check Status Marker' = VAR s = SELECTEDVALUE ( dq_reconciliation[status] ) RETURN IF ( ISBLANK ( s ), BLANK (), "● " & s )
+		displayFolder: KPI markers
+		lineageTag: 76509a26-f268-56fe-a1a5-cf68d5bef9d2
+
+	measure 'Check Status Color' = IF ( SELECTEDVALUE ( dq_reconciliation[status] ) = "PASS", [Color Good], [Color Bad] )
+		displayFolder: KPI markers
+		lineageTag: 9fbe5888-e852-5202-921a-b986de1a8287
+
+	measure 'So What Pipeline' = "Next quarter's pipeline covers " & FORMAT ( [Next Quarter Coverage x], "0.0" ) & "x of target (healthy is 3.0x); bookings this quarter stand at " & FORMAT ( [Current Quarter Attainment %], "0%" ) & " of target."
+		displayFolder: Page takeaways
+		lineageTag: b1238729-196a-50ec-846b-ff0a8d9668d2
+
+	measure 'So What Risk' = FORMAT ( [At Risk % of Pipeline], "0%" ) & " of open pipeline (€" & FORMAT ( [EUR At Risk] / 1000000, "0.0" ) & "M, " & FORMAT ( [At Risk Deals], "#,0" ) & " deals) is stuck, stale, past due or orphaned: start with the ranked list above."
+		displayFolder: Page takeaways
+		lineageTag: 0dc8d1d4-f404-5b3b-a869-a88e857e5785
+
+	measure 'So What People' = "Win rate is " & FORMAT ( [Win Rate (count)], "0.0%" ) & " and reps rate open deals " & FORMAT ( [Forecast Honesty Gap (pts)], "+0.0;-0.0" ) & " pts versus the governed probabilities: review the managers in red."
+		displayFolder: Page takeaways
+		lineageTag: b7a0adda-16ef-5f7d-85e1-dda92cdaf81d
+
+	measure 'So What Market' = "€" & FORMAT ( [Open Pipeline EUR] / 1000000, "0.0" ) & "M of open pipeline across " & FORMAT ( [Accounts], "#,0" ) & " accounts; the win rate differs a lot by region, so direct investment to the strongest regions."
+		displayFolder: Page takeaways
+		lineageTag: 5a92a386-7375-5656-a746-22a89b23b1e3
+
+	measure 'So What Model' = "The model puts weighted pipeline at €" & FORMAT ( [Model Weighted Pipeline EUR] / 1000000, "0.0" ) & "M against €" & FORMAT ( [Governed Weighted (scored deals) EUR] / 1000000, "0.0" ) & "M under the CRM stage odds; " & FORMAT ( [Deals To Review], "#,0" ) & " deals differ by 25 points or more and need a review."
+		displayFolder: Page takeaways
+		lineageTag: 2f3507bd-e40c-58a0-9e0f-176a972b75d4
+
+	measure 'Impact Size' = ABS ( [Impact (pts)] )
+		formatString: 0.0
+		displayFolder: Split series: one measure per colour state
+		lineageTag: 2c482aeb-3dde-5c67-807d-004930cb9b4c
+
+	measure 'Impact Up (pts)' = VAR i = [Impact (pts)] RETURN IF ( i >= 2, i )
+		formatString: +0.0;-0.0;0.0
+		displayFolder: Split series: one measure per colour state
+		lineageTag: cc6355a7-6859-502b-908d-6b705faed297
+
+	measure 'Impact Down (pts)' = VAR i = [Impact (pts)] RETURN IF ( i <= -2, i )
+		formatString: +0.0;-0.0;0.0
+		displayFolder: Split series: one measure per colour state
+		lineageTag: 327bc0d6-75f1-5ee7-8017-3d8d6774ac1c
+
+	measure 'Impact Minor (pts)' = VAR i = [Impact (pts)] RETURN IF ( ABS ( i ) < 2, i )
+		formatString: +0.0;-0.0;0.0
+		displayFolder: Split series: one measure per colour state
+		lineageTag: 355e9429-1b93-5f04-8545-549b6d253b3f
+
+	measure 'Quota Met %' = VAR a = [Quota Attainment YTD %] RETURN IF ( a >= 1, a )
+		formatString: 0.0%
+		displayFolder: Split series: one measure per colour state
+		lineageTag: b4b3fe5b-4712-5d1d-a187-fd54e0c2d6d5
+
+	measure 'Quota Missed %' = VAR a = [Quota Attainment YTD %] RETURN IF ( a < 1, a )
+		formatString: 0.0%
+		displayFolder: Split series: one measure per colour state
+		lineageTag: 9a73329b-328b-55f4-a91f-0b510501369e
+
+	measure 'Honesty Optimistic (pts)' = VAR g = [Forecast Honesty Gap (pts)] RETURN IF ( g > 0, g )
+		formatString: +0.0;-0.0;0.0
+		displayFolder: Split series: one measure per colour state
+		lineageTag: edbf0e44-31ad-5493-b633-e7fb17928ff9
+
+	measure 'Honesty Cautious (pts)' = VAR g = [Forecast Honesty Gap (pts)] RETURN IF ( g <= 0, g )
+		formatString: +0.0;-0.0;0.0
+		displayFolder: Split series: one measure per colour state
+		lineageTag: 0f159149-7e1d-5f63-8d0c-42c592d482ab
 
 	column Dummy
 		isHidden

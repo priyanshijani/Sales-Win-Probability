@@ -1,2 +1,1040 @@
 cultureInfo en-US
 
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "pipeline_deals.forecast_category": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "pipeline_deals",
+			          "ConceptualProperty": "forecast_category"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Forecast Category": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "pipeline_deals.stage": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "pipeline_deals",
+			          "ConceptualProperty": "stage"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Stage": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "pipeline_deals.service_line": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "pipeline_deals",
+			          "ConceptualProperty": "service_line"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Service Line": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "pipeline_deals.sales_region": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "pipeline_deals",
+			          "ConceptualProperty": "sales_region"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Sales Region": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "pipeline_deals.opportunity_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "pipeline_deals",
+			          "ConceptualProperty": "opportunity_id"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Opportunity ID": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "pipeline_deals.department": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "pipeline_deals",
+			          "ConceptualProperty": "department"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Department": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "pipeline_deals.opportunity_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "pipeline_deals",
+			          "ConceptualProperty": "opportunity_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Opportunity Name": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "pipeline_deals.owner_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "pipeline_deals",
+			          "ConceptualProperty": "owner_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Owner Name": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "pipeline_deals.risk_reasons": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "pipeline_deals",
+			          "ConceptualProperty": "risk_reasons"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Risk Reasons": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "pipeline_deals.loss_reason": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "pipeline_deals",
+			          "ConceptualProperty": "loss_reason"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Loss Reason": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "pipeline_deals.country_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "pipeline_deals",
+			          "ConceptualProperty": "country_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Country Name": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "pipeline_deals.industry": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "pipeline_deals",
+			          "ConceptualProperty": "industry"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Industry": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dimdate.month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimDate",
+			          "ConceptualProperty": "Month"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Month": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dimdepartment.department": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimDepartment",
+			          "ConceptualProperty": "department"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Department": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dept_quarter_summary.quarter": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dept_quarter_summary",
+			          "ConceptualProperty": "quarter"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Quarter": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "pipeline_stage_stints.department": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "pipeline_stage_stints",
+			          "ConceptualProperty": "department"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Department": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "pipeline_stage_stints.stage": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "pipeline_stage_stints",
+			          "ConceptualProperty": "stage"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Stage": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.days_in_current_stage": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Days In Current Stage"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Days in stage": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.deal_amount_eur": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Deal Amount EUR"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Deal value": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.gap_vs_governed_marker": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Gap vs Governed Marker"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Model vs CRM stage": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.impact_marker": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Impact Marker"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Impact (pts)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures.check_status_marker": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Check Status Marker"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Status": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_team.full_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "sales_team",
+			          "ConceptualProperty": "full_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Full Name": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_team.department": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "sales_team",
+			          "ConceptualProperty": "department"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Department": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_team.sales_manager": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "sales_team",
+			          "ConceptualProperty": "sales_manager"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Sales Manager": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_accounts.account_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_accounts",
+			          "ConceptualProperty": "account_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Account Name": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_accounts.country_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_accounts",
+			          "ConceptualProperty": "country_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Country Name": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_accounts.industry": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_accounts",
+			          "ConceptualProperty": "industry"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Industry": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_accounts.account_status": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_accounts",
+			          "ConceptualProperty": "account_status"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Account Status": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "model_feature_importance.base_feature": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "model_feature_importance",
+			          "ConceptualProperty": "base_feature"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Base Feature": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "model_feature_importance.model": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "model_feature_importance",
+			          "ConceptualProperty": "model"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Model": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "model_calibration.prob_bin": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "model_calibration",
+			          "ConceptualProperty": "prob_bin"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Prob Bin": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "model_calibration.method": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "model_calibration",
+			          "ConceptualProperty": "method"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Method": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "model_scores.opportunity_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "model_scores",
+			          "ConceptualProperty": "opportunity_id"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Opportunity ID": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "model_scores.stage": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "model_scores",
+			          "ConceptualProperty": "stage"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Stage": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "model_scores.amount_eur": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "model_scores",
+			          "ConceptualProperty": "amount_eur"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Amount EUR": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "model_scores.governed_probability": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "model_scores",
+			          "ConceptualProperty": "governed_probability"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Governed Probability": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "model_scores.model_win_probability": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "model_scores",
+			          "ConceptualProperty": "model_win_probability"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Model Win Probability": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "model_scores.deal_label": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "model_scores",
+			          "ConceptualProperty": "deal_label"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Deal Label": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "model_backtest.method": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "model_backtest",
+			          "ConceptualProperty": "method"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Method": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "model_explanations.feature_label": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "model_explanations",
+			          "ConceptualProperty": "feature_label"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Feature Label": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "model_explanations.insight": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "model_explanations",
+			          "ConceptualProperty": "insight"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Insight": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dq_reconciliation.check_group": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dq_reconciliation",
+			          "ConceptualProperty": "check_group"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Check Group": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dq_reconciliation.check_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dq_reconciliation",
+			          "ConceptualProperty": "check_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Check Name": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dq_reconciliation.dimension": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dq_reconciliation",
+			          "ConceptualProperty": "dimension"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Dimension": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dq_reconciliation.expected": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dq_reconciliation",
+			          "ConceptualProperty": "expected"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Expected": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dq_reconciliation.actual": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dq_reconciliation",
+			          "ConceptualProperty": "actual"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Actual": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dq_reconciliation.difference": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dq_reconciliation",
+			          "ConceptualProperty": "difference"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Difference": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rejected_records.reject_reason": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "rejected_records",
+			          "ConceptualProperty": "reject_reason"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Reject Reason": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+
