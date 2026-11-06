@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "b311929749cf51349e9b",
   "position": {
-    "x": 780,
+    "x": 30,
     "y": 184,
     "z": 8000,
-    "height": 110,
+    "height": 124,
     "width": 359,
     "tabOrder": 8000
   },
@@ -23,15 +23,39 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Stuck Deals"
+                  "Property": "EUR At Risk"
                 }
               },
-              "queryRef": "_Measures.Stuck Deals",
-              "nativeQueryRef": "Stuck Deals"
+              "queryRef": "_Measures.EUR At Risk",
+              "nativeQueryRef": "EUR At Risk"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Color Bad"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [
@@ -47,7 +71,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Stuck deals'"
+                  "Value": "'Pipeline at risk'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Pipeline at risk'"
                 }
               }
             }

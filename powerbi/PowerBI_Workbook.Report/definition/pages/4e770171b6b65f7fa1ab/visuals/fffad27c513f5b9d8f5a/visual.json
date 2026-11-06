@@ -2,54 +2,18 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "fffad27c513f5b9d8f5a",
   "position": {
-    "x": 1310,
-    "y": 240,
+    "x": 1590,
+    "y": 112,
     "z": 10000,
-    "height": 400,
-    "width": 580,
+    "height": 118,
+    "width": 296,
     "tabOrder": 10000
   },
   "visual": {
-    "visualType": "clusteredBarChart",
+    "visualType": "card",
     "query": {
       "queryState": {
-        "Category": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "model_feature_importance"
-                    }
-                  },
-                  "Property": "base_feature"
-                }
-              },
-              "queryRef": "model_feature_importance.base_feature",
-              "nativeQueryRef": "base_feature"
-            }
-          ]
-        },
-        "Series": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "model_feature_importance"
-                    }
-                  },
-                  "Property": "model"
-                }
-              },
-              "queryRef": "model_feature_importance.model",
-              "nativeQueryRef": "model"
-            }
-          ]
-        },
-        "Y": {
+        "Values": {
           "projections": [
             {
               "field": {
@@ -59,32 +23,14 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Feature Importance Share"
+                  "Property": "Deals Not Scored"
                 }
               },
-              "queryRef": "_Measures.Feature Importance Share",
-              "nativeQueryRef": "Feature Importance Share"
+              "queryRef": "_Measures.Deals Not Scored",
+              "nativeQueryRef": "Deals Not Scored"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "_Measures"
-                  }
-                },
-                "Property": "Feature Importance Share"
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
-        "isDefaultSort": true
       }
     },
     "visualContainerObjects": {
@@ -101,7 +47,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'What drives the model'"
+                  "Value": "'Deals not scored'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Deals not scored'"
                 }
               }
             }

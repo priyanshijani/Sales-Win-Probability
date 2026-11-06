@@ -2,36 +2,18 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "5f70bacbe3f959a19a95",
   "position": {
-    "x": 670,
-    "y": 310,
+    "x": 1370,
+    "y": 184,
     "z": 13000,
-    "height": 330,
-    "width": 1220,
+    "height": 124,
+    "width": 252,
     "tabOrder": 13000
   },
   "visual": {
-    "visualType": "lineStackedColumnComboChart",
+    "visualType": "card",
     "query": {
       "queryState": {
-        "Category": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "dept_quarter_summary"
-                    }
-                  },
-                  "Property": "quarter"
-                }
-              },
-              "queryRef": "dept_quarter_summary.quarter",
-              "nativeQueryRef": "quarter"
-            }
-          ]
-        },
-        "Y": {
+        "Values": {
           "projections": [
             {
               "field": {
@@ -41,78 +23,14 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Commit EUR"
+                  "Property": "Win Rate Last 12M"
                 }
               },
-              "queryRef": "_Measures.Commit EUR",
-              "nativeQueryRef": "Commit EUR"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Best Case EUR"
-                }
-              },
-              "queryRef": "_Measures.Best Case EUR",
-              "nativeQueryRef": "Best Case EUR"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Pipeline Category EUR"
-                }
-              },
-              "queryRef": "_Measures.Pipeline Category EUR",
-              "nativeQueryRef": "Pipeline Category EUR"
-            }
-          ]
-        },
-        "Y2": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Target EUR"
-                }
-              },
-              "queryRef": "_Measures.Target EUR",
-              "nativeQueryRef": "Target EUR"
+              "queryRef": "_Measures.Win Rate Last 12M",
+              "nativeQueryRef": "Win Rate Last 12M"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "dept_quarter_summary"
-                  }
-                },
-                "Property": "quarter"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ],
-        "isDefaultSort": true
       }
     },
     "visualContainerObjects": {
@@ -129,7 +47,61 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Forecast by expected close quarter vs target'"
+                  "Value": "'Win rate, last 12 mo'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Win rate, last 12 mo'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Win Rate Label"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Win Rate Color"
+                    }
+                  }
                 }
               }
             }

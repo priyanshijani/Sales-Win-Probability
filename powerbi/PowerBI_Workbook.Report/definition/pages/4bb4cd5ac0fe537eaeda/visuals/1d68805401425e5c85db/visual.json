@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "1d68805401425e5c85db",
   "position": {
-    "x": 780,
+    "x": 30,
     "y": 184,
     "z": 8000,
-    "height": 110,
+    "height": 124,
     "width": 359,
     "tabOrder": 8000
   },
@@ -23,15 +23,30 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Win Rate (count)"
+                  "Property": "Bookings YTD EUR"
                 }
               },
-              "queryRef": "_Measures.Win Rate (count)",
-              "nativeQueryRef": "Win Rate (count)"
+              "queryRef": "_Measures.Bookings YTD EUR",
+              "nativeQueryRef": "Bookings YTD EUR"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [
@@ -47,7 +62,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Win rate'"
+                  "Value": "'Bookings YTD'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Bookings YTD'"
                 }
               }
             }

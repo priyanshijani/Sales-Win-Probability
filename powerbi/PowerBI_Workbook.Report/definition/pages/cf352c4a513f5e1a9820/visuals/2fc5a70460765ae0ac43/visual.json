@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "2fc5a70460765ae0ac43",
   "position": {
-    "x": 1437,
-    "y": 110,
+    "x": 499,
+    "y": 112,
     "z": 6000,
-    "height": 110,
+    "height": 118,
     "width": 453,
     "tabOrder": 6000
   },
@@ -23,11 +23,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Selected Deal Amount EUR"
+                  "Property": "Selected Governed Probability"
                 }
               },
-              "queryRef": "_Measures.Selected Deal Amount EUR",
-              "nativeQueryRef": "Selected Deal Amount EUR"
+              "queryRef": "_Measures.Selected Governed Probability",
+              "nativeQueryRef": "Selected Governed Probability"
             }
           ]
         }
@@ -47,7 +47,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Deal value'"
+                  "Value": "'CRM stage default'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'CRM stage default'"
                 }
               }
             }

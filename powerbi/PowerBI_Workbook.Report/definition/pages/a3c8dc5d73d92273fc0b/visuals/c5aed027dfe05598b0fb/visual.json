@@ -2,36 +2,18 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "c5aed027dfe05598b0fb",
   "position": {
-    "x": 30,
-    "y": 660,
+    "x": 1638,
+    "y": 184,
     "z": 14000,
-    "height": 330,
-    "width": 940,
+    "height": 124,
+    "width": 252,
     "tabOrder": 14000
   },
   "visual": {
-    "visualType": "lineChart",
+    "visualType": "card",
     "query": {
       "queryState": {
-        "Category": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "DimDate"
-                    }
-                  },
-                  "Property": "Month"
-                }
-              },
-              "queryRef": "DimDate.Month",
-              "nativeQueryRef": "Month"
-            }
-          ]
-        },
-        "Y": {
+        "Values": {
           "projections": [
             {
               "field": {
@@ -41,33 +23,30 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Bookings EUR"
+                  "Property": "Avg Won Deal EUR"
                 }
               },
-              "queryRef": "_Measures.Bookings EUR",
-              "nativeQueryRef": "Bookings EUR"
+              "queryRef": "_Measures.Avg Won Deal EUR",
+              "nativeQueryRef": "Avg Won Deal EUR"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "DimDate"
-                  }
-                },
-                "Property": "Month"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ],
-        "isDefaultSort": true
       }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [
@@ -83,7 +62,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Monthly bookings'"
+                  "Value": "'Avg won deal'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Avg won deal'"
                 }
               }
             }

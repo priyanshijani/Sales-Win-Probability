@@ -1,0 +1,128 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "5f39073dea4958d3a7e3",
+  "position": {
+    "x": 1310,
+    "y": 240,
+    "z": 13000,
+    "height": 400,
+    "width": 580,
+    "tabOrder": 13000
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "model_feature_importance"
+                    }
+                  },
+                  "Property": "base_feature"
+                }
+              },
+              "queryRef": "model_feature_importance.base_feature",
+              "nativeQueryRef": "base_feature",
+              "displayName": "Base Feature"
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "model_feature_importance"
+                    }
+                  },
+                  "Property": "model"
+                }
+              },
+              "queryRef": "model_feature_importance.model",
+              "nativeQueryRef": "model",
+              "displayName": "Model"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Feature Importance Share"
+                }
+              },
+              "queryRef": "_Measures.Feature Importance Share",
+              "nativeQueryRef": "Feature Importance Share"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  }
+                },
+                "Property": "Feature Importance Share"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'What drives the model'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'What drives the model'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

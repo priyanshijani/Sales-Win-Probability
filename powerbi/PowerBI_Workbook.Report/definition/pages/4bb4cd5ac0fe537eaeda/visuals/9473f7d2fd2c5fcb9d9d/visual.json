@@ -2,15 +2,15 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "9473f7d2fd2c5fcb9d9d",
   "position": {
-    "x": 810,
-    "y": 660,
+    "x": 1350,
+    "y": 310,
     "z": 15000,
     "height": 330,
-    "width": 1080,
+    "width": 540,
     "tabOrder": 15000
   },
   "visual": {
-    "visualType": "hundredPercentStackedBarChart",
+    "visualType": "scatterChart",
     "query": {
       "queryState": {
         "Category": {
@@ -20,32 +20,33 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "pipeline_deals"
+                      "Entity": "sales_team"
                     }
                   },
-                  "Property": "department"
+                  "Property": "sales_manager"
                 }
               },
-              "queryRef": "pipeline_deals.department",
-              "nativeQueryRef": "department"
+              "queryRef": "sales_team.sales_manager",
+              "nativeQueryRef": "sales_manager",
+              "displayName": "Sales Manager"
             }
           ]
         },
-        "Series": {
+        "X": {
           "projections": [
             {
               "field": {
-                "Column": {
+                "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "pipeline_deals"
+                      "Entity": "_Measures"
                     }
                   },
-                  "Property": "loss_reason"
+                  "Property": "Open Pipeline EUR"
                 }
               },
-              "queryRef": "pipeline_deals.loss_reason",
-              "nativeQueryRef": "loss_reason"
+              "queryRef": "_Measures.Open Pipeline EUR",
+              "nativeQueryRef": "Open Pipeline EUR"
             }
           ]
         },
@@ -59,11 +60,29 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Lost Deals"
+                  "Property": "Win Rate (count)"
                 }
               },
-              "queryRef": "_Measures.Lost Deals",
-              "nativeQueryRef": "Lost Deals"
+              "queryRef": "_Measures.Win Rate (count)",
+              "nativeQueryRef": "Win Rate (count)"
+            }
+          ]
+        },
+        "Size": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Bookings YTD EUR"
+                }
+              },
+              "queryRef": "_Measures.Bookings YTD EUR",
+              "nativeQueryRef": "Bookings YTD EUR"
             }
           ]
         }
@@ -83,7 +102,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Loss reasons by department'"
+                  "Value": "'Open pipeline vs win rate by manager'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Open pipeline vs win rate by manager'"
                 }
               }
             }

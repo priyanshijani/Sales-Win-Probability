@@ -213,10 +213,10 @@ def parse_measures():
 
 
 # Backslash-escaped literals: TMDL rejects format strings that contain bare double quotes.
-EUR_M = r"\€#,0.0,,\M"
+EUR_M = r"\€#,0"
 FORMATS = {
     "EUR_M": EUR_M,
-    "EUR_K": r"\€#,0,\K",
+    "EUR_K": r"\€#,0",
     "PCT": "0.0%",
     "X": r"0.0\x",
     "INT": "#,0",
@@ -231,10 +231,14 @@ def fmt_for(name):
         return FORMATS["DATE"]
     if name in ("Current Quarter", "Next Quarter"):
         return None
+    if name == "Reasoning Text" or name.startswith(("Color ", "So What")) or n.endswith((" label", " color", " marker")):
+        return None
+    if name.endswith("(pts)") and name != "Impact (pts)" and name != "Forecast Honesty Gap (pts)":
+        return "+0.0;-0.0;0.0"
+    if name == "Impact Size":
+        return "0.0"
     if n.endswith("%") or "win rate" in n or n.endswith("share") or n.endswith("probability"):
         return FORMATS["PCT"]
-    if name == "Reasoning Text":
-        return None
     if name == "Impact (pts)":
         return "+0.0;-0.0;0.0"
     if n.endswith(" x"):
@@ -365,15 +369,48 @@ def msr(prop, table="_Measures"):
     return {"Measure": {"Expression": {"SourceRef": {"Entity": table}}, "Property": prop}}
 
 
+ACRONYMS = {"eur": "EUR", "id": "ID", "pts": "(pts)", "ytd": "YTD", "dq": "DQ"}
+MEASURE_HEADERS = {"Gap vs Governed Marker": "Model vs CRM stage", "Impact Marker": "Impact (pts)", "Check Status Marker": "Status",
+                   "Days In Current Stage": "Days in stage", "Deal Amount EUR": "Deal value",
+                   "Impact Up (pts)": "Raises win probability", "Impact Down (pts)": "Lowers win probability",
+                   "Impact Minor (pts)": "Negligible (under 2 pts)", "Quota Met %": "At or above quota",
+                   "Quota Missed %": "Below quota", "Honesty Optimistic (pts)": "More optimistic than governed",
+                   "Honesty Cautious (pts)": "More cautious than governed"}
+
+
+def pretty(prop):
+    return " ".join(ACRONYMS.get(w, w.capitalize()) for w in prop.split("_"))
+
+
 def proj(field):
     kind = "Measure" if "Measure" in field else "Column"
     ent = field[kind]["Expression"]["SourceRef"]["Entity"]
     prop = field[kind]["Property"]
-    return {"field": field, "queryRef": f"{ent}.{prop}", "nativeQueryRef": prop}
+    out = {"field": field, "queryRef": f"{ent}.{prop}", "nativeQueryRef": prop}
+    name = pretty(prop) if kind == "Column" else MEASURE_HEADERS.get(prop)
+    if name:
+        out["displayName"] = name
+    return out
 
 
 def lit(v):
     return {"expr": {"Literal": {"Value": v}}}
+
+
+def mexpr(prop):
+    return {"expr": {"Measure": {"Expression": {"SourceRef": {"Entity": "_Measures"}}, "Property": prop}}}
+
+
+def mcolor(prop):
+    """A colour driven by a DAX measure that returns a hex string (conditional formatting by field value)."""
+    return {"solid": {"color": mexpr(prop)}}
+
+
+def fixed(hexcode):
+    return {"solid": {"color": lit(f"'{hexcode}'")}}
+
+
+BLACK, CHARCOAL, ORANGE = "#111111", "#2B2B2B", "#F58220"
 
 
 class Page:
@@ -385,7 +422,7 @@ class Page:
         self.title = title
         self.subtitle = subtitle
 
-    def add(self, vtype, x, y, w, h, roles=None, title=None, sort=None, objects=None, extra=None):
+    def add(self, vtype, x, y, w, h, roles=None, title=None, sort=None, objects=None, extra=None, container=None):
         v = {"visualType": vtype}
         if roles:
             v["query"] = {"queryState": {r: {"projections": [proj(f) for f in fs]} for r, fs in roles.items()}}
@@ -395,6 +432,10 @@ class Page:
             v["objects"] = objects
         if title:
             v["visualContainerObjects"] = {"title": [{"properties": {"show": lit("true"), "text": lit("'" + title.replace("'", "''") + "'")}}]}
+        if title:
+            v["visualContainerObjects"]["general"] = [{"properties": {"altText": lit("'" + title.replace("'", "''") + "'")}}]
+        if container:
+            v["visualContainerObjects"] = {**v.get("visualContainerObjects", {}), **container}
         v = {k: val for k, val in v.items() if val is not None}
         vis = {"$schema": SCHEMA, "name": hid("vis", self.id, str(len(self.visuals))),
                "position": {"x": x, "y": y, "z": self.z, "height": h, "width": w, "tabOrder": self.z}, "visual": v}
@@ -402,35 +443,62 @@ class Page:
         self.visuals.append(vis)
 
     # --- convenience builders -------------------------------------------------------------------------------------
-    def text(self, x, y, w, h, value, size="12pt", bold=False, color="#1B2A41"):
+    def text(self, x, y, w, h, value, size="12pt", bold=False, color="#111111"):
         run = {"value": value, "textStyle": {"fontSize": size, "color": color, **({"fontWeight": "bold"} if bold else {})}}
         self.add("textbox", x, y, w, h, objects={"general": [{"properties": {"paragraphs": [{"textRuns": [run]}]}}]})
 
-    def card(self, x, y, w, h, measure, title):
-        self.add("card", x, y, w, h, {"Values": [msr(measure)]}, title=title)
+    def band(self, x, y, w, h, hexcode):
+        """A solid coloured strip (header band, accent rule)."""
+        self.add("textbox", x, y, w, h, objects={"general": [{"properties": {"paragraphs": [{"textRuns": [{"value": " "}]}]}}]},
+                 container={"background": [{"properties": {"show": lit("true"), "color": fixed(hexcode), "transparency": lit("0D")}}]})
+
+    def card(self, x, y, w, h, measure, title, label=None, color=None):
+        """KPI card. label = measure whose text sits under the number (an arrow + the change); color = measure that colours it.
+        With a label the colour applies to the label; without one it colours the number itself (metrics that are bad by nature)."""
+        objects, container = None, None
+        if label:
+            container = {"subTitle": [{"properties": {"show": lit("true"), "text": mexpr(label),
+                                                      **({"fontColor": mcolor(color)} if color else {})}}]}
+        elif color:
+            objects = {"labels": [{"properties": {"color": mcolor(color)}}]}
+        if measure.endswith("EUR"):
+            props = {"labelPrecision": lit("1L")}
+            for o in (objects or {}).get("labels", []):
+                props.update(o["properties"])
+            objects = {"labels": [{"properties": props}]}
+        self.add("card", x, y, w, h, {"Values": [msr(measure)]}, title=title, objects=objects, container=container)
 
     def slicer(self, x, y, w, h, field, title):
         self.add("slicer", x, y, w, h, {"Values": [field]}, title=title,
-                 objects={"data": [{"properties": {"mode": lit("'Dropdown'")}}]})
+                 objects={"data": [{"properties": {"mode": lit("'Dropdown'")}}],
+                          "header": [{"properties": {"show": lit("false")}}]})
 
     def header(self, slicers=True):
-        self.text(30, 14, 1500, 56, self.title, "26pt", True)
-        self.text(30, 66, 1500, 30, self.subtitle, "12pt", False, "#4A5568")
-        self.add("pageNavigator", 1300, 14, 590, 56)
+        self.band(0, 0, PAGE_W, 100, BLACK)
+        self.band(0, 100, PAGE_W, 5, ORANGE)
+        self.text(30, 12, 1500, 56, self.title, "24pt", True, "#FFFFFF")
+        self.text(30, 62, 1500, 30, self.subtitle, "12pt", False, "#BFBFBF")
+        self.add("pageNavigator", 1300, 22, 590, 56)
         if slicers:
-            self.slicer(30, 104, 300, 66, col("DimDepartment", "department"), "Department")
-            self.slicer(350, 104, 300, 66, col("pipeline_deals", "sales_region"), "Sales region")
-            self.slicer(670, 104, 300, 66, col("pipeline_deals", "service_line"), "Service line")
+            self.slicer(30, 114, 300, 62, col("DimDepartment", "department"), "Department")
+            self.slicer(350, 114, 300, 62, col("pipeline_deals", "sales_region"), "Sales region")
+            self.slicer(670, 114, 300, 62, col("pipeline_deals", "service_line"), "Service line")
 
-    def so_what(self):
-        self.text(30, 1010, 1860, 50, "So what: (write your one-line takeaway for the CRO here)", "13pt", True, "#1F4E79")
+    def so_what(self, measure):
+        self.add("card", 30, 1004, 1860, 60, {"Values": [msr(measure)]},
+                 objects={"labels": [{"properties": {"fontSize": lit("14D"), "fontFamily": lit("'Segoe UI Semibold'"),
+                                                     "color": fixed("#C25A0A")}}]},
+                 container={"general": [{"properties": {"altText": lit("'So what: the one-line takeaway for this page'")}}]})
 
-    def cards(self, items, y=184, h=110):
+    def cards(self, items, y=184, h=124):
+        """items: (measure, title) or (measure, title, label_measure, color_measure)."""
         n = len(items)
         gap = 16
         w = (PAGE_W - 60 - gap * (n - 1)) // n
-        for i, (m, t) in enumerate(items):
-            self.card(30 + i * (w + gap), y, w, h, m, t)
+        for i, it in enumerate(items):
+            m, t, *rest = it
+            label, color = (rest + [None, None])[:2]
+            self.card(30 + i * (w + gap), y, w, h, m, t, label, color)
 
 
 def asc(f):
@@ -448,9 +516,12 @@ def build_pages():
     p = Page("p1", "Pipeline Health & Forecast", "Will we hit the number, and how healthy is the pipeline?",
              "Open pipeline, governed weighted forecast and bookings vs target · snapshot 15 Sep 2026")
     p.header()
-    p.cards([("Open Pipeline EUR", "Open pipeline"), ("Weighted Pipeline EUR", "Weighted pipeline (governed)"),
-             ("Current Quarter Attainment %", "Bookings vs target, this quarter"), ("Next Quarter Coverage x", "Pipeline coverage, next quarter"),
-             ("Win Rate Last 12M", "Win rate, last 12 months"), ("Avg Won Deal EUR", "Average won deal")])
+    p.cards([("Open Pipeline EUR", "Open pipeline"), ("Weighted Pipeline EUR", "Weighted pipeline"),
+             ("Current Quarter Attainment %", "Attainment, this quarter", "Attainment Label", "Attainment Color"),
+             ("Next Quarter Coverage x", "Coverage, next quarter", "Coverage Label", "Coverage Color"),
+             ("Bookings L3M EUR", "Bookings, last 3 months", "Bookings L3M Label", "Bookings L3M Color"),
+             ("Win Rate Last 12M", "Win rate, last 12 mo", "Win Rate Label", "Win Rate Color"),
+             ("Avg Won Deal EUR", "Avg won deal")])
     p.add("clusteredBarChart", 30, 310, 620, 330, {"Category": [col("pipeline_deals", "stage")], "Y": [msr("Open Pipeline EUR")]},
           "Open pipeline by stage", sort=[asc(col("pipeline_deals", "stage"))])
     p.add("lineStackedColumnComboChart", 670, 310, 1220, 330,
@@ -462,16 +533,16 @@ def build_pages():
     p.add("clusteredColumnChart", 990, 660, 900, 330, {"Category": [col("pipeline_deals", "forecast_category")],
                                                       "Y": [msr("Open Pipeline EUR"), msr("Weighted Pipeline EUR")]},
           "Open vs weighted pipeline by forecast category")
-    p.so_what()
+    p.so_what("So What Pipeline")
     pages.append(p)
 
     # ---- Page 2: Deal Velocity & Stuck Deals -----------------------------------------------------------------------
     p = Page("p2", "Deal Velocity & Stuck Deals", "Where are deals getting stuck, and how much money is at risk?",
              "Stuck = open longer in a stage than its governed threshold · at risk = stuck, stale, past due or orphaned")
     p.header()
-    p.cards([("EUR At Risk", "Pipeline at risk"), ("At Risk % of Pipeline", "Share of open pipeline at risk"),
-             ("Stuck Deals", "Stuck deals"), ("Avg Sales Cycle Days", "Avg sales cycle, won (days)"),
-             ("At Risk Deals", "At-risk deals")])
+    p.cards([("EUR At Risk", "Pipeline at risk", None, "Color Bad"), ("At Risk % of Pipeline", "At risk, % of pipeline", None, "Color Bad"),
+             ("Stuck Deals", "Stuck deals", None, "Color Bad"), ("Avg Sales Cycle Days", "Sales cycle, won (days)"),
+             ("At Risk Deals", "At-risk deals", None, "Color Bad")])
     p.add("lineClusteredColumnComboChart", 30, 310, 620, 330,
           {"Category": [col("pipeline_stage_stints", "stage")], "Y": [msr("Median Days in Stage")], "Y2": [msr("Avg Stuck Threshold Days")]},
           "Median days in stage vs stuck threshold", sort=[asc(col("pipeline_stage_stints", "stage"))])
@@ -488,30 +559,37 @@ def build_pages():
           {"Values": [col("pipeline_deals", "opportunity_name"), col("pipeline_deals", "owner_name"), col("pipeline_deals", "stage"),
                       msr("Days In Current Stage"), msr("EUR At Risk"), col("pipeline_deals", "risk_reasons")]},
           "Fix this week: at-risk deals", sort=[desc(msr("EUR At Risk"))])
-    p.so_what()
+    p.so_what("So What Risk")
     pages.append(p)
 
     # ---- Page 3: Manager & Department Performance ------------------------------------------------------------------
     p = Page("p3", "Manager & Department Performance", "Which managers and departments convert pipeline into revenue?",
              "FY2026 year to date · quota prorated to days active")
     p.header()
-    p.cards([("Bookings YTD EUR", "Bookings YTD"), ("Quota Attainment YTD %", "Quota attainment YTD"),
-             ("Win Rate (count)", "Win rate"), ("Open Pipeline EUR", "Open pipeline"), ("Forecast Honesty Gap (pts)", "Rep optimism vs governed (pts)")])
+    p.cards([("Bookings YTD EUR", "Bookings YTD"), ("Quota Attainment YTD %", "Quota attainment YTD", "Quota Label", "Quota Color"),
+             ("Win Rate (count)", "Win rate"), ("Open Pipeline EUR", "Open pipeline"),
+             ("Forecast Honesty Gap (pts)", "Rep optimism (pts)", "Honesty Label", "Honesty Color")])
     p.add("pivotTable", 30, 310, 760, 330,
           {"Rows": [col("sales_team", "department"), col("sales_team", "sales_manager"), col("sales_team", "full_name")],
            "Values": [msr("Bookings YTD EUR"), msr("Quota Attainment YTD %"), msr("Win Rate (count)"), msr("Open Pipeline EUR")]},
           "Department > manager > account executive")
-    p.add("clusteredBarChart", 810, 310, 520, 330, {"Category": [col("sales_team", "full_name")], "Y": [msr("Quota Attainment YTD %")]},
-          "Quota attainment YTD by account executive", sort=[desc(msr("Quota Attainment YTD %"))])
+    p.add("barChart", 810, 310, 520, 330,
+          {"Category": [col("sales_team", "full_name")], "Y": [msr("Quota Met %"), msr("Quota Missed %")],
+           "Tooltips": [msr("Quota Attainment YTD %")]},
+          "Quota attainment YTD by account executive", sort=[desc(msr("Quota Attainment YTD %"))],
+          objects={"dataPoint": [{"properties": {"fill": fixed("#1E9E5A")}, "selector": {"metadata": "_Measures.Quota Met %"}}, {"properties": {"fill": fixed("#D32F2F")}, "selector": {"metadata": "_Measures.Quota Missed %"}}]})
     p.add("scatterChart", 1350, 310, 540, 330,
           {"Category": [col("sales_team", "sales_manager")], "X": [msr("Open Pipeline EUR")], "Y": [msr("Win Rate (count)")],
            "Size": [msr("Bookings YTD EUR")]}, "Open pipeline vs win rate by manager")
-    p.add("clusteredBarChart", 30, 660, 760, 330, {"Category": [col("sales_team", "sales_manager")], "Y": [msr("Forecast Honesty Gap (pts)")]},
-          "Forecast honesty gap by manager (positive = optimistic)", sort=[desc(msr("Forecast Honesty Gap (pts)"))])
+    p.add("barChart", 30, 660, 760, 330,
+          {"Category": [col("sales_team", "sales_manager")], "Y": [msr("Honesty Optimistic (pts)"), msr("Honesty Cautious (pts)")],
+           "Tooltips": [msr("Forecast Honesty Gap (pts)")]},
+          "Forecast honesty gap by manager (points vs governed probability)", sort=[desc(msr("Forecast Honesty Gap (pts)"))],
+          objects={"dataPoint": [{"properties": {"fill": fixed("#D32F2F")}, "selector": {"metadata": "_Measures.Honesty Optimistic (pts)"}}, {"properties": {"fill": fixed("#1E9E5A")}, "selector": {"metadata": "_Measures.Honesty Cautious (pts)"}}]})
     p.add("hundredPercentStackedBarChart", 810, 660, 1080, 330,
           {"Category": [col("pipeline_deals", "department")], "Series": [col("pipeline_deals", "loss_reason")], "Y": [msr("Lost Deals")]},
           "Loss reasons by department")
-    p.so_what()
+    p.so_what("So What People")
     pages.append(p)
 
     # ---- Page 4: Europe Market Opportunity -------------------------------------------------------------------------
@@ -520,9 +598,8 @@ def build_pages():
     p.header()
     p.cards([("Open Pipeline EUR", "Open pipeline"), ("Win Rate (count)", "Win rate"), ("Accounts", "Accounts"),
              ("Open Pipeline per Account EUR", "Open pipeline per account")])
-    p.add("map", 30, 310, 760, 330,
-          {"Category": [col("dim_accounts", "city")], "X": [msr("Account Longitude")], "Y": [msr("Account Latitude")],
-           "Size": [msr("Open Pipeline EUR")]}, "Open pipeline by city")
+    p.add("clusteredBarChart", 30, 310, 760, 330, {"Category": [col("pipeline_deals", "sales_region")], "Y": [msr("Win Rate (count)")]},
+          "Win rate by sales region", sort=[desc(msr("Win Rate (count)"))])
     p.add("clusteredBarChart", 810, 310, 520, 330, {"Category": [col("pipeline_deals", "country_name")], "Y": [msr("Open Pipeline EUR")]},
           "Open pipeline by country", sort=[desc(msr("Open Pipeline EUR"))])
     p.add("clusteredBarChart", 1350, 310, 540, 330, {"Category": [col("pipeline_deals", "service_line")], "Y": [msr("Open Pipeline EUR")]},
@@ -534,7 +611,7 @@ def build_pages():
           {"Values": [col("dim_accounts", "account_name"), col("dim_accounts", "country_name"), col("dim_accounts", "industry"),
                       col("dim_accounts", "account_status"), msr("Open Pipeline EUR"), msr("Bookings EUR")]},
           "Top accounts by open pipeline", sort=[desc(msr("Open Pipeline EUR"))])
-    p.so_what()
+    p.so_what("So What Market")
     pages.append(p)
 
     # ---- Page 5: Win Probability (ML) ------------------------------------------------------------------------------
@@ -542,8 +619,10 @@ def build_pages():
              "ADVISORY - never replaces the governed forecast · backtest: trained before 1 Mar 2026, tested on 550 deals · see docs/model_card.md")
     p.header(slicers=False)
     p.cards([("Weighted Pipeline EUR", "Governed weighted pipeline"), ("Model Weighted Pipeline EUR", "Model-weighted pipeline"),
-             ("Governed Weighted (scored deals) EUR", "Governed, scored deals only"), ("Deals To Review", "Deals to review (>= 25 pts apart)"),
-             ("Deals Not Scored", "Deals not scored (no amount)")], y=110)
+             ("Governed Weighted (scored deals) EUR", "Governed, scored deals only"),
+             ("Model vs Governed Gap EUR", "Model minus governed", "Model Gap Label", "Model Gap Color"),
+             ("Deals To Review", "Deals to review", None, "Color Bad"),
+             ("Deals Not Scored", "Deals not scored")], y=112, h=118)
     p.add("scatterChart", 30, 240, 620, 400,
           {"Category": [col("model_calibration", "prob_bin")], "Series": [col("model_calibration", "method")],
            "X": [msr("Predicted Win Rate")], "Y": [msr("Actual Win Rate")], "Size": [msr("Calibration Deals")]},
@@ -558,10 +637,12 @@ def build_pages():
     p.add("tableEx", 30, 660, 1860, 330,
           {"Values": [col("model_scores", "opportunity_id"), col("model_scores", "stage"), col("model_scores", "amount_eur"),
                       col("model_scores", "governed_probability"), col("model_scores", "model_win_probability"),
-                      col("model_scores", "model_vs_governed_pts"), msr("Deals To Review")]},
+                      msr("Gap vs Governed Marker"), msr("Deals To Review")]},
           "Open deals where the model and the governed probability disagree by 25 points or more",
-          sort=[desc(col("model_scores", "amount_eur"))])
-    p.so_what()
+          sort=[desc(col("model_scores", "amount_eur"))],
+          objects={"values": [{"properties": {"fontColor": mcolor("Gap vs Governed Color")},
+                               "selector": {"metadata": "_Measures.Gap vs Governed Marker"}}]})
+    p.so_what("So What Model")
     pages.append(p)
 
     # ---- Page 6: Deal explainer (why does the model think so?) -----------------------------------------------------
@@ -569,35 +650,51 @@ def build_pages():
              "ADVISORY - click a deal in the list · bars show how many probability points each fact about the deal adds or removes "
              "compared with the average open deal")
     p.header(slicers=False)
-    p.cards([("Selected Model Win Probability", "Model win probability"), ("Selected Governed Probability", "CRM stage default"),
-             ("Average Open Deal Probability", "Average open deal (model)"), ("Selected Deal Amount EUR", "Deal value")], y=110)
+    p.cards([("Selected Model Win Probability", "Model win probability", "Model vs CRM Label", "Model vs CRM Color"),
+             ("Selected Governed Probability", "CRM stage default"),
+             ("Average Open Deal Probability", "Average open deal (model)"), ("Selected Deal Amount EUR", "Deal value")], y=112, h=118)
     p.add("tableEx", 30, 240, 820, 750,
           {"Values": [col("model_scores", "deal_label"), col("model_scores", "amount_eur"), col("model_scores", "governed_probability"),
-                      col("model_scores", "model_win_probability"), col("model_scores", "model_vs_governed_pts")]},
-          "Open deals (click one)", sort=[desc(col("model_scores", "amount_eur"))])
-    p.add("card", 870, 240, 1020, 170, {"Values": [msr("Reasoning Text")]}, "In plain words")
-    p.add("clusteredBarChart", 870, 430, 1020, 330,
-          {"Category": [col("model_explanations", "feature_label")], "Y": [msr("Impact (pts)")]},
-          "What pushes the win probability up (+) or down (-), in points", sort=[desc(msr("Impact (pts)"))])
+                      col("model_scores", "model_win_probability"), msr("Gap vs Governed Marker")]},
+          "Open deals (click one)", sort=[desc(col("model_scores", "amount_eur"))],
+          objects={"values": [{"properties": {"fontColor": mcolor("Gap vs Governed Color")},
+                               "selector": {"metadata": "_Measures.Gap vs Governed Marker"}}],
+                   "columnWidth": [{"properties": {"value": lit(f"{w}D")}, "selector": {"metadata": m}} for m, w in
+                                   [("model_scores.deal_label", 300), ("model_scores.amount_eur", 100),
+                                    ("model_scores.governed_probability", 100), ("model_scores.model_win_probability", 100),
+                                    ("_Measures.Gap vs Governed Marker", 150)]]})
+    p.add("card", 870, 240, 1020, 170, {"Values": [msr("Reasoning Text")]}, "In plain words",
+          objects={"labels": [{"properties": {"fontSize": lit("13D"), "fontFamily": lit("'Segoe UI'")}}]})
+    p.add("barChart", 870, 430, 1020, 330,
+          {"Category": [col("model_explanations", "feature_label")],
+           "Y": [msr("Impact Up (pts)"), msr("Impact Down (pts)"), msr("Impact Minor (pts)")],
+           "Tooltips": [msr("Impact (pts)"), msr("Impact Size")]},
+          "What moves this deal's win probability, in points vs the average open deal", sort=[desc(msr("Impact Size"))],
+          objects={"dataPoint": [{"properties": {"fill": fixed("#1E9E5A")}, "selector": {"metadata": "_Measures.Impact Up (pts)"}}, {"properties": {"fill": fixed("#D32F2F")}, "selector": {"metadata": "_Measures.Impact Down (pts)"}}, {"properties": {"fill": fixed("#BFBFBF")}, "selector": {"metadata": "_Measures.Impact Minor (pts)"}}]})
     p.add("tableEx", 870, 780, 1020, 210,
-          {"Values": [col("model_explanations", "feature_label"), col("model_explanations", "insight"), msr("Impact (pts)")]},
-          "The reasons, in a few words", sort=[desc(msr("Impact (pts)"))])
+          {"Values": [col("model_explanations", "feature_label"), col("model_explanations", "insight"), msr("Impact Marker")]},
+          "The reasons, in a few words", sort=[desc(msr("Impact (pts)"))],
+          objects={"values": [{"properties": {"fontColor": mcolor("Impact Color")},
+                               "selector": {"metadata": "_Measures.Impact Marker"}}]})
     pages.append(p)
 
     # ---- Page 6: Data Trust ----------------------------------------------------------------------------------------
     p = Page("p6", "Data Trust", "Can I trust these numbers?",
              "Every number reconciles to the CRM's own control totals; a failed check stops the dbt build")
     p.header(slicers=False)
-    p.cards([("Checks Passed", "Checks passed"), ("Checks Total", "Checks total"), ("Trust Score %", "Trust score"),
-             ("Rejected Records", "Raw rows not turned into deals")], y=110)
+    p.cards([("Checks Passed", "Checks passed", None, "Color Good"), ("Checks Total", "Checks total"),
+             ("Trust Score %", "Trust score", "Trust Label", "Trust Color"),
+             ("Rejected Records", "Rejected raw rows")], y=112, h=118)
     p.add("tableEx", 30, 240, 1240, 750,
           {"Values": [col("dq_reconciliation", "check_group"), col("dq_reconciliation", "check_name"), col("dq_reconciliation", "dimension"),
                       col("dq_reconciliation", "expected"), col("dq_reconciliation", "actual"), col("dq_reconciliation", "difference"),
-                      col("dq_reconciliation", "status")]}, "Reconciliation checks")
+                      msr("Check Status Marker")]}, "Reconciliation checks",
+          objects={"values": [{"properties": {"fontColor": mcolor("Check Status Color")},
+                               "selector": {"metadata": "_Measures.Check Status Marker"}}]})
     p.add("clusteredBarChart", 1290, 240, 600, 360, {"Category": [col("rejected_records", "reject_reason")], "Y": [msr("Rejected Records")]},
           "Why raw rows were rejected")
     p.add("textbox", 1290, 620, 600, 370, objects={"general": [{"properties": {"paragraphs": [
-        {"textRuns": [{"value": "Row bridge", "textStyle": {"fontWeight": "bold", "fontSize": "16pt", "color": "#1B2A41"}}]},
+        {"textRuns": [{"value": "Row bridge", "textStyle": {"fontWeight": "bold", "fontSize": "16pt", "color": "#111111"}}]},
         {"textRuns": [{"value": "5,012 raw CRM rows = 4,800 opportunities + 206 older versions + 6 test records.", "textStyle": {"fontSize": "13pt"}}]},
         {"textRuns": [{"value": "765 account records = 720 master accounts + 45 merged duplicates.", "textStyle": {"fontSize": "13pt"}}]},
         {"textRuns": [{"value": "Nothing is silently deleted: every rejected row is in rejected_records with a reason.", "textStyle": {"fontSize": "13pt"}}]}]}}]})
@@ -605,11 +702,55 @@ def build_pages():
     return pages
 
 
+def _c(hexcode):
+    return {"solid": {"color": hexcode}}
+
+
+# Orange / black / grey. Red and green are reserved for good-vs-bad markers (never used as series colours).
 THEME = {
     "name": "Nexora Executive",
-    "dataColors": ["#1F4E79", "#2E75B6", "#7FB2E5", "#BDD7EE", "#2E9E5B", "#E0A526", "#C0392B", "#8C8C8C"],
-    "background": "#FFFFFF", "foreground": "#1B2A41", "tableAccent": "#1F4E79",
-    "good": "#2E9E5B", "neutral": "#E0A526", "bad": "#C0392B",
+    "dataColors": ["#F58220", "#2B2B2B", "#8C8C8C", "#FFB066", "#595959", "#C25A0A", "#BFBFBF", "#111111"],
+    "background": "#FFFFFF", "backgroundLight": "#F2F2F2", "backgroundNeutral": "#D9D9D9",
+    "foreground": "#111111", "foregroundNeutralSecondary": "#595959", "foregroundNeutralTertiary": "#BFBFBF",
+    "tableAccent": "#F58220", "hyperlink": "#C25A0A", "visitedHyperlink": "#8C8C8C",
+    "good": "#1E9E5A", "neutral": "#8C8C8C", "bad": "#D32F2F",
+    "maximum": "#E8650A", "center": "#FFB066", "minimum": "#FFE3CC",
+    "textClasses": {
+        "callout": {"fontSize": 24, "fontFace": "Segoe UI Semibold", "color": "#111111"},
+        "title": {"fontSize": 12, "fontFace": "Segoe UI Semibold", "color": "#111111"},
+        "header": {"fontSize": 12, "fontFace": "Segoe UI Semibold", "color": "#111111"},
+        "label": {"fontSize": 10, "fontFace": "Segoe UI", "color": "#595959"},
+    },
+    "visualStyles": {
+        "*": {"*": {
+            "title": [{"show": True, "alignment": "left", "fontFamily": "Segoe UI Semibold", "fontSize": 12, "fontColor": _c("#111111")}],
+            "subTitle": [{"show": False, "alignment": "left", "fontFamily": "Segoe UI Semibold", "fontSize": 11}],
+            "background": [{"show": True, "color": _c("#FFFFFF"), "transparency": 0}],
+            "border": [{"show": True, "color": _c("#D9D9D9")}],
+            "dropShadow": [{"show": False}],
+            "valueAxis": [{"gridlineColor": _c("#E6E6E6"), "labelColor": _c("#595959")}],
+            "categoryAxis": [{"labelColor": _c("#595959")}],
+            "legend": [{"labelColor": _c("#595959")}],
+        }},
+        "page": {"*": {
+            "background": [{"color": _c("#F2F2F2"), "transparency": 0}],
+            "outspace": [{"color": _c("#E6E6E6")}],
+        }},
+        "textbox": {"*": {"background": [{"show": False}], "border": [{"show": False}]}},
+        "card": {"*": {
+            "labels": [{"color": _c("#111111"), "fontSize": 24, "fontFamily": "Segoe UI Semibold"}],
+            "categoryLabels": [{"show": False}],
+        }},
+        "tableEx": {"*": {
+            "total": [{"totals": False}],
+            "columnHeaders": [{"fontColor": _c("#FFFFFF"), "backColor": _c("#111111"), "fontFamily": "Segoe UI Semibold", "fontSize": 10}],
+            "values": [{"fontSize": 10, "fontColorPrimary": _c("#111111"), "backColorPrimary": _c("#FFFFFF"),
+                        "fontColorSecondary": _c("#111111"), "backColorSecondary": _c("#F7F7F7")}],
+        }},
+        "pivotTable": {"*": {
+            "columnHeaders": [{"fontColor": _c("#FFFFFF"), "backColor": _c("#111111"), "fontFamily": "Segoe UI Semibold", "fontSize": 10}],
+        }},
+    },
 }
 
 

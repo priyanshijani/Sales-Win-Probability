@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "d890c2045c7b5d64a52f",
   "position": {
-    "x": 1155,
-    "y": 110,
+    "x": 342,
+    "y": 112,
     "z": 6000,
-    "height": 110,
-    "width": 359,
+    "height": 118,
+    "width": 296,
     "tabOrder": 6000
   },
   "visual": {
@@ -23,15 +23,30 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Deals To Review"
+                  "Property": "Model Weighted Pipeline EUR"
                 }
               },
-              "queryRef": "_Measures.Deals To Review",
-              "nativeQueryRef": "Deals To Review"
+              "queryRef": "_Measures.Model Weighted Pipeline EUR",
+              "nativeQueryRef": "Model Weighted Pipeline EUR"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [
@@ -47,7 +62,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Deals to review (>= 25 pts apart)'"
+                  "Value": "'Model-weighted pipeline'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Model-weighted pipeline'"
                 }
               }
             }

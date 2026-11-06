@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "c33a86c3b1f05d49871c",
   "position": {
-    "x": 966,
+    "x": 298,
     "y": 184,
     "z": 9000,
-    "height": 110,
-    "width": 296,
+    "height": 124,
+    "width": 252,
     "tabOrder": 9000
   },
   "visual": {
@@ -23,15 +23,30 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Next Quarter Coverage x"
+                  "Property": "Weighted Pipeline EUR"
                 }
               },
-              "queryRef": "_Measures.Next Quarter Coverage x",
-              "nativeQueryRef": "Next Quarter Coverage x"
+              "queryRef": "_Measures.Weighted Pipeline EUR",
+              "nativeQueryRef": "Weighted Pipeline EUR"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [
@@ -47,7 +62,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Pipeline coverage, next quarter'"
+                  "Value": "'Weighted pipeline'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Weighted pipeline'"
                 }
               }
             }

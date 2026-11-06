@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "a4dc805f9211511b8984",
   "position": {
-    "x": 968,
-    "y": 110,
+    "x": 30,
+    "y": 112,
     "z": 5000,
-    "height": 110,
+    "height": 118,
     "width": 453,
     "tabOrder": 5000
   },
@@ -23,15 +23,39 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Trust Score %"
+                  "Property": "Checks Passed"
                 }
               },
-              "queryRef": "_Measures.Trust Score %",
-              "nativeQueryRef": "Trust Score %"
+              "queryRef": "_Measures.Checks Passed",
+              "nativeQueryRef": "Checks Passed"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Color Good"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [
@@ -47,7 +71,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Trust score'"
+                  "Value": "'Checks passed'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Checks passed'"
                 }
               }
             }

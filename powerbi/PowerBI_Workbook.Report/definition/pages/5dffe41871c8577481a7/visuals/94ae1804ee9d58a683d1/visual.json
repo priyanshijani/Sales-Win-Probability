@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "94ae1804ee9d58a683d1",
   "position": {
-    "x": 670,
-    "y": 104,
+    "x": 30,
+    "y": 114,
     "z": 5000,
-    "height": 66,
+    "height": 62,
     "width": 300,
     "tabOrder": 5000
   },
@@ -20,14 +20,15 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "pipeline_deals"
+                      "Entity": "DimDepartment"
                     }
                   },
-                  "Property": "service_line"
+                  "Property": "department"
                 }
               },
-              "queryRef": "pipeline_deals.service_line",
-              "nativeQueryRef": "service_line"
+              "queryRef": "DimDepartment.department",
+              "nativeQueryRef": "department",
+              "displayName": "Department"
             }
           ]
         }
@@ -41,6 +42,19 @@
               "expr": {
                 "Literal": {
                   "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -62,7 +76,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Service line'"
+                  "Value": "'Department'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Department'"
                 }
               }
             }

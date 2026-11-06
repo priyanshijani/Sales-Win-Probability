@@ -2,14 +2,36 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "7017f217fb7359b99c1f",
   "position": {
-    "x": 1300,
-    "y": 14,
+    "x": 30,
+    "y": 12,
     "z": 2000,
     "height": 56,
-    "width": 590,
+    "width": 1500,
     "tabOrder": 2000
   },
   "visual": {
-    "visualType": "pageNavigator"
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Where are deals getting stuck, and how much money is at risk?",
+                    "textStyle": {
+                      "fontSize": "24pt",
+                      "color": "#FFFFFF",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
   }
 }

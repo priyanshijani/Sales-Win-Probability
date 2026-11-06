@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "83be2795d9895874b566",
   "position": {
-    "x": 1590,
+    "x": 834,
     "y": 184,
     "z": 11000,
-    "height": 110,
-    "width": 296,
+    "height": 124,
+    "width": 252,
     "tabOrder": 11000
   },
   "visual": {
@@ -23,11 +23,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Avg Won Deal EUR"
+                  "Property": "Next Quarter Coverage x"
                 }
               },
-              "queryRef": "_Measures.Avg Won Deal EUR",
-              "nativeQueryRef": "Avg Won Deal EUR"
+              "queryRef": "_Measures.Next Quarter Coverage x",
+              "nativeQueryRef": "Next Quarter Coverage x"
             }
           ]
         }
@@ -47,7 +47,61 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Average won deal'"
+                  "Value": "'Coverage, next quarter'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Coverage, next quarter'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Coverage Label"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Coverage Color"
+                    }
+                  }
                 }
               }
             }

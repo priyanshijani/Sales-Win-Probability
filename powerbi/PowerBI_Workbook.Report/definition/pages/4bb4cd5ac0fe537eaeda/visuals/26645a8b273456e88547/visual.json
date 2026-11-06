@@ -2,15 +2,15 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "26645a8b273456e88547",
   "position": {
-    "x": 30,
-    "y": 660,
+    "x": 810,
+    "y": 310,
     "z": 14000,
     "height": 330,
-    "width": 760,
+    "width": 520,
     "tabOrder": 14000
   },
   "visual": {
-    "visualType": "clusteredBarChart",
+    "visualType": "barChart",
     "query": {
       "queryState": {
         "Category": {
@@ -23,11 +23,12 @@
                       "Entity": "sales_team"
                     }
                   },
-                  "Property": "sales_manager"
+                  "Property": "full_name"
                 }
               },
-              "queryRef": "sales_team.sales_manager",
-              "nativeQueryRef": "sales_manager"
+              "queryRef": "sales_team.full_name",
+              "nativeQueryRef": "full_name",
+              "displayName": "Full Name"
             }
           ]
         },
@@ -41,11 +42,45 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Forecast Honesty Gap (pts)"
+                  "Property": "Quota Met %"
                 }
               },
-              "queryRef": "_Measures.Forecast Honesty Gap (pts)",
-              "nativeQueryRef": "Forecast Honesty Gap (pts)"
+              "queryRef": "_Measures.Quota Met %",
+              "nativeQueryRef": "Quota Met %",
+              "displayName": "At or above quota"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Quota Missed %"
+                }
+              },
+              "queryRef": "_Measures.Quota Missed %",
+              "nativeQueryRef": "Quota Missed %",
+              "displayName": "Below quota"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Quota Attainment YTD %"
+                }
+              },
+              "queryRef": "_Measures.Quota Attainment YTD %",
+              "nativeQueryRef": "Quota Attainment YTD %"
             }
           ]
         }
@@ -60,7 +95,7 @@
                     "Entity": "_Measures"
                   }
                 },
-                "Property": "Forecast Honesty Gap (pts)"
+                "Property": "Quota Attainment YTD %"
               }
             },
             "direction": "Descending"
@@ -68,6 +103,46 @@
         ],
         "isDefaultSort": true
       }
+    },
+    "objects": {
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1E9E5A'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Quota Met %"
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#D32F2F'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Quota Missed %"
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [
@@ -83,7 +158,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Forecast honesty gap by manager (positive = optimistic)'"
+                  "Value": "'Quota attainment YTD by account executive'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Quota attainment YTD by account executive'"
                 }
               }
             }

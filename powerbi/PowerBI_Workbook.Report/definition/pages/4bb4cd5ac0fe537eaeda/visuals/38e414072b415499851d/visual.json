@@ -3,69 +3,31 @@
   "name": "38e414072b415499851d",
   "position": {
     "x": 30,
-    "y": 104,
+    "y": 62,
     "z": 3000,
-    "height": 66,
-    "width": 300,
+    "height": 30,
+    "width": 1500,
     "tabOrder": 3000
   },
   "visual": {
-    "visualType": "slicer",
-    "query": {
-      "queryState": {
-        "Values": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "DimDepartment"
-                    }
-                  },
-                  "Property": "department"
-                }
-              },
-              "queryRef": "DimDepartment.department",
-              "nativeQueryRef": "department"
-            }
-          ]
-        }
-      }
-    },
+    "visualType": "textbox",
     "objects": {
-      "data": [
+      "general": [
         {
           "properties": {
-            "mode": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Dropdown'"
-                }
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "FY2026 year to date · quota prorated to days active",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#BFBFBF"
+                    }
+                  }
+                ]
               }
-            }
-          }
-        }
-      ]
-    },
-    "visualContainerObjects": {
-      "title": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Department'"
-                }
-              }
-            }
+            ]
           }
         }
       ]

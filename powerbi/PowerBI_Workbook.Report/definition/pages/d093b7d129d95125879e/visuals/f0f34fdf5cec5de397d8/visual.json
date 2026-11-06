@@ -1,0 +1,91 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "f0f34fdf5cec5de397d8",
+  "position": {
+    "x": 1290,
+    "y": 240,
+    "z": 10000,
+    "height": 360,
+    "width": 600,
+    "tabOrder": 10000
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rejected_records"
+                    }
+                  },
+                  "Property": "reject_reason"
+                }
+              },
+              "queryRef": "rejected_records.reject_reason",
+              "nativeQueryRef": "reject_reason",
+              "displayName": "Reject Reason"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Rejected Records"
+                }
+              },
+              "queryRef": "_Measures.Rejected Records",
+              "nativeQueryRef": "Rejected Records"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Why raw rows were rejected'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Why raw rows were rejected'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

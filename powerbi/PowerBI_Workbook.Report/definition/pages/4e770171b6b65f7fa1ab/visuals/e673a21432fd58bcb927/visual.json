@@ -2,33 +2,101 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "e673a21432fd58bcb927",
   "position": {
-    "x": 30,
-    "y": 1010,
+    "x": 670,
+    "y": 240,
     "z": 12000,
-    "height": 50,
-    "width": 1860,
+    "height": 400,
+    "width": 620,
     "tabOrder": 12000
   },
   "visual": {
-    "visualType": "textbox",
-    "objects": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "model_backtest"
+                    }
+                  },
+                  "Property": "method"
+                }
+              },
+              "queryRef": "model_backtest.method",
+              "nativeQueryRef": "method",
+              "displayName": "Method"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Backtest Forecast EUR"
+                }
+              },
+              "queryRef": "_Measures.Backtest Forecast EUR",
+              "nativeQueryRef": "Backtest Forecast EUR"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Backtest Actual EUR"
+                }
+              },
+              "queryRef": "_Measures.Backtest Actual EUR",
+              "nativeQueryRef": "Backtest Actual EUR"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Backtest: forecast won EUR vs actual'"
+                }
+              }
+            }
+          }
+        }
+      ],
       "general": [
         {
           "properties": {
-            "paragraphs": [
-              {
-                "textRuns": [
-                  {
-                    "value": "So what: (write your one-line takeaway for the CRO here)",
-                    "textStyle": {
-                      "fontSize": "13pt",
-                      "color": "#1F4E79",
-                      "fontWeight": "bold"
-                    }
-                  }
-                ]
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Backtest: forecast won EUR vs actual'"
+                }
               }
-            ]
+            }
           }
         }
       ]

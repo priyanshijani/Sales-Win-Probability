@@ -3,32 +3,125 @@
   "name": "65022f73f3115dff919d",
   "position": {
     "x": 30,
-    "y": 1010,
+    "y": 660,
     "z": 16000,
-    "height": 50,
-    "width": 1860,
+    "height": 330,
+    "width": 760,
     "tabOrder": 16000
   },
   "visual": {
-    "visualType": "textbox",
-    "objects": {
+    "visualType": "scatterChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pipeline_deals"
+                    }
+                  },
+                  "Property": "opportunity_id"
+                }
+              },
+              "queryRef": "pipeline_deals.opportunity_id",
+              "nativeQueryRef": "opportunity_id",
+              "displayName": "Opportunity ID"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Days In Current Stage"
+                }
+              },
+              "queryRef": "_Measures.Days In Current Stage",
+              "nativeQueryRef": "Days In Current Stage",
+              "displayName": "Days in stage"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Deal Amount EUR"
+                }
+              },
+              "queryRef": "_Measures.Deal Amount EUR",
+              "nativeQueryRef": "Deal Amount EUR",
+              "displayName": "Deal value"
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "pipeline_deals"
+                    }
+                  },
+                  "Property": "stage"
+                }
+              },
+              "queryRef": "pipeline_deals.stage",
+              "nativeQueryRef": "stage",
+              "displayName": "Stage"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Open deals: days in stage vs deal value'"
+                }
+              }
+            }
+          }
+        }
+      ],
       "general": [
         {
           "properties": {
-            "paragraphs": [
-              {
-                "textRuns": [
-                  {
-                    "value": "So what: (write your one-line takeaway for the CRO here)",
-                    "textStyle": {
-                      "fontSize": "13pt",
-                      "color": "#1F4E79",
-                      "fontWeight": "bold"
-                    }
-                  }
-                ]
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Open deals: days in stage vs deal value'"
+                }
               }
-            ]
+            }
           }
         }
       ]

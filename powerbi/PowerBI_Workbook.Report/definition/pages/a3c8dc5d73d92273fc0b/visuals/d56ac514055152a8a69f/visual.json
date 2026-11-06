@@ -3,69 +3,31 @@
   "name": "d56ac514055152a8a69f",
   "position": {
     "x": 30,
-    "y": 104,
+    "y": 62,
     "z": 3000,
-    "height": 66,
-    "width": 300,
+    "height": 30,
+    "width": 1500,
     "tabOrder": 3000
   },
   "visual": {
-    "visualType": "slicer",
-    "query": {
-      "queryState": {
-        "Values": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "DimDepartment"
-                    }
-                  },
-                  "Property": "department"
-                }
-              },
-              "queryRef": "DimDepartment.department",
-              "nativeQueryRef": "department"
-            }
-          ]
-        }
-      }
-    },
+    "visualType": "textbox",
     "objects": {
-      "data": [
+      "general": [
         {
           "properties": {
-            "mode": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Dropdown'"
-                }
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Open pipeline, governed weighted forecast and bookings vs target · snapshot 15 Sep 2026",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#BFBFBF"
+                    }
+                  }
+                ]
               }
-            }
-          }
-        }
-      ]
-    },
-    "visualContainerObjects": {
-      "title": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Department'"
-                }
-              }
-            }
+            ]
           }
         }
       ]

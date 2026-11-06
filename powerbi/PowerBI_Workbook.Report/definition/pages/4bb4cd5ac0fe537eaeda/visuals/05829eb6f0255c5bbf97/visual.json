@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "05829eb6f0255c5bbf97",
   "position": {
-    "x": 1530,
+    "x": 780,
     "y": 184,
     "z": 10000,
-    "height": 110,
+    "height": 124,
     "width": 359,
     "tabOrder": 10000
   },
@@ -23,11 +23,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Forecast Honesty Gap (pts)"
+                  "Property": "Win Rate (count)"
                 }
               },
-              "queryRef": "_Measures.Forecast Honesty Gap (pts)",
-              "nativeQueryRef": "Forecast Honesty Gap (pts)"
+              "queryRef": "_Measures.Win Rate (count)",
+              "nativeQueryRef": "Win Rate (count)"
             }
           ]
         }
@@ -47,7 +47,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Rep optimism vs governed (pts)'"
+                  "Value": "'Win rate'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Win rate'"
                 }
               }
             }

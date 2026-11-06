@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "aafd7769b724574bb6cf",
   "position": {
-    "x": 30,
-    "y": 66,
+    "x": 0,
+    "y": 100,
     "z": 1000,
-    "height": 30,
-    "width": 1500,
+    "height": 5,
+    "width": 1920,
     "tabOrder": 1000
   },
   "visual": {
@@ -19,15 +19,44 @@
               {
                 "textRuns": [
                   {
-                    "value": "Stuck = open longer in a stage than its governed threshold · at risk = stuck, stale, past due or orphaned",
-                    "textStyle": {
-                      "fontSize": "12pt",
-                      "color": "#4A5568"
-                    }
+                    "value": " "
                   }
                 ]
               }
             ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#F58220'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
           }
         }
       ]

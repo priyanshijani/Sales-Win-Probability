@@ -139,3 +139,77 @@ Average Open Deal Probability = CALCULATE ( AVERAGE ( model_scores[model_win_pro
 Selected Deal Amount EUR = SUM ( model_scores[amount_eur] )
 Impact (pts) = AVERAGE ( model_explanations[impact_pts] )
 Reasoning Text = SELECTEDVALUE ( model_scores[model_reasoning], "Click a deal in the list on the left to see why the model rates it as it does." )
+
+
+// ---- KPI markers ---------------------------------------------------------------------------------------
+// Arrows show direction; green and red show good and bad for the business.
+// Every Label measure feeds a card subtitle or a table cell; the matching Color measure drives its font / bar colour.
+Color Good = "#1E9E5A"
+Color Bad = "#D32F2F"
+Color Neutral = "#6B6B6B"
+
+Bookings L3M EUR = CALCULATE ( [Bookings EUR], DATESBETWEEN ( DimDate[Date], EDATE ( [Snapshot Date], -3 ) + 1, [Snapshot Date] ) )
+Bookings Prior 3M EUR = CALCULATE ( [Bookings EUR], DATESBETWEEN ( DimDate[Date], EDATE ( [Snapshot Date], -6 ) + 1, EDATE ( [Snapshot Date], -3 ) ) )
+Bookings L3M Change % = DIVIDE ( [Bookings L3M EUR] - [Bookings Prior 3M EUR], [Bookings Prior 3M EUR] )
+Bookings L3M Label = VAR d = [Bookings L3M Change %] RETURN IF ( ISBLANK ( d ), "no prior period", IF ( d >= 0, "▲ +", "▼ " ) & FORMAT ( d, "0.0%" ) & " vs prior 3 months" )
+Bookings L3M Color = IF ( [Bookings L3M Change %] >= 0, [Color Good], [Color Bad] )
+
+Win Rate Prior 12M = CALCULATE ( [Win Rate (count)], DATESBETWEEN ( DimDate[Date], EDATE ( [Snapshot Date], -24 ) + 1, EDATE ( [Snapshot Date], -12 ) ) )
+Win Rate Change (pts) = ( [Win Rate Last 12M] - [Win Rate Prior 12M] ) * 100
+Win Rate Label = VAR d = [Win Rate Change (pts)] RETURN IF ( ISBLANK ( d ), "no prior year", IF ( d >= 0, "▲ +", "▼ " ) & FORMAT ( d, "0.0" ) & " pts vs prior 12 months" )
+Win Rate Color = IF ( [Win Rate Change (pts)] >= 0, [Color Good], [Color Bad] )
+
+Attainment Gap (pts) = ( [Current Quarter Attainment %] - 1 ) * 100
+Attainment Label = VAR d = [Attainment Gap (pts)] RETURN IF ( ISBLANK ( d ), BLANK (), IF ( d >= 0, "▲ +", "▼ " ) & FORMAT ( d, "0.0" ) & " pts vs target" )
+Attainment Color = IF ( [Attainment Gap (pts)] >= 0, [Color Good], [Color Bad] )
+
+Coverage Gap x = [Next Quarter Coverage x] - 3
+Coverage Label = VAR d = [Coverage Gap x] RETURN IF ( ISBLANK ( d ), BLANK (), IF ( d >= 0, "▲ +", "▼ " ) & FORMAT ( d, "0.0" ) & "x vs 3.0x healthy" )
+Coverage Color = IF ( [Coverage Gap x] >= 0, [Color Good], [Color Bad] )
+
+Quota Gap (pts) = ( [Quota Attainment YTD %] - 1 ) * 100
+Quota Label = VAR d = [Quota Gap (pts)] RETURN IF ( ISBLANK ( d ), BLANK (), IF ( d >= 0, "▲ +", "▼ " ) & FORMAT ( d, "0.0" ) & " pts vs quota" )
+Quota Color = IF ( [Quota Gap (pts)] >= 0, [Color Good], [Color Bad] )
+
+// Positive = reps more optimistic than the governed probabilities = the forecast is at risk of being overstated.
+Honesty Label = VAR d = [Forecast Honesty Gap (pts)] RETURN IF ( ISBLANK ( d ), BLANK (), IF ( d > 0, "▲ +", "▼ " ) & FORMAT ( d, "0.0" ) & IF ( d > 0, " pts more optimistic", " pts more cautious" ) )
+Honesty Color = IF ( [Forecast Honesty Gap (pts)] > 0, [Color Bad], [Color Good] )
+
+// Negative = the model is more cautious than the CRM stage odds = the governed forecast looks overstated.
+Model Gap Label = VAR d = [Model vs Governed Gap EUR] RETURN IF ( ISBLANK ( d ), BLANK (), IF ( d >= 0, "▲ +€", "▼ -€" ) & FORMAT ( ABS ( d ) / 1000000, "0.0" ) & "M vs governed" )
+Model Gap Color = IF ( [Model vs Governed Gap EUR] >= 0, [Color Good], [Color Bad] )
+
+Model vs CRM Label = VAR d = ( [Selected Model Win Probability] - [Selected Governed Probability] ) * 100 RETURN IF ( ISBLANK ( d ), BLANK (), IF ( d >= 0, "▲ +", "▼ " ) & FORMAT ( d, "0" ) & " pts vs CRM stage default" )
+Model vs CRM Color = IF ( [Selected Model Win Probability] >= [Selected Governed Probability], [Color Good], [Color Bad] )
+
+Impact Marker = VAR d = [Impact (pts)] RETURN IF ( ISBLANK ( d ), BLANK (), IF ( d >= 0, "▲ +", "▼ " ) & FORMAT ( d, "0.0" ) )
+Impact Color = IF ( [Impact (pts)] >= 0, [Color Good], [Color Bad] )
+
+Gap vs Governed Marker = VAR d = AVERAGE ( model_scores[model_vs_governed_pts] ) RETURN IF ( ISBLANK ( d ), BLANK (), IF ( d >= 0, "▲ +", "▼ " ) & FORMAT ( d, "0" ) & " pts" )
+Gap vs Governed Color = IF ( AVERAGE ( model_scores[model_vs_governed_pts] ) >= 0, [Color Good], [Color Bad] )
+
+Trust Label = IF ( [Trust Score %] = 1, "● All checks pass", "● " & ( [Checks Total] - [Checks Passed] ) & " checks failing" )
+Trust Color = IF ( [Trust Score %] = 1, [Color Good], [Color Bad] )
+Check Status Marker = VAR s = SELECTEDVALUE ( dq_reconciliation[status] ) RETURN IF ( ISBLANK ( s ), BLANK (), "● " & s )
+Check Status Color = IF ( SELECTEDVALUE ( dq_reconciliation[status] ) = "PASS", [Color Good], [Color Bad] )
+
+
+// ---- Page takeaways ------------------------------------------------------------------------------------
+// One line per page, written as measures so the sentence stays true after every refresh.
+So What Pipeline = "Next quarter's pipeline covers " & FORMAT ( [Next Quarter Coverage x], "0.0" ) & "x of target (healthy is 3.0x); bookings this quarter stand at " & FORMAT ( [Current Quarter Attainment %], "0%" ) & " of target."
+So What Risk = FORMAT ( [At Risk % of Pipeline], "0%" ) & " of open pipeline (€" & FORMAT ( [EUR At Risk] / 1000000, "0.0" ) & "M, " & FORMAT ( [At Risk Deals], "#,0" ) & " deals) is stuck, stale, past due or orphaned: start with the ranked list above."
+So What People = "Win rate is " & FORMAT ( [Win Rate (count)], "0.0%" ) & " and reps rate open deals " & FORMAT ( [Forecast Honesty Gap (pts)], "+0.0;-0.0" ) & " pts versus the governed probabilities: review the managers in red."
+So What Market = "€" & FORMAT ( [Open Pipeline EUR] / 1000000, "0.0" ) & "M of open pipeline across " & FORMAT ( [Accounts], "#,0" ) & " accounts; the win rate differs a lot by region, so direct investment to the strongest regions."
+So What Model = "The model puts weighted pipeline at €" & FORMAT ( [Model Weighted Pipeline EUR] / 1000000, "0.0" ) & "M against €" & FORMAT ( [Governed Weighted (scored deals) EUR] / 1000000, "0.0" ) & "M under the CRM stage odds; " & FORMAT ( [Deals To Review], "#,0" ) & " deals differ by 25 points or more and need a review."
+
+
+// ---- Split series: one measure per colour state (a bar chart cannot colour single bars from one measure) ------
+// Impact: |impact| under 2 points is treated as negligible, the same cut-off the model card uses for the one-line reasons.
+Impact Size = ABS ( [Impact (pts)] )
+Impact Up (pts) = VAR i = [Impact (pts)] RETURN IF ( i >= 2, i )
+Impact Down (pts) = VAR i = [Impact (pts)] RETURN IF ( i <= -2, i )
+Impact Minor (pts) = VAR i = [Impact (pts)] RETURN IF ( ABS ( i ) < 2, i )
+Quota Met % = VAR a = [Quota Attainment YTD %] RETURN IF ( a >= 1, a )
+Quota Missed % = VAR a = [Quota Attainment YTD %] RETURN IF ( a < 1, a )
+Honesty Optimistic (pts) = VAR g = [Forecast Honesty Gap (pts)] RETURN IF ( g > 0, g )
+Honesty Cautious (pts) = VAR g = [Forecast Honesty Gap (pts)] RETURN IF ( g <= 0, g )

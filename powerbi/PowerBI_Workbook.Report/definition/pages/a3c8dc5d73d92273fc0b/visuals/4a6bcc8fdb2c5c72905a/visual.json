@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "4a6bcc8fdb2c5c72905a",
   "position": {
-    "x": 1278,
+    "x": 566,
     "y": 184,
     "z": 10000,
-    "height": 110,
-    "width": 296,
+    "height": 124,
+    "width": 252,
     "tabOrder": 10000
   },
   "visual": {
@@ -23,11 +23,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Win Rate Last 12M"
+                  "Property": "Current Quarter Attainment %"
                 }
               },
-              "queryRef": "_Measures.Win Rate Last 12M",
-              "nativeQueryRef": "Win Rate Last 12M"
+              "queryRef": "_Measures.Current Quarter Attainment %",
+              "nativeQueryRef": "Current Quarter Attainment %"
             }
           ]
         }
@@ -47,7 +47,61 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Win rate, last 12 months'"
+                  "Value": "'Attainment, this quarter'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Attainment, this quarter'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Attainment Label"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Attainment Color"
+                    }
+                  }
                 }
               }
             }

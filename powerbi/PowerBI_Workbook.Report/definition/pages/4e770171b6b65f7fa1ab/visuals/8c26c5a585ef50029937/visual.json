@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "8c26c5a585ef50029937",
   "position": {
-    "x": 780,
-    "y": 110,
+    "x": 30,
+    "y": 112,
     "z": 5000,
-    "height": 110,
-    "width": 359,
+    "height": 118,
+    "width": 296,
     "tabOrder": 5000
   },
   "visual": {
@@ -23,15 +23,30 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Governed Weighted (scored deals) EUR"
+                  "Property": "Weighted Pipeline EUR"
                 }
               },
-              "queryRef": "_Measures.Governed Weighted (scored deals) EUR",
-              "nativeQueryRef": "Governed Weighted (scored deals) EUR"
+              "queryRef": "_Measures.Weighted Pipeline EUR",
+              "nativeQueryRef": "Weighted Pipeline EUR"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [
@@ -47,7 +62,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Governed, scored deals only'"
+                  "Value": "'Governed weighted pipeline'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Governed weighted pipeline'"
                 }
               }
             }

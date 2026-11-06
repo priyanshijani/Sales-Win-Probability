@@ -3,54 +3,31 @@
   "name": "13358e7272eb5274902a",
   "position": {
     "x": 30,
-    "y": 110,
+    "y": 62,
     "z": 3000,
-    "height": 110,
-    "width": 453,
+    "height": 30,
+    "width": 1500,
     "tabOrder": 3000
   },
   "visual": {
-    "visualType": "card",
-    "query": {
-      "queryState": {
-        "Values": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Checks Passed"
-                }
-              },
-              "queryRef": "_Measures.Checks Passed",
-              "nativeQueryRef": "Checks Passed"
-            }
-          ]
-        }
-      }
-    },
-    "visualContainerObjects": {
-      "title": [
+    "visualType": "textbox",
+    "objects": {
+      "general": [
         {
           "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Every number reconciles to the CRM's own control totals; a failed check stops the dbt build",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#BFBFBF"
+                    }
+                  }
+                ]
               }
-            },
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Checks passed'"
-                }
-              }
-            }
+            ]
           }
         }
       ]
