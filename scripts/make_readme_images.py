@@ -4,6 +4,7 @@ Numbers come from the warehouse and ml/outputs/metrics.json, so the pictures can
 Run after the pipeline:  python scripts/make_readme_images.py   ->  images/readme/*.png
 """
 import json
+import re
 import textwrap
 from pathlib import Path
 
@@ -21,8 +22,10 @@ OUT.mkdir(parents=True, exist_ok=True)
 
 FONT = "Segoe UI"
 BOLD = "Segoe UI Semibold"
-NAVY, INK, BLUE, MID, SKY, PALE = "#0B1F3A", "#1B2A41", "#1F4E79", "#2E75B6", "#7FB2E5", "#EAF2FB"
-AMBER, GREEN, RED, GREY, WHITE = "#F2A900", "#2E9E5B", "#C0392B", "#6B7280", "#FFFFFF"
+# Same palette as the Power BI theme: black, orange, grey. Red and green are kept for bad / good only.
+NAVY, INK, BLUE, MID, SKY, PALE = "#111111", "#1F1F1F", "#2B2B2B", "#F58220", "#FFB066", "#F2F2F2"
+AMBER, GREEN, RED, GREY, WHITE = "#F58220", "#1E9E5A", "#D32F2F", "#6B6B6B", "#FFFFFF"
+DORANGE, LINE, TINT, TINT_LINE = "#C25A0A", "#D9D9D9", "#FFE9D6", "#F5B97A"   # small orange text, hairlines, light orange fills
 
 # ---- numbers ----------------------------------------------------------------------------------------------------------
 con = duckdb.connect(str(ROOT / "warehouse" / "nexora.duckdb"), read_only=True)
@@ -35,6 +38,8 @@ N = {
     "risk_eur": con.execute("select sum(amount_eur) from pipeline_deals where is_at_risk").fetchone()[0] / 1e6,
     "flag_n": con.execute("select count(*) from ml.model_scores where model_vs_governed_pts <= -25").fetchone()[0],
     "flag_eur": con.execute("select sum(amount_eur) from ml.model_scores where model_vs_governed_pts <= -25").fetchone()[0] / 1e6,
+    "measures": len(re.findall(r"^\tmeasure ", (ROOT / "powerbi" / "PowerBI_Workbook.SemanticModel" / "definition" / "tables"
+                                                 / "_Measures.tmdl").read_text(encoding="utf-8"), re.M)),
     "scored": m["scored"],
     "train_deals": m["train_deals"],
     "test_deals": m["test_deals"],
@@ -67,7 +72,7 @@ def box(ax, x, y, w, h, fc, ec="none", r=18, lw=0, alpha=1.0, z=1):
     return p
 
 
-def arrow(ax, x1, y1, x2, y2, color=MID, lw=3, ms=22, z=3):
+def arrow(ax, x1, y1, x2, y2, color="#595959", lw=3, ms=22, z=3):
     ax.add_patch(FancyArrowPatch((x1, y1), (x2, y2), arrowstyle="-|>", mutation_scale=ms, color=color, lw=lw, zorder=z,
                                  shrinkA=0, shrinkB=0))
 
@@ -85,7 +90,7 @@ def hero():
     W, H = 1600, 440
     fig, ax = canvas(W, H, NAVY)
     grad = np.linspace(0, 1, 256).reshape(1, -1)
-    ax.imshow(grad, extent=[0, W, H, 0], cmap=matplotlib.colors.LinearSegmentedColormap.from_list("g", [NAVY, "#133A63", "#1F4E79"]),
+    ax.imshow(grad, extent=[0, W, H, 0], cmap=matplotlib.colors.LinearSegmentedColormap.from_list("g", [NAVY, "#1B1B1B", "#2B2B2B"]),
               aspect="auto", zorder=0)
     ax.set_xlim(0, W); ax.set_ylim(H, 0)
     # faint grid
@@ -98,7 +103,7 @@ def hero():
     t(ax, 70, 168, "Sales Pipeline", 54, WHITE, "bold")
     t(ax, 70, 232, "Intelligence", 54, WHITE, "bold")
     ax.add_patch(Rectangle((70, 268), 90, 5, fc=AMBER, zorder=3))
-    t(ax, 70, 312, "Know which deals will close, and why.", 24, "#DCE9F7")
+    t(ax, 70, 312, "Know which deals will close, and why.", 24, "#E6E6E6")
     t(ax, 70, 352, "One trusted view of the pipeline. A win probability you can explain.", 16, SKY)
     # right: funnel of deals + probability ring
     stages = ["Discovery", "Solution\nDesign", "Proposal", "Negotiation", "Won"]
@@ -118,7 +123,7 @@ def hero():
     ax.add_patch(Wedge((cx, cy), R, 0, 360, width=20, fc=WHITE, alpha=0.10, zorder=2))
     ax.add_patch(Wedge((cx, cy), R, -90, -90 + 360 * 0.84, width=20, fc=AMBER, zorder=3))
     t(ax, cx, cy - 8, "84%", 46, WHITE, "bold", ha="center")
-    t(ax, cx, cy + 38, "chance to win", 14, "#DCE9F7", ha="center")
+    t(ax, cx, cy + 38, "chance to win", 14, "#E6E6E6", ha="center")
     box(ax, cx - 150, 350, 300, 44, WHITE, r=22, alpha=0.12, z=2)
     t(ax, cx, 372, "…because late stage, a strong service line", 12.5, WHITE, ha="center")
     save(fig, "hero_banner.png")
@@ -129,14 +134,14 @@ def hero():
 # ======================================================================================================================
 def workflow():
     W, H = 1600, 700
-    fig, ax = canvas(W, H, "#F5F8FC")
+    fig, ax = canvas(W, H, "#F2F2F2")
     t(ax, W / 2, 52, "From messy CRM data to decisions leaders can trust", 30, NAVY, "bold", ha="center")
     t(ax, W / 2, 92, "What was built, in five steps", 16, GREY, ha="center")
     steps = [
-        ("1", "DATA SOURCES", "⚑", "Capture", ["24 monthly CRM extracts", "2 system versions after a migration", "8 currencies"], GREY),
+        ("1", "DATA SOURCES", "⚑", "Capture", ["24 monthly CRM extracts", "2 system versions after a migration", "8 currencies"], "#6B6B6B"),
         ("2", "TRUST LAYER", "✔", "Cleanse & reconcile", [f"{N['raw_rows']:,} raw rows become {N['deals']:,} real deals", "Duplicates and test data removed", f"{N['checks']} of {N['checks']} checks pass"], BLUE),
         ("3", "BUSINESS RULES", "⚖", "Govern", ["One definition per metric", "Stage odds, FX and “stuck” rules", "Written down, versioned, tested"], BLUE),
-        ("4", "PREDICTIVE SCIENCE", "⚙", "Learn from history", [f"Learns from {N['train_deals']:,} closed deals", f"Proven on {N['test_deals']} unseen deals", "A win probability for every open deal"], MID),
+        ("4", "PREDICTIVE SCIENCE", "⚙", "Learn from history", [f"Learns from {N['train_deals']:,} closed deals", f"Proven on {N['test_deals']} unseen deals", "A win probability for every open deal"], DORANGE),
         ("5", "DECISIONS", "★", "Act", [f"€{N['flag_eur']:.0f}M of pipeline flagged for review", "“Why this deal?” in plain words", "Early warning on stuck deals"], AMBER),
     ]
     n = len(steps)
@@ -144,18 +149,18 @@ def workflow():
     bw = (W - 2 * margin - gap * (n - 1)) / n
     for i, (num, head, icon, verb, lines, col) in enumerate(steps):
         x = margin + i * (bw + gap)
-        box(ax, x, 150, bw, 440, WHITE, ec="#D6E2F0", lw=1.5, r=22, z=1)
+        box(ax, x, 150, bw, 440, WHITE, ec=LINE, lw=1.5, r=22, z=1)
         box(ax, x, 150, bw, 112, col, r=22, z=2)
         ax.add_patch(Rectangle((x, 230), bw, 32, fc=col, zorder=2))          # square off the header's lower corners
         ax.add_patch(Circle((x + 44, 206), 26, fc=WHITE, alpha=0.95, zorder=3))
-        t(ax, x + 44, 205, icon, 26, col if col != AMBER else "#B97C00", ha="center", family="DejaVu Sans", zorder=4)
+        t(ax, x + 44, 205, icon, 26, col if col != AMBER else DORANGE, ha="center", family="DejaVu Sans", zorder=4)
         t(ax, x + 86, 184, f"STEP {num}", 11, WHITE, "bold")
         t(ax, x + 84, 214, head, 12.5, WHITE, "bold")
         t(ax, x + bw / 2, 300, verb, 21, NAVY, "bold", ha="center")
         ax.add_patch(Rectangle((x + bw / 2 - 28, 326), 56, 4, fc=col, zorder=3))
         for k, line in enumerate(lines):
             yy = 372 + k * 70
-            t(ax, x + 24, yy, "•", 20, col if col != AMBER else AMBER, "bold")
+            t(ax, x + 24, yy, "•", 20, col, "bold")
             wrapped = textwrap.fill(line, 24)
             t(ax, x + 48, yy + (10 if wrapped.count(chr(10)) else 0), wrapped, 14, INK, va="center", linespacing=1.35)
         if i < n - 1:
@@ -175,34 +180,34 @@ def workflow():
 # ======================================================================================================================
 def explainer():
     W, H = 1600, 760
-    fig, ax = canvas(W, H, "#F5F8FC")
+    fig, ax = canvas(W, H, "#F2F2F2")
     t(ax, W / 2, 50, "What is a win probability?", 32, NAVY, "bold", ha="center")
     t(ax, W / 2, 92, "The chance, from 0% to 100%, that an open deal ends in a signed contract", 18, GREY, ha="center")
 
     # left panel: who says what
-    box(ax, 50, 140, 520, 570, WHITE, ec="#D6E2F0", lw=1.5, r=22)
-    t(ax, 80, 178, "ONE DEAL, THREE ANSWERS", 13, MID, "bold")
+    box(ax, 50, 140, 520, 570, WHITE, ec=LINE, lw=1.5, r=22)
+    t(ax, 80, 178, "ONE DEAL, THREE ANSWERS", 13, DORANGE, "bold")
     name = EX.deal_label.split(" | ")[1]
     t(ax, 80, 212, name, 22, NAVY, "bold")
     t(ax, 80, 244, f"SAP S/4HANA · €{EX.amount_eur / 1e6:.1f}M · Solution Design stage", 14, GREY)
     rows = [("“I feel good about it”", "Rep’s gut feeling", "varies by person", GREY, None),
-            ("CRM stage default", "Same % for every deal in the stage", f"{EX.g:.0%}", MID, EX.g),
+            ("CRM stage default", "Same % for every deal in the stage", f"{EX.g:.0%}", BLUE, EX.g),
             ("Win-probability model", "Learned from 2,927 closed deals", f"{EX.p:.0%}", AMBER, EX.p)]
     for i, (a, b, c, col, v) in enumerate(rows):
         y = 292 + i * 128
-        box(ax, 80, y, 460, 108, PALE if i < 2 else "#FFF6DC", r=16)
+        box(ax, 80, y, 460, 108, PALE if i < 2 else TINT, r=16)
         t(ax, 100, y + 30, a, 17, NAVY, "bold")
         t(ax, 100, y + 58, b, 12.5, GREY)
         t(ax, 520, y + 40, c, 34 if v is not None else 15, col if col != GREY else GREY, "bold", ha="right")
         if v is not None:
-            ax.add_patch(Rectangle((100, y + 80), 420, 10, fc="#D6E2F0", zorder=3))
+            ax.add_patch(Rectangle((100, y + 80), 420, 10, fc=LINE, zorder=3))
             ax.add_patch(Rectangle((100, y + 80), 420 * v, 10, fc=col, zorder=4))
     # arrow to right panel
     arrow(ax, 585, 425, 640, 425, color=NAVY, lw=4, ms=30)
 
     # right panel: reasons waterfall
-    box(ax, 655, 140, 895, 570, WHITE, ec="#D6E2F0", lw=1.5, r=22)
-    t(ax, 685, 178, "WHY THE MODEL SAYS " + f"{EX.p:.0%}", 13, MID, "bold")
+    box(ax, 655, 140, 895, 570, WHITE, ec=LINE, lw=1.5, r=22)
+    t(ax, 685, 178, "WHY THE MODEL SAYS " + f"{EX.p:.0%}", 13, DORANGE, "bold")
     t(ax, 685, 212, "Each fact about the deal moves the probability up or down", 20, NAVY, "bold")
     top = EXPL.head(4)
     other = EX.p * 100 - BASE * 100 - top.impact_pts.sum()
@@ -221,7 +226,7 @@ def explainer():
         y = 258 + i * 56
         t(ax, 685, y + 20, lab, 14.5, INK, "bold" if kind != "delta" else "normal")
         if kind == "start":
-            ax.add_patch(Rectangle((x0, y + 4), v * scale, 32, fc=SKY, zorder=3)); cum = v
+            ax.add_patch(Rectangle((x0, y + 4), v * scale, 32, fc="#BFBFBF", zorder=3)); cum = v
             t(ax, x0 + v * scale + 10, y + 20, f"{v:.0f}%", 15, NAVY, "bold")
         elif kind == "end":
             ax.add_patch(Rectangle((x0, y + 4), v * scale, 32, fc=AMBER, zorder=3))
@@ -231,8 +236,8 @@ def explainer():
             ax.add_patch(Rectangle((x0 + min(a, b) * scale, y + 4), abs(v) * scale, 32, fc=GREEN if v > 0 else RED, zorder=3))
             t(ax, x0 + max(a, b) * scale + 10, y + 20, f"{v:+.0f} pts", 15, GREEN if v > 0 else RED, "bold")
             cum = b
-        ax.plot([x0, x0], [y - 4, y + 44], color="#D6E2F0", lw=1, zorder=2)
-    box(ax, 685, 652, 835, 40, "#EAF6EF", r=14)
+        ax.plot([x0, x0], [y - 4, y + 44], color=LINE, lw=1, zorder=2)
+    box(ax, 685, 652, 835, 40, TINT, r=14)
     t(ax, 705, 672, f"Takeaway: the CRM says {EX.g:.0%}, the model says about a quarter. Check it before banking it.", 13.5, INK)
     save(fig, "win_probability_explained.png")
 
@@ -245,7 +250,7 @@ def architecture():
     fig, ax = canvas(W, H, WHITE)
     t(ax, W / 2, 40, "Technical architecture", 28, NAVY, "bold", ha="center")
 
-    def node(x, y, w, h, title, sub, fc=PALE, ec="#BCD3EA", tc=NAVY):
+    def node(x, y, w, h, title, sub, fc=PALE, ec="#BFBFBF", tc=NAVY):
         box(ax, x, y, w, h, fc, ec=ec, lw=1.6, r=14)
         t(ax, x + w / 2, y + 26, title, 14.5, tc, "bold", ha="center")
         for k, s in enumerate(sub):
@@ -254,8 +259,8 @@ def architecture():
     # lane labels
     lanes = [("SOURCES", 40), ("STAGING (dbt views)", 330), ("INTERMEDIATE (dbt views)", 640), ("MARTS (dbt tables · DuckDB)", 950), ("CONSUME", 1280)]
     for lab, x in lanes:
-        t(ax, x, 84, lab, 12, MID, "bold")
-        ax.plot([x, x + 270], [98, 98], color=SKY, lw=2)
+        t(ax, x, 84, lab, 12, DORANGE, "bold")
+        ax.plot([x, x + 270], [98, 98], color=MID, lw=2)
     node(40, 116, 250, 78, "24 monthly CRM CSVs", ["v1 + v2 schemas · 5,012 rows"])
     node(40, 206, 250, 78, "Stage-change audit log", ["16,289 field changes"])
     node(40, 296, 250, 78, "Accounts Excel export", ["junk header/footer · 765 rows"])
@@ -266,12 +271,12 @@ def architecture():
     node(640, 116, 270, 100, "int_opportunities_clean", ["latest version · owner match", "currency fill · account link"])
     node(640, 228, 270, 70, "int_accounts_master", ["765 → 720 master accounts"])
     node(640, 310, 270, 70, "int_stage_stints", ["12,017 stints via lead()"])
-    node(950, 116, 270, 100, "pipeline_deals", ["rules · FX · risk flags", "4,800 rows"], fc="#DCEBFA")
-    node(950, 228, 270, 70, "stints · team · accounts", ["dept_quarter_summary"], fc="#DCEBFA")
-    node(950, 310, 270, 70, "rejected_records", ["212 rows, each with a reason"], fc="#DCEBFA")
-    node(1280, 116, 270, 100, "Power BI (PBIP)", ["7 pages · 63 DAX measures"], fc="#FFF6DC", ec="#EBD28B")
-    node(1280, 228, 270, 70, "CSV exports", ["data/output/*"], fc="#FFF6DC", ec="#EBD28B")
-    node(1280, 310, 270, 70, "AI experiment", ["grounded vs ungrounded"], fc="#FFF6DC", ec="#EBD28B")
+    node(950, 116, 270, 100, "pipeline_deals", ["rules · FX · risk flags", "4,800 rows"], fc=TINT, ec=TINT_LINE)
+    node(950, 228, 270, 70, "stints · team · accounts", ["dept_quarter_summary"], fc=TINT, ec=TINT_LINE)
+    node(950, 310, 270, 70, "rejected_records", ["212 rows, each with a reason"], fc=TINT, ec=TINT_LINE)
+    node(1280, 116, 270, 100, "Power BI (PBIP)", [f"7 pages · {N['measures']} DAX measures"], fc=WHITE, ec=MID)
+    node(1280, 228, 270, 70, "CSV exports", ["data/output/*"], fc=WHITE, ec=MID)
+    node(1280, 310, 270, 70, "AI experiment", ["grounded vs ungrounded"], fc=WHITE, ec=MID)
     for y in (166, 263, 345):
         arrow(ax, 292, 160 if y == 166 else y, 328, 160 if y == 166 else y, lw=2, ms=16)
     arrow(ax, 292, 420, 328, 345, lw=2, ms=16)
@@ -282,14 +287,14 @@ def architecture():
         arrow(ax, 1222, 166 if y == 166 else y, 1278, 166 if y == 166 else y, lw=2, ms=16)
 
     # ML lane
-    box(ax, 40, 500, 1510, 120, "#F5F8FC", ec="#D6E2F0", lw=1.5, r=16)
-    t(ax, 60, 522, "MACHINE LEARNING  ·  Python / scikit-learn", 12, MID, "bold")
+    box(ax, 40, 500, 1510, 120, "#F2F2F2", ec=LINE, lw=1.5, r=16)
+    t(ax, 60, 522, "MACHINE LEARNING  ·  Python / scikit-learn", 12, DORANGE, "bold")
     ml = [("Photos of closed deals", "day 0/14/30/45/60/90/120 per stage"), ("Time-based backtest", "train < 1 Mar 2026 · test 550 deals"),
           ("Logistic regression vs forest", "Brier · AUC · calibration"), ("Score + explain", f"{N['scored']} deals · reason codes"),
           ("ml.* tables", "scores · explanations · calibration")]
     for i, (a, b) in enumerate(ml):
         x = 60 + i * 296
-        box(ax, x, 538, 270, 66, WHITE, ec="#BCD3EA", lw=1.4, r=12)
+        box(ax, x, 538, 270, 66, WHITE, ec="#BFBFBF", lw=1.4, r=12)
         t(ax, x + 135, 561, a, 13, NAVY, "bold", ha="center")
         t(ax, x + 135, 584, b, 11, GREY, ha="center")
         if i < 4:
@@ -298,8 +303,8 @@ def architecture():
     arrow(ax, 1415, 500, 1415, 384, color=MID, lw=2.5, ms=18)
 
     # governance lane
-    box(ax, 40, 650, 1510, 170, "#FFFBF0", ec="#F0DCA0", lw=1.5, r=16)
-    t(ax, 60, 672, "QUALITY & GOVERNANCE  ·  runs on every build", 12, "#B97C00", "bold")
+    box(ax, 40, 650, 1510, 170, "#FFF3E6", ec=TINT_LINE, lw=1.5, r=16)
+    t(ax, 60, 672, "QUALITY & GOVERNANCE  ·  runs on every build", 12, DORANGE, "bold")
     gov = [("Reconciliation", f"{N['checks']} checks vs CRM totals", "a failure stops the build"),
            ("dbt tests", "40 tests · keys, values,", "relationships, no overlaps"),
            ("Rules as data", "seeds: stage odds, FX, targets", "aliases, field mapping"),
@@ -308,7 +313,7 @@ def architecture():
            ("CI + reproducible", "GitHub Actions · seeded data", "one command rebuilds all")]
     for i, (a, b, c) in enumerate(gov):
         x = 60 + i * 247
-        box(ax, x, 694, 232, 106, WHITE, ec="#F0DCA0", lw=1.4, r=12)
+        box(ax, x, 694, 232, 106, WHITE, ec=TINT_LINE, lw=1.4, r=12)
         t(ax, x + 116, 716, a, 13, NAVY, "bold", ha="center")
         t(ax, x + 116, 745, b, 11, GREY, ha="center")
         t(ax, x + 116, 765, c, 11, GREY, ha="center")
