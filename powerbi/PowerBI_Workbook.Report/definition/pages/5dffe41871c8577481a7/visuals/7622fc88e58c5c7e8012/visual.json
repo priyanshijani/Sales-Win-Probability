@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "7622fc88e58c5c7e8012",
   "position": {
     "x": 1350,
@@ -28,6 +28,7 @@
               },
               "queryRef": "pipeline_deals.service_line",
               "nativeQueryRef": "service_line",
+              "active": true,
               "displayName": "Service Line"
             }
           ]

@@ -76,3 +76,4 @@ table model_explanations
 				  #"Changed column type"
 
 	annotation PBI_ResultType = Table
+

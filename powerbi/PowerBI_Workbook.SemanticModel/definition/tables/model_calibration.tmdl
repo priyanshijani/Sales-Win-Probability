@@ -53,3 +53,4 @@ table model_calibration
 				  #"Changed column type"
 
 	annotation PBI_ResultType = Table
+

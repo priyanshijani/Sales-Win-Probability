@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "f0f34fdf5cec5de397d8",
   "position": {
     "x": 1290,
@@ -28,6 +28,7 @@
               },
               "queryRef": "rejected_records.reject_reason",
               "nativeQueryRef": "reject_reason",
+              "active": true,
               "displayName": "Reject Reason"
             }
           ]

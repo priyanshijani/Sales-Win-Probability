@@ -22,8 +22,8 @@ table pipeline_stage_stints
 		dataType: string
 		lineageTag: b1e87477-c813-56b7-aa4f-440b94335530
 		summarizeBy: none
-		sortByColumn: stage_order
 		sourceColumn: stage
+		sortByColumn: stage_order
 
 		annotation SummarizationSetBy = Automatic
 
@@ -148,3 +148,4 @@ table pipeline_stage_stints
 				  #"Changed column type"
 
 	annotation PBI_ResultType = Table
+

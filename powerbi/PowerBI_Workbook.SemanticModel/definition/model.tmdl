@@ -13,8 +13,6 @@ annotation PBI_QueryOrder = ["DataFolder", "pipeline_deals", "pipeline_stage_sti
 
 annotation PBI_ProTooling = ["DevMode"]
 
-ref expression DataFolder
-
 ref table pipeline_deals
 ref table pipeline_stage_stints
 ref table sales_team
@@ -31,5 +29,12 @@ ref table DimDate
 ref table DimDepartment
 ref table DimStage
 ref table _Measures
+ref table DateTableTemplate_e5f66d9f-a356-446d-b496-02db169852ae
+ref table LocalDateTable_3289e6aa-2ac2-4775-a49b-327d2c5d0bbb
+ref table LocalDateTable_2339f8fd-bc7b-451d-a736-d40abeee9fbe
+ref table LocalDateTable_ba7ce3e0-019d-4980-ad43-28a40d5cc244
+ref table LocalDateTable_a02cb8f7-d640-4455-8769-4611378ce008
+ref table LocalDateTable_aa868306-9cc6-40d4-8784-5417d35c9785
 
 ref cultureInfo en-US
+

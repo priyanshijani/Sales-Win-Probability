@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "3fb0253c570858158fcc",
   "position": {
     "x": 30,
@@ -28,6 +28,7 @@
               },
               "queryRef": "sales_team.department",
               "nativeQueryRef": "department",
+              "active": true,
               "displayName": "Department"
             },
             {
@@ -43,6 +44,7 @@
               },
               "queryRef": "sales_team.sales_manager",
               "nativeQueryRef": "sales_manager",
+              "active": false,
               "displayName": "Sales Manager"
             },
             {
@@ -58,6 +60,7 @@
               },
               "queryRef": "sales_team.full_name",
               "nativeQueryRef": "full_name",
+              "active": false,
               "displayName": "Full Name"
             }
           ]

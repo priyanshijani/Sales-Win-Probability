@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "48b9052b73015e108954",
   "position": {
     "x": 810,
@@ -28,6 +28,7 @@
               },
               "queryRef": "pipeline_deals.country_name",
               "nativeQueryRef": "country_name",
+              "active": true,
               "displayName": "Country Name"
             }
           ]

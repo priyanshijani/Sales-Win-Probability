@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "3ceb1750b97f5a97a738",
   "position": {
     "x": 30,
@@ -122,6 +122,23 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  }
+                },
+                "Property": "Check Status Marker"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
       }
     },
     "objects": {
@@ -186,5 +203,107 @@
         }
       ]
     }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e1fbd2ad8608920d9504",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dq_reconciliation"
+              }
+            },
+            "Property": "check_group"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "5216cbdd008416d722b0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dq_reconciliation"
+              }
+            },
+            "Property": "check_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8177667fe30b1068e460",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dq_reconciliation"
+              }
+            },
+            "Property": "dimension"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "5969ce0533b0e5d77a28",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dq_reconciliation"
+              }
+            },
+            "Property": "expected"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "deabed7fb0bb2d6246a0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dq_reconciliation"
+              }
+            },
+            "Property": "actual"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ede0b6a5a77b41550643",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dq_reconciliation"
+              }
+            },
+            "Property": "difference"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "30355edab040d46820b8",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Check Status Marker"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

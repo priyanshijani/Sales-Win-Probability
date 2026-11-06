@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "e673a21432fd58bcb927",
   "position": {
     "x": 670,
@@ -28,6 +28,7 @@
               },
               "queryRef": "model_backtest.method",
               "nativeQueryRef": "method",
+              "active": true,
               "displayName": "Method"
             }
           ]

@@ -56,7 +56,14 @@ table sales_team
 		summarizeBy: none
 		sourceColumn: hire_date
 
+		variation Variation
+			isDefault
+			relationship: 7a76d5d7-56b5-43ee-92b3-2baf5fdc95c2
+			defaultHierarchy: LocalDateTable_a02cb8f7-d640-4455-8769-4611378ce008.'Date Hierarchy'
+
 		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column leave_date
 		dataType: dateTime
@@ -65,7 +72,14 @@ table sales_team
 		summarizeBy: none
 		sourceColumn: leave_date
 
+		variation Variation
+			isDefault
+			relationship: 3a863232-ceff-4039-8f46-2fc1daa533f7
+			defaultHierarchy: LocalDateTable_aa868306-9cc6-40d4-8784-5417d35c9785.'Date Hierarchy'
+
 		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column is_active
 		dataType: boolean
@@ -87,7 +101,7 @@ table sales_team
 		dataType: int64
 		formatString: 0
 		lineageTag: 94265326-2b19-5a09-b493-3d5c5db1e28d
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: active_days_ytd
 
 		annotation SummarizationSetBy = Automatic
@@ -119,3 +133,4 @@ table sales_team
 				  #"Changed column type"
 
 	annotation PBI_ResultType = Table
+

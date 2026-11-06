@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "c467b1e0ae6f5088bd68",
   "position": {
     "x": 30,
@@ -28,6 +28,7 @@
               },
               "queryRef": "pipeline_deals.sales_region",
               "nativeQueryRef": "sales_region",
+              "active": true,
               "displayName": "Sales Region"
             }
           ]

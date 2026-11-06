@@ -110,3 +110,4 @@ table dept_quarter_summary
 				  #"Changed column type"
 
 	annotation PBI_ResultType = Table
+

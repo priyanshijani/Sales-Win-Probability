@@ -148,3 +148,4 @@ table model_scores
 				  #"Changed column type"
 
 	annotation PBI_ResultType = Table
+

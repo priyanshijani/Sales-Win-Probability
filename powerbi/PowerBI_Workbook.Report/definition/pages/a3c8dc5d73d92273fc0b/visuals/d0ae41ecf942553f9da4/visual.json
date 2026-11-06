@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "d0ae41ecf942553f9da4",
   "position": {
     "x": 670,
@@ -28,6 +28,7 @@
               },
               "queryRef": "dept_quarter_summary.quarter",
               "nativeQueryRef": "quarter",
+              "active": true,
               "displayName": "Quarter"
             }
           ]

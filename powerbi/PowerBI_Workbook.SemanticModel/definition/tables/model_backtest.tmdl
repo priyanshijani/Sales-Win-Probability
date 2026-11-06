@@ -77,3 +77,4 @@ table model_backtest
 				  #"Changed column type"
 
 	annotation PBI_ResultType = Table
+

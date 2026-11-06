@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "d6ab4451c57a57fabb0a",
   "position": {
     "x": 30,
@@ -209,6 +209,11 @@
             "metadata": "_Measures.Gap vs Governed Marker"
           }
         }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {}
+        }
       ]
     },
     "visualContainerObjects": {
@@ -246,5 +251,79 @@
         }
       ]
     }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "39c737250a5bd92c70c0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "model_scores"
+              }
+            },
+            "Property": "deal_label"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6b9d314c56906e07ace3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "model_scores"
+              }
+            },
+            "Property": "amount_eur"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3a731bf6bbb1d38600e7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "model_scores"
+              }
+            },
+            "Property": "governed_probability"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a94a3b3083665ba50b3c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "model_scores"
+              }
+            },
+            "Property": "model_win_probability"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f0f8f841a40036a9d341",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Gap vs Governed Marker"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

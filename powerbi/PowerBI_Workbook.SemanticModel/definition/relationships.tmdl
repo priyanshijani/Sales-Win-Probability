@@ -33,11 +33,37 @@ relationship 1d0b60d6-9ba8-54a3-a345-1a590fcf557f
 	toColumn: dim_accounts.master_account_id
 
 relationship 8c653179-98a7-5b79-999a-78c807061654
-	fromCardinality: one
 	crossFilteringBehavior: bothDirections
+	fromCardinality: one
 	fromColumn: model_scores.opportunity_id
 	toColumn: pipeline_deals.opportunity_id
 
 relationship 700daa29-7912-5b31-9559-0705e3f5a18b
 	fromColumn: model_explanations.opportunity_id
 	toColumn: model_scores.opportunity_id
+
+relationship e5a2c5f0-49fa-4897-bfb0-5bae8d4e4f5b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: pipeline_deals.last_activity_date
+	toColumn: LocalDateTable_3289e6aa-2ac2-4775-a49b-327d2c5d0bbb.Date
+
+relationship 3187d3ec-88ff-4a67-be55-0bf9c54c9c60
+	joinOnDateBehavior: datePartOnly
+	fromColumn: pipeline_deals.stage_entered_date
+	toColumn: LocalDateTable_2339f8fd-bc7b-451d-a736-d40abeee9fbe.Date
+
+relationship cc9b5412-3297-4f5b-a820-67d619d18f94
+	joinOnDateBehavior: datePartOnly
+	fromColumn: pipeline_deals.snapshot_date
+	toColumn: LocalDateTable_ba7ce3e0-019d-4980-ad43-28a40d5cc244.Date
+
+relationship 7a76d5d7-56b5-43ee-92b3-2baf5fdc95c2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: sales_team.hire_date
+	toColumn: LocalDateTable_a02cb8f7-d640-4455-8769-4611378ce008.Date
+
+relationship 3a863232-ceff-4039-8f46-2fc1daa533f7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: sales_team.leave_date
+	toColumn: LocalDateTable_aa868306-9cc6-40d4-8784-5417d35c9785.Date
+

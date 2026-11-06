@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "5f39073dea4958d3a7e3",
   "position": {
     "x": 1310,
@@ -28,6 +28,7 @@
               },
               "queryRef": "model_feature_importance.base_feature",
               "nativeQueryRef": "base_feature",
+              "active": true,
               "displayName": "Base Feature"
             }
           ]
