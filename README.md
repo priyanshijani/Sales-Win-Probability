@@ -2,14 +2,18 @@
   <img src="images/readme/hero_banner.png" alt="Sales Pipeline Intelligence: know which deals will close, and why" width="100%">
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Power%20BI-dashboards-F2C811" alt="Power BI">
-  <img src="https://img.shields.io/badge/dbt-trusted%20data-FF694B" alt="dbt">
-  <img src="https://img.shields.io/badge/Python-win%20probability-3776AB" alt="Python">
-  <img src="https://img.shields.io/badge/27%2F27-quality%20checks%20pass-2E9E5B" alt="Quality checks">
-</p>
-
 > *A worked example of the sales-operations analytics I build for revenue leaders. Fictional company, synthetic data, real-world problems.*
+
+## Tech stack
+
+| Layer | Tools and skills |
+|---|---|
+| **Transformation** | <img src="https://img.shields.io/badge/dbt_Core-F58220?logo=dbt&logoColor=white" alt="dbt Core"> <img src="https://img.shields.io/badge/DuckDB-F58220?logo=duckdb&logoColor=white" alt="DuckDB"> <img src="https://img.shields.io/badge/SQL-F58220" alt="SQL"> <img src="https://img.shields.io/badge/Jinja_macros-111111?logo=jinja&logoColor=white" alt="Jinja macros"> <img src="https://img.shields.io/badge/Window_functions-111111" alt="Window functions"> <img src="https://img.shields.io/badge/Data_modelling-111111" alt="Data modelling"> |
+| **Data quality** | <img src="https://img.shields.io/badge/Reconciliation-F58220" alt="Reconciliation"> <img src="https://img.shields.io/badge/dbt_tests-F58220?logo=dbt&logoColor=white" alt="dbt tests"> <img src="https://img.shields.io/badge/Entity_resolution-111111" alt="Entity resolution"> <img src="https://img.shields.io/badge/Schema_drift-111111" alt="Schema drift"> <img src="https://img.shields.io/badge/Audit_trail-111111" alt="Audit trail"> <img src="https://img.shields.io/badge/Data_definitions-111111" alt="Data definitions"> |
+| **Machine learning** | <img src="https://img.shields.io/badge/Python-F58220?logo=python&logoColor=white" alt="Python"> <img src="https://img.shields.io/badge/scikit--learn-F58220?logo=scikitlearn&logoColor=white" alt="scikit-learn"> <img src="https://img.shields.io/badge/pandas-F58220?logo=pandas&logoColor=white" alt="pandas"> <img src="https://img.shields.io/badge/Logistic_regression-111111" alt="Logistic regression"> <img src="https://img.shields.io/badge/Random_forest-111111" alt="Random forest"> <img src="https://img.shields.io/badge/Backtesting-111111" alt="Backtesting"> <img src="https://img.shields.io/badge/Calibration-111111" alt="Calibration"> <img src="https://img.shields.io/badge/Explainability-111111" alt="Explainability"> <img src="https://img.shields.io/badge/Model_card-111111" alt="Model card"> |
+| **BI & analytics** | <img src="https://img.shields.io/badge/Power_BI-F58220?logo=powerbi&logoColor=white" alt="Power BI"> <img src="https://img.shields.io/badge/DAX-F58220" alt="DAX"> <img src="https://img.shields.io/badge/Star_schema-111111" alt="Star schema"> <img src="https://img.shields.io/badge/PBIP_%2F_TMDL-111111" alt="PBIP / TMDL"> <img src="https://img.shields.io/badge/Conditional_formatting-111111" alt="Conditional formatting"> <img src="https://img.shields.io/badge/Data_storytelling-111111" alt="Data storytelling"> |
+| **DevOps** | <img src="https://img.shields.io/badge/GitHub_Actions-F58220?logo=githubactions&logoColor=white" alt="GitHub Actions"> <img src="https://img.shields.io/badge/Git-F58220?logo=git&logoColor=white" alt="Git"> <img src="https://img.shields.io/badge/GitHub-F58220?logo=github&logoColor=white" alt="GitHub"> <img src="https://img.shields.io/badge/CI-111111" alt="CI"> <img src="https://img.shields.io/badge/Reproducible_pipelines-111111" alt="Reproducible pipelines"> |
+| **Domain** | <img src="https://img.shields.io/badge/Sales_operations-F58220" alt="Sales operations"> <img src="https://img.shields.io/badge/Pipeline_forecasting-111111" alt="Pipeline forecasting"> <img src="https://img.shields.io/badge/Quota_%26_win--rate_analysis-111111" alt="Quota & win-rate analysis"> <img src="https://img.shields.io/badge/Metric_definition-111111" alt="Metric definition"> |
 
 ---
 
@@ -181,9 +185,46 @@
 - **Model status "Advisory":** promoted only after two quarters of beating the governed forecast, with sign-off
 - **Reproducible:** seeded synthetic data, one command rebuilds everything, CI on every push
 
-## 9. The model, validated
+## 9. The model: inputs, training and validation
 
-- **Leakage-safe:** only facts known while the deal is open; the rep's own probability, close date, loss reason and activity dates are excluded
+### In plain words
+- The model reads a deal the way an experienced sales manager would: where it is, what kind of deal, which service and client, who runs it, how long it has been going
+- It has seen 2,927 closed deals and learned which combinations ended in a signature
+- For every open deal it returns a **chance to win and the reasons**. It is advisory and never replaces the governed forecast
+
+### Data behind it
+| Source | Size | What it gives the model |
+|---|---|---|
+| CRM opportunity extracts | 24 monthly CSVs, 5,012 raw rows, 18 fields each (36 column names across two schema versions) | Stage, amount, currency, service line, lead source, dates, owner, outcome |
+| Stage-change audit log | 16,289 changes | Days in stage, moves backwards, the state of a deal on any past day |
+| Accounts Excel export | 765 records, merged into 720 | Industry, client size, country and region |
+| Sales roster | 29 account executives, 8 managers | Sales manager and department |
+| Reference tables | 7 | Stage rules, FX rates, country mapping and aliases: used to clean and convert, not as inputs |
+
+After cleaning, `pipeline_deals` has 4,800 deals and 60 columns (about 30 derived) and `pipeline_stage_stints` has 12,017 rows. The Power BI model adds 111 measures.
+
+### What goes in: 13 features (6 of them derived)
+| Group | Features | Derived by us? |
+|---|---|---|
+| Deal | stage, service line, deal type (new logo / expansion), deal size (log of the euro amount) | deal type, deal size |
+| Client | industry, client size, sales region | |
+| Sales | sales manager, lead source | |
+| Timing | days in current stage, deal age, times moved backwards, over the stuck threshold | all four |
+
+The random forest also sees the department. The rep's own probability, forecast category, expected close date, loss reason, activity dates and account status are excluded on purpose: they reveal the answer or only exist after a deal closes.
+
+### How it is trained
+1. **Photos.** For each closed deal, take a snapshot on day 0, 14, 30, 45, 60, 90 and 120 of every open stage it sat in. Each photo holds only what was known that day, plus the final result (won or lost): 20,574 photos from 2,927 deals
+2. **Split by time.** Train on deals closed before 1 Mar 2026, test on the 550 deals still open that day. All photos of a deal stay on the same side
+3. **Compare.** CRM stage odds against logistic regression and a random forest, on Brier score, AUC and forecast error in euros
+4. **Choose.** Logistic regression: the lowest Brier score, and every coefficient can be explained
+5. **Retrain and score.** Refit on all 4,061 deals closed before 15 Sep 2026 (29,348 photos) and score 692 of the 724 open deals (32 have no amount)
+6. **Explain.** For each deal, each fact's push on the probability in points, against an average open deal (42%)
+
+**Biggest drivers:** service line 30%, stage 22%, sales manager 15%, industry 14%, sales region 10%. A driver describes how similar deals behaved, not why, so a manager or industry effect is a prompt to investigate, not a verdict.
+
+### Validation
+- **Leakage-safe:** only facts known while the deal is open
 - **Time-based backtest:** trained on deals closed before 1 Mar 2026, tested on the 550 deals open that day
 
 | Method | Brier ↓ | AUC ↑ | Won-revenue forecast error |
@@ -192,7 +233,8 @@
 | **Logistic regression (chosen)** | **0.208** | **0.725** | **+8%** |
 | Random forest | 0.210 | 0.717 | +15% |
 
-- **Explainable:** reason codes per deal in `ml.model_explanations`
+- **Explainable:** reason codes per deal in `ml.model_explanations`, shown on the "Why this deal?" page
+- **Limits:** synthetic data with designed patterns, 550 test deals, one backtest date and no confidence intervals. Treat the gaps as indicative. Full detail in [`docs/model_card.md`](docs/model_card.md)
 
 ## 10. Repository map
 ```
@@ -216,14 +258,21 @@ python scripts/run_pipeline.py     # dbt build → model → CSV exports → doc
 ```
 Then open `powerbi/PowerBI_Workbook.pbip` and refresh. See [`powerbi/README.md`](powerbi/README.md).
 
-## 12. Skills shown
-**Business:** metric definition, forecasting, sales operations, stakeholder storytelling ·
-**BI:** Power BI, DAX, star schema ·
-**ML:** leakage-safe features, backtesting, calibration, explainability ·
-**Data engineering:** dbt, SQL window functions, entity resolution, schema drift ·
-**Quality:** reconciliation, tests, audit trail ·
-**Practice:** CI, version control, reproducibility
+## 12. Road to production and automation
+*Today this runs end to end on synthetic data with one command. This is what a real CRM would add. It is a plan, not built yet.*
+
+| Area | Today | To ship |
+|---|---|---|
+| **Ingest** | 24 CSV drops, mapped by a field-mapping table | Managed connector from the CRM (API or CDC) into a raw layer. Only the mapping and alias tables change per company |
+| **Scale** | Full rebuild in DuckDB | Incremental dbt models and snapshots; adapter swap to Snowflake, Databricks or BigQuery |
+| **Orchestration** | GitHub Actions on every push | Scheduled daily run (Airflow, Dagster or dbt Cloud), then dbt, model and export in order, with retries |
+| **Quality** | 27 reconciliation checks and 40 tests stop the build | Source-freshness checks, data contracts and alerts to Teams or Slack when a check fails |
+| **Model** | Retrained by hand, status "Advisory" | Scheduled retrain, versioned in a model registry, calibration and drift monitoring, promoted only after two quarters of beating the governed forecast |
+| **Power BI** | Local `.pbip` project | Publish to the Service with scheduled refresh, dev / test / prod deployment pipelines, row-level security by manager and region |
+| **Security & ops** | Synthetic data, no secrets | Secrets in a vault, least-privilege access, PII review, run logs and cost monitoring |
 
 ## 13. About
-<!-- TODO: your name, one line about you, LinkedIn link -->
+Built by **Priyanshi Jani** as a worked example of sales-operations analytics: a trusted data layer, a forecast you can defend and dashboards a CRO can act on.
+GitHub: [priyanshijani](https://github.com/priyanshijani) · [Tech stack](#tech-stack)
+
 *All companies, people and figures are fictional and were generated for learning purposes.*
